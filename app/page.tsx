@@ -1,11 +1,11 @@
 import { Suspense } from "react";
-import Link from "next/link";
 import { CURRENT_CONGRESS } from "@/lib/openCongress";
 import { listMeasures } from "@/lib/batasWatch";
 import { summaryFromBatasWatch } from "@/lib/bills";
 import { BillList } from "./components/BillCard";
 import { Greeting } from "./components/Greeting";
 import { SearchBar } from "./components/SearchBar";
+import { SearchLink } from "./components/SearchNavigation";
 import { WatchlistPreview } from "./components/WatchlistPreview";
 import { BillListSkeleton } from "./components/Skeleton";
 import { LiveDataUnavailable } from "./components/LiveDataUnavailable";
@@ -31,13 +31,13 @@ export default function Home() {
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
           {SUGGESTIONS.map((s) => (
-            <Link
+            <SearchLink
               key={s}
-              href={`/receipts?q=${encodeURIComponent(s)}`}
+              q={s}
               className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-indigo-100 hover:bg-white/20"
             >
               {s}
-            </Link>
+            </SearchLink>
           ))}
         </div>
       </header>

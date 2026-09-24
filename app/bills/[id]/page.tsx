@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getBillDetail, LiveSourceUnavailableError, type BillDetail } from "@/lib/bills";
 import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
@@ -9,6 +8,7 @@ import { PersonCard } from "../../components/PersonCard";
 import { StatusBadge } from "../../components/StatusBadge";
 import { WatchButton } from "../../components/WatchButton";
 import { ShareButton } from "../../components/ShareButton";
+import { SearchLink } from "../../components/SearchNavigation";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
 
 async function load(id: string): Promise<BillDetail | "unavailable" | null> {
@@ -124,13 +124,10 @@ export default async function BillPage({ params }: { params: { id: string } }) {
           <ul className="divide-y divide-gray-100">
             {bill.authorNames.map((name) => (
               <li key={name}>
-                <Link
-                  href={`/receipts?q=${encodeURIComponent(surnameOf(name))}`}
-                  className="flex items-center justify-between py-2.5 text-sm font-medium"
-                >
+                <SearchLink q={surnameOf(name)} className="flex items-center justify-between py-2.5 text-sm font-medium">
                   {name}
                   <span className="text-xs text-navy">Receipts →</span>
-                </Link>
+                </SearchLink>
               </li>
             ))}
           </ul>

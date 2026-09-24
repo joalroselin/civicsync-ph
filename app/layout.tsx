@@ -4,6 +4,7 @@ import "./globals.css";
 import { WatchlistProvider } from "./components/WatchlistProvider";
 import { BottomNav } from "./components/BottomNav";
 import { PwaSupport } from "./components/PwaSupport";
+import { SearchNavigationProvider } from "./components/SearchNavigation";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
@@ -28,8 +29,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-paper font-sans text-gray-900 antialiased">
         <WatchlistProvider>
-          <div className="mx-auto min-h-screen max-w-md pb-[calc(80px+env(safe-area-inset-bottom))]">{children}</div>
-          <BottomNav />
+          <SearchNavigationProvider>
+            <div className="mx-auto min-h-screen max-w-md pb-[calc(80px+env(safe-area-inset-bottom))]">{children}</div>
+            <BottomNav />
+          </SearchNavigationProvider>
           <PwaSupport />
         </WatchlistProvider>
       </body>

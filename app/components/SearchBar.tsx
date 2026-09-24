@@ -1,10 +1,10 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { Spinner, useSearchNavigation } from "./SearchNavigation";
 
 export function SearchBar({ defaultValue = "", autoFocus = false }: { defaultValue?: string; autoFocus?: boolean }) {
-  const router = useRouter();
+  const { search, pending } = useSearchNavigation();
   const [q, setQ] = useState(defaultValue);
 
   return (
@@ -12,18 +12,24 @@ export function SearchBar({ defaultValue = "", autoFocus = false }: { defaultVal
       role="search"
       onSubmit={(e) => {
         e.preventDefault();
-        const query = q.trim();
-        if (query) router.push(`/receipts?q=${encodeURIComponent(query)}`);
+        (document.activeElement as HTMLElement | null)?.blur(); // close the mobile keyboard
+        search(q);
       }}
       className="relative"
     >
       <label htmlFor="search" className="sr-only">
         Search a politician or a bill
       </label>
-      <svg className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-        <circle cx="11" cy="11" r="7" />
-        <path d="m20 20-3.5-3.5" strokeLinecap="round" />
-      </svg>
+      <span className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+        {pending ? (
+          <Spinner className="h-[18px] w-[18px] text-navy" />
+        ) : (
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+            <circle cx="11" cy="11" r="7" />
+            <path d="m20 20-3.5-3.5" strokeLinecap="round" />
+          </svg>
+        )}
+      </span>
       <input
         id="search"
         type="search"

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Suspense } from "react";
 import { parseBillNumber, searchBills, searchPeople } from "@/lib/openCongress";
 import { getMeasureByNumber, listMeasures, toBatasWatchNumber } from "@/lib/batasWatch";
 import { summaryFromBatasWatch, summaryFromOpenCongress } from "@/lib/bills";
@@ -7,6 +7,8 @@ import { BillList } from "../components/BillCard";
 import { LiveDataUnavailable } from "../components/LiveDataUnavailable";
 import { PersonCard } from "../components/PersonCard";
 import { SearchBar } from "../components/SearchBar";
+import { SearchLink, Spinner } from "../components/SearchNavigation";
+import { BillListSkeleton } from "../components/Skeleton";
 import { PageHeader, Pager } from "../components/PageHeader";
 
 export const metadata: Metadata = { title: "Receipts" };
@@ -23,24 +25,23 @@ export default async function ReceiptsPage({ searchParams }: { searchParams: { q
       <p className="-mt-2 mb-4 text-sm text-gray-600">
         Every bill a lawmaker has authored, across all 13 congresses on record.
       </p>
-      <SearchBar defaultValue={q} autoFocus={!q} />
+      <SearchBar key={q} defaultValue={q} autoFocus={!q} />
       {q ? <Results q={q} page={page} /> : <Empty />}
     </main>
   );
 }
 
+/**
+ * Lawmakers (~1s) and BatasWatch filings (<0.5s) render first. Open
+ * Congress's full-text bill search can take ~5s uncached, so it streams in
+ * behind its own skeleton rather than holding up the whole page.
+ */
 async function Results({ q, page }: { q: string; page: number }) {
   const billNo = parseBillNumber(q);
   const firstPage = page === 1;
 
-  const [people, bills, latest] = await Promise.all([
+  const [people, latest] = await Promise.all([
     billNo || !firstPage ? Promise.resolve([]) : searchPeople({ q, limit: 5 }).catch(() => null),
-    searchBills({
-      q: billNo ? String(billNo.number) : q,
-      subtype: billNo?.subtype,
-      limit: PAGE_SIZE,
-      offset: (page - 1) * PAGE_SIZE,
-    }).catch(() => null),
     // Open Congress lags about a year, so also check BatasWatch for newer
     // 20th Congress filings on the first page.
     !firstPage
@@ -54,27 +55,11 @@ async function Results({ q, page }: { q: string; page: number }) {
             .catch(() => null),
   ]);
 
-  if (people === null && bills === null && latest === null) {
-    return <ErrorNote />;
-  }
-
-  const ocSummaries = (bills?.data ?? []).map((b) => summaryFromOpenCongress(b));
-  const seen = new Set(ocSummaries.map((b) => b.routeId));
-  const latestSummaries = (latest ?? [])
-    .map(summaryFromBatasWatch)
-    .filter((b) => !seen.has(b.routeId))
-    .slice(0, billNo ? 1 : 5);
-
-  const noResults = !people?.length && !ocSummaries.length && !latestSummaries.length;
+  const latestSummaries = (latest ?? []).map(summaryFromBatasWatch).slice(0, billNo ? 1 : 5);
 
   return (
     <div className="mt-6 flex flex-col gap-7">
       {latest === null && <LiveDataUnavailable what="Search of bills filed since Sept 2025" />}
-      {noResults && latest !== null && (
-        <p className="rounded-2xl bg-white p-5 text-center text-sm text-gray-600 ring-1 ring-gray-200">
-          No matches for <span className="font-semibold">“{q}”</span>. Try a last name, a keyword from the bill title, or a bill number like “SB 1294”.
-        </p>
-      )}
 
       {people && people.length > 0 && (
         <Section id="people" title="Lawmakers">
@@ -94,13 +79,74 @@ async function Results({ q, page }: { q: string; page: number }) {
         </Section>
       )}
 
-      {ocSummaries.length > 0 && (
-        <Section id="bills" title={`${billNo ? "All congresses" : "Bills"} · ${bills!.total.toLocaleString()} on record`}>
-          <BillList bills={ocSummaries} />
-          <Pager basePath="/receipts" params={{ q }} page={page} hasMore={bills!.hasMore} />
-        </Section>
-      )}
+      <Suspense key={`${q}|${page}`} fallback={<BillsFallback />}>
+        <RecordBills
+          q={q}
+          page={page}
+          billNo={billNo}
+          exclude={latestSummaries.map((b) => b.routeId)}
+          hasOtherResults={(people?.length ?? 0) + latestSummaries.length > 0}
+          latestFailed={latest === null}
+        />
+      </Suspense>
     </div>
+  );
+}
+
+async function RecordBills({
+  q,
+  page,
+  billNo,
+  exclude,
+  hasOtherResults,
+  latestFailed,
+}: {
+  q: string;
+  page: number;
+  billNo: ReturnType<typeof parseBillNumber>;
+  exclude: string[];
+  hasOtherResults: boolean;
+  latestFailed: boolean;
+}) {
+  const bills = await searchBills({
+    q: billNo ? String(billNo.number) : q,
+    subtype: billNo?.subtype,
+    limit: PAGE_SIZE,
+    offset: (page - 1) * PAGE_SIZE,
+  }).catch(() => null);
+
+  if (!bills) return <ErrorNote />;
+
+  // Bills already shown under "Latest filings" aren't repeated here.
+  const skip = new Set(exclude);
+  const summaries = bills.data.map((b) => summaryFromOpenCongress(b)).filter((b) => !skip.has(b.routeId));
+
+  if (summaries.length === 0) {
+    if (hasOtherResults || latestFailed) return null;
+    return (
+      <p className="rounded-2xl bg-white p-5 text-center text-sm text-gray-600 ring-1 ring-gray-200">
+        No matches for <span className="font-semibold">“{q}”</span>. Try a last name, a keyword from the bill title, or a bill number like “SB 1294”.
+      </p>
+    );
+  }
+
+  return (
+    <Section id="bills" title={`${billNo ? "All congresses" : "Bills"} · ${bills.total.toLocaleString()} on record`}>
+      <BillList bills={summaries} />
+      <Pager basePath="/receipts" params={{ q }} page={page} hasMore={bills.hasMore} />
+    </Section>
+  );
+}
+
+function BillsFallback() {
+  return (
+    <section aria-label="Loading bills on record">
+      <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
+        <Spinner className="h-3.5 w-3.5 text-gray-400" />
+        Searching all 13 congresses…
+      </div>
+      <BillListSkeleton count={3} />
+    </section>
   );
 }
 
@@ -128,12 +174,12 @@ function Empty() {
       <ul className="grid grid-cols-2 gap-2">
         {examples.map((e) => (
           <li key={e.q}>
-            <Link
-              href={`/receipts?q=${encodeURIComponent(e.q)}`}
+            <SearchLink
+              q={e.q}
               className="block rounded-2xl bg-white p-3.5 text-sm font-medium shadow-sm ring-1 ring-gray-200/70 hover:ring-navy/30"
             >
               {e.label}
-            </Link>
+            </SearchLink>
           </li>
         ))}
       </ul>

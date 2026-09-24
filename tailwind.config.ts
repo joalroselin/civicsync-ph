@@ -9,6 +9,9 @@ const config: Config = {
         crimson: "#991B1B",
         paper: "#F9FAFB",
       },
+      keyframes: {
+        "fade-in": { from: { opacity: "0" }, to: { opacity: "1" } },
+      },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         display: ["var(--font-display)", "Space Grotesk", "system-ui", "sans-serif"],
