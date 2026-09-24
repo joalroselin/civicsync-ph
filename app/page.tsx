@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import { CURRENT_CONGRESS } from "@/lib/openCongress";
 import { listMeasures } from "@/lib/batasWatch";
 import { summaryFromBatasWatch } from "@/lib/bills";
@@ -72,7 +73,12 @@ export default function Home() {
       </div>
 
       {/* The sidebar carries the credit from md up. */}
-      <Credit className="text-center md:hidden" />
+      <div className="flex flex-col items-center gap-1 md:hidden">
+        <Credit />
+        <Link href="/press" className="text-[11px] font-semibold text-gray-500 hover:text-navy">
+          Press kit
+        </Link>
+      </div>
     </main>
   );
 }
