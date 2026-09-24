@@ -71,11 +71,7 @@ Upstream quirks handled in code (verified against live responses, Sept 2026):
 - `public/sw.js` — hand-written service worker: cache-first for static
   assets, network-first for pages and API calls, `/offline` fallback.
 
-## Next steps
+## Roadmap
 
-1. Set up the Firebase project (Google sign-in + Firestore) and deploy
-   `firestore.rules`.
-2. Match screens to the design canvas.
-3. Deploy (Vercel).
-4. Lazy-load Firebase so it isn't in every page's bundle (~110 kB).
-5. Tests for bill-number parsing, number mapping, and author matching.
+See [ROADMAP.md](ROADMAP.md) for what's next, grouped into phases: Harden,
+Engage, Depth and Own the data. It also has the decisions log and open questions.
