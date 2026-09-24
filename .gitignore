@@ -4,3 +4,6 @@ node_modules
 next-env.d.ts
 *.tsbuildinfo
 .DS_Store
+
+# Social media assets (kept local)
+marketing/
