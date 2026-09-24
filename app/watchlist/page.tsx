@@ -69,7 +69,7 @@ export default function WatchlistPage() {
           <p className="mb-3 text-xs text-gray-500">
             {items.length} {items.length === 1 ? "bill" : "bills"} · {refreshing ? "Checking for status updates…" : "Status up to date"}
           </p>
-          <ul className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
             {items.map((b) => (
               <li key={b.id}>
                 <Link
