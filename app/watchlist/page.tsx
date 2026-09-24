@@ -23,10 +23,10 @@ export default function WatchlistPage() {
   }, [ready]);
 
   return (
-    <main className="px-5 pb-5">
+    <main className="px-5 pb-5 md:pt-4">
       <PageHeader title="Watchlist" />
 
-      <section className="mb-5 rounded-2xl bg-white p-4 text-sm shadow-sm ring-1 ring-gray-200/70">
+      <section className="mb-5 max-w-2xl rounded-2xl bg-white p-4 text-sm shadow-sm ring-1 ring-gray-200/70">
         {!syncAvailable ? (
           <p className="text-gray-600">Saved on this device. Sign-in sync will be available once accounts are set up.</p>
         ) : user ? (
@@ -55,7 +55,7 @@ export default function WatchlistPage() {
       {!ready ? (
         <BillListSkeleton />
       ) : items.length === 0 ? (
-        <div className="rounded-[20px] border border-dashed border-gray-300 p-8 text-center">
+        <div className="mx-auto max-w-lg rounded-[20px] border border-dashed border-gray-300 p-8 text-center md:mt-8">
           <p className="font-display text-lg font-semibold">Nothing here yet</p>
           <p className="mt-1 text-sm text-gray-600">
             Find a bill in Receipts and tap the bookmark to follow it.
@@ -69,12 +69,12 @@ export default function WatchlistPage() {
           <p className="mb-3 text-xs text-gray-500">
             {items.length} {items.length === 1 ? "bill" : "bills"} · {refreshing ? "Checking for status updates…" : "Status up to date"}
           </p>
-          <ul className="flex flex-col gap-3">
+          <ul className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {items.map((b) => (
               <li key={b.id}>
                 <Link
                   href={`/bills/${b.id}`}
-                  className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-200/70 hover:ring-navy/30"
+                  className="flex h-full items-start gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-200/70 hover:ring-navy/30"
                 >
                   <div className="min-w-0 flex-1">
                     <div className="flex gap-2 text-xs text-gray-500">

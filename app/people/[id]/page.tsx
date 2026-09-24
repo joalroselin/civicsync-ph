@@ -53,89 +53,94 @@ export default async function PersonPage({
           .catch(() => null);
 
   return (
-    <main className="px-5 pb-5">
+    <main className="px-5 pb-5 md:pt-4">
       <PageHeader title="Receipts" back="/receipts" />
 
-      <section className="flex items-center gap-4 rounded-[20px] bg-white p-5 shadow-sm ring-1 ring-gray-200/70">
-        <Avatar person={person} size={60} />
-        <div className="min-w-0">
-          <h2 className="font-display text-xl font-semibold leading-tight">{personName(person)}</h2>
-          {latest && (
-            <p className="mt-0.5 text-sm text-gray-600">
-              {latest.position}, {latest.congress_ordinal} Congress
-            </p>
-          )}
+      {/* Desktop: profile in a sticky left column, bills on the right. */}
+      <div className="lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:items-start lg:gap-8">
+        <div className="lg:sticky lg:top-20">
+          <section className="flex items-center gap-4 rounded-[20px] bg-white p-5 shadow-sm ring-1 ring-gray-200/70 lg:flex-col lg:items-start lg:p-6">
+            <Avatar person={person} size={60} />
+            <div className="min-w-0">
+              <h2 className="font-display text-xl font-semibold leading-tight lg:text-2xl">{personName(person)}</h2>
+              {latest && (
+                <p className="mt-0.5 text-sm text-gray-600">
+                  {latest.position}, {latest.congress_ordinal} Congress
+                </p>
+              )}
+              {served.length > 0 && (
+                <p className="mt-1 text-xs text-gray-500">
+                  Served in {congresses.length} {congresses.length === 1 ? "congress" : "congresses"}
+                </p>
+              )}
+            </div>
+          </section>
+
           {served.length > 0 && (
-            <p className="mt-1 text-xs text-gray-500">
-              Served in {congresses.length} {congresses.length === 1 ? "congress" : "congresses"}
-            </p>
-          )}
-        </div>
-      </section>
-
-      {served.length > 0 && (
-        <details className="mt-3 rounded-2xl bg-white p-4 text-sm ring-1 ring-gray-200/70">
-          <summary className="cursor-pointer font-semibold text-gray-700">Service record</summary>
-          <ul className="mt-3 divide-y divide-gray-100">
-            {served.map((c, i) => (
-              <li key={i} className="flex justify-between py-2">
-                <span>{c.congress_ordinal} Congress</span>
-                <span className="text-gray-500">{c.position}</span>
-              </li>
-            ))}
-          </ul>
-        </details>
-      )}
-
-      <section className="mt-6" aria-labelledby="authored-heading">
-        <h2 id="authored-heading" className="font-display text-lg font-semibold">
-          Authored bills
-          {bills?.total != null && <span className="ml-2 text-sm font-normal text-gray-500">{bills.total.toLocaleString()}</span>}
-        </h2>
-
-        {congresses.length > 1 && (
-          <div className="-mx-5 mt-3 flex gap-2 no-scrollbar overflow-x-auto px-5 pb-1" role="tablist" aria-label="Filter by congress">
-            {congresses.map((n) => (
-              <FilterChip
-                key={n}
-                href={`/people/${person.id}?congress=${n}`}
-                active={congress === n}
-                label={n === BATASWATCH_CONGRESS ? `${ordinal(n)} · live` : ordinal(n)}
-              />
-            ))}
-            <FilterChip href={`/people/${person.id}?congress=all`} active={!congress} label="All history" />
-          </div>
-        )}
-
-        <div className="mt-4">
-          {bills === null ? (
-            congress === BATASWATCH_CONGRESS ? (
-              <LiveDataUnavailable what="The 20th Congress list" />
-            ) : (
-              <p className="text-sm text-crimson">Couldn’t reach Open Congress right now. Try again shortly.</p>
-            )
-          ) : bills.data.length === 0 ? (
-            <p className="rounded-2xl bg-white p-5 text-center text-sm text-gray-500 ring-1 ring-gray-200">
-              No authored bills on record{congress ? ` for the ${ordinal(congress)} Congress` : ""}.
-            </p>
-          ) : (
             <>
-              <BillList bills={bills.data} />
-              <p className="mt-3 text-[11px] text-gray-400">
-                {congress === BATASWATCH_CONGRESS
-                  ? "Current list via BatasWatch (independent tracker)."
-                  : "Via BetterGov Open Congress. Its catalogue currently runs to around September 2025."}
-              </p>
-              <Pager
-                basePath={`/people/${person.id}`}
-                params={{ congress: filter }}
-                page={page}
-                hasMore={bills.hasMore}
-              />
+              {/* Collapsed on phones to save space; always open in the desktop column. */}
+              <details className="mt-3 rounded-2xl bg-white p-4 text-sm ring-1 ring-gray-200/70 lg:hidden">
+                <summary className="cursor-pointer font-semibold text-gray-700">Service record</summary>
+                <ServiceRecord served={served} />
+              </details>
+              <section className="mt-3 hidden rounded-2xl bg-white p-4 text-sm ring-1 ring-gray-200/70 lg:block">
+                <h3 className="font-semibold text-gray-700">Service record</h3>
+                <ServiceRecord served={served} />
+              </section>
             </>
           )}
         </div>
-      </section>
+
+        <section className="mt-6 lg:mt-0" aria-labelledby="authored-heading">
+          <h2 id="authored-heading" className="font-display text-lg font-semibold">
+            Authored bills
+            {bills?.total != null && <span className="ml-2 text-sm font-normal text-gray-500">{bills.total.toLocaleString()}</span>}
+          </h2>
+
+          {congresses.length > 1 && (
+            <div className="-mx-5 mt-3 flex gap-2 no-scrollbar overflow-x-auto px-5 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0" role="tablist" aria-label="Filter by congress">
+              {congresses.map((n) => (
+                <FilterChip
+                  key={n}
+                  href={`/people/${person.id}?congress=${n}`}
+                  active={congress === n}
+                  label={n === BATASWATCH_CONGRESS ? `${ordinal(n)} · live` : ordinal(n)}
+                />
+              ))}
+              <FilterChip href={`/people/${person.id}?congress=all`} active={!congress} label="All history" />
+            </div>
+          )}
+
+          <div className="mt-4">
+            {bills === null ? (
+              congress === BATASWATCH_CONGRESS ? (
+                <LiveDataUnavailable what="The 20th Congress list" />
+              ) : (
+                <p className="text-sm text-crimson">Couldn’t reach Open Congress right now. Try again shortly.</p>
+              )
+            ) : bills.data.length === 0 ? (
+              <p className="rounded-2xl bg-white p-5 text-center text-sm text-gray-500 ring-1 ring-gray-200">
+                No authored bills on record{congress ? ` for the ${ordinal(congress)} Congress` : ""}.
+              </p>
+            ) : (
+              <>
+                <BillList bills={bills.data} />
+                <p className="mt-3 text-[11px] text-gray-400">
+                  {congress === BATASWATCH_CONGRESS
+                    ? "Current list via BatasWatch (independent tracker)."
+                    : "Via BetterGov Open Congress. Its catalogue currently runs to around September 2025."}
+                </p>
+                <Pager
+                  basePath={`/people/${person.id}`}
+                  params={{ congress: filter }}
+                  page={page}
+                  hasMore={bills.hasMore}
+                />
+              </>
+            )}
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
@@ -158,6 +163,19 @@ async function liveBills(
   } catch {
     return null;
   }
+}
+
+function ServiceRecord({ served }: { served: NonNullable<OpenCongressPerson["congresses_served"]> }) {
+  return (
+    <ul className="mt-3 divide-y divide-gray-100">
+      {served.map((c, i) => (
+        <li key={i} className="flex justify-between py-2">
+          <span>{c.congress_ordinal} Congress</span>
+          <span className="text-gray-500">{c.position}</span>
+        </li>
+      ))}
+    </ul>
+  );
 }
 
 function FilterChip({ href, active, label }: { href: string; active: boolean; label: string }) {

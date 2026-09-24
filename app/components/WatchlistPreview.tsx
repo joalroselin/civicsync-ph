@@ -25,9 +25,9 @@ export function WatchlistPreview() {
           Tap the bookmark on any bill to follow it here.
         </p>
       ) : (
-        <ul className="-mx-5 flex snap-x gap-3 no-scrollbar overflow-x-auto px-5 pb-1">
-          {items.slice(0, 6).map((b) => (
-            <li key={b.id} className="w-64 shrink-0 snap-start">
+        <ul className="-mx-5 flex snap-x gap-3 no-scrollbar overflow-x-auto px-5 pb-1 md:mx-0 md:px-0 lg:flex-col lg:overflow-visible lg:pb-0">
+          {items.slice(0, 5).map((b) => (
+            <li key={b.id} className="w-64 shrink-0 snap-start lg:w-auto">
               <Link
                 href={`/bills/${b.id}`}
                 className="flex h-full flex-col gap-2 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-200/70"

@@ -2,9 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { WatchlistProvider } from "./components/WatchlistProvider";
-import { BottomNav } from "./components/BottomNav";
+import { BottomNav, SideNav } from "./components/Nav";
 import { PwaSupport } from "./components/PwaSupport";
 import { SearchNavigationProvider } from "./components/SearchNavigation";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
@@ -30,7 +31,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="bg-paper font-sans text-gray-900 antialiased">
         <WatchlistProvider>
           <SearchNavigationProvider>
-            <div className="mx-auto min-h-screen max-w-md pb-[calc(80px+env(safe-area-inset-bottom))]">{children}</div>
+            <div className="md:flex">
+              <SideNav />
+              <div className="min-w-0 flex-1">
+                {/* Phone: narrow column above the tab bar. Tablet/desktop: wider, no tab bar. */}
+                <div className="mx-auto min-h-screen max-w-md pb-[calc(80px+env(safe-area-inset-bottom))] md:max-w-3xl md:px-4 md:pb-12 lg:max-w-6xl lg:px-8">
+                  {children}
+                </div>
+              </div>
+            </div>
             <BottomNav />
           </SearchNavigationProvider>
           <PwaSupport />

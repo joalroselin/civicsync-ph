@@ -20,12 +20,14 @@ export default async function ReceiptsPage({ searchParams }: { searchParams: { q
   const page = Math.max(1, Number(searchParams.page) || 1);
 
   return (
-    <main className="px-5 pb-5">
+    <main className="px-5 pb-5 md:pt-4">
       <PageHeader title="Receipts" />
       <p className="-mt-2 mb-4 text-sm text-gray-600">
         Every bill a lawmaker has authored, across all 13 congresses on record.
       </p>
-      <SearchBar key={q} defaultValue={q} autoFocus={!q} />
+      <div className="max-w-2xl">
+        <SearchBar key={q} defaultValue={q} autoFocus={!q} />
+      </div>
       {q ? <Results q={q} page={page} /> : <Empty />}
     </main>
   );
@@ -58,37 +60,42 @@ async function Results({ q, page }: { q: string; page: number }) {
   const latestSummaries = (latest ?? []).map(summaryFromBatasWatch).slice(0, billNo ? 1 : 5);
 
   return (
-    <div className="mt-6 flex flex-col gap-7">
-      {latest === null && <LiveDataUnavailable what="Search of bills filed since Sept 2025" />}
-
+    <div className="mt-6 flex flex-col gap-7 lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-8">
+      {/* Lawmakers: first on phones, side column on desktop. */}
       {people && people.length > 0 && (
-        <Section id="people" title="Lawmakers">
-          <ul className="flex flex-col gap-2">
-            {people.map((p) => (
-              <li key={p.id}>
-                <PersonCard person={p} />
-              </li>
-            ))}
-          </ul>
-        </Section>
+        <aside className="lg:sticky lg:top-20 lg:col-start-2 lg:row-start-1">
+          <Section id="people" title="Lawmakers">
+            <ul className="flex flex-col gap-2">
+              {people.map((p) => (
+                <li key={p.id}>
+                  <PersonCard person={p} />
+                </li>
+              ))}
+            </ul>
+          </Section>
+        </aside>
       )}
 
-      {latestSummaries.length > 0 && (
-        <Section id="latest" title={billNo ? "20th Congress" : "Latest filings · 20th Congress"}>
-          <BillList bills={latestSummaries} />
-        </Section>
-      )}
+      <div className="flex flex-col gap-7 lg:col-start-1 lg:row-start-1">
+        {latest === null && <LiveDataUnavailable what="Search of bills filed since Sept 2025" />}
 
-      <Suspense key={`${q}|${page}`} fallback={<BillsFallback />}>
-        <RecordBills
-          q={q}
-          page={page}
-          billNo={billNo}
-          exclude={latestSummaries.map((b) => b.routeId)}
-          hasOtherResults={(people?.length ?? 0) + latestSummaries.length > 0}
-          latestFailed={latest === null}
-        />
-      </Suspense>
+        {latestSummaries.length > 0 && (
+          <Section id="latest" title={billNo ? "20th Congress" : "Latest filings · 20th Congress"}>
+            <BillList bills={latestSummaries} />
+          </Section>
+        )}
+
+        <Suspense key={`${q}|${page}`} fallback={<BillsFallback />}>
+          <RecordBills
+            q={q}
+            page={page}
+            billNo={billNo}
+            exclude={latestSummaries.map((b) => b.routeId)}
+            hasOtherResults={(people?.length ?? 0) + latestSummaries.length > 0}
+            latestFailed={latest === null}
+          />
+        </Suspense>
+      </div>
     </div>
   );
 }
@@ -171,7 +178,7 @@ function Empty() {
   return (
     <div className="mt-6">
       <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-500">Try</h2>
-      <ul className="grid grid-cols-2 gap-2">
+      <ul className="grid max-w-2xl grid-cols-2 gap-2 md:grid-cols-4">
         {examples.map((e) => (
           <li key={e.q}>
             <SearchLink

@@ -42,8 +42,8 @@ export function PwaSupport() {
   };
 
   return (
-    <div className="fixed inset-x-0 bottom-[calc(64px+env(safe-area-inset-bottom))] z-30 px-4">
-      <div className="mx-auto flex max-w-md items-center gap-3 rounded-2xl bg-gray-900 p-3 pl-4 text-white shadow-lg">
+    <div className="fixed inset-x-0 bottom-[calc(64px+env(safe-area-inset-bottom))] z-30 px-4 md:inset-x-auto md:bottom-6 md:right-6 md:px-0">
+      <div className="mx-auto flex max-w-md md:w-96 items-center gap-3 rounded-2xl bg-gray-900 p-3 pl-4 text-white shadow-lg">
         <p className="flex-1 text-sm">
           <span className="font-semibold">Install CivicSync</span>
           <span className="block text-xs text-gray-300">Quick access, works offline.</span>
