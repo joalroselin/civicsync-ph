@@ -73,14 +73,15 @@ Upstream quirks handled in code (verified against live responses, Sept 2026):
 
 ## Editing site content (CMS)
 
-About, Press kit copy, Home search suggestions, headline numbers, and an
-optional announcement banner are managed in **Sanity** (provisioned via the
+About, Get involved, Press kit copy, contact email, social links, Home
+search suggestions, headline numbers, and an optional announcement banner
+are managed in **Sanity** (provisioned via the
 Vercel Marketplace) and edited in Sanity Studio (`studio/`, see its README).
 Published edits go live in seconds via a webhook to `/api/revalidate`, with
 no redeploy.
 
 - `lib/sanity.ts`: read-only client with cache tags
-- `lib/content.ts`: `getSiteSettings()`, `getAboutPage()`, `getPressKit()`
+- `lib/content.ts`: `getSiteSettings()`, `getAboutPage()`, `getGetInvolvedPage()`, `getPressKit()`
 - `lib/content-defaults.ts`: the fallback copy if Sanity is unreachable
   (also what `scripts/seed-content.mts` seeded)
 
@@ -88,3 +89,22 @@ no redeploy.
 
 See [ROADMAP.md](ROADMAP.md) for what's next, grouped into phases: Harden,
 Engage, Depth and Own the data. It also has the decisions log and open questions.
+
+## Contributing
+
+Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) and the
+[Code of Conduct](CODE_OF_CONDUCT.md).
+
+## Licence
+
+Copyright (C) 2026 HelloJoal.
+
+CivicSync PH is free software: you can redistribute it and/or modify it
+under the terms of the [GNU Affero General Public License](LICENSE) as
+published by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version. If you run a modified version for
+others to use, you must make your source code available to them.
+
+The licence covers this project's code. Legislative data belongs to its
+sources (BetterGov Open Congress, BatasWatch, and the official Senate and
+House records) and is subject to their terms.

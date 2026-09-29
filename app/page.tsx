@@ -75,8 +75,9 @@ export default async function Home() {
       {/* The sidebar carries the credit from md up. */}
       <div className="flex flex-col items-center gap-1 md:hidden">
         <Credit />
-        <p className="flex gap-3 text-[11px] font-semibold text-gray-500">
+        <p className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-semibold text-gray-500">
           <Link href="/about" className="hover:text-navy">About</Link>
+          <Link href="/get-involved" className="hover:text-navy">Get involved</Link>
           <Link href="/press" className="hover:text-navy">Press kit</Link>
         </p>
       </div>

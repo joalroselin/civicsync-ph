@@ -1,14 +1,17 @@
 import { sanityFetch } from "@/lib/sanity";
 import {
   DEFAULT_ABOUT_PAGE,
+  DEFAULT_GET_INVOLVED_PAGE,
   DEFAULT_PRESS_KIT,
   DEFAULT_SITE_SETTINGS,
   type AboutPage,
+  type GetInvolvedPage,
   type PressKit,
   type SiteSettings,
 } from "@/lib/content-defaults";
 
-export type { AboutPage, PressKit, SiteSettings };
+export type { AboutPage, GetInvolvedPage, PressKit, SiteSettings };
+export type { Way, WayIcon, SocialLink } from "@/lib/content-defaults";
 export { ENQUIRY_SUBJECTS, mailtoHref } from "@/lib/content-defaults";
 
 /** Overlay non-empty CMS values on the defaults, one level deep. */
@@ -28,7 +31,7 @@ function withDefaults<T extends object>(defaults: T, cms: Partial<T> | null): T 
 
 export async function getSiteSettings(): Promise<SiteSettings> {
   const cms = await sanityFetch<Partial<SiteSettings>>(
-    `*[_id == "siteSettings"][0]{ contactEmail, homeSuggestions, stats, announcement }`
+    `*[_id == "siteSettings"][0]{ contactEmail, socialLinks, homeSuggestions, stats, announcement }`
   );
   return withDefaults(DEFAULT_SITE_SETTINGS, cms);
 }
@@ -41,4 +44,9 @@ export async function getAboutPage(): Promise<AboutPage> {
 export async function getPressKit(): Promise<PressKit> {
   const cms = await sanityFetch<Partial<PressKit>>(`*[_id == "pressKit"][0]{ oneLine, short, long, faq }`);
   return withDefaults(DEFAULT_PRESS_KIT, cms);
+}
+
+export async function getGetInvolvedPage(): Promise<GetInvolvedPage> {
+  const cms = await sanityFetch<Partial<GetInvolvedPage>>(`*[_id == "getInvolvedPage"][0]{ kicker, title, intro, ways }`);
+  return withDefaults(DEFAULT_GET_INVOLVED_PAGE, cms);
 }

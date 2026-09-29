@@ -7,7 +7,7 @@
  * Studio. Needs SANITY_API_WRITE_TOKEN (server-side secret from Vercel).
  */
 import { createClient } from "@sanity/client";
-import { DEFAULT_ABOUT_PAGE, DEFAULT_PRESS_KIT, DEFAULT_SITE_SETTINGS } from "../lib/content-defaults.ts";
+import { DEFAULT_ABOUT_PAGE, DEFAULT_GET_INVOLVED_PAGE, DEFAULT_PRESS_KIT, DEFAULT_SITE_SETTINGS } from "../lib/content-defaults.ts";
 
 const projectId = process.env.SANITY_API_PROJECT_ID;
 const token = process.env.SANITY_API_WRITE_TOKEN;
@@ -27,6 +27,7 @@ const client = createClient({
 const docs = [
   { _id: "siteSettings", _type: "siteSettings", ...DEFAULT_SITE_SETTINGS },
   { _id: "aboutPage", _type: "aboutPage", ...DEFAULT_ABOUT_PAGE },
+  { _id: "getInvolvedPage", _type: "getInvolvedPage", ...DEFAULT_GET_INVOLVED_PAGE },
   { _id: "pressKit", _type: "pressKit", ...DEFAULT_PRESS_KIT },
 ];
 

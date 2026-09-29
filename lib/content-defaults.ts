@@ -26,8 +26,14 @@ export interface PortableBlock {
   children: PortableSpan[];
 }
 
+export interface SocialLink {
+  _key: string;
+  platform: string;
+  url: string;
+}
 export interface SiteSettings {
   contactEmail: string;
+  socialLinks: SocialLink[];
   homeSuggestions: string[];
   stats: { currentCongressBills: string; totalRecords: string; asOf: string };
   announcement: { enabled: boolean; message: string; linkLabel?: string; linkUrl?: string };
@@ -36,6 +42,25 @@ export interface AboutPage {
   title: string;
   intro: string;
   body: PortableBlock[];
+}
+export type WayIcon = "megaphone" | "flag" | "lightbulb" | "language" | "code" | "handshake";
+export interface Way {
+  _key: string;
+  title: string;
+  description: string;
+  effort?: string;
+  icon?: WayIcon;
+  action: "email" | "link" | "share";
+  buttonLabel: string;
+  emailSubject?: string;
+  url?: string;
+  comingSoon?: boolean;
+}
+export interface GetInvolvedPage {
+  kicker: string;
+  title: string;
+  intro: string;
+  ways: Way[];
 }
 export interface PressKit {
   oneLine: string;
@@ -51,6 +76,7 @@ const CONTACT_EMAIL = "hello.joaldev@gmail.com";
 export const ENQUIRY_SUBJECTS = {
   general: "Enquiry: CivicSync PH",
   press: "Press enquiry: CivicSync PH",
+  dataCorrection: "Data correction: CivicSync PH",
 } as const;
 
 export function mailtoHref(email: string, subject: string): string {
@@ -85,6 +111,7 @@ const li = (...segments: Segment[]) => block("normal", segments, "bullet");
 
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   contactEmail: CONTACT_EMAIL,
+  socialLinks: [],
   homeSuggestions: ["Hontiveros", "Tulfo", "Magna Carta", "SB 1294", "rice"],
   stats: { currentCongressBills: "13,600+", totalRecords: "165,000+", asOf: "2026-09-24" },
   announcement: { enabled: false, message: "" },
@@ -127,14 +154,93 @@ export const DEFAULT_ABOUT_PAGE: AboutPage = {
       { text: "GitHub", href: REPO_URL },
       "."
     ),
+    h2("Open source"),
+    p(
+      "CivicSync is open source under the ",
+      { text: "GNU Affero General Public License v3.0", href: `${REPO_URL}/blob/main/LICENSE` },
+      " (AGPL-3.0). Anyone can read, reuse, and improve the code. If someone runs a modified version for the public, they must share their changes too, so improvements to civic tools stay public. The licence covers our code; legislative data belongs to its sources."
+    ),
     h2("Help shape it"),
     p(
       "CivicSync is free and still growing. Questions, ideas, or spotted a problem? Email ",
       { text: CONTACT_EMAIL, href: mailtoHref(CONTACT_EMAIL, ENQUIRY_SUBJECTS.general) },
+      ". Want to do more? See ",
+      { text: "ways to get involved", href: "/get-involved" },
       ". Journalists can find logos, screenshots, and a fact sheet in the ",
       { text: "press kit", href: "/press" },
       "."
     ),
+  ],
+};
+
+export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
+  kicker: "Bayanihan",
+  title: "Help make Philippine laws easier to follow",
+  intro:
+    "CivicSync is free, independent, and built in the open. Whether you have five minutes or a few hours a month, there’s a way to help more Filipinos find and follow the work of their lawmakers.",
+  ways: [
+    {
+      _key: "way-share",
+      title: "Spread the word",
+      description: "Share CivicSync with friends, family, or your community. The more people check the receipts, the better.",
+      effort: "2 minutes",
+      icon: "megaphone",
+      action: "share",
+      buttonLabel: "Share CivicSync",
+    },
+    {
+      _key: "way-report",
+      title: "Report a data error",
+      description:
+        "Spotted a wrong status, author, or title? Every bill page has a “Report an issue” link, or email us with the bill number and what looks wrong.",
+      effort: "5 minutes",
+      icon: "flag",
+      action: "email",
+      buttonLabel: "Report an error",
+      emailSubject: "Data correction: CivicSync PH",
+    },
+    {
+      _key: "way-ideas",
+      title: "Suggest a feature",
+      description: "Tell us what would make CivicSync more useful to you. A public roadmap where you can vote on ideas is coming soon.",
+      effort: "5 minutes",
+      icon: "lightbulb",
+      action: "email",
+      buttonLabel: "Share an idea",
+      emailSubject: "Feature idea: CivicSync PH",
+    },
+    {
+      _key: "way-translate",
+      title: "Help translate",
+      description:
+        "We’re planning Filipino and major regional languages, reviewed by native speakers. Join the translator list and we’ll reach out when it’s ready.",
+      effort: "A few hours",
+      icon: "language",
+      action: "email",
+      buttonLabel: "Join the translator list",
+      emailSubject: "Contribute: Translation",
+    },
+    {
+      _key: "way-code",
+      title: "Contribute code or design",
+      description:
+        "CivicSync is open source (AGPL-3.0). Developers and designers can pick up an issue, improve the app, or propose something new. Start with the contributing guide.",
+      effort: "Ongoing",
+      icon: "code",
+      action: "link",
+      buttonLabel: "View on GitHub",
+      url: `${REPO_URL}/blob/main/CONTRIBUTING.md`,
+    },
+    {
+      _key: "way-partner",
+      title: "Partner with us",
+      description: "Civic groups, universities, newsrooms, and data providers: let’s work together to make legislative information more accessible.",
+      effort: "For organisations",
+      icon: "handshake",
+      action: "email",
+      buttonLabel: "Get in touch",
+      emailSubject: "Partnership: CivicSync PH",
+    },
   ],
 };
 
@@ -143,7 +249,7 @@ export const DEFAULT_PRESS_KIT: PressKit = {
   short:
     "CivicSync PH is a free, mobile-first web app that makes Philippine legislative records easier to use. Search the Senate and House of Representatives in one place, see every bill a lawmaker has authored across 13 congresses since 1987, check where a bill stands today, and follow the bills you care about. No sign-up required.",
   long:
-    "CivicSync PH is a free, mobile-first web app that helps Filipinos find and follow the work of their lawmakers. The Philippine Congress has two chambers, each with its own website, formats, and numbering, and each three-year Congress sees thousands of bills filed. CivicSync brings those records together: one search across the Senate and House, one profile per lawmaker covering their whole career across both chambers, and one page per bill combining its history with its current status, committee, a plain-language summary, and links to the official record. Users can bookmark bills to a Watchlist without creating an account. CivicSync is built on open data from BetterGov's Open Congress API and BatasWatch, and is designed as a guide to the official record, not a replacement for it. It was built by independent developer HelloJoal, with AI assistance, and its source code is public.",
+    "CivicSync PH is a free, mobile-first web app that helps Filipinos find and follow the work of their lawmakers. The Philippine Congress has two chambers, each with its own website, formats, and numbering, and each three-year Congress sees thousands of bills filed. CivicSync brings those records together: one search across the Senate and House, one profile per lawmaker covering their whole career across both chambers, and one page per bill combining its history with its current status, committee, a plain-language summary, and links to the official record. Users can bookmark bills to a Watchlist without creating an account. CivicSync is built on open data from BetterGov's Open Congress API and BatasWatch, and is designed as a guide to the official record, not a replacement for it. It was built by independent developer HelloJoal, with AI assistance, and is open source under the AGPL-3.0 licence.",
   faq: [
     {
       _key: "faq-official",
@@ -172,7 +278,7 @@ export const DEFAULT_PRESS_KIT: PressKit = {
     {
       _key: "faq-cost",
       question: "What does it cost?",
-      answer: "CivicSync is free to use, and its source code is public on GitHub.",
+      answer: "CivicSync is free to use, and it is open source under the GNU AGPL-3.0 licence. The code is on GitHub.",
     },
   ],
 };

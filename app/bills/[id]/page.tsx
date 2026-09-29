@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getBillDetail, LiveSourceUnavailableError, type BillDetail } from "@/lib/bills";
+import { getSiteSettings } from "@/lib/content";
 import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
 import { formatDate, ordinal, toTitleCase } from "@/lib/format";
 import { PageHeader } from "../../components/PageHeader";
@@ -39,6 +40,12 @@ export default async function BillPage({ params }: { params: { id: string } }) {
 
   const title = toTitleCase(bill.title);
   const isCurrent = bill.congress === BATASWATCH_CONGRESS;
+  const { contactEmail } = await getSiteSettings();
+  const reportHref = `mailto:${contactEmail}?subject=${encodeURIComponent(
+    `Data correction: ${bill.label} (CivicSync PH)`
+  )}&body=${encodeURIComponent(
+    `Bill: ${bill.label}, ${ordinal(bill.congress)} Congress\nPage: https://civicsync-ph-gamma.vercel.app/bills/${bill.id}\n\nWhat looks wrong:\n\nWhere you saw the correct information (link to the official record, if you have one):\n`
+  )}`;
 
   return (
     <main className="px-5 pb-5 md:pt-4">
@@ -201,7 +208,13 @@ export default async function BillPage({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      <p className="mt-6 text-center text-[11px] text-gray-400">
+      <p className="mt-8 text-center text-sm text-gray-600">
+        Spot something wrong?{" "}
+        <a href={reportHref} className="font-semibold text-crimson underline underline-offset-2">
+          Report an issue
+        </a>
+      </p>
+      <p className="mt-2 text-center text-[11px] text-gray-400">
         {bill.billNumber} · Sources:{" "}
         {[bill.inOpenCongress && "BetterGov Open Congress", bill.statusSource && "BatasWatch"].filter(Boolean).join(", ")}
       </p>

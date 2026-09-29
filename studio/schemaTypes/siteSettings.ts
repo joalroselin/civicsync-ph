@@ -13,6 +13,28 @@ export const siteSettings = defineType({
       validation: (r) => r.email(),
     }),
     defineField({
+      name: "socialLinks",
+      title: "Social media accounts",
+      description: "Add accounts as you create them; icons appear on the Get involved page automatically.",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          name: "socialLink",
+          fields: [
+            defineField({
+              name: "platform",
+              type: "string",
+              options: { list: ["Facebook", "Instagram", "X", "Threads", "TikTok", "LinkedIn", "YouTube"] },
+              validation: (r) => r.required(),
+            }),
+            defineField({ name: "url", type: "url", validation: (r) => r.required() }),
+          ],
+          preview: { select: { title: "platform", subtitle: "url" } },
+        },
+      ],
+    }),
+    defineField({
       name: "homeSuggestions",
       title: "Home page search suggestions",
       description: "The quick-search chips under the search bar. Keep them short.",

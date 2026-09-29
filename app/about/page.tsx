@@ -77,6 +77,9 @@ export default async function AboutPage() {
           <Link href="/receipts" className="rounded-xl bg-navy px-4 py-3 text-sm font-semibold text-white hover:bg-blue-900">
             Start searching
           </Link>
+          <Link href="/get-involved" className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-crimson ring-1 ring-gray-200 hover:ring-crimson/40">
+            Get involved
+          </Link>
           <Link href="/press" className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-navy ring-1 ring-gray-200 hover:ring-navy/40">
             Press kit
           </Link>
