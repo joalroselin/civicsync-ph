@@ -43,7 +43,7 @@ export interface AboutPage {
   intro: string;
   body: PortableBlock[];
 }
-export type WayIcon = "megaphone" | "flag" | "lightbulb" | "language" | "code" | "handshake";
+export type WayIcon = "megaphone" | "flag" | "lightbulb" | "language" | "code" | "handshake" | "briefcase";
 export interface Way {
   _key: string;
   title: string;
@@ -77,6 +77,7 @@ export const ENQUIRY_SUBJECTS = {
   general: "Enquiry: CivicSync PH",
   press: "Press enquiry: CivicSync PH",
   dataCorrection: "Data correction: CivicSync PH",
+  commercial: "Commercial licence: CivicSync PH",
 } as const;
 
 export function mailtoHref(email: string, subject: string): string {
@@ -160,6 +161,11 @@ export const DEFAULT_ABOUT_PAGE: AboutPage = {
       { text: "GNU Affero General Public License v3.0", href: `${REPO_URL}/blob/main/LICENSE` },
       " (AGPL-3.0). Anyone can read, reuse, and improve the code. If someone runs a modified version for the public, they must share their changes too, so improvements to civic tools stay public. The licence covers our code; legislative data belongs to its sources."
     ),
+    p(
+      "Organisations that can’t meet the AGPL’s terms, for example to build CivicSync into a closed-source product, can ",
+      { text: "ask about a commercial licence", href: mailtoHref(CONTACT_EMAIL, ENQUIRY_SUBJECTS.commercial) },
+      ". Licence fees help fund CivicSync’s development."
+    ),
     h2("Help shape it"),
     p(
       "CivicSync is free and still growing. Questions, ideas, or spotted a problem? Email ",
@@ -241,6 +247,17 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
       buttonLabel: "Get in touch",
       emailSubject: "Partnership: CivicSync PH",
     },
+    {
+      _key: "way-commercial",
+      title: "Commercial licensing",
+      description:
+        "Want to build CivicSync into a closed-source product, or run a modified version without publishing your changes? A commercial licence lets you, and helps fund development.",
+      effort: "For businesses",
+      icon: "briefcase",
+      action: "email",
+      buttonLabel: "Ask about a licence",
+      emailSubject: "Commercial licence: CivicSync PH",
+    },
   ],
 };
 
@@ -274,6 +291,12 @@ export const DEFAULT_PRESS_KIT: PressKit = {
       question: "Does it collect personal data?",
       answer:
         "No account is needed. The Watchlist is stored on the user's own device. Users who choose to sign in with Google have their Watchlist synced to their account so it follows them across devices.",
+    },
+    {
+      _key: "faq-commercial",
+      question: "Can businesses use CivicSync's code?",
+      answer:
+        "Yes. The code is open source under the AGPL-3.0, which allows commercial use as long as modified versions that others use are shared under the same licence. Organisations that want to keep their changes private or build a closed-source product can buy a commercial licence instead.",
     },
     {
       _key: "faq-cost",

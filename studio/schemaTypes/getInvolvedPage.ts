@@ -32,6 +32,7 @@ export const getInvolvedPage = defineType({
                   { title: "Language (translate)", value: "language" },
                   { title: "Code (build)", value: "code" },
                   { title: "Handshake (partner)", value: "handshake" },
+                  { title: "Briefcase (business)", value: "briefcase" },
                 ],
               },
               initialValue: "lightbulb",

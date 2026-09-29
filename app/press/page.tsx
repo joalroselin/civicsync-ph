@@ -24,7 +24,7 @@ function facts(stats: SiteSettings["stats"]): [string, React.ReactNode][] {
     ["Data sources", "BetterGov Open Congress API; BatasWatch"],
     ["Website", <a key="w" href={SITE_URL} className="text-navy underline">{SITE_URL.replace("https://", "")}</a>],
     ["Source code", <a key="r" href={REPO_URL} className="text-navy underline">github.com/joalroselin/civicsync-ph</a>],
-    ["Licence", "Open source, GNU AGPL-3.0"],
+    ["Licence", "Open source (GNU AGPL-3.0); commercial licences available"],
   ];
 }
 

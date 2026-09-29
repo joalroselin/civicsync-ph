@@ -58,8 +58,9 @@ export default async function GetInvolvedPage() {
           <div>
             <p className="font-display text-lg font-semibold">Open source, built in the open</p>
             <p className="mt-1 max-w-2xl text-sm leading-relaxed text-indigo-100">
-              CivicSync’s code is licensed under the GNU AGPL-3.0, so improvements to it stay public. Everyone taking
-              part agrees to our code of conduct and keeps CivicSync non-partisan.
+              CivicSync’s code is licensed under the GNU AGPL-3.0, so improvements to it stay public, with commercial
+              licences for businesses that need other terms. Everyone taking part agrees to our code of conduct and
+              keeps CivicSync non-partisan.
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap gap-2 text-sm font-semibold">
@@ -131,6 +132,8 @@ function Icon({ name }: { name: WayIcon }) {
       return <svg {...common}><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16" /></svg>;
     case "handshake":
       return <svg {...common}><path d="m11 17 2 2a1.5 1.5 0 0 0 2-2l-1-1M13 15l2.5 2.5a1.5 1.5 0 0 0 2-2L14 12M3 9l4-4 5 2 3-1 6 5-3 3-2-2" /><path d="m7 5-4 7 5 5 2-2" /></svg>;
+    case "briefcase":
+      return <svg {...common}><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18" /></svg>;
     default:
       return <svg {...common}><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3Z" /></svg>;
   }

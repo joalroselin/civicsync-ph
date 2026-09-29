@@ -56,11 +56,18 @@ sources, CMS, and caching fit together.
 6. Open a pull request describing what changed and why, with screenshots for
    visual changes.
 
-## Licence
+## Licence and the Contributor License Agreement
 
-CivicSync PH is licensed under the [GNU Affero General Public License v3.0
-or later](LICENSE). By contributing, you agree that your contributions are
-licensed under the same terms.
+CivicSync PH is open source under the [GNU Affero General Public License
+v3.0 or later](LICENSE), and it also offers [commercial
+licences](COMMERCIAL-LICENSE.md) to organisations that can't meet the AGPL's
+terms. Commercial licences help fund the project.
+
+To make that possible, contributors sign a short **[Contributor License
+Agreement](CLA.md)** (CLA) before their first pull request is merged. You
+keep the copyright in your work; the CLA lets the project offer your
+contribution under both the AGPL and commercial licences. A bot will prompt
+you on your first pull request, and signing takes one click.
 
 ## Questions
 

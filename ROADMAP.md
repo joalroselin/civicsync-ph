@@ -45,6 +45,9 @@ Make what exists fast, reliable and safe to promote.
 - [ ] **Link previews.** Open Graph images for bill and lawmaker pages, so
       links shared on Facebook/Messenger/X show the title and status
       (the main way civic content spreads in PH).
+- [ ] **Finalise licensing.** Lawyer review of `CLA.md` and a commercial
+      licence template; install CLA Assistant on the repo before accepting
+      outside pull requests.
 - [ ] **Upgrade to Next.js 16 / React 19.** Then optionally embed the Sanity
       Studio at `/studio` using the current `next-sanity`.
 - [ ] **Custom domain** (e.g. `civicsync.ph`), then update the Firebase
@@ -126,6 +129,7 @@ Remove the live dependency on third-party APIs.
 | Sept 2026 | Show BatasWatch's automated summaries, labelled as automated | Useful context; the label and "read the bill text" note limit misreading |
 | Sept 2026 | Site copy (About, Get involved, Press, settings) managed in Sanity via the Vercel Marketplace | Edit without redeploying; Studio hosted separately so the app isn't forced onto Next 16 yet |
 | Sept 2026 | License the code under AGPL-3.0-or-later | Keeps improvements to a public civic tool public, even when others host modified versions |
+| Sept 2026 | Dual-license: AGPL-3.0 plus paid commercial licences; contributors sign a CLA | Funds development while staying open source; the CLA keeps the right to relicense contributions |
 | Sept 2026 | Enquiries and contributions by email with pre-filled subjects | No forms or extra services to run; subjects make the inbox easy to triage |
 
 ## How we'll measure it

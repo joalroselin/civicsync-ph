@@ -105,6 +105,11 @@ published by the Free Software Foundation, either version 3 of the License,
 or (at your option) any later version. If you run a modified version for
 others to use, you must make your source code available to them.
 
+**Commercial licences** are available for organisations that can't meet the
+AGPL's terms, for example to build CivicSync into a closed-source product.
+See [COMMERCIAL-LICENSE.md](COMMERCIAL-LICENSE.md). Contributors sign a
+[Contributor License Agreement](CLA.md) so the project can offer both.
+
 The licence covers this project's code. Legislative data belongs to its
 sources (BetterGov Open Congress, BatasWatch, and the official Senate and
 House records) and is subject to their terms.
