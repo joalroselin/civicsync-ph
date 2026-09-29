@@ -15,7 +15,7 @@ npm install
 # studio/.env needs SANITY_STUDIO_PROJECT_ID and SANITY_STUDIO_DATASET
 # (copy them from the root .env.local)
 npx sanity login     # use the Google/GitHub login linked to your Sanity account
-npx sanity deploy    # publishes the editor to https://civicsync.sanity.studio
+npx sanity deploy    # updates the editor at https://civicsync.sanity.studio
 ```
 
 `npm run dev` runs the editor locally at http://localhost:3333.
