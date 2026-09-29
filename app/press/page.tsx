@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "../components/PageHeader";
 import { CopyButton } from "./CopyButton";
-import { getPressKit, getSiteSettings, type SiteSettings } from "@/lib/content";
+import { ENQUIRY_SUBJECTS, getPressKit, getSiteSettings, mailtoHref, type SiteSettings } from "@/lib/content";
 import { formatDate } from "@/lib/format";
 
 export const metadata: Metadata = {
@@ -265,7 +265,7 @@ export default async function PressPage() {
             {CONTACT_EMAIL ? (
               <>
                 Press enquiries:{" "}
-                <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-navy underline">
+                <a href={mailtoHref(CONTACT_EMAIL, ENQUIRY_SUBJECTS.press)} className="font-semibold text-navy underline">
                   {CONTACT_EMAIL}
                 </a>
               </>

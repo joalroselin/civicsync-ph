@@ -9,6 +9,7 @@ import {
 } from "@/lib/content-defaults";
 
 export type { AboutPage, PressKit, SiteSettings };
+export { ENQUIRY_SUBJECTS, mailtoHref } from "@/lib/content-defaults";
 
 /** Overlay non-empty CMS values on the defaults, one level deep. */
 function withDefaults<T extends object>(defaults: T, cms: Partial<T> | null): T {

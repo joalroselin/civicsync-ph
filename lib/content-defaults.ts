@@ -45,6 +45,17 @@ export interface PressKit {
 }
 
 const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
+const CONTACT_EMAIL = "hello.joaldev@gmail.com";
+
+/** Pre-filled subjects so enquiries are easy to sort in the inbox. */
+export const ENQUIRY_SUBJECTS = {
+  general: "Enquiry: CivicSync PH",
+  press: "Press enquiry: CivicSync PH",
+} as const;
+
+export function mailtoHref(email: string, subject: string): string {
+  return `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+}
 
 // --- tiny Portable Text builders -------------------------------------------
 type Segment = string | { text: string; href?: string; strong?: boolean };
@@ -73,7 +84,7 @@ const li = (...segments: Segment[]) => block("normal", segments, "bullet");
 // --- defaults ---------------------------------------------------------------
 
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
-  contactEmail: "",
+  contactEmail: CONTACT_EMAIL,
   homeSuggestions: ["Hontiveros", "Tulfo", "Magna Carta", "SB 1294", "rice"],
   stats: { currentCongressBills: "13,600+", totalRecords: "165,000+", asOf: "2026-09-24" },
   announcement: { enabled: false, message: "" },
@@ -118,8 +129,8 @@ export const DEFAULT_ABOUT_PAGE: AboutPage = {
     ),
     h2("Help shape it"),
     p(
-      "CivicSync is free and still growing. Have an idea or spotted a problem? ",
-      { text: "Open an issue on GitHub", href: `${REPO_URL}/issues` },
+      "CivicSync is free and still growing. Questions, ideas, or spotted a problem? Email ",
+      { text: CONTACT_EMAIL, href: mailtoHref(CONTACT_EMAIL, ENQUIRY_SUBJECTS.general) },
       ". Journalists can find logos, screenshots, and a fact sheet in the ",
       { text: "press kit", href: "/press" },
       "."
