@@ -1,0 +1,24 @@
+{
+  "name": "civicsync-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sanity Studio for editing CivicSync PH content",
+  "scripts": {
+    "dev": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy"
+  },
+  "dependencies": {
+    "@sanity/vision": "^6.17.0",
+    "react": "^19.2.2",
+    "react-dom": "^19.2.2",
+    "sanity": "^6.17.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

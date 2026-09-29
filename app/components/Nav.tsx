@@ -97,9 +97,10 @@ export function SideNav() {
           Data from BetterGov Open Congress and BatasWatch. Verify against official records.
         </p>
         <Credit />
-        <Link href="/press" className="block text-[11px] font-semibold text-gray-500 hover:text-navy">
-          Press kit
-        </Link>
+        <p className="flex gap-3 text-[11px] font-semibold text-gray-500">
+          <Link href="/about" className="hover:text-navy">About</Link>
+          <Link href="/press" className="hover:text-navy">Press kit</Link>
+        </p>
       </div>
     </aside>
   );

@@ -71,6 +71,19 @@ Upstream quirks handled in code (verified against live responses, Sept 2026):
 - `public/sw.js` — hand-written service worker: cache-first for static
   assets, network-first for pages and API calls, `/offline` fallback.
 
+## Editing site content (CMS)
+
+About, Press kit copy, Home search suggestions, headline numbers, and an
+optional announcement banner are managed in **Sanity** (provisioned via the
+Vercel Marketplace) and edited in Sanity Studio (`studio/`, see its README).
+Published edits go live in seconds via a webhook to `/api/revalidate`, with
+no redeploy.
+
+- `lib/sanity.ts`: read-only client with cache tags
+- `lib/content.ts`: `getSiteSettings()`, `getAboutPage()`, `getPressKit()`
+- `lib/content-defaults.ts`: the fallback copy if Sanity is unreachable
+  (also what `scripts/seed-content.mts` seeded)
+
 ## Roadmap
 
 See [ROADMAP.md](ROADMAP.md) for what's next, grouped into phases: Harden,

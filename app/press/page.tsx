@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHeader } from "../components/PageHeader";
 import { CopyButton } from "./CopyButton";
+import { getPressKit, getSiteSettings, type SiteSettings } from "@/lib/content";
+import { formatDate } from "@/lib/format";
 
 export const metadata: Metadata = {
   title: "Press kit",
@@ -10,29 +12,20 @@ export const metadata: Metadata = {
 
 const SITE_URL = "https://civicsync-ph-gamma.vercel.app";
 const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
-/** Add a press email here to show it on the page; until then contact goes via GitHub. */
-const CONTACT_EMAIL = "";
-
-const BOILERPLATE = {
-  oneLine: "CivicSync PH is a free app for looking up Philippine lawmakers and the bills they file.",
-  short:
-    "CivicSync PH is a free, mobile-first web app that makes Philippine legislative records easier to use. Search the Senate and House of Representatives in one place, see every bill a lawmaker has authored across 13 congresses since 1987, check where a bill stands today, and follow the bills you care about. No sign-up required.",
-  long:
-    "CivicSync PH is a free, mobile-first web app that helps Filipinos find and follow the work of their lawmakers. The Philippine Congress has two chambers, each with its own website, formats, and numbering, and each three-year Congress sees thousands of bills filed. CivicSync brings those records together: one search across the Senate and House, one profile per lawmaker covering their whole career across both chambers, and one page per bill combining its history with its current status, committee, a plain-language summary, and links to the official record. Users can bookmark bills to a Watchlist without creating an account. CivicSync is built on open data from BetterGov's Open Congress API and BatasWatch, and is designed as a guide to the official record, not a replacement for it. It was built by independent developer HelloJoal, with AI assistance, and its source code is public.",
-};
-
-const FACTS: [string, React.ReactNode][] = [
-  ["Launched", "September 2026"],
-  ["Built by", <>HelloJoal, independent developer (assisted by AI)</>],
-  ["Price", "Free, no account required"],
-  ["Platform", "Web app, installable on phones and desktops (PWA)"],
-  ["Coverage", "13 congresses: 8th to 20th (1987 to present)"],
-  ["Records", "165,000+ legislative records; 13,600+ bills in the current 20th Congress"],
-  ["Live status", "20th Congress bills (status, committee, summaries)"],
-  ["Data sources", "BetterGov Open Congress API; BatasWatch"],
-  ["Website", <a key="w" href={SITE_URL} className="text-navy underline">{SITE_URL.replace("https://", "")}</a>],
-  ["Source code", <a key="r" href={REPO_URL} className="text-navy underline">github.com/joalroselin/civicsync-ph</a>],
-];
+function facts(stats: SiteSettings["stats"]): [string, React.ReactNode][] {
+  return [
+    ["Launched", "September 2026"],
+    ["Built by", <>HelloJoal, independent developer (assisted by AI)</>],
+    ["Price", "Free, no account required"],
+    ["Platform", "Web app, installable on phones and desktops (PWA)"],
+    ["Coverage", "13 congresses: 8th to 20th (1987 to present)"],
+    ["Records", `${stats.totalRecords} legislative records; ${stats.currentCongressBills} bills in the current 20th Congress`],
+    ["Live status", "20th Congress bills (status, committee, summaries)"],
+    ["Data sources", "BetterGov Open Congress API; BatasWatch"],
+    ["Website", <a key="w" href={SITE_URL} className="text-navy underline">{SITE_URL.replace("https://", "")}</a>],
+    ["Source code", <a key="r" href={REPO_URL} className="text-navy underline">github.com/joalroselin/civicsync-ph</a>],
+  ];
+}
 
 const FEATURES = [
   ["Receipts", "Search any senator or representative and see every bill they've authored, across both chambers and 13 congresses."],
@@ -66,30 +59,12 @@ const COLORS = [
   { name: "Paper", hex: "#F9FAFB", use: "Background", text: "text-gray-900" },
 ];
 
-const FAQ = [
-  [
-    "Is CivicSync an official government website?",
-    "No. CivicSync is independent and non-partisan, and is not affiliated with the Senate, the House of Representatives, or any government agency. It links to official records so readers can verify details at the source.",
-  ],
-  [
-    "Where does the data come from?",
-    "Lawmaker profiles and authorship history come from BetterGov's Open Congress API. Live status, committee referrals, plain-language summaries, and 20th Congress bills filed since late 2025 come from BatasWatch, an independent bill tracker. The plain-language summaries are automated and labelled as such.",
-  ],
-  [
-    "How is it different from the Senate and House websites?",
-    "The chamber websites are the authoritative record. CivicSync is a guide to them: it searches both chambers at once, groups a lawmaker's whole career in one profile, combines history with live status on one page per bill, and lets people follow bills from their phone.",
-  ],
-  [
-    "Does it collect personal data?",
-    "No account is needed. The Watchlist is stored on the user's own device. Users who choose to sign in with Google have their Watchlist synced to their account so it follows them across devices.",
-  ],
-  [
-    "What does it cost?",
-    "CivicSync is free to use, and its source code is public on GitHub.",
-  ],
-];
+/** Copy (descriptions, FAQ, contact, figures) is edited in Sanity Studio; see lib/content.ts. */
+export default async function PressPage() {
+  const [press, settings] = await Promise.all([getPressKit(), getSiteSettings()]);
+  const CONTACT_EMAIL = settings.contactEmail;
+  const FACTS = facts(settings.stats);
 
-export default function PressPage() {
   return (
     <main className="px-5 pb-12 md:pt-4">
       <PageHeader title="Press kit" />
@@ -119,9 +94,9 @@ export default function PressPage() {
 
       <Section title="About CivicSync PH">
         <div className="grid gap-4 lg:grid-cols-3">
-          <Boilerplate label="One line" text={BOILERPLATE.oneLine} />
-          <Boilerplate label="Short · ~50 words" text={BOILERPLATE.short} className="lg:col-span-2" />
-          <Boilerplate label="Long · ~140 words" text={BOILERPLATE.long} className="lg:col-span-3" />
+          <Boilerplate label="One line" text={press.oneLine} />
+          <Boilerplate label="Short · ~50 words" text={press.short} className="lg:col-span-2" />
+          <Boilerplate label="Long · ~140 words" text={press.long} className="lg:col-span-3" />
         </div>
       </Section>
 
@@ -134,7 +109,9 @@ export default function PressPage() {
             </div>
           ))}
         </dl>
-        <p className="mt-2 text-xs text-gray-400">Record counts as of 24 September 2026.</p>
+        {settings.stats.asOf && (
+          <p className="mt-2 text-xs text-gray-400">Record counts as of {formatDate(settings.stats.asOf)}.</p>
+        )}
       </Section>
 
       <Section title="Key features">
@@ -264,8 +241,8 @@ export default function PressPage() {
 
       <Section title="FAQ">
         <div className="divide-y divide-gray-100 overflow-hidden rounded-2xl bg-white ring-1 ring-gray-200/70">
-          {FAQ.map(([q, a]) => (
-            <details key={q} className="group px-4 py-3">
+          {press.faq.map(({ _key, question: q, answer: a }) => (
+            <details key={_key} className="group px-4 py-3">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-gray-900">
                 {q}
                 <span className="text-gray-400 transition group-open:rotate-45" aria-hidden>

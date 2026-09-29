@@ -7,3 +7,8 @@ next-env.d.ts
 
 # Social media assets (kept local)
 marketing/
+.vercel
+.env*
+!.env.example
+studio/dist
+studio/.sanity

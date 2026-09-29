@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { CURRENT_CONGRESS } from "@/lib/openCongress";
+import { getSiteSettings } from "@/lib/content";
 import { listMeasures } from "@/lib/batasWatch";
 import { summaryFromBatasWatch } from "@/lib/bills";
 import { BillList } from "./components/BillCard";
@@ -15,9 +16,8 @@ import { Credit } from "./components/Credit";
 
 export const revalidate = 1800;
 
-const SUGGESTIONS = ["Hontiveros", "Tulfo", "Magna Carta", "SB 1294", "rice"];
-
-export default function Home() {
+export default async function Home() {
+  const { homeSuggestions } = await getSiteSettings();
   return (
     <main className="flex flex-col gap-7 p-5 md:py-8 lg:gap-8">
       <header className="rounded-[20px] bg-navy p-5 pb-6 text-white shadow-md md:p-8 lg:p-10">
@@ -34,7 +34,7 @@ export default function Home() {
           <SearchBar />
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
-          {SUGGESTIONS.map((s) => (
+          {homeSuggestions.map((s) => (
             <SearchLink
               key={s}
               q={s}
@@ -75,9 +75,10 @@ export default function Home() {
       {/* The sidebar carries the credit from md up. */}
       <div className="flex flex-col items-center gap-1 md:hidden">
         <Credit />
-        <Link href="/press" className="text-[11px] font-semibold text-gray-500 hover:text-navy">
-          Press kit
-        </Link>
+        <p className="flex gap-3 text-[11px] font-semibold text-gray-500">
+          <Link href="/about" className="hover:text-navy">About</Link>
+          <Link href="/press" className="hover:text-navy">Press kit</Link>
+        </p>
       </div>
     </main>
   );
