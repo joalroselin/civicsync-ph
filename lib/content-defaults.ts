@@ -112,7 +112,10 @@ const li = (...segments: Segment[]) => block("normal", segments, "bullet");
 
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   contactEmail: CONTACT_EMAIL,
-  socialLinks: [],
+  socialLinks: [
+    { _key: "social-facebook", platform: "Facebook", url: "https://www.facebook.com/civicsyncphilippines" },
+    { _key: "social-instagram", platform: "Instagram", url: "https://www.instagram.com/civicsyncph" },
+  ],
   homeSuggestions: ["Hontiveros", "Tulfo", "Magna Carta", "SB 1294", "rice"],
   stats: { currentCongressBills: "13,600+", totalRecords: "165,000+", asOf: "2026-09-24" },
   announcement: { enabled: false, message: "" },

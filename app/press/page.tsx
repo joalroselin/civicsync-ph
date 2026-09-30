@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const SITE_URL = "https://civicsync-ph-gamma.vercel.app";
 const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
-function facts(stats: SiteSettings["stats"]): [string, React.ReactNode][] {
+function facts(stats: SiteSettings["stats"], social: SiteSettings["socialLinks"]): [string, React.ReactNode][] {
   return [
     ["Launched", "September 2026"],
     ["Built by", <>HelloJoal, independent developer (assisted by AI)</>],
@@ -25,6 +25,18 @@ function facts(stats: SiteSettings["stats"]): [string, React.ReactNode][] {
     ["Website", <a key="w" href={SITE_URL} className="text-navy underline">{SITE_URL.replace("https://", "")}</a>],
     ["Source code", <a key="r" href={REPO_URL} className="text-navy underline">github.com/joalroselin/civicsync-ph</a>],
     ["Licence", "Open source (GNU AGPL-3.0); commercial licences available"],
+    ...(social.length
+      ? [[
+          "Social",
+          <span key="s" className="flex flex-wrap gap-x-3">
+            {social.map((l) => (
+              <a key={l._key} href={l.url} className="text-navy underline">
+                {l.platform}
+              </a>
+            ))}
+          </span>,
+        ] as [string, React.ReactNode]]
+      : []),
   ];
 }
 
@@ -64,7 +76,7 @@ const COLORS = [
 export default async function PressPage() {
   const [press, settings] = await Promise.all([getPressKit(), getSiteSettings()]);
   const CONTACT_EMAIL = settings.contactEmail;
-  const FACTS = facts(settings.stats);
+  const FACTS = facts(settings.stats, settings.socialLinks);
 
   return (
     <main className="px-5 pb-12 md:pt-4">
