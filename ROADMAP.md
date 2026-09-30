@@ -1,10 +1,25 @@
 # CivicSync PH — Development Roadmap
 
-_Last updated: 24 Sept 2026 · Live at https://civicsync-ph-gamma.vercel.app_
+_Last updated: 30 Sept 2026 · Live at https://civicsync-ph-gamma.vercel.app_
 
 This picks up where the original public roadmap's v1 scope left off. Phases
 are named rather than numbered so they don't collide with that document's
 versioning; fold them in when the two are merged.
+
+## Status workflow
+
+The public board (Canny) uses these statuses. `docs/roadmap-canny.csv` holds
+every ticket for import.
+
+| Status | Meaning |
+|---|---|
+| **Requested** | Anything suggested or noted: the backlog |
+| **Planned** | Part of the current sprint |
+| **Ongoing** | Being built right now |
+| **Deployed** | Live for 30 days or less (new) |
+| **Completed** | Live for more than 30 days |
+
+Move Deployed items to Completed once they pass 30 days.
 
 ## Where things stand
 
@@ -35,24 +50,24 @@ versioning; fold them in when the two are merged.
 
 Make what exists fast, reliable and safe to promote.
 
-- [ ] **Run the server in Singapore.** Pin the function region to `sin1` in a
+- [x] **Run the server in Singapore.** _(Deployed 30 Sept: `vercel.json`)_ Pin the function region to `sin1` in a
       committed `vercel.json` so it can't drift from the dashboard setting.
-- [ ] **Lazy-load Firebase.** Load auth/Firestore only when someone opens the
+- [x] **Lazy-load Firebase.** _(Deployed 30 Sept: Home first-load JS 208 → 101 kB)_ Load auth/Firestore only when someone opens the
       Watchlist or signs in.
-- [ ] **Tests + CI.** Unit tests for bill-number parsing, SB/HB number mapping,
+- [ ] **Tests + CI.** _(Approved; deferred to a later sprint: CS-901)_ Unit tests for bill-number parsing, SB/HB number mapping,
       author matching (shared surnames) and the source merge; GitHub Actions
       running typecheck, tests and build on every PR.
-- [ ] **Link previews.** Open Graph images for bill and lawmaker pages, so
+- [x] **Link previews.** _(Deployed 30 Sept: site, bill, and lawmaker images)_ Open Graph images for bill and lawmaker pages, so
       links shared on Facebook/Messenger/X show the title and status
       (the main way civic content spreads in PH).
 - [ ] **Finalise licensing.** Lawyer review of `CLA.md` and a commercial
       licence template; install CLA Assistant on the repo before accepting
       outside pull requests.
-- [ ] **Upgrade to Next.js 16 / React 19.** Then optionally embed the Sanity
+- [ ] **Upgrade to Next.js 16 / React 19.** _(Planned: CS-108)_ Then optionally embed the Sanity
       Studio at `/studio` using the current `next-sanity`.
 - [ ] **Custom domain** (e.g. `civicsync.ph`), then update the Firebase
       authorized domains, social posts and manifest.
-- [ ] **Monitoring.** Vercel Analytics (privacy-friendly), error tracking, and
+- [ ] **Monitoring.** _(Analytics deployed 30 Sept; enable Web Analytics in the Vercel dashboard. Error tracking and uptime checks still to do.)_ Vercel Analytics (privacy-friendly), error tracking, and
       an uptime check on BatasWatch so outages are known before users report them.
 - [ ] **Accessibility pass.** WCAG 2.1 AA: contrast, focus order, screen-reader
       labels on status chips, 44px touch targets.
