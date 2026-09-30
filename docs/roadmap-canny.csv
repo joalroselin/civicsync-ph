@@ -32,7 +32,7 @@ CS-030,Instant content updates,"Site text like the About page and FAQ updates wi
 CS-031,Contributing guide and code of conduct,"Clear guidance for anyone who wants to help build CivicSync, with a commitment to staying non-partisan.",In Progress,Community,Open source;Deployed,2026-09-30
 CS-032,Public roadmap,"This board: see what's shipped, what's next, and suggest or vote on ideas.",In Progress,Community,Deployed,2026-09-30
 CS-033,"Simpler navigation, with a More menu on phones","A cleaner sidebar (main pages first, About and Get involved below) and a new More tab on phones, so every page is one tap away from anywhere.",Complete,Design,Deployed,2026-09-30
-CS-034,Author's role shown on every bill,"Every Senate and House bill shows who filed it and their role, Senator or Representative, in bill lists and on the bill page.",In Progress,Bills,,
+CS-034,Author's role shown on every bill,"Every Senate and House bill shows who filed it and their role, Senator or Representative, in bill lists and on the bill page.",Complete,Bills,Deployed,2026-09-30
 CS-101,Faster loading for users in the Philippines,"The app's servers now run in Singapore, closer to Philippine users.",Complete,Performance,Performance;Deployed,2026-09-30
 CS-102,Lighter app on mobile data,"Sign-in features load only when you need them, halving the data used on a first visit.",Complete,Performance,Performance;Deployed,2026-09-30
 CS-103,Rich previews when sharing,"Links to bills and lawmakers shared on Facebook, Messenger, and X show a preview card with the title and status.",Complete,Sharing,Deployed,2026-09-30
