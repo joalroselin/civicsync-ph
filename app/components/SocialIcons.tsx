@@ -6,11 +6,16 @@ const HOVER_COLOR: Record<string, string> = {
   instagram: "hover:text-[#E1306C]",
 };
 
-/** Small, muted social icons. Accounts come from Sanity → Site settings. */
+/** Always shown after the social accounts. */
+const EXTRA_LINKS = [
+  { key: "roadmap", label: "Roadmap", href: "https://civicsyncph.canny.io", external: true, hover: "hover:text-[#525DF4]" },
+  { key: "press", label: "Press kit", href: "/press", external: false, hover: "hover:text-crimson" },
+] as const;
+
+/** Small, muted icons: social accounts (from Sanity → Site settings), then Roadmap and Press kit. */
 export function SocialIcons({ links, className = "" }: { links: SocialLink[]; className?: string }) {
-  if (links.length === 0) return null;
   return (
-    <ul className={`flex items-center gap-3 ${className}`} aria-label="CivicSync on social media">
+    <ul className={`flex items-center gap-3 ${className}`} aria-label="CivicSync elsewhere">
       {links.map((l) => (
         <li key={l._key}>
           <a
@@ -22,6 +27,19 @@ export function SocialIcons({ links, className = "" }: { links: SocialLink[]; cl
             className={`block text-gray-400 transition ${HOVER_COLOR[l.platform.toLowerCase()] ?? "hover:text-navy"}`}
           >
             <PlatformIcon platform={l.platform} />
+          </a>
+        </li>
+      ))}
+      {EXTRA_LINKS.map((x) => (
+        <li key={x.key}>
+          <a
+            href={x.href}
+            {...(x.external ? { target: "_blank", rel: "noreferrer" } : {})}
+            aria-label={x.label}
+            title={x.label}
+            className={`block text-gray-400 transition ${x.hover}`}
+          >
+            <PlatformIcon platform={x.key} />
           </a>
         </li>
       ))}
@@ -44,6 +62,20 @@ function PlatformIcon({ platform }: { platform: string }) {
           <rect x="3" y="3" width="18" height="18" rx="5" />
           <circle cx="12" cy="12" r="4" />
           <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "roadmap":
+      // Signpost: the public roadmap on Canny
+      return (
+        <svg {...p} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 3v18M12 5h6l2 2.5L18 10h-6M12 13H6l-2 2.5L6 18h6" />
+        </svg>
+      );
+    case "press":
+      // Newspaper
+      return (
+        <svg {...p} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M4 5h13v14H6a2 2 0 0 1-2-2V5ZM17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5M8 16h3" />
         </svg>
       );
     default:

@@ -7,7 +7,8 @@
  * - Creates missing categories and tags on the board
  * - Creates posts that don't exist yet (matched by title), authored by the
  *   board admin, then sets status and tags
- * - For existing posts, updates status and adds missing tags; never deletes
+ * - For existing posts, updates the description (if changed), status, and
+ *   missing tags; never deletes
  * - Status changes don't notify voters (shouldNotifyVoters: false)
  *
  * Needs CANNY_API_KEY (Canny → Settings → API & Webhooks). Keep it out of git.
@@ -94,7 +95,7 @@ if (!admin) throw new Error("No admin user found");
 
 const { categories } = await call<{ categories: { id: string; name: string }[] }>("categories/list", { boardID: board.id, limit: 100 });
 const { tags } = await call<{ tags: { id: string; name: string }[] }>("tags/list", { boardID: board.id, limit: 100 });
-const existingPosts: { id: string; title: string; status: string; tags: { id: string; name: string }[] }[] = [];
+const existingPosts: { id: string; title: string; details?: string; status: string; tags: { id: string; name: string }[] }[] = [];
 for (let skip = 0; ; skip += 100) {
   const page = await call<{ posts: any[]; hasMore: boolean }>("posts/list", { boardID: board.id, limit: 100, skip });
   existingPosts.push(...page.posts);
@@ -136,6 +137,7 @@ for (const name of needTags) {
 
 let created = 0;
 let updated = 0;
+let detailsUpdated = 0;
 const statusFallbacks: string[] = [];
 for (const { t, existing, status } of plan) {
   const details = [t.Details, t["Deployed On"] ? `Deployed: ${formatDate(t["Deployed On"])}` : ""].filter(Boolean).join("\n\n");
@@ -150,7 +152,14 @@ for (const { t, existing, status } of plan) {
     });
     postID = res.id;
     created++;
-  } else updated++;
+  } else {
+    updated++;
+    const want = details || t.Title;
+    if ((existing!.details ?? "").trim() !== want.trim()) {
+      await call("posts/update", { postID, details: want });
+      detailsUpdated++;
+    }
+  }
 
   if (status !== "open" && existing?.status !== status) {
     try {
@@ -170,5 +179,5 @@ for (const { t, existing, status } of plan) {
   process.stdout.write(".");
 }
 
-console.log(`\nDone: ${created} created, ${updated} updated.`);
+console.log(`\nDone: ${created} created, ${updated} updated (${detailsUpdated} descriptions changed).`);
 if (statusFallbacks.length) console.log("Status fallbacks:\n  " + statusFallbacks.join("\n  "));
