@@ -220,8 +220,8 @@ function InfoIcon({ active, small }: { active: boolean; small?: boolean }) {
   const s = small ? 18 : 24;
   return (
     <svg width={s} height={s} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? 2.2 : 1.8} aria-hidden>
-      <circle cx="12" cy="12" r="9" />
-      <path d="M12 11v5M12 8h.01" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="8.5" />
+      <path d="M12 11v5M12 7.75h.01" strokeLinecap="round" />
     </svg>
   );
 }
@@ -229,8 +229,9 @@ function InfoIcon({ active, small }: { active: boolean; small?: boolean }) {
 function HeartIcon({ active, small }: { active: boolean; small?: boolean }) {
   const s = small ? 18 : 24;
   return (
-    <svg width={s} height={s} viewBox="0 0 24 24" fill={active ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.8" aria-hidden>
-      <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z" strokeLinejoin="round" />
+    <svg width={s} height={s} viewBox="0 0 24 24" fill={active ? "currentColor" : "none"} stroke="currentColor" strokeWidth={active ? 2.2 : 1.8} aria-hidden>
+      {/* Drawn to fill the same 17px box as the info circle, so both read as one size. */}
+      <path d="M12 20.5S3.5 15.4 3.5 9.2A4.7 4.7 0 0 1 12 6.4a4.7 4.7 0 0 1 8.5 2.8c0 6.2-8.5 11.3-8.5 11.3Z" strokeLinejoin="round" />
     </svg>
   );
 }
