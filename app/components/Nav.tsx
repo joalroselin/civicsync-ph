@@ -100,9 +100,9 @@ export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
         </p>
         <Credit />
         <p className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-semibold text-gray-500">
-          <Link href="/about" className="hover:text-navy">About</Link>
-          <Link href="/get-involved" className="hover:text-navy">Get involved</Link>
-          <Link href="/press" className="hover:text-navy">Press kit</Link>
+          <Link href="/about" className="transition hover:text-crimson">About</Link>
+          <Link href="/get-involved" className="transition hover:text-crimson">Get involved</Link>
+          <Link href="/press" className="transition hover:text-crimson">Press kit</Link>
         </p>
         <SocialIcons links={socialLinks} className="pt-1" />
       </div>

@@ -1,5 +1,11 @@
 import type { SocialLink } from "@/lib/content";
 
+/** Brand colour on hover. Full class names so Tailwind picks them up. */
+const HOVER_COLOR: Record<string, string> = {
+  facebook: "hover:text-[#1877F2]",
+  instagram: "hover:text-[#E1306C]",
+};
+
 /** Small, muted social icons. Accounts come from Sanity → Site settings. */
 export function SocialIcons({ links, className = "" }: { links: SocialLink[]; className?: string }) {
   if (links.length === 0) return null;
@@ -13,7 +19,7 @@ export function SocialIcons({ links, className = "" }: { links: SocialLink[]; cl
             rel="noreferrer"
             aria-label={`CivicSync on ${l.platform}`}
             title={l.platform}
-            className="block text-gray-400 transition hover:text-navy"
+            className={`block text-gray-400 transition ${HOVER_COLOR[l.platform.toLowerCase()] ?? "hover:text-navy"}`}
           >
             <PlatformIcon platform={l.platform} />
           </a>
