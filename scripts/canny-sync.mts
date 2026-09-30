@@ -3,8 +3,12 @@
  *
  *   node --env-file=.env.local scripts/canny-sync.mts           # dry run: prints the plan
  *   node --env-file=.env.local scripts/canny-sync.mts --apply   # creates/updates posts
+ *   add --no-create to only update posts that already exist on Canny
  *
- * - Creates missing categories and tags on the board
+ * - Groups categories under parent categories (CATEGORY_GROUPS); an existing
+ *   top-level category is moved under its parent by recreating it and
+ *   re-filing its posts (votes, comments, and statuses are untouched)
+ * - Creates missing tags; removes tags from posts that the CSV no longer lists
  * - Creates posts that don't exist yet (matched by title), authored by the
  *   board admin, then sets status and tags
  * - For existing posts, updates the description (if changed), status, and
@@ -18,6 +22,8 @@ import { readFileSync } from "node:fs";
 const API = "https://canny.io/api/v1";
 const KEY = process.env.CANNY_API_KEY;
 const APPLY = process.argv.includes("--apply");
+/** Update existing posts only; don't recreate posts missing on Canny (e.g. deleted there on purpose). */
+const NO_CREATE = process.argv.includes("--no-create");
 const BOARD_URL_NAME = "feature-requests";
 
 if (!KEY) {
@@ -69,6 +75,16 @@ function parseCsv(text: string): Record<string, string>[] {
   return body.map((r) => Object.fromEntries(header.map((h, i) => [h, r[i] ?? ""])));
 }
 
+/** Parent category → subcategories (the CSV "Category" column holds the subcategory). */
+const CATEGORY_GROUPS: Record<string, string[]> = {
+  "Find & follow": ["Receipts", "Bills", "Watchlist", "Discovery"],
+  Understand: ["Education", "Language", "Data"],
+  "Trust & privacy": ["Trust", "Accessibility"],
+  "App experience": ["Platform", "Performance", "Design", "Under the hood"],
+  Community: ["Community", "Sharing", "Research"],
+};
+const PARENT_OF = new Map(Object.entries(CATEGORY_GROUPS).flatMap(([parent, subs]) => subs.map((s) => [s, parent] as const)));
+
 const STATUS: Record<string, string> = {
   Open: "open",
   Backlog: "backlog",
@@ -95,7 +111,7 @@ if (!admin) throw new Error("No admin user found");
 
 const { categories } = await call<{ categories: { id: string; name: string }[] }>("categories/list", { boardID: board.id, limit: 100 });
 const { tags } = await call<{ tags: { id: string; name: string }[] }>("tags/list", { boardID: board.id, limit: 100 });
-const existingPosts: { id: string; title: string; details?: string; status: string; tags: { id: string; name: string }[] }[] = [];
+const existingPosts: { id: string; title: string; details?: string; status: string; category?: { id: string } | null; tags: { id: string; name: string }[] }[] = [];
 for (let skip = 0; ; skip += 100) {
   const page = await call<{ posts: any[]; hasMore: boolean }>("posts/list", { boardID: board.id, limit: 100, skip });
   existingPosts.push(...page.posts);
@@ -106,13 +122,24 @@ for (let skip = 0; ; skip += 100) {
 const ticketTags = (t: Record<string, string>) =>
   t.Tags.split(";").map((s) => s.trim()).filter((s) => s && s !== t.Category);
 
-const categoryIds = new Map(categories.map((c) => [c.name, c.id]));
+// Category name → { id, parentID }. Parent and sub names must be unique on a board.
+const catByName = new Map(categories.map((c: any) => [c.name, { id: c.id as string, parentID: (c.parentID ?? null) as string | null }]));
+const wantedSubs = [...new Set(tickets.map((t) => t.Category).filter(Boolean))];
+for (const sub of wantedSubs) if (!PARENT_OF.has(sub)) throw new Error(`Category "${sub}" has no parent in CATEGORY_GROUPS`);
+// "Community" is both a parent and a subcategory name; Canny needs unique names, so the sub gets a suffix.
+const subName = (sub: string) => (CATEGORY_GROUPS[sub] ? `${sub} (general)` : sub);
 const tagIds = new Map(tags.map((t) => [t.name, t.id]));
-const needCategories = [...new Set(tickets.map((t) => t.Category).filter(Boolean))].filter((c) => !categoryIds.has(c));
+const needParents = Object.keys(CATEGORY_GROUPS).filter((p) => !catByName.has(p) || catByName.get(p)!.parentID);
+const needSubs = wantedSubs.filter((sub) => {
+  const c = catByName.get(subName(sub));
+  const parent = catByName.get(PARENT_OF.get(sub)!);
+  return !c || !parent || c.parentID !== parent.id;
+});
 const needTags = [...new Set(tickets.flatMap(ticketTags))].filter((t) => !tagIds.has(t));
 
 console.log(`Board: ${board.name} (${existingPosts.length} existing posts) · admin: ${admin.name}`);
-console.log(`Categories to create: ${needCategories.join(", ") || "none"}`);
+console.log(`Parent categories to create: ${needParents.join(", ") || "none"}`);
+console.log(`Subcategories to create/move: ${needSubs.map(subName).join(", ") || "none"}`);
 console.log(`Tags to create: ${needTags.join(", ") || "none"}`);
 
 const plan = tickets.map((t) => {
@@ -126,9 +153,31 @@ if (!APPLY) {
   process.exit(0);
 }
 
-for (const name of needCategories) {
+for (const name of needParents) {
+  const existing = catByName.get(name);
+  if (existing) {
+    // Exists but nested somewhere: free the name before creating the top-level parent
+    await call("categories/delete", { categoryID: existing.id });
+  }
   const { id } = await call<{ id: string }>("categories/create", { boardID: board.id, name, subscribeAdmins: false });
-  categoryIds.set(name, id);
+  catByName.set(name, { id, parentID: null });
+}
+for (const sub of needSubs) {
+  const name = subName(sub);
+  const parentID = catByName.get(PARENT_OF.get(sub)!)!.id;
+  const current = catByName.get(name); // same-named category in the wrong place
+  // If the sub was renamed (e.g. "Community" → "Community (general)"), posts may still sit
+  // under the old name, which is now the parent itself. Move them, but never delete a parent.
+  const legacy = name !== sub ? catByName.get(sub) : undefined;
+  const fromIds = [current?.id, legacy?.id].filter(Boolean);
+  const moving = existingPosts.filter((p) => p.category && fromIds.includes(p.category.id));
+  if (current && current.parentID !== parentID) await call("categories/delete", { categoryID: current.id });
+  const { id } = await call<{ id: string }>("categories/create", { boardID: board.id, name, parentID, subscribeAdmins: false });
+  catByName.set(name, { id, parentID });
+  for (const p of moving) {
+    await call("posts/change_category", { postID: p.id, categoryID: id });
+    p.category = { id };
+  }
 }
 for (const name of needTags) {
   const { id } = await call<{ id: string }>("tags/create", { boardID: board.id, name });
@@ -138,17 +187,22 @@ for (const name of needTags) {
 let created = 0;
 let updated = 0;
 let detailsUpdated = 0;
+const skipped: string[] = [];
 const statusFallbacks: string[] = [];
 for (const { t, existing, status } of plan) {
   const details = [t.Details, t["Deployed On"] ? `Deployed: ${formatDate(t["Deployed On"])}` : ""].filter(Boolean).join("\n\n");
   let postID = existing?.id;
+  if (!postID && NO_CREATE) {
+    skipped.push(`${t["Ticket ID"]} ${t.Title}`);
+    continue;
+  }
   if (!postID) {
     const res = await call<{ id: string }>("posts/create", {
       authorID: admin.id,
       boardID: board.id,
       title: t.Title,
       details: details || t.Title, // Canny requires non-empty details
-      categoryID: categoryIds.get(t.Category),
+      categoryID: catByName.get(subName(t.Category))?.id,
     });
     postID = res.id;
     created++;
@@ -172,12 +226,22 @@ for (const { t, existing, status } of plan) {
     }
   }
 
+  const wantCat = catByName.get(subName(t.Category))?.id;
+  if (existing && wantCat && (existing as any).category?.id !== wantCat) {
+    await call("posts/change_category", { postID, categoryID: wantCat });
+  }
+
+  const want = new Set(ticketTags(t));
   const have = new Set((existing?.tags ?? []).map((x) => x.name));
-  for (const name of ticketTags(t)) {
+  for (const name of want) {
     if (!have.has(name)) await call("posts/add_tag", { postID, tagID: tagIds.get(name) });
+  }
+  for (const tag of existing?.tags ?? []) {
+    if (!want.has(tag.name)) await call("posts/remove_tag", { postID, tagID: tag.id });
   }
   process.stdout.write(".");
 }
 
 console.log(`\nDone: ${created} created, ${updated} updated (${detailsUpdated} descriptions changed).`);
+if (skipped.length) console.log("Not on Canny, left alone (--no-create):\n  " + skipped.join("\n  "));
 if (statusFallbacks.length) console.log("Status fallbacks:\n  " + statusFallbacks.join("\n  "));
