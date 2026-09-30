@@ -8,18 +8,18 @@ versioning; fold them in when the two are merged.
 
 ## Status workflow
 
-The public board (Canny) uses these statuses. `docs/roadmap-canny.csv` holds
-every ticket for import.
+The public board is on Canny (free plan, default statuses). `docs/roadmap-canny.csv`
+holds every ticket for import, already using Canny's status names.
 
-| Status | Meaning |
-|---|---|
-| **Requested** | Anything suggested or noted: the backlog |
-| **Planned** | Part of the current sprint |
-| **Ongoing** | Being built right now |
-| **Deployed** | Live for 30 days or less (new) |
-| **Completed** | Live for more than 30 days |
-
-Move Deployed items to Completed once they pass 30 days.
+| Workflow | Canny status | Meaning |
+|---|---|---|
+| **Requested** | Open | Anything suggested or noted: the backlog people vote on |
+| **Planned** | Planned | Part of the current sprint |
+| **Ongoing** | In Progress | Being built right now |
+| **Deployed** | Complete + `Deployed` tag | Live for 30 days or less (new) |
+| **Completed** | Complete | Live for more than 30 days (remove the tag) |
+| *Approved, deferred* | Backlog | Agreed, scheduled for a later sprint |
+| *Won't do* | Closed | Decided against, with a reason |
 
 ## Where things stand
 
