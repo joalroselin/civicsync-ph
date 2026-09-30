@@ -1,5 +1,7 @@
 # CivicSync PH
 
+[![Architecture diagram](https://gitdiagram.com/diagram-badge.svg)](https://gitdiagram.com/joalroselin/civicsync-ph?utm_source=readme&utm_medium=badge)
+
 Receipts and a Civic Watchlist for Philippine legislation. Mobile-first PWA
 built on Next.js 14 (App Router), Tailwind, and Firebase. See the public
 roadmap for scope and phasing.
@@ -83,11 +85,11 @@ no redeploy.
 - `lib/sanity.ts`: read-only client with cache tags
 - `lib/content.ts`: `getSiteSettings()`, `getAboutPage()`, `getGetInvolvedPage()`, `getPressKit()`
 - `lib/content-defaults.ts`: the fallback copy if Sanity is unreachable
+  (also what `scripts/seed-content.mts` seeded)
 - **Intake forms** (Get involved → translators, partners, commercial):
   `app/api/intake` stores submissions in Sanity under `inbox.*` IDs, which
   Sanity never serves to unauthenticated requests, even from a public
   dataset. They appear in Studio → **Inbox**. Field rules live in `lib/intake.ts`.
-  (also what `scripts/seed-content.mts` seeded)
 
 ## Roadmap
 
