@@ -7,13 +7,21 @@ import { PwaSupport } from "./components/PwaSupport";
 import { SearchNavigationProvider } from "./components/SearchNavigation";
 import { AnnouncementBanner } from "./components/AnnouncementBanner";
 import { getSiteSettings } from "@/lib/content";
+import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-display" });
 
+const SITE_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+  : "https://civicsync-ph-gamma.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: { default: "CivicSync PH", template: "%s · CivicSync PH" },
+  openGraph: { siteName: "CivicSync PH", type: "website", locale: "en_PH" },
+  twitter: { card: "summary_large_image" },
   description: "Receipts and a Civic Watchlist for Philippine legislation.",
   manifest: "/manifest.json",
   appleWebApp: { capable: true, title: "CivicSync", statusBarStyle: "default" },
@@ -48,6 +56,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           </SearchNavigationProvider>
           <PwaSupport />
         </WatchlistProvider>
+        {/* Cookieless, aggregate page-view counts; no personal data or cross-site tracking. */}
+        <Analytics />
       </body>
     </html>
   );

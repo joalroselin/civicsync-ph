@@ -11,7 +11,7 @@ export const getInvolvedPage = defineType({
     defineField({
       name: "ways",
       title: "Ways to help",
-      description: "Shown as cards in this order. Mark one “Coming soon” to show it without a button.",
+      description: "Shown as cards in this order. “Coming soon” adds a sticker but keeps the button, so people can register interest.",
       type: "array",
       of: [
         defineArrayMember({
@@ -61,13 +61,27 @@ export const getInvolvedPage = defineType({
               hidden: ({ parent }) => parent?.action !== "email",
             }),
             defineField({
+              name: "emailBody",
+              title: "Message template",
+              description: "Pre-filled in the email and copyable, so people know what to include.",
+              type: "text",
+              rows: 6,
+              hidden: ({ parent }) => parent?.action !== "email",
+            }),
+            defineField({
               name: "url",
               title: "Link",
               type: "url",
               validation: (r) => r.uri({ allowRelative: true, scheme: ["http", "https"] }),
               hidden: ({ parent }) => parent?.action !== "link",
             }),
-            defineField({ name: "comingSoon", title: "Coming soon", type: "boolean", initialValue: false }),
+            defineField({
+              name: "comingSoon",
+              title: "Coming soon",
+              description: "Adds a “Coming soon” sticker. The button still works.",
+              type: "boolean",
+              initialValue: false,
+            }),
           ],
           preview: {
             select: { title: "title", effort: "effort", soon: "comingSoon" },

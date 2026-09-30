@@ -3,25 +3,15 @@
 import { initializeApp, getApps, type FirebaseApp } from "firebase/app";
 import { getAuth, type Auth } from "firebase/auth";
 import { getFirestore, type Firestore } from "firebase/firestore";
+import { firebaseConfig, firebaseEnabled } from "@/lib/firebase-config";
 
-const config = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-};
-
-/**
- * Firebase is optional in dev: without config the Watchlist still works,
- * stored on-device only. With config, signed-in users sync to Firestore.
- */
-export const firebaseEnabled = Boolean(config.apiKey && config.projectId);
+export { firebaseEnabled };
 
 let app: FirebaseApp | null = null;
 
 function firebaseApp(): FirebaseApp | null {
   if (!firebaseEnabled) return null;
-  if (!app) app = getApps()[0] ?? initializeApp(config);
+  if (!app) app = getApps()[0] ?? initializeApp(firebaseConfig);
   return app;
 }
 

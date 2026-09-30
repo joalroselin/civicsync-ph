@@ -13,7 +13,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 const components: PortableTextComponents = {
   block: {
-    h2: ({ children }) => <h2 className="mt-10 font-display text-xl font-semibold text-gray-900 first:mt-0">{children}</h2>,
+    // Headings get ids (e.g. #your-privacy) so other pages can link to a section.
+    h2: ({ children, value }) => (
+      <h2 id={slugify(blockText(value))} className="mt-10 scroll-mt-20 font-display text-xl font-semibold text-gray-900 first:mt-0">
+        {children}
+      </h2>
+    ),
     h3: ({ children }) => <h3 className="mt-6 font-display text-lg font-semibold text-gray-900">{children}</h3>,
     normal: ({ children }) => <p className="mt-3 text-[15px] leading-relaxed text-gray-700 md:text-base">{children}</p>,
   },
@@ -100,4 +105,16 @@ function Stat({ value, label }: { value: string; label: string }) {
       </dd>
     </div>
   );
+}
+
+function blockText(block: { children?: unknown[] }) {
+  return (block.children ?? []).map((c) => (c as { text?: string }).text ?? "").join("");
+}
+
+function slugify(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[’']/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }

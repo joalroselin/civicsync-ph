@@ -53,6 +53,8 @@ export interface Way {
   action: "email" | "link" | "share";
   buttonLabel: string;
   emailSubject?: string;
+  /** Pre-filled email body, also offered as "Copy message template". */
+  emailBody?: string;
   url?: string;
   comingSoon?: boolean;
 }
@@ -154,9 +156,13 @@ export const DEFAULT_ABOUT_PAGE: AboutPage = {
     ),
     h2("Who’s behind it"),
     p(
-      "CivicSync PH is built by HelloJoal, an independent developer, with AI assistance. The source code is public on ",
+      "CivicSync PH is built by HelloJoal, an independent developer. The source code is public on ",
       { text: "GitHub", href: REPO_URL },
       "."
+    ),
+    h2("Your privacy"),
+    p(
+      "CivicSync is privacy first. You don’t need an account, and your Watchlist is saved only on your device. If you want it on your other devices too, you can sign in with Google to sync it; that’s the only time we store anything about you. We count visits anonymously, without cookies, to see which pages are useful. We never sell data or track you across other sites."
     ),
     h2("Open source"),
     p(
@@ -207,6 +213,7 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
       action: "email",
       buttonLabel: "Report an error",
       emailSubject: "Data correction: CivicSync PH",
+      emailBody: "Bill number (e.g. SB 1999 or HB 4659):\nLink to the CivicSync page:\n\nWhat looks wrong (status, author, title, committee…):\n\nWhat it should say:\n\nWhere you saw the correct information (link to the official Senate or House record, if you have one):\n",
     },
     {
       _key: "way-ideas",
@@ -217,6 +224,7 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
       action: "email",
       buttonLabel: "Share an idea",
       emailSubject: "Feature idea: CivicSync PH",
+      emailBody: "What would you like CivicSync to do?\n\nWhat problem would it solve for you?\n\nHow do you use CivicSync today (optional)?\n",
     },
     {
       _key: "way-translate",
@@ -227,7 +235,9 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
       icon: "language",
       action: "email",
       buttonLabel: "Join the translator list",
+      comingSoon: true,
       emailSubject: "Contribute: Translation",
+      emailBody: "Your name:\nLanguage(s) you can translate into:\nYour experience (e.g. native speaker, professional translator, student):\nHow many hours a month could you help?\n",
     },
     {
       _key: "way-code",
@@ -248,7 +258,9 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
       icon: "handshake",
       action: "email",
       buttonLabel: "Get in touch",
+      comingSoon: true,
       emailSubject: "Partnership: CivicSync PH",
+      emailBody: "Your name and organisation:\nWhat your organisation does:\nWhat you’d like to do together:\n",
     },
     {
       _key: "way-commercial",
@@ -259,7 +271,9 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
       icon: "briefcase",
       action: "email",
       buttonLabel: "Ask about a licence",
+      comingSoon: true,
       emailSubject: "Commercial licence: CivicSync PH",
+      emailBody: "Your name and organisation:\nWhat you plan to build with CivicSync’s code:\nRoughly how many users it will serve:\nWhy the AGPL-3.0 doesn’t work for you (optional):\n",
     },
   ],
 };
@@ -269,7 +283,7 @@ export const DEFAULT_PRESS_KIT: PressKit = {
   short:
     "CivicSync PH is a free, mobile-first web app that makes Philippine legislative records easier to use. Search the Senate and House of Representatives in one place, see every bill a lawmaker has authored across 13 congresses since 1987, check where a bill stands today, and follow the bills you care about. No sign-up required.",
   long:
-    "CivicSync PH is a free, mobile-first web app that helps Filipinos find and follow the work of their lawmakers. The Philippine Congress has two chambers, each with its own website, formats, and numbering, and each three-year Congress sees thousands of bills filed. CivicSync brings those records together: one search across the Senate and House, one profile per lawmaker covering their whole career across both chambers, and one page per bill combining its history with its current status, committee, a plain-language summary, and links to the official record. Users can bookmark bills to a Watchlist without creating an account. CivicSync is built on open data from BetterGov's Open Congress API and BatasWatch, and is designed as a guide to the official record, not a replacement for it. It was built by independent developer HelloJoal, with AI assistance, and is open source under the AGPL-3.0 licence.",
+    "CivicSync PH is a free, mobile-first web app that helps Filipinos find and follow the work of their lawmakers. The Philippine Congress has two chambers, each with its own website, formats, and numbering, and each three-year Congress sees thousands of bills filed. CivicSync brings those records together: one search across the Senate and House, one profile per lawmaker covering their whole career across both chambers, and one page per bill combining its history with its current status, committee, a plain-language summary, and links to the official record. Users can bookmark bills to a Watchlist without creating an account. CivicSync is built on open data from BetterGov's Open Congress API and BatasWatch, and is designed as a guide to the official record, not a replacement for it. It was built by independent developer HelloJoal and is open source under the AGPL-3.0 licence.",
   faq: [
     {
       _key: "faq-official",
@@ -293,7 +307,7 @@ export const DEFAULT_PRESS_KIT: PressKit = {
       _key: "faq-privacy",
       question: "Does it collect personal data?",
       answer:
-        "No account is needed. The Watchlist is stored on the user's own device. Users who choose to sign in with Google have their Watchlist synced to their account so it follows them across devices.",
+        "No. CivicSync is privacy first: no account is needed, and the Watchlist is stored on the user's own device. Users who choose to sign in with Google have their Watchlist synced so it follows them across devices. Visits are counted anonymously, without cookies, and no data is sold or used to track people across other sites.",
     },
     {
       _key: "faq-commercial",

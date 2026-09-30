@@ -10,6 +10,7 @@ import { StatusBadge } from "../../components/StatusBadge";
 import { WatchButton } from "../../components/WatchButton";
 import { ShareButton } from "../../components/ShareButton";
 import { SearchLink } from "../../components/SearchNavigation";
+import { EmailAction } from "../../components/EmailAction";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
 
 async function load(id: string): Promise<BillDetail | "unavailable" | null> {
@@ -41,11 +42,8 @@ export default async function BillPage({ params }: { params: { id: string } }) {
   const title = toTitleCase(bill.title);
   const isCurrent = bill.congress === BATASWATCH_CONGRESS;
   const { contactEmail } = await getSiteSettings();
-  const reportHref = `mailto:${contactEmail}?subject=${encodeURIComponent(
-    `Data correction: ${bill.label} (CivicSync PH)`
-  )}&body=${encodeURIComponent(
-    `Bill: ${bill.label}, ${ordinal(bill.congress)} Congress\nPage: https://civicsync-ph-gamma.vercel.app/bills/${bill.id}\n\nWhat looks wrong:\n\nWhere you saw the correct information (link to the official record, if you have one):\n`
-  )}`;
+  const reportSubject = `Data correction: ${bill.label} (CivicSync PH)`;
+  const reportBody = `Bill: ${bill.label}, ${ordinal(bill.congress)} Congress\nPage: https://civicsync-ph-gamma.vercel.app/bills/${bill.id}\n\nWhat looks wrong (status, author, title, committee…):\n\nWhat it should say:\n\nWhere you saw the correct information (link to the official Senate or House record, if you have one):\n`;
 
   return (
     <main className="px-5 pb-5 md:pt-4">
@@ -208,12 +206,17 @@ export default async function BillPage({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      <p className="mt-8 text-center text-sm text-gray-600">
-        Spot something wrong?{" "}
-        <a href={reportHref} className="font-semibold text-crimson underline underline-offset-2">
-          Report an issue
-        </a>
-      </p>
+      <div className="mt-8 text-center text-sm text-gray-600">
+        <span>Spot something wrong? </span>
+        <EmailAction
+          email={contactEmail}
+          subject={reportSubject}
+          body={reportBody}
+          label="Report an issue"
+          buttonClassName="font-semibold text-crimson underline underline-offset-2"
+          align="center"
+        />
+      </div>
       <p className="mt-2 text-center text-[11px] text-gray-400">
         {bill.billNumber} · Sources:{" "}
         {[bill.inOpenCongress && "BetterGov Open Congress", bill.statusSource && "BatasWatch"].filter(Boolean).join(", ")}

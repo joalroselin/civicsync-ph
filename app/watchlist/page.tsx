@@ -28,7 +28,7 @@ export default function WatchlistPage() {
 
       <section className="mb-5 max-w-2xl rounded-2xl bg-white p-4 text-sm shadow-sm ring-1 ring-gray-200/70">
         {!syncAvailable ? (
-          <p className="text-gray-600">Saved on this device. Sign-in sync will be available once accounts are set up.</p>
+          <PrivacyNote>No account needed. Your Watchlist stays on this device.</PrivacyNote>
         ) : user ? (
           <div className="flex items-center justify-between gap-3">
             <p className="min-w-0 text-gray-600">
@@ -40,7 +40,10 @@ export default function WatchlistPage() {
           </div>
         ) : (
           <div className="flex items-center justify-between gap-3">
-            <p className="text-gray-600">Saved on this device. Sign in to keep it across devices.</p>
+            <PrivacyNote>
+              No account needed. Your Watchlist stays on this device. Sign in only if you want it on your other devices
+              too.
+            </PrivacyNote>
             <button
               onClick={() => signIn().catch(() => setAuthError("Sign-in didn’t complete. Try again."))}
               className="shrink-0 rounded-xl bg-navy px-3.5 py-2 text-sm font-semibold text-white"
@@ -94,5 +97,19 @@ export default function WatchlistPage() {
         </>
       )}
     </main>
+  );
+}
+
+function PrivacyNote({ children }: { children: React.ReactNode }) {
+  return (
+    <p className="flex gap-2 text-gray-600">
+      <svg className="mt-0.5 shrink-0 text-emerald-600" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <rect x="5" y="11" width="14" height="10" rx="2" />
+        <path d="M8 11V8a4 4 0 0 1 8 0v3" strokeLinecap="round" />
+      </svg>
+      <span>
+        <span className="font-semibold text-gray-800">Privacy first.</span> {children}
+      </span>
+    </p>
   );
 }

@@ -1,16 +1,30 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
-import {
-  GoogleAuthProvider,
-  onAuthStateChanged,
-  signInWithPopup,
-  signOut as fbSignOut,
-  type User,
-} from "firebase/auth";
-import { collection, deleteDoc, doc, onSnapshot, setDoc, writeBatch } from "firebase/firestore";
-import { firebaseAuth, firebaseEnabled, firestore } from "@/lib/firebase";
+import { firebaseEnabled } from "@/lib/firebase-config";
 import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
+import type { SyncUser } from "@/lib/watchlistSync";
+
+/** Firebase sync code, downloaded only when needed (see loadSync). */
+type SyncModule = typeof import("@/lib/watchlistSync");
+let syncModule: Promise<SyncModule> | null = null;
+const loadSync = () => (syncModule ??= import("@/lib/watchlistSync"));
+
+/** Remembers that this browser has signed in, so sync only loads for those users. */
+const SIGNED_IN_KEY = "civicsync:signed-in";
+const hasSignedInBefore = () => {
+  try {
+    return localStorage.getItem(SIGNED_IN_KEY) === "1";
+  } catch {
+    return false;
+  }
+};
+const setSignedInFlag = (on: boolean) => {
+  try {
+    if (on) localStorage.setItem(SIGNED_IN_KEY, "1");
+    else localStorage.removeItem(SIGNED_IN_KEY);
+  } catch {}
+};
 
 export interface WatchedBill {
   id: string;
@@ -28,7 +42,7 @@ interface WatchlistContextValue {
   toggle: (bill: Omit<WatchedBill, "savedAt">) => void;
   /** Re-fetch live status for every watched bill; resolves when done. */
   refreshStatuses: () => Promise<void>;
-  user: User | null;
+  user: SyncUser | null;
   syncAvailable: boolean;
   signIn: () => Promise<void>;
   signOut: () => Promise<void>;
@@ -59,48 +73,46 @@ const sortBySaved = (items: WatchedBill[]) => [...items].sort((a, b) => b.savedA
 export function WatchlistProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<WatchedBill[]>([]);
   const [ready, setReady] = useState(false);
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<SyncUser | null>(null);
   const itemsRef = useRef(items);
   itemsRef.current = items;
+  const stopSyncRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     setItems(sortBySaved(readLocal()));
     setReady(true);
   }, []);
 
-  // Firestore sync: users/{uid}/watchlist/{billId}
-  useEffect(() => {
-    const auth = firebaseAuth();
-    const db = firestore();
-    if (!auth || !db) return;
-
+  // Firestore sync: users/{uid}/watchlist/{billId}. Starts only for browsers
+  // that have signed in before, or when someone taps "Sign in".
+  const startSync = useCallback(async () => {
+    if (!firebaseEnabled || stopSyncRef.current) return;
+    const sync = await loadSync();
     let unsubSnapshot: (() => void) | null = null;
-    const unsubAuth = onAuthStateChanged(auth, async (u) => {
+    const unsubAuth = sync.watchAuth(async (u) => {
       setUser(u);
+      setSignedInFlag(Boolean(u));
       unsubSnapshot?.();
       unsubSnapshot = null;
       if (!u) return;
-
-      const col = collection(db, "users", u.uid, "watchlist");
-      // First sign-in on this device: push anything saved locally up.
-      const local = readLocal();
-      if (local.length) {
-        const batch = writeBatch(db);
-        for (const item of local) batch.set(doc(col, item.id), item, { merge: true });
-        await batch.commit().catch((e) => console.error("Watchlist merge failed", e));
-      }
-      unsubSnapshot = onSnapshot(col, (snap) => {
-        const remote = snap.docs.map((d) => d.data() as WatchedBill);
+      unsubSnapshot = await sync.subscribeWatchlist<WatchedBill>(u.uid, readLocal(), (remote) => {
         setItems(sortBySaved(remote));
         writeLocal(remote);
       });
     });
-
-    return () => {
+    stopSyncRef.current = () => {
       unsubAuth();
       unsubSnapshot?.();
     };
   }, []);
+
+  useEffect(() => {
+    if (hasSignedInBefore()) startSync();
+    return () => {
+      stopSyncRef.current?.();
+      stopSyncRef.current = null;
+    };
+  }, [startSync]);
 
   const toggle = useCallback(
     (bill: Omit<WatchedBill, "savedAt">) => {
@@ -111,11 +123,10 @@ export function WatchlistProvider({ children }: { children: React.ReactNode }) {
       setItems(next);
       writeLocal(next);
 
-      const db = firestore();
-      if (user && db) {
-        const ref = doc(db, "users", user.uid, "watchlist", bill.id);
-        const op = exists ? deleteDoc(ref) : setDoc(ref, next.find((i) => i.id === bill.id)!);
-        op.catch((e) => console.error("Watchlist sync failed", e));
+      if (user) {
+        loadSync()
+          .then((sync) => (exists ? sync.removeItem(user.uid, bill.id) : sync.saveItem(user.uid, next.find((i) => i.id === bill.id)!)))
+          .catch((e) => console.error("Watchlist sync failed", e));
       }
     },
     [user]
@@ -141,12 +152,10 @@ export function WatchlistProvider({ children }: { children: React.ReactNode }) {
     const next = itemsRef.current.map((i) => (changed.has(i.id) ? { ...i, status: changed.get(i.id)! } : i));
     setItems(next);
     writeLocal(next);
-    const db = firestore();
-    if (user && db) {
+    if (user) {
+      const sync = await loadSync();
       for (const [id, status] of Array.from(changed)) {
-        setDoc(doc(db, "users", user.uid, "watchlist", id), { status }, { merge: true }).catch((e) =>
-          console.error("Watchlist sync failed", e)
-        );
+        sync.updateStatus(user.uid, id, status).catch((e) => console.error("Watchlist sync failed", e));
       }
     }
   }, [user]);
@@ -154,14 +163,16 @@ export function WatchlistProvider({ children }: { children: React.ReactNode }) {
   const isWatched = useCallback((id: string) => items.some((i) => i.id === id), [items]);
 
   const signIn = useCallback(async () => {
-    const auth = firebaseAuth();
-    if (!auth) return;
-    await signInWithPopup(auth, new GoogleAuthProvider());
-  }, []);
+    if (!firebaseEnabled) return;
+    await startSync(); // loads Firebase and starts listening for the signed-in user
+    const sync = await loadSync();
+    await sync.signIn();
+  }, [startSync]);
 
   const signOut = useCallback(async () => {
-    const auth = firebaseAuth();
-    if (auth) await fbSignOut(auth);
+    setSignedInFlag(false);
+    const sync = await loadSync();
+    await sync.signOut();
   }, []);
 
   return (

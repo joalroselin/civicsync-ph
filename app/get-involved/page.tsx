@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { getGetInvolvedPage, getSiteSettings, mailtoHref, type Way, type WayIcon } from "@/lib/content";
+import { getGetInvolvedPage, getSiteSettings, type Way, type WayIcon } from "@/lib/content";
 import { PageHeader } from "../components/PageHeader";
 import { ShareSiteButton } from "./ShareSiteButton";
+import { EmailAction } from "../components/EmailAction";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getGetInvolvedPage();
@@ -89,7 +90,12 @@ function WayCard({ way, email }: { way: Way; email: string }) {
   const button =
     "inline-flex items-center justify-center rounded-xl bg-crimson px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-red-900";
   return (
-    <li className="flex flex-col rounded-2xl bg-white p-5 shadow-sm ring-1 ring-gray-200/70">
+    <li className={`relative flex flex-col rounded-2xl p-5 shadow-sm ring-1 ${way.comingSoon ? "bg-gray-50 ring-gray-200" : "bg-white ring-gray-200/70"}`}>
+      {way.comingSoon && (
+        <span className="absolute -right-2 -top-3 rotate-6 rounded-md bg-amber-300 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-amber-950 shadow-md ring-1 ring-amber-400/60">
+          Coming soon
+        </span>
+      )}
       <div className="flex items-start justify-between gap-3">
         <span className="grid h-11 w-11 place-items-center rounded-xl bg-crimson/10 text-crimson">
           <Icon name={way.icon ?? "lightbulb"} />
@@ -101,18 +107,20 @@ function WayCard({ way, email }: { way: Way; email: string }) {
       <h3 className="mt-4 font-display text-lg font-semibold text-gray-900">{way.title}</h3>
       <p className="mt-1.5 flex-1 text-sm leading-relaxed text-gray-700">{way.description}</p>
       <div className="mt-5">
-        {way.comingSoon ? (
-          <span className="inline-flex rounded-xl bg-gray-100 px-4 py-2.5 text-sm font-semibold text-gray-500">Coming soon</span>
-        ) : way.action === "share" ? (
+        {way.action === "share" ? (
           <ShareSiteButton label={way.buttonLabel} className={button} />
         ) : way.action === "link" && way.url ? (
           <a href={way.url} target={way.url.startsWith("/") ? undefined : "_blank"} rel="noreferrer" className={button}>
             {way.buttonLabel}
           </a>
         ) : (
-          <a href={mailtoHref(email, way.emailSubject || "Get involved: CivicSync PH")} className={button}>
-            {way.buttonLabel}
-          </a>
+          <EmailAction
+            email={email}
+            subject={way.emailSubject || "Get involved: CivicSync PH"}
+            body={way.emailBody}
+            label={way.buttonLabel}
+            buttonClassName={button}
+          />
         )}
       </div>
     </li>

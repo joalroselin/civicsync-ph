@@ -1,6 +1,7 @@
 const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
 
-export function Credit({ className = "" }: { className?: string }) {
+/** "Built by HelloJoal". The AI note is shown only where `showAiCredit` is set (the sidebar). */
+export function Credit({ className = "", showAiCredit = false }: { className?: string; showAiCredit?: boolean }) {
   return (
     <p className={`text-[11px] text-gray-400 ${className}`}>
       Built by{" "}
@@ -11,8 +12,8 @@ export function Credit({ className = "" }: { className?: string }) {
         className="font-semibold text-gray-500 underline decoration-gray-300 underline-offset-2 hover:text-navy hover:decoration-navy"
       >
         HelloJoal
-      </a>{" "}
-      · assisted by AI
+      </a>
+      {showAiCredit && " · assisted by AI"}
     </p>
   );
 }

@@ -15,7 +15,7 @@ const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
 function facts(stats: SiteSettings["stats"], social: SiteSettings["socialLinks"]): [string, React.ReactNode][] {
   return [
     ["Launched", "September 2026"],
-    ["Built by", <>HelloJoal, independent developer (assisted by AI)</>],
+    ["Built by", "HelloJoal, independent developer"],
     ["Price", "Free, no account required"],
     ["Platform", "Web app, installable on phones and desktops (PWA)"],
     ["Coverage", "13 congresses: 8th to 20th (1987 to present)"],

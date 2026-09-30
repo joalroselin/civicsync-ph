@@ -98,7 +98,10 @@ export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
         <p className="text-[11px] leading-relaxed text-gray-400">
           Data from BetterGov Open Congress and BatasWatch. Verify against official records.
         </p>
-        <Credit />
+        <Credit showAiCredit />
+        <Link href="/about#your-privacy" className="block text-[11px] text-gray-400 transition hover:text-crimson">
+          Privacy first · No account needed
+        </Link>
         <p className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-semibold text-gray-500">
           <Link href="/about" className="transition hover:text-crimson">About</Link>
           <Link href="/get-involved" className="transition hover:text-crimson">Get involved</Link>
