@@ -23,7 +23,7 @@ CS-108,"Upgrade to the latest app framework (Next.js 16, React 19)","Why: CivicS
 CS-104,Our own web address,Move from the temporary vercel.app link to a proper domain (e.g. civicsync.ph).,Planned,Platform,Platform,
 CS-105,Accessibility improvements,"Better screen-reader support, contrast, and tap targets, aiming for WCAG 2.1 AA.",Planned,Accessibility,Accessibility,
 CS-106,More complete data for newer bills,Work with data partners to fill gaps for bills filed since late 2025.,Planned,Data,Data,
-CS-110,Built-in forms for ideas and volunteers,"Suggest features, join the translator list, or get in touch without leaving CivicSync or needing an email app.",In Progress,Community,Community,
+CS-110,Built-in forms for ideas and volunteers,"Join the translator list, propose a partnership, or ask about a commercial licence with a short form, without leaving CivicSync or needing an email app. Submissions are stored privately.",Complete,Community,Community;Deployed,2026-09-30
 CS-201,Get notified when a bill you follow moves,Receive a push notification or email digest when a Watchlist bill changes status.,Planned,Watchlist,Watchlist;Notifications,
 CS-202,Filipino / Tagalog language option,"Switch the whole app to Filipino, translated and reviewed by people.",Planned,Language,Language,
 CS-203,Dark mode,"A darker colour scheme that's easier on the eyes at night, and follows your phone's setting automatically.",Planned,Design,Design,
