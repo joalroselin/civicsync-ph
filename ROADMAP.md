@@ -8,8 +8,9 @@ versioning; fold them in when the two are merged.
 
 ## Status workflow
 
-The public board is on Canny (free plan, default statuses). `docs/roadmap-canny.csv`
-holds every ticket for import, already using Canny's status names.
+The public board is at https://civicsyncph.canny.io (free plan, default statuses).
+`docs/roadmap-canny.csv` is the source list; `scripts/canny-sync.mts` pushes it
+to Canny (dry run by default, `--apply` to write).
 
 | Workflow | Canny status | Meaning |
 |---|---|---|
@@ -18,7 +19,7 @@ holds every ticket for import, already using Canny's status names.
 | **Ongoing** | In Progress | Being built right now |
 | **Deployed** | Complete + `Deployed` tag | Live for 30 days or less (new) |
 | **Completed** | Complete | Live for more than 30 days (remove the tag) |
-| *Approved, deferred* | Backlog | Agreed, scheduled for a later sprint |
+| *Approved, deferred* | Under Review | Agreed, scheduled for a later sprint (Backlog isn't available via the API on the free plan) |
 | *Won't do* | Closed | Decided against, with a reason |
 
 ## Where things stand

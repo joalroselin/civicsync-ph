@@ -80,6 +80,9 @@ export default async function Home() {
           <Link href="/about" className="transition hover:text-crimson">About</Link>
           <Link href="/get-involved" className="transition hover:text-crimson">Get involved</Link>
           <Link href="/press" className="transition hover:text-crimson">Press kit</Link>
+          <a href="https://civicsyncph.canny.io" target="_blank" rel="noreferrer" className="transition hover:text-crimson">
+            Roadmap
+          </a>
         </p>
         <SocialIcons links={socialLinks} className="pt-1" />
       </div>

@@ -72,6 +72,7 @@ export interface PressKit {
 }
 
 const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
+export const ROADMAP_URL = "https://civicsyncph.canny.io";
 const CONTACT_EMAIL = "hello.joaldev@gmail.com";
 
 /** Pre-filled subjects so enquiries are easy to sort in the inbox. */
@@ -218,13 +219,12 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
     {
       _key: "way-ideas",
       title: "Suggest a feature",
-      description: "Tell us what would make CivicSync more useful to you. A public roadmap where you can vote on ideas is coming soon.",
+      description: "Tell us what would make CivicSync more useful, or upvote ideas others have shared on our public roadmap.",
       effort: "5 minutes",
       icon: "lightbulb",
-      action: "email",
-      buttonLabel: "Share an idea",
-      emailSubject: "Feature idea: CivicSync PH",
-      emailBody: "What would you like CivicSync to do?\n\nWhat problem would it solve for you?\n\nHow do you use CivicSync today (optional)?\n",
+      action: "link",
+      buttonLabel: "Suggest or vote",
+      url: "https://civicsyncph.canny.io/feature-requests",
     },
     {
       _key: "way-translate",
