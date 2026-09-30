@@ -16,9 +16,9 @@ win:** the sync copies them back into the CSV instead of overwriting them
 
 | Workflow | Canny status | Meaning |
 |---|---|---|
-| **Requested** | Open | New suggestions from visitors, not yet reviewed |
-| **Planned** | Planned | Committed to build (includes the current sprint) |
-| **Ongoing** | In Progress | Being built right now |
+| **Requested** | Open | Later: suggestions and longer-term ideas people can vote on |
+| **Planned** | Planned | Next up, after what's In Progress |
+| **Ongoing** | In Progress | Being built or actively improved right now (a live feature can be In Progress and keep its `Deployed` tag) |
 | **Deployed** | Complete + `Deployed` tag | Live for 30 days or less (new) |
 | **Completed** | Complete | Live for more than 30 days (remove the tag) |
 | *Approved, deferred* | Under Review | Agreed, scheduled for a later sprint (Backlog isn't available via the API on the free plan) |
