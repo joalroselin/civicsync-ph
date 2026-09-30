@@ -58,7 +58,7 @@ CS-306,"Faster, more reliable search",Our own search index so results appear ins
 CS-307,Open dataset for other civic projects,"Publish cleaned, merged legislative data for others to build on.",Planned,Data,,
 CS-308,Exploring: voting records,Researching whether we can show how lawmakers voted. This isn't available from our current sources yet.,Planned,Research,,
 CS-309,Community-contributed languages,Volunteers can add and review new languages; each goes live only after a native-speaker review.,Planned,Language,,
-CS-901,Automated testing on every change,So updates don't break search or bill pages. Approved; scheduled for a later sprint.,Planned,Under the hood,Under the hood,
+CS-901,Automated testing on every change,So updates don't break search or bill pages. Approved; scheduled for a later sprint.,In Progress,Under the hood,Under the hood,
 CS-902,Uptime monitoring,So we catch data-source outages before you do.,Planned,Under the hood,Under the hood,
 CS-903,Backup source for bill status,So status still loads if our main tracker is down.,Planned,Under the hood,Under the hood,
 CS-904,Finalise contributor licensing,"Lawyer review of the Contributor License Agreement, a commercial licence template, and CLA Assistant on GitHub before accepting outside code.",Planned,Under the hood,Under the hood;Open source,

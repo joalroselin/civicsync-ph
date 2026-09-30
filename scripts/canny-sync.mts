@@ -4,6 +4,11 @@
  *   node --env-file=.env.local scripts/canny-sync.mts           # dry run: prints the plan
  *   node --env-file=.env.local scripts/canny-sync.mts --apply   # creates/updates posts
  *   add --no-create to only update posts that already exist on Canny
+ *   add --push-status to overwrite Canny statuses with the CSV's
+ *
+ * Statuses: Canny is the source of truth. Status changes made in Canny are
+ * copied back into the CSV (on --apply) and never overwritten, unless you
+ * pass --push-status. New posts get the CSV status.
  *
  * - Groups categories under parent categories (CATEGORY_GROUPS); an existing
  *   top-level category is moved under its parent by recreating it and
@@ -17,13 +22,15 @@
  *
  * Needs CANNY_API_KEY (Canny → Settings → API & Webhooks). Keep it out of git.
  */
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 
 const API = "https://canny.io/api/v1";
 const KEY = process.env.CANNY_API_KEY;
 const APPLY = process.argv.includes("--apply");
 /** Update existing posts only; don't recreate posts missing on Canny (e.g. deleted there on purpose). */
 const NO_CREATE = process.argv.includes("--no-create");
+/** Overwrite statuses on Canny with the CSV's (otherwise Canny's statuses win and are pulled into the CSV). */
+const PUSH_STATUS = process.argv.includes("--push-status");
 const BOARD_URL_NAME = "feature-requests";
 
 if (!KEY) {
@@ -85,6 +92,12 @@ const CATEGORY_GROUPS: Record<string, string[]> = {
 };
 const PARENT_OF = new Map(Object.entries(CATEGORY_GROUPS).flatMap(([parent, subs]) => subs.map((s) => [s, parent] as const)));
 
+const writeCsv = (rows: Record<string, string>[]) => {
+  const cols = Object.keys(rows[0]);
+  const esc = (v: string) => (/[",\n]/.test(v) ? `"${v.replace(/"/g, '""')}"` : v);
+  writeFileSync(CSV_PATH, [cols.join(","), ...rows.map((r) => cols.map((c) => esc(r[c] ?? "")).join(","))].join("\n") + "\n");
+};
+
 const STATUS: Record<string, string> = {
   Open: "open",
   Backlog: "backlog",
@@ -99,7 +112,9 @@ function formatDate(iso: string) {
   return new Date(iso + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
 }
 
-const tickets = parseCsv(readFileSync(new URL("../docs/roadmap-canny.csv", import.meta.url), "utf8"));
+const CSV_PATH = new URL("../docs/roadmap-canny.csv", import.meta.url);
+const tickets = parseCsv(readFileSync(CSV_PATH, "utf8"));
+const LABEL_OF: Record<string, string> = Object.fromEntries(Object.entries(STATUS).map(([label, api]) => [api, label]));
 
 const { boards } = await call<{ boards: { id: string; url: string; name: string }[] }>("boards/list", {});
 const board = boards.find((b) => b.url.endsWith(`/${BOARD_URL_NAME}`));
@@ -147,6 +162,12 @@ const plan = tickets.map((t) => {
   return { t, existing, status: STATUS[t.Status] ?? "open" };
 });
 console.log(`Posts to create: ${plan.filter((p) => !p.existing).length} · existing to update: ${plan.filter((p) => p.existing).length}`);
+const statusDiffs = plan.filter((p) => p.existing && p.existing.status !== p.status);
+if (statusDiffs.length)
+  console.log(
+    `Statuses that differ (${PUSH_STATUS ? "will push CSV → Canny" : "will keep Canny's and update the CSV"}):\n  ` +
+      statusDiffs.map((p) => `${p.t["Ticket ID"]} ${p.t.Title}: CSV ${p.t.Status} / Canny ${LABEL_OF[p.existing!.status] ?? p.existing!.status}`).join("\n  ")
+  );
 
 if (!APPLY) {
   console.log("\nDry run. Re-run with --apply to make these changes.");
@@ -187,8 +208,20 @@ for (const name of needTags) {
 let created = 0;
 let updated = 0;
 let detailsUpdated = 0;
-const skipped: string[] = [];
 const statusFallbacks: string[] = [];
+const skipped: string[] = [];
+const pulled: string[] = [];
+
+async function setStatus(postID: string, status: string, t: Record<string, string>) {
+  try {
+    await call("posts/change_status", { changerID: admin.id, postID, status, shouldNotifyVoters: false });
+  } catch (err) {
+    // Some accounts don't expose every status (e.g. Backlog) to the API
+    const fallback = status === "backlog" ? "under review" : "open";
+    await call("posts/change_status", { changerID: admin.id, postID, status: fallback, shouldNotifyVoters: false });
+    statusFallbacks.push(`${t["Ticket ID"]}: ${status} → ${fallback} (${(err as Error).message.slice(0, 80)})`);
+  }
+}
 for (const { t, existing, status } of plan) {
   const details = [t.Details, t["Deployed On"] ? `Deployed: ${formatDate(t["Deployed On"])}` : ""].filter(Boolean).join("\n\n");
   let postID = existing?.id;
@@ -215,14 +248,14 @@ for (const { t, existing, status } of plan) {
     }
   }
 
-  if (status !== "open" && existing?.status !== status) {
-    try {
-      await call("posts/change_status", { changerID: admin.id, postID, status, shouldNotifyVoters: false });
-    } catch (err) {
-      // Some accounts don't expose every status (e.g. Backlog) to the API
-      const fallback = status === "backlog" ? "under review" : "open";
-      await call("posts/change_status", { changerID: admin.id, postID, status: fallback, shouldNotifyVoters: false });
-      statusFallbacks.push(`${t["Ticket ID"]}: ${status} → ${fallback} (${(err as Error).message.slice(0, 80)})`);
+  if (!existing) {
+    if (status !== "open") await setStatus(postID!, status, t);
+  } else if (existing.status !== status) {
+    if (PUSH_STATUS) await setStatus(postID!, status, t);
+    else {
+      // Changed in Canny: keep it, and record it in the CSV
+      pulled.push(`${t["Ticket ID"]} ${t.Title}: ${t.Status} → ${LABEL_OF[existing.status] ?? existing.status}`);
+      t.Status = LABEL_OF[existing.status] ?? t.Status;
     }
   }
 
@@ -243,5 +276,9 @@ for (const { t, existing, status } of plan) {
 }
 
 console.log(`\nDone: ${created} created, ${updated} updated (${detailsUpdated} descriptions changed).`);
+if (pulled.length) {
+  writeCsv(tickets);
+  console.log("Kept Canny's status and updated the CSV:\n  " + pulled.join("\n  "));
+}
 if (skipped.length) console.log("Not on Canny, left alone (--no-create):\n  " + skipped.join("\n  "));
 if (statusFallbacks.length) console.log("Status fallbacks:\n  " + statusFallbacks.join("\n  "));

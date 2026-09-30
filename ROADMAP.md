@@ -9,8 +9,10 @@ versioning; fold them in when the two are merged.
 ## Status workflow
 
 The public board is at https://civicsyncph.canny.io (free plan, default statuses).
-`docs/roadmap-canny.csv` is the source list; `scripts/canny-sync.mts` pushes it
-to Canny (dry run by default, `--apply` to write).
+`docs/roadmap-canny.csv` is the ticket list; `scripts/canny-sync.mts` syncs it
+to Canny (dry run by default, `--apply` to write). **Statuses changed in Canny
+win:** the sync copies them back into the CSV instead of overwriting them
+(use `--push-status` to deliberately push CSV statuses).
 
 | Workflow | Canny status | Meaning |
 |---|---|---|
