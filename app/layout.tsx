@@ -52,7 +52,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 </div>
               </div>
             </div>
-            <BottomNav />
+            <BottomNav socialLinks={socialLinks} />
           </SearchNavigationProvider>
           <PwaSupport />
         </WatchlistProvider>

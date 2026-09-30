@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import Link from "next/link";
 import { CURRENT_CONGRESS } from "@/lib/openCongress";
 import { getSiteSettings } from "@/lib/content";
 import { listMeasures } from "@/lib/batasWatch";
@@ -12,13 +11,11 @@ import { WatchlistPreview } from "./components/WatchlistPreview";
 import { BillListSkeleton } from "./components/Skeleton";
 import { LiveDataUnavailable } from "./components/LiveDataUnavailable";
 import { Logo } from "./components/Logo";
-import { Credit } from "./components/Credit";
-import { SocialIcons } from "./components/SocialIcons";
 
 export const revalidate = 1800;
 
 export default async function Home() {
-  const { homeSuggestions, socialLinks } = await getSiteSettings();
+  const { homeSuggestions } = await getSiteSettings();
   return (
     <main className="flex flex-col gap-7 p-5 md:py-8 lg:gap-8">
       <header className="rounded-[20px] bg-navy p-5 pb-6 text-white shadow-md md:p-8 lg:p-10">
@@ -71,20 +68,6 @@ export default async function Home() {
         <div className="lg:hidden">
           <SourcesNote />
         </div>
-      </div>
-
-      {/* The sidebar carries the credit from md up. */}
-      <div className="flex flex-col items-center gap-1 md:hidden">
-        <Credit />
-        <p className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-semibold text-gray-500">
-          <Link href="/about" className="transition hover:text-crimson">About</Link>
-          <Link href="/get-involved" className="transition hover:text-crimson">Get involved</Link>
-          <Link href="/press" className="transition hover:text-crimson">Press kit</Link>
-          <a href="https://civicsyncph.canny.io" target="_blank" rel="noreferrer" className="transition hover:text-crimson">
-            Roadmap
-          </a>
-        </p>
-        <SocialIcons links={socialLinks} className="pt-1" />
       </div>
     </main>
   );
