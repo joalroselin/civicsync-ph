@@ -14,8 +14,8 @@ to Canny (dry run by default, `--apply` to write).
 
 | Workflow | Canny status | Meaning |
 |---|---|---|
-| **Requested** | Open | Anything suggested or noted: the backlog people vote on |
-| **Planned** | Planned | Part of the current sprint |
+| **Requested** | Open | New suggestions from visitors, not yet reviewed |
+| **Planned** | Planned | Committed to build (includes the current sprint) |
 | **Ongoing** | In Progress | Being built right now |
 | **Deployed** | Complete + `Deployed` tag | Live for 30 days or less (new) |
 | **Completed** | Complete | Live for more than 30 days (remove the tag) |

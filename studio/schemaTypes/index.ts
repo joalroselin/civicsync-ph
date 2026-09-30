@@ -1,9 +1,10 @@
 import { aboutPage } from "./aboutPage";
 import { getInvolvedPage } from "./getInvolvedPage";
+import { intakeSubmission } from "./intakeSubmission";
 import { pressKit } from "./pressKit";
 import { siteSettings } from "./siteSettings";
 
-export const schemaTypes = [siteSettings, aboutPage, getInvolvedPage, pressKit];
+export const schemaTypes = [siteSettings, aboutPage, getInvolvedPage, pressKit, intakeSubmission];
 
 /** One document each, with a fixed ID the app reads by. */
 export const SINGLETONS = [

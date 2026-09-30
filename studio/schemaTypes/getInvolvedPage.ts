@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { INTAKE_KINDS } from "./intakeSubmission";
 
 export const getInvolvedPage = defineType({
   name: "getInvolvedPage",
@@ -43,6 +44,7 @@ export const getInvolvedPage = defineType({
               type: "string",
               options: {
                 list: [
+                  { title: "Opens a form (goes to the Inbox)", value: "form" },
                   { title: "Opens an email", value: "email" },
                   { title: "Opens a link", value: "link" },
                   { title: "Shares CivicSync", value: "share" },
@@ -53,6 +55,13 @@ export const getInvolvedPage = defineType({
               validation: (r) => r.required(),
             }),
             defineField({ name: "buttonLabel", title: "Button text", type: "string", validation: (r) => r.required() }),
+            defineField({
+              name: "formKind",
+              title: "Form",
+              type: "string",
+              options: { list: [...INTAKE_KINDS] },
+              hidden: ({ parent }) => parent?.action !== "form",
+            }),
             defineField({
               name: "emailSubject",
               title: "Email subject",

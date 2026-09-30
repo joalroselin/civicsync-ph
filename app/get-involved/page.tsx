@@ -4,6 +4,7 @@ import { getGetInvolvedPage, getSiteSettings, type Way, type WayIcon } from "@/l
 import { PageHeader } from "../components/PageHeader";
 import { ShareSiteButton } from "./ShareSiteButton";
 import { EmailAction } from "../components/EmailAction";
+import { IntakeForm } from "../components/IntakeForm";
 
 export async function generateMetadata(): Promise<Metadata> {
   const page = await getGetInvolvedPage();
@@ -107,7 +108,9 @@ function WayCard({ way, email }: { way: Way; email: string }) {
       <h3 className="mt-4 font-display text-lg font-semibold text-gray-900">{way.title}</h3>
       <p className="mt-1.5 flex-1 text-sm leading-relaxed text-gray-700">{way.description}</p>
       <div className="mt-5">
-        {way.action === "share" ? (
+        {way.action === "form" && way.formKind ? (
+          <IntakeForm kind={way.formKind} label={way.buttonLabel} buttonClassName={button} email={email} />
+        ) : way.action === "share" ? (
           <ShareSiteButton label={way.buttonLabel} className={button} />
         ) : way.action === "link" && way.url ? (
           <a href={way.url} target={way.url.startsWith("/") ? undefined : "_blank"} rel="noreferrer" className={button}>

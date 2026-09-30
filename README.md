@@ -83,6 +83,10 @@ no redeploy.
 - `lib/sanity.ts`: read-only client with cache tags
 - `lib/content.ts`: `getSiteSettings()`, `getAboutPage()`, `getGetInvolvedPage()`, `getPressKit()`
 - `lib/content-defaults.ts`: the fallback copy if Sanity is unreachable
+- **Intake forms** (Get involved → translators, partners, commercial):
+  `app/api/intake` stores submissions in Sanity under `inbox.*` IDs, which
+  Sanity never serves to unauthenticated requests, even from a public
+  dataset. They appear in Studio → **Inbox**. Field rules live in `lib/intake.ts`.
   (also what `scripts/seed-content.mts` seeded)
 
 ## Roadmap

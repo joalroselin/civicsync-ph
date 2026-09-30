@@ -50,7 +50,9 @@ export interface Way {
   description: string;
   effort?: string;
   icon?: WayIcon;
-  action: "email" | "link" | "share";
+  action: "email" | "link" | "share" | "form";
+  /** For action "form": which intake form (see lib/intake.ts). */
+  formKind?: "translator" | "partner" | "commercial";
   buttonLabel: string;
   emailSubject?: string;
   /** Pre-filled email body, also offered as "Copy message template". */
@@ -163,7 +165,7 @@ export const DEFAULT_ABOUT_PAGE: AboutPage = {
     ),
     h2("Your privacy"),
     p(
-      "CivicSync is privacy first. You don’t need an account, and your Watchlist is saved only on your device. If you want it on your other devices too, you can sign in with Google to sync it; that’s the only time we store anything about you. We count visits anonymously, without cookies, to see which pages are useful. We never sell data or track you across other sites."
+      "CivicSync is privacy first. You don’t need an account, and your Watchlist is saved only on your device. If you want it on your other devices too, you can sign in with Google to sync it. The only other time we store anything about you is if you choose to send us a form, like joining the translator list; we use it only to reply to you, and delete it on request. We count visits anonymously, without cookies, to see which pages are useful. We never sell data or track you across other sites."
     ),
     h2("Open source"),
     p(
@@ -233,7 +235,8 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
         "We’re planning Filipino and major regional languages, reviewed by native speakers. Join the translator list and we’ll reach out when it’s ready.",
       effort: "A few hours",
       icon: "language",
-      action: "email",
+      action: "form",
+      formKind: "translator",
       buttonLabel: "Join the translator list",
       comingSoon: true,
       emailSubject: "Contribute: Translation",
@@ -256,7 +259,8 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
       description: "Civic groups, universities, newsrooms, and data providers: let’s work together to make legislative information more accessible.",
       effort: "For organisations",
       icon: "handshake",
-      action: "email",
+      action: "form",
+      formKind: "partner",
       buttonLabel: "Get in touch",
       comingSoon: true,
       emailSubject: "Partnership: CivicSync PH",
@@ -269,7 +273,8 @@ export const DEFAULT_GET_INVOLVED_PAGE: GetInvolvedPage = {
         "Want to build CivicSync into a closed-source product, or run a modified version without publishing your changes? A commercial licence lets you, and helps fund development.",
       effort: "For businesses",
       icon: "briefcase",
-      action: "email",
+      action: "form",
+      formKind: "commercial",
       buttonLabel: "Ask about a licence",
       comingSoon: true,
       emailSubject: "Commercial licence: CivicSync PH",
@@ -307,7 +312,7 @@ export const DEFAULT_PRESS_KIT: PressKit = {
       _key: "faq-privacy",
       question: "Does it collect personal data?",
       answer:
-        "No. CivicSync is privacy first: no account is needed, and the Watchlist is stored on the user's own device. Users who choose to sign in with Google have their Watchlist synced so it follows them across devices. Visits are counted anonymously, without cookies, and no data is sold or used to track people across other sites.",
+        "No. CivicSync is privacy first: no account is needed, and the Watchlist is stored on the user's own device. Users who choose to sign in with Google have their Watchlist synced so it follows them across devices, and contact forms store only what people choose to send. Visits are counted anonymously, without cookies, and no data is sold or used to track people across other sites.",
     },
     {
       _key: "faq-commercial",
