@@ -5,6 +5,7 @@ import {
   billLabel,
   searchBills,
   parseBillNumber,
+  personShortName,
   type OpenCongressBill,
   type OpenCongressPerson,
 } from "@/lib/openCongress";
@@ -49,6 +50,23 @@ export interface BillSummary {
   dateFiled: string | null;
   /** undefined → don't show a status badge (e.g. search rows without a lookup) */
   status?: string | null;
+  /** Author display names, principal author first. */
+  authors: string[];
+}
+
+export type AuthorRole = "Senator" | "Representative";
+
+/** Senate bills are filed by senators, House bills by representatives (at the time of filing). */
+export function authorRole(label: string): AuthorRole {
+  return label.startsWith("SB") ? "Senator" : "Representative";
+}
+
+/** "Sen. Risa Hontiveros +2" / "Rep. Jernie Nisay" */
+export function authorLine(bill: Pick<BillSummary, "label" | "authors">): string | null {
+  if (!bill.authors.length) return null;
+  const prefix = authorRole(bill.label) === "Senator" ? "Sen." : "Rep.";
+  const more = bill.authors.length > 1 ? ` +${bill.authors.length - 1}` : "";
+  return `${prefix} ${bill.authors[0]}${more}`;
 }
 
 export function summaryFromOpenCongress(bill: OpenCongressBill, status?: string | null): BillSummary {
@@ -59,6 +77,11 @@ export function summaryFromOpenCongress(bill: OpenCongressBill, status?: string 
     title: billTitle(bill),
     dateFiled: bill.date_filed,
     status,
+    authors: bill.authors?.length
+      ? bill.authors.map(personShortName)
+      : bill.authors_raw
+        ? bill.authors_raw.split(/;|\band\b/).map((n) => displayAuthorName(n.trim())).filter(Boolean)
+        : [],
   };
 }
 
@@ -71,6 +94,7 @@ export function summaryFromBatasWatch(m: BatasWatchMeasure): BillSummary {
     title: m.title ?? m.longTitle ?? "Untitled bill",
     dateFiled: m.filedAt,
     status: statusText(m),
+    authors: (m.authorCredits?.length ? m.authorCredits.map((a) => a.name) : m.primaryAuthors ?? []).map(displayAuthorName),
   };
 }
 

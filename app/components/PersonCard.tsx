@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { personInitials, personName, personShortName, type OpenCongressPerson } from "@/lib/openCongress";
 
-export function PersonCard({ person }: { person: OpenCongressPerson }) {
+/** `role` (e.g. "Senator") is shown when the card appears under a bill's authors. */
+export function PersonCard({ person, role }: { person: OpenCongressPerson; role?: string }) {
   return (
     <Link
       href={`/people/${person.id}`}
@@ -10,7 +11,10 @@ export function PersonCard({ person }: { person: OpenCongressPerson }) {
       <Avatar person={person} />
       <div className="min-w-0 flex-1">
         <p className="truncate font-semibold text-gray-900">{personShortName(person)}</p>
-        <p className="truncate text-xs text-gray-500">{personName(person)}</p>
+        <p className="truncate text-xs text-gray-500">
+          {role && <span className="mr-1.5 rounded bg-navy/10 px-1.5 py-0.5 font-semibold text-navy">{role}</span>}
+          {personName(person)}
+        </p>
       </div>
       <span className="shrink-0 text-xs font-semibold text-navy">Receipts →</span>
     </Link>

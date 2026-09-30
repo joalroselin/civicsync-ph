@@ -32,6 +32,8 @@ export interface WatchedBill {
   title: string;
   congress: number;
   status: string | null;
+  /** e.g. "Sen. Risa Hontiveros +2"; filled when saved or on the next status refresh. */
+  authorLine?: string;
   savedAt: number;
 }
 
@@ -139,23 +141,32 @@ export function WatchlistProvider({ children }: { children: React.ReactNode }) {
         try {
           const res = await fetch(`/api/bills/${encodeURIComponent(item.id)}`);
           if (!res.ok) return null;
-          const { status } = (await res.json()) as { status: string | null };
-          return status && status !== item.status ? { id: item.id, status } : null;
+          const bill = (await res.json()) as { status: string | null; label: string; authors: { first_name?: string; last_name?: string; aliases?: string[] }[]; authorNames: string[] };
+          const names = bill.authors?.length
+            ? bill.authors.map((a) => `${a.aliases?.[0] ?? a.first_name?.split(" ")[0] ?? ""} ${a.last_name ?? ""}`.trim())
+            : bill.authorNames ?? [];
+          const line = names.length ? `${bill.label?.startsWith("SB") ? "Sen." : "Rep."} ${names[0]}${names.length > 1 ? ` +${names.length - 1}` : ""}` : undefined;
+          const statusChanged = bill.status && bill.status !== item.status;
+          const authorChanged = line && line !== item.authorLine;
+          return statusChanged || authorChanged ? { id: item.id, status: statusChanged ? bill.status! : item.status, authorLine: line ?? item.authorLine } : null;
         } catch {
           return null;
         }
       })
     );
-    const changed = new Map(updates.filter(Boolean).map((u) => [u!.id, u!.status]));
+    const changed = new Map(updates.filter(Boolean).map((u) => [u!.id, u!]));
     if (changed.size === 0) return;
 
-    const next = itemsRef.current.map((i) => (changed.has(i.id) ? { ...i, status: changed.get(i.id)! } : i));
+    const next = itemsRef.current.map((i) => {
+      const u = changed.get(i.id);
+      return u ? { ...i, status: u.status, authorLine: u.authorLine } : i;
+    });
     setItems(next);
     writeLocal(next);
     if (user) {
       const sync = await loadSync();
-      for (const [id, status] of Array.from(changed)) {
-        sync.updateStatus(user.uid, id, status).catch((e) => console.error("Watchlist sync failed", e));
+      for (const [id, u] of Array.from(changed)) {
+        if (u.status) sync.updateStatus(user.uid, id, u.status).catch((e) => console.error("Watchlist sync failed", e));
       }
     }
   }, [user]);

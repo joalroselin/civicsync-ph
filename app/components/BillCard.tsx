@@ -1,11 +1,12 @@
 import Link from "next/link";
-import type { BillSummary } from "@/lib/bills";
+import { authorLine, authorRole, type BillSummary } from "@/lib/bills";
 import { StatusBadge } from "./StatusBadge";
 import { WatchButton } from "./WatchButton";
 import { formatDate, ordinal, toTitleCase } from "@/lib/format";
 
-export function BillCard({ bill }: { bill: BillSummary }) {
+export function BillCard({ bill, hideAuthor = false }: { bill: BillSummary; hideAuthor?: boolean }) {
   const title = toTitleCase(bill.title);
+  const byline = hideAuthor ? null : authorLine(bill);
   return (
     <Link
       href={`/bills/${bill.routeId}`}
@@ -19,6 +20,7 @@ export function BillCard({ bill }: { bill: BillSummary }) {
           </span>
         </div>
         <p className="mt-1.5 line-clamp-3 text-[15px] font-medium leading-snug text-gray-900">{title}</p>
+        {byline && <AuthorByline text={byline} role={authorRole(bill.label)} />}
         {bill.status !== undefined && (
           <div className="mt-2">
             <StatusBadge status={bill.status} />
@@ -27,18 +29,34 @@ export function BillCard({ bill }: { bill: BillSummary }) {
       </div>
       <WatchButton
         variant="icon"
-        bill={{ id: bill.routeId, label: bill.label, title, congress: bill.congress, status: bill.status ?? null }}
+        bill={{ id: bill.routeId, label: bill.label, title, congress: bill.congress, status: bill.status ?? null, authorLine: byline ?? undefined }}
       />
     </Link>
   );
 }
 
-export function BillList({ bills }: { bills: BillSummary[] }) {
+/** "Sen. Risa Hontiveros +2", with the full role for screen readers. */
+export function AuthorByline({ text, role }: { text: string; role: string }) {
+  return (
+    <p className="mt-1 flex items-center gap-1.5 text-xs text-gray-600" title={role}>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-gray-400" aria-hidden>
+        <circle cx="12" cy="8" r="4" />
+        <path d="M4 21a8 8 0 0 1 16 0" strokeLinecap="round" />
+      </svg>
+      <span className="truncate">
+        <span className="sr-only">{role}: </span>
+        {text}
+      </span>
+    </p>
+  );
+}
+
+export function BillList({ bills, hideAuthor = false }: { bills: BillSummary[]; hideAuthor?: boolean }) {
   return (
     <ul className="flex flex-col gap-3">
       {bills.map((b) => (
         <li key={b.routeId}>
-          <BillCard bill={b} />
+          <BillCard bill={b} hideAuthor={hideAuthor} />
         </li>
       ))}
     </ul>

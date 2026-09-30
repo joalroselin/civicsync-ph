@@ -8,6 +8,7 @@ import { WatchButton } from "../components/WatchButton";
 import { PageHeader } from "../components/PageHeader";
 import { BillListSkeleton } from "../components/Skeleton";
 import { formatDate } from "@/lib/format";
+import { AuthorByline } from "../components/BillCard";
 
 export default function WatchlistPage() {
   const { items, ready, user, syncAvailable, signIn, signOut, refreshStatuses } = useWatchlist();
@@ -85,6 +86,7 @@ export default function WatchlistPage() {
                       <span>Saved {formatDate(new Date(b.savedAt).toISOString())}</span>
                     </div>
                     <p className="mt-1.5 line-clamp-3 text-[15px] font-medium leading-snug">{b.title}</p>
+                    {b.authorLine && <AuthorByline text={b.authorLine} role={b.label.startsWith("SB") ? "Senator" : "Representative"} />}
                     <div className="mt-2">
                       <StatusBadge status={b.status} />
                     </div>

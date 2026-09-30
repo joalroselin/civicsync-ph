@@ -41,6 +41,9 @@ export default async function BillPage({ params }: { params: { id: string } }) {
 
   const title = toTitleCase(bill.title);
   const isCurrent = bill.congress === BATASWATCH_CONGRESS;
+  // Senate bills are filed by senators, House bills by representatives.
+  const role = bill.chamber === "Senate" ? "Senator" : "Representative";
+  const authorCount = Math.max(bill.authors.length, bill.authorNames.length);
   const { contactEmail } = await getSiteSettings();
   const reportSubject = `Data correction: ${bill.label} (CivicSync PH)`;
   const reportBody = `Bill: ${bill.label}, ${ordinal(bill.congress)} Congress\nPage: https://civicsync-ph-gamma.vercel.app/bills/${bill.id}\n\nWhat looks wrong (status, author, title, committee…):\n\nWhat it should say:\n\nWhere you saw the correct information (link to the official Senate or House record, if you have one):\n`;
@@ -107,12 +110,12 @@ export default async function BillPage({ params }: { params: { id: string } }) {
             )}
           </Card>
           <div className="hidden xl:block">
-            <Card title={Math.max(bill.authors.length, bill.authorNames.length) === 1 ? "Author" : "Authors"}>
+            <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${role}s`}>
               {bill.authors.length > 0 ? (
                 <ul className="-mx-1 flex flex-col gap-2">
                   {bill.authors.map((a) => (
                     <li key={a.id}>
-                      <PersonCard person={a} />
+                      <PersonCard person={a} role={role} />
                     </li>
                   ))}
                 </ul>
@@ -121,8 +124,11 @@ export default async function BillPage({ params }: { params: { id: string } }) {
                   {bill.authorNames.map((name) => (
                     <li key={name}>
                       <SearchLink q={surnameOf(name)} className="flex items-center justify-between py-2.5 text-sm font-medium">
-                        {name}
-                        <span className="text-xs text-navy">Receipts →</span>
+                        <span className="flex min-w-0 items-center gap-2">
+                          <span className="shrink-0 rounded bg-navy/10 px-1.5 py-0.5 text-[11px] font-semibold text-navy">{role}</span>
+                          <span className="truncate">{name}</span>
+                        </span>
+                        <span className="shrink-0 text-xs text-navy">Receipts →</span>
                       </SearchLink>
                     </li>
                   ))}
@@ -153,12 +159,12 @@ export default async function BillPage({ params }: { params: { id: string } }) {
             </Card>
           )}
           <div className="xl:hidden">
-            <Card title={Math.max(bill.authors.length, bill.authorNames.length) === 1 ? "Author" : "Authors"}>
+            <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${role}s`}>
               {bill.authors.length > 0 ? (
                 <ul className="-mx-1 flex flex-col gap-2">
                   {bill.authors.map((a) => (
                     <li key={a.id}>
-                      <PersonCard person={a} />
+                      <PersonCard person={a} role={role} />
                     </li>
                   ))}
                 </ul>
@@ -167,8 +173,11 @@ export default async function BillPage({ params }: { params: { id: string } }) {
                   {bill.authorNames.map((name) => (
                     <li key={name}>
                       <SearchLink q={surnameOf(name)} className="flex items-center justify-between py-2.5 text-sm font-medium">
-                        {name}
-                        <span className="text-xs text-navy">Receipts →</span>
+                        <span className="flex min-w-0 items-center gap-2">
+                          <span className="shrink-0 rounded bg-navy/10 px-1.5 py-0.5 text-[11px] font-semibold text-navy">{role}</span>
+                          <span className="truncate">{name}</span>
+                        </span>
+                        <span className="shrink-0 text-xs text-navy">Receipts →</span>
                       </SearchLink>
                     </li>
                   ))}

@@ -124,7 +124,7 @@ export default async function PersonPage({
               </p>
             ) : (
               <>
-                <BillList bills={bills.data} />
+                <BillList bills={bills.data} hideAuthor />
                 <p className="mt-3 text-[11px] text-gray-400">
                   {congress === BATASWATCH_CONGRESS
                     ? "Current list via BatasWatch (independent tracker)."
