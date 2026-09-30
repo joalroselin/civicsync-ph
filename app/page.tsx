@@ -13,11 +13,12 @@ import { BillListSkeleton } from "./components/Skeleton";
 import { LiveDataUnavailable } from "./components/LiveDataUnavailable";
 import { Logo } from "./components/Logo";
 import { Credit } from "./components/Credit";
+import { SocialIcons } from "./components/SocialIcons";
 
 export const revalidate = 1800;
 
 export default async function Home() {
-  const { homeSuggestions } = await getSiteSettings();
+  const { homeSuggestions, socialLinks } = await getSiteSettings();
   return (
     <main className="flex flex-col gap-7 p-5 md:py-8 lg:gap-8">
       <header className="rounded-[20px] bg-navy p-5 pb-6 text-white shadow-md md:p-8 lg:p-10">
@@ -80,6 +81,7 @@ export default async function Home() {
           <Link href="/get-involved" className="hover:text-navy">Get involved</Link>
           <Link href="/press" className="hover:text-navy">Press kit</Link>
         </p>
+        <SocialIcons links={socialLinks} className="pt-1" />
       </div>
     </main>
   );

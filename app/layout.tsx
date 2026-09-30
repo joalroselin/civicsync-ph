@@ -6,6 +6,7 @@ import { BottomNav, SideNav } from "./components/Nav";
 import { PwaSupport } from "./components/PwaSupport";
 import { SearchNavigationProvider } from "./components/SearchNavigation";
 import { AnnouncementBanner } from "./components/AnnouncementBanner";
+import { getSiteSettings } from "@/lib/content";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -26,14 +27,15 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const { socialLinks } = await getSiteSettings();
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="bg-paper font-sans text-gray-900 antialiased">
         <WatchlistProvider>
           <SearchNavigationProvider>
             <div className="md:flex">
-              <SideNav />
+              <SideNav socialLinks={socialLinks} />
               <div className="min-w-0 flex-1">
                 <AnnouncementBanner />
                 {/* Phone: narrow column above the tab bar. Tablet/desktop: wider, no tab bar. */}

@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { useWatchlist } from "./WatchlistProvider";
 import { Logo } from "./Logo";
 import { Credit } from "./Credit";
+import { SocialIcons } from "./SocialIcons";
+import type { SocialLink } from "@/lib/content";
 
 const tabs = [
   { href: "/", label: "Home", icon: HomeIcon, match: (p: string) => p === "/" },
@@ -56,7 +58,7 @@ export function BottomNav() {
 }
 
 /** Tablet and up: sticky left sidebar with the same destinations. */
-export function SideNav() {
+export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
   const pathname = usePathname();
   const { items } = useWatchlist();
 
@@ -102,6 +104,7 @@ export function SideNav() {
           <Link href="/get-involved" className="hover:text-navy">Get involved</Link>
           <Link href="/press" className="hover:text-navy">Press kit</Link>
         </p>
+        <SocialIcons links={socialLinks} className="pt-1" />
       </div>
     </aside>
   );
