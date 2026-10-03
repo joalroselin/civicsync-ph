@@ -26,6 +26,8 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   appleWebApp: { capable: true, title: "CivicSync", statusBarStyle: "default" },
   icons: { icon: "/icon.svg", apple: "/apple-touch-icon.png" },
+  // Google Search Console ownership (public by design; also see public/google*.html).
+  verification: { google: "z8swIy-DYlRIjaahL6l5QGpZ5lBusZxjJv3ABbioRIg" },
 };
 
 export const viewport: Viewport = {
