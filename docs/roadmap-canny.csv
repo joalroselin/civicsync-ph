@@ -37,7 +37,7 @@ CS-101,Faster loading for users in the Philippines,"The app's servers now run in
 CS-102,Lighter app on mobile data,"Sign-in features load only when you need them, halving the data used on a first visit.",Complete,Performance,Performance;Deployed,2026-09-30
 CS-103,Rich previews when sharing,"Links to bills and lawmakers shared on Facebook, Messenger, and X show a preview card with the title and status.",Complete,Sharing,Deployed,2026-09-30
 CS-104,Our own web address,Move from the temporary vercel.app link to a proper domain (e.g. civicsync.ph).,Planned,Platform,,
-CS-105,Accessibility improvements,"Better screen-reader support, contrast, and tap targets, aiming for WCAG 2.1 AA.",Planned,Accessibility,,
+CS-105,Accessibility improvements,"Readable contrast in light and dark mode, a skip-to-content link, and an automatic accessibility check (WCAG 2.1 AA) on every change.",Complete,Accessibility,Deployed,2026-10-03
 CS-106,More complete data for newer bills,Work with data partners to fill gaps for bills filed since late 2025.,Open,Data,,
 CS-107,Privacy-friendly analytics,"Anonymous, cookieless visit counts so we can see which pages are useful. No personal data, no cross-site tracking.",Complete,Trust,Privacy;Under the hood;Deployed,2026-09-30
 CS-108,"Upgrade to the latest app framework (Next.js 16, React 19)","Why: CivicSync runs on Next.js 14 and React 18, two major versions behind. Staying behind means newer tools increasingly won't work with it (the content editor already had to be hosted separately for this reason), older versions get less attention for bug and security fixes, and we miss performance improvements. What changes: page parameters become asynchronous (an official tool handles most of it), a small change to how cached content is refreshed, and a new default build tool. All current libraries support React 19. Plan: do it on a separate branch with a full check of every page before merging. Afterwards, the content editor can move into the app at /studio. Estimated effort: a few hours.",Complete,Under the hood,Under the hood;Performance;Deployed,2026-10-03
@@ -51,7 +51,7 @@ CS-206,Privacy page,"A full explanation of what's stored on your device, what's 
 CS-207,Major regional languages,"Cebuano, Ilocano, Hiligaynon, Waray, Bikol, Kapampangan, and Pangasinan, reviewed by native speakers.",Open,Language,,
 CS-208,Translated bill summaries,"Plain-language summaries in more languages, clearly labelled as machine-translated, with the original alongside.",Open,Language,,
 CS-301,Browse bills by topic,"Explore 20th Congress bills by topic, like Health, Education or Agriculture, with the most relevant bills first and a Senate/House filter.",Complete,Discovery,Deployed,2026-10-03
-CS-302,Richer lawmaker profiles,"Photos, committee memberships, and frequent co-authors.",Open,Receipts,,
+CS-302,Richer lawmaker profiles,"Photos, district or party-list, and Senate positions are live for current lawmakers. Still to come: committee memberships and frequent co-authors.",In Progress,Receipts,,
 CS-303,Bill timelines,See a bill's full history of status changes over time.,Open,Bills,,
 CS-304,Compare lawmakers side by side,"Compare bill counts by congress, topic, and outcome.",Open,Receipts,,
 CS-305,Link enacted bills to the final law,Connect bills that became Republic Acts to the law's text.,Open,Bills,,
@@ -76,3 +76,6 @@ CS-120,Smarter search on Receipts,"Best matches ranked by meaning with plain-lan
 CS-121,Faster roadmap updates,"A one-line command updates this board from our code, and shipped items stop being tagged Deployed after 30 days automatically.",Complete,Under the hood,Under the hood;Deployed,2026-10-03
 CS-122,Tidy author lists on busy bills,"Bills with dozens of authors show a count and the first five, with the rest in a compact list you can search (Find an author).",Complete,Bills,Deployed,2026-10-03
 CS-123,Authors link to the right lawmaker,"Fixed: some authors opened the wrong profile when two sources spell a name differently (Brian Poe opened Grace Poe). Authors now link by official House member codes, and each lawmaker's live list includes bills filed under any of their names.",Complete,Receipts,Deployed,2026-10-03
+CS-124,Related bills,"Every bill page shows similar bills from the 20th Congress, including the same proposal filed in the other chamber.",Complete,Bills,Deployed,2026-10-03
+CS-125,Print a bill page,"A clean, ink-friendly printout of any bill (status, summary, authors, sources) with a link back, for classes and handouts.",Complete,Bills,Deployed,2026-10-03
+CS-126,Quicker ways to search,"Press / to search from anywhere, and a helpful not-found page with search and suggestions instead of a dead end.",Complete,Receipts,Deployed,2026-10-03
