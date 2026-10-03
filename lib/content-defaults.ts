@@ -122,7 +122,7 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
     { _key: "social-instagram", platform: "Instagram", url: "https://www.instagram.com/civicsyncph" },
   ],
   // Everyday topics only: naming lawmakers here would read as partisan.
-  homeSuggestions: ["rice", "teachers", "nurses", "jeepney", "mental health"],
+  homeSuggestions: ["rice", "flood", "teachers", "nurses", "jeepney", "mental health"],
   stats: { currentCongressBills: "13,600+", totalRecords: "165,000+", asOf: "2026-09-24" },
   announcement: { enabled: false, message: "" },
 };
