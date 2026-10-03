@@ -14,8 +14,9 @@ export interface CiteInput {
 }
 
 const ord = (n: number) => `${n}${n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] ?? "th"}`;
-const date = (iso: string, style: "long" | "mla") => {
+const date = (iso: string, style: "long" | "mla" | "dmy") => {
   const d = new Date(`${iso}T00:00:00Z`);
+  if (style === "dmy") return d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
   if (style === "long") return d.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" });
   // MLA abbreviates months longer than four letters: 27 Aug. 2025, 3 June 2026
   const m = d.toLocaleDateString("en-US", { month: "long", timeZone: "UTC" });
@@ -32,6 +33,12 @@ export function citations(b: CiteInput, accessed: string) {
 
   return [
     { key: "apa", name: "APA 7", text: `${body}. (${year}). ${b.title} (${billNo}, ${congress}). ${b.url}` },
+    {
+      // Harvard (Cite Them Right): Author (Year) Title. Details. Available at: URL (Accessed: date).
+      key: "harvard",
+      name: "Harvard",
+      text: `${body} (${year}) ${b.title}. ${billNo}, ${congress}. Available at: ${b.url} (Accessed: ${date(accessed, "dmy")}).`,
+    },
     {
       key: "mla",
       name: "MLA 9",

@@ -68,4 +68,4 @@ CS-112,Embed a bill's live status on your site,"A copy-paste card or badge for b
 CS-113,Calendar and RSS feeds for your Watchlist,"Subscribe in Google Calendar, Apple Calendar or any news reader to see hearings and status changes where you already look.",Open,Watchlist,,
 CS-114,Ask about a bill on Messenger or Viber,Send a bill number or lawmaker name to a chat bot and get the status and a link back. No app needed.,Open,Discovery,,
 CS-115,Bill status inside news articles,"A browser extension that recognises bill numbers on any page (news, Facebook) and shows the live status on hover.",Open,Discovery,,
-CS-116,Cite this bill,"One-tap citations (APA, MLA, Chicago, BibTeX) on every bill, and a CSV download of any lawmaker's bills, for students, researchers and journalists.",Complete,Research,Deployed,2026-10-03
+CS-116,Cite this bill,"One-tap citations (APA, Harvard, MLA, Chicago, BibTeX) on every bill, and a CSV download of any lawmaker's bills, for students, researchers and journalists.",Complete,Research,Deployed,2026-10-03
