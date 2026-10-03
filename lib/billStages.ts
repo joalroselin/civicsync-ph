@@ -25,12 +25,12 @@ export const STAGES = [
   {
     short: "Other chamber",
     title: "The other chamber",
-    body: "The bill goes to the other chamber (House or Senate), which repeats the same steps with its own [[version]].",
+    body: "The bill goes to the other chamber (House or Senate), which repeats the same steps. Along the way it may change the wording, or pass its own bill on the same topic instead. Either way, each chamber now has its own [[version]], and both must match word for word before the bill can become law.",
   },
   {
     short: "Bicam",
     title: "Bicameral conference",
-    body: "If the two versions differ, members of both chambers meet to agree on one text. Both chambers then [[ratify]] it.",
+    body: "If the two versions differ, even slightly, a small group from each chamber meets to agree on one final text. Both chambers then [[ratify]] it.",
   },
   {
     short: "President",

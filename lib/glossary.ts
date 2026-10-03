@@ -11,7 +11,7 @@ export const GLOSSARY: Record<string, string> = {
   "public hearings": "Committee meetings where experts, agencies and citizens give their views on a bill. Most are open to the public and streamed.",
   amendments: "Proposed changes to a bill’s wording, voted on before the bill is approved.",
   "rules committee": "The committee that sets each chamber’s agenda, deciding which bills reach the floor and when.",
-  version: "Each chamber passes its own text of a bill, which may differ from the other’s.",
+  version: "The exact wording one chamber approved. The Senate and House often agree on the idea but differ on details, like amounts, deadlines or who is covered.",
   ratify: "A final vote by each chamber approving the text agreed on in the bicameral conference.",
   "malacañang": "The official home and office of the President, often used to mean the President’s office.",
   veto: "The President’s rejection of a bill. Congress can override it with a two-thirds vote in both chambers.",
