@@ -36,6 +36,8 @@ for (const c of checks) {
     const problems = [
       !want.includes(res.status) && `status ${res.status}, wanted ${want.join("/")}`,
       c.contains && res.status === 200 && !body.includes(c.contains) && `missing "${c.contains}"`,
+      // The app's error page renders with status 200, so check the text too.
+      res.status === 200 && body.includes("Something went wrong") && "shows the error page",
       c.type && res.status === 200 && !(res.headers.get("content-type") ?? "").includes(c.type) && `content-type ${res.headers.get("content-type")}`,
     ].filter(Boolean);
     if (problems.length) failed++;

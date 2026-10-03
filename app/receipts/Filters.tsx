@@ -19,7 +19,7 @@ export function Filters({ q, chamber, congress }: { q: string; chamber?: string;
   };
   const pill = (active: boolean) =>
     `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${
-      active ? "bg-navy text-white ring-navy" : "bg-white text-gray-600 ring-gray-200 hover:ring-navy/40"
+      active ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"
     }`;
 
   return (
@@ -41,7 +41,7 @@ export function Filters({ q, chamber, congress }: { q: string; chamber?: string;
         id="congress-filter"
         value={congress ?? ""}
         onChange={(e) => router.push(href({ congress: e.target.value || undefined }), { scroll: false })}
-        className="rounded-full bg-white py-1 pl-3 pr-7 text-xs font-semibold text-gray-700 ring-1 ring-gray-200 hover:ring-navy/40"
+        className="rounded-full bg-surface py-1 pl-3 pr-7 text-xs font-semibold text-gray-700 ring-1 ring-gray-200 hover:ring-navy-ink/40"
       >
         <option value="">All congresses</option>
         {CONGRESSES.map((n) => (

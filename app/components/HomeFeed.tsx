@@ -62,7 +62,7 @@ export function HomeFeed({ filed, moved }: { filed: { senate: FeedBill[]; house:
         />
       </div>
 
-      <section className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200/70" aria-live="polite">
+      <section className="overflow-hidden rounded-2xl bg-surface shadow-sm ring-1 ring-gray-200/70" aria-live="polite">
         <p className="flex items-center justify-between border-b border-gray-100 bg-gray-50/80 px-4 py-2.5 text-xs text-gray-500">
           <span className="font-semibold uppercase tracking-wider text-gray-600">
             {chamber === "all" ? "Senate and House" : chamber === "senate" ? "Senate" : "House of Representatives"}
@@ -83,7 +83,7 @@ export function HomeFeed({ filed, moved }: { filed: { senate: FeedBill[]; house:
         {view === "moved" && rows.length > 0 && (
           <p className="border-t border-gray-100 px-4 py-2.5 text-[11px] text-gray-400">
             Bills that passed a reading, were scheduled for debate, or moved between chambers in the last 45 days.{" "}
-            <Link href="/how-bills-become-law" className="underline underline-offset-2 hover:text-navy">
+            <Link href="/how-bills-become-law" className="underline underline-offset-2 hover:text-navy-ink">
               What the steps mean
             </Link>
           </p>
@@ -123,7 +123,7 @@ function Segmented<T extends string>({
           aria-selected={value === o.value}
           onClick={() => onChange(o.value)}
           className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition ${
-            value === o.value ? "bg-white text-navy shadow-sm" : "text-gray-500 hover:text-gray-800"
+            value === o.value ? "bg-surface text-navy-ink shadow-sm" : "text-gray-500 hover:text-gray-800"
           }`}
         >
           {o.label}
@@ -148,7 +148,7 @@ function Pills({ value, onChange }: { value: Chamber; onChange: (c: Chamber) => 
           aria-pressed={value === o.value}
           onClick={() => onChange(o.value)}
           className={`rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${
-            value === o.value ? "bg-navy text-white ring-navy" : "bg-white text-gray-600 ring-gray-200 hover:ring-navy/40"
+            value === o.value ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"
           }`}
         >
           {o.label}

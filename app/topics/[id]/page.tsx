@@ -29,7 +29,7 @@ export default async function TopicPage(props: { params: Promise<{ id: string }>
   const bills = hits?.map(summaryFromSemantic);
 
   const pill = (active: boolean) =>
-    `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy text-white ring-navy" : "bg-white text-gray-600 ring-gray-200 hover:ring-navy/40"}`;
+    `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"}`;
 
   return (
     <main className="px-5 pb-12 md:pt-4">
@@ -64,9 +64,9 @@ export default async function TopicPage(props: { params: Promise<{ id: string }>
         {!bills ? (
           <LiveDataUnavailable what="Bills for this topic" />
         ) : bills.length === 0 ? (
-          <p className="rounded-2xl bg-white p-5 text-center text-sm text-gray-500 ring-1 ring-gray-200">No bills found for this topic yet.</p>
+          <p className="rounded-2xl bg-surface p-5 text-center text-sm text-gray-500 ring-1 ring-gray-200">No bills found for this topic yet.</p>
         ) : (
-          <ul className="divide-y divide-gray-100 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200/70">
+          <ul className="divide-y divide-gray-100 overflow-hidden rounded-2xl bg-surface shadow-sm ring-1 ring-gray-200/70">
             {bills.map((b) => (
               <li key={b.routeId}>
                 <BillRow bill={b} summary={b.summary} />

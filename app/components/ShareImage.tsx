@@ -43,14 +43,14 @@ export function ShareImagePanel({ src, filename, intro }: { src: string; filenam
       {/* eslint-disable-next-line @next/next/no-img-element -- generated on demand; next/image adds nothing here */}
       <img src={`${src}?format=post`} alt="Preview of the share image" className="mx-auto mt-3 w-full max-w-[260px] rounded-xl shadow-md ring-1 ring-gray-200" loading="lazy" />
       <div className="mt-4 flex gap-2">
-        <button type="button" onClick={() => go("post")} disabled={!!busy} className={`${btn} bg-navy text-white ring-navy hover:bg-blue-900`}>
+        <button type="button" onClick={() => go("post")} disabled={!!busy} className={`${btn} bg-navy text-white ring-navy-ink hover:bg-blue-900`}>
           {busy === "post" ? "Preparing…" : "Post (4:5)"}
         </button>
-        <button type="button" onClick={() => go("story")} disabled={!!busy} className={`${btn} bg-white text-navy ring-gray-200 hover:ring-navy/40`}>
+        <button type="button" onClick={() => go("story")} disabled={!!busy} className={`${btn} bg-surface text-navy-ink ring-gray-200 hover:ring-navy-ink/40`}>
           {busy === "story" ? "Preparing…" : "Story (9:16)"}
         </button>
       </div>
-      {error && <p className="mt-2 text-xs text-crimson">Couldn’t make the image right now. Try again in a moment.</p>}
+      {error && <p className="mt-2 text-xs text-crimson-ink">Couldn’t make the image right now. Try again in a moment.</p>}
       <p className="mt-2 text-[11px] text-gray-400">On phones this opens your share menu. On computers the image downloads.</p>
     </div>
   );
@@ -65,7 +65,7 @@ export function ShareImageButton(props: { src: string; filename: string; intro: 
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold text-navy hover:bg-navy/5"
+        className="inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold text-navy-ink hover:bg-navy-ink/5"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
           <rect x="4" y="3" width="16" height="18" rx="2" />
@@ -74,7 +74,7 @@ export function ShareImageButton(props: { src: string; filename: string; intro: 
         {open ? "Hide share image" : "Share as image"}
       </button>
       {open && (
-        <div className="mt-2 rounded-2xl bg-white p-4 ring-1 ring-gray-200/70">
+        <div className="mt-2 rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70">
           <ShareImagePanel {...props} />
         </div>
       )}

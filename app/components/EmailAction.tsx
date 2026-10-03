@@ -41,7 +41,7 @@ export function EmailAction({
   };
 
   const small =
-    "inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-200 bg-white text-gray-800 hover:ring-gray-300";
+    "inline-flex items-center justify-center rounded-lg px-3 py-2 text-sm font-semibold ring-1 ring-inset ring-gray-200 bg-surface text-gray-800 hover:ring-gray-300";
 
   return (
     <div className={align === "center" ? "flex flex-col items-center" : ""}>
@@ -54,14 +54,14 @@ export function EmailAction({
           <p className="text-xs text-gray-500">Email</p>
           <div className="mt-0.5 flex items-center justify-between gap-2">
             <span className="min-w-0 truncate font-semibold text-gray-900">{email}</span>
-            <button type="button" className="shrink-0 text-xs font-semibold text-navy hover:underline" onClick={() => copy(email, "Email copied")}>
+            <button type="button" className="shrink-0 text-xs font-semibold text-navy-ink hover:underline" onClick={() => copy(email, "Email copied")}>
               Copy
             </button>
           </div>
           <p className="mt-2 text-xs text-gray-500">Subject</p>
           <div className="mt-0.5 flex items-center justify-between gap-2">
             <span className="min-w-0 truncate text-gray-800">{subject}</span>
-            <button type="button" className="shrink-0 text-xs font-semibold text-navy hover:underline" onClick={() => copy(subject, "Subject copied")}>
+            <button type="button" className="shrink-0 text-xs font-semibold text-navy-ink hover:underline" onClick={() => copy(subject, "Subject copied")}>
               Copy
             </button>
           </div>

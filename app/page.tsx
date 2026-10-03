@@ -146,7 +146,7 @@ function ChamberSkeleton() {
   return (
     <div>
       <div className="mb-3 h-10 w-64 animate-pulse rounded-xl bg-gray-100" />
-      <div className="rounded-2xl bg-white p-1 ring-1 ring-gray-200/70">
+      <div className="rounded-2xl bg-surface p-1 ring-1 ring-gray-200/70">
         <BillListSkeleton count={4} />
       </div>
     </div>

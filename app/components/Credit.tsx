@@ -9,7 +9,7 @@ export function Credit({ className = "", showAiCredit = false }: { className?: s
         href={REPO_URL}
         target="_blank"
         rel="noreferrer"
-        className="font-semibold text-gray-500 underline decoration-gray-300 underline-offset-2 hover:text-navy hover:decoration-navy"
+        className="font-semibold text-gray-500 underline decoration-gray-300 underline-offset-2 hover:text-navy-ink hover:decoration-navy-ink"
       >
         HelloJoal
       </a>

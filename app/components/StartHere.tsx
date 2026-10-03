@@ -31,15 +31,15 @@ export function StartHere() {
           <li key={t.href}>
             <Link
               href={t.href}
-              className="group flex h-full items-start gap-3 rounded-2xl bg-white p-4 ring-1 ring-gray-200/70 transition hover:ring-navy/30"
+              className="group flex h-full items-start gap-3 rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70 transition hover:ring-navy-ink/30"
             >
-              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-navy/10 text-navy">
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-navy-ink/10 text-navy-ink">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                   {t.icon}
                 </svg>
               </span>
               <span>
-                <span className="block text-sm font-semibold text-gray-900 group-hover:text-navy">{t.title}</span>
+                <span className="block text-sm font-semibold text-gray-900 group-hover:text-navy-ink">{t.title}</span>
                 <span className="mt-0.5 block text-xs leading-relaxed text-gray-500">{t.body}</span>
               </span>
             </Link>
@@ -55,7 +55,7 @@ export function SectionHeading({ id, eyebrow, title, action }: { id: string; eye
   return (
     <div className="mb-3 flex items-end justify-between gap-3">
       <div>
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-crimson">{eyebrow}</p>
+        <p className="text-[11px] font-semibold uppercase tracking-wider text-crimson-ink">{eyebrow}</p>
         <h2 id={id} className="mt-0.5 font-display text-xl font-semibold leading-tight lg:text-2xl">
           {title}
         </h2>

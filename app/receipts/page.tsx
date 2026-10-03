@@ -93,7 +93,7 @@ async function Results({ q, page, chamber, congress }: { q: string; page: number
 
       {best && best.length > 0 && (
         <Section id="best" title="Best matches · 20th Congress" note="Ranked by meaning, with plain-language summaries">
-          <ul className="divide-y divide-gray-100 overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200/70">
+          <ul className="divide-y divide-gray-100 overflow-hidden rounded-2xl bg-surface shadow-sm ring-1 ring-gray-200/70">
             {best.map((b) => (
               <li key={b.routeId}>
                 <BillRow bill={b} summary={b.summary} highlight={terms} />
@@ -155,7 +155,7 @@ async function RecordBills({
   if (summaries.length === 0) {
     if (hasOtherResults) return null;
     return (
-      <p className="rounded-2xl bg-white p-5 text-center text-sm text-gray-600 ring-1 ring-gray-200">
+      <p className="rounded-2xl bg-surface p-5 text-center text-sm text-gray-600 ring-1 ring-gray-200">
         No matches for <span className="font-semibold">“{q}”</span>
         {chamber || congress ? " with these filters" : ""}. Try a last name, a keyword from the bill title, or a bill number like “SB 1294”.
       </p>
@@ -217,7 +217,7 @@ async function Empty() {
         <ul className="flex flex-wrap gap-2">
           {homeSuggestions.map((s) => (
             <li key={s}>
-              <SearchLink q={s} className="block rounded-full bg-white px-3.5 py-1.5 text-sm font-medium shadow-sm ring-1 ring-gray-200/70 hover:ring-navy/30">
+              <SearchLink q={s} className="block rounded-full bg-surface px-3.5 py-1.5 text-sm font-medium shadow-sm ring-1 ring-gray-200/70 hover:ring-navy-ink/30">
                 {s}
               </SearchLink>
             </li>
@@ -232,7 +232,7 @@ async function Empty() {
             <h2 id="topics-heading" className="text-xs font-semibold uppercase tracking-wider text-gray-500">
               Browse by topic · 20th Congress
             </h2>
-            <Link href="/topics" className="text-sm font-semibold text-navy hover:text-crimson">
+            <Link href="/topics" className="text-sm font-semibold text-navy-ink hover:text-crimson-ink">
               All topics
             </Link>
           </div>
@@ -245,7 +245,7 @@ async function Empty() {
 
 function ErrorNote() {
   return (
-    <p className="mt-6 rounded-2xl bg-red-50 p-4 text-sm text-crimson ring-1 ring-red-200">
+    <p className="mt-6 rounded-2xl bg-red-50 p-4 text-sm text-crimson-ink ring-1 ring-red-200">
       Couldn’t reach Open Congress right now. Check your connection and try again.
     </p>
   );

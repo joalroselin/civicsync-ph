@@ -8,6 +8,7 @@ import { SearchNavigationProvider } from "./components/SearchNavigation";
 import { AnnouncementBanner } from "./components/AnnouncementBanner";
 import { getSiteSettings } from "@/lib/content";
 import { Analytics } from "@vercel/analytics/next";
+import { themeScript } from "./components/ThemeToggle";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -31,7 +32,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1E3A8A",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#1E3A8A" },
+    { media: "(prefers-color-scheme: dark)", color: "#0B101E" },
+  ],
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -40,7 +44,11 @@ export const viewport: Viewport = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { socialLinks } = await getSiteSettings();
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    // suppressHydrationWarning: the theme script adds "dark" before React loads.
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="bg-paper font-sans text-gray-900 antialiased">
         <WatchlistProvider>
           <SearchNavigationProvider>

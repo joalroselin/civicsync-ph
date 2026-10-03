@@ -23,7 +23,7 @@ export function Pager({ basePath, params, page, hasMore }: { basePath: string; p
     const s = qs.toString();
     return s ? `${basePath}?${s}` : basePath;
   };
-  const cls = "rounded-xl px-4 py-2.5 text-sm font-semibold ring-1 ring-gray-200 bg-white";
+  const cls = "rounded-xl px-4 py-2.5 text-sm font-semibold ring-1 ring-gray-200 bg-surface";
   return (
     <nav className="mt-4 flex items-center justify-between" aria-label="Pagination">
       {page > 1 ? <Link className={cls} href={href(page - 1)}>← Previous</Link> : <span />}

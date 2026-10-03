@@ -19,7 +19,7 @@ export function WatchlistPreview() {
         action={
           <Link
             href="/watchlist"
-            className="text-sm font-semibold text-navy hover:text-crimson"
+            className="text-sm font-semibold text-navy-ink hover:text-crimson-ink"
           >
             See all
           </Link>
@@ -30,9 +30,9 @@ export function WatchlistPreview() {
           <li key={b.id} className="w-64 shrink-0 snap-start lg:w-auto">
             <Link
               href={`/bills/${b.id}`}
-              className="flex h-full flex-col gap-2 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-200/70"
+              className="flex h-full flex-col gap-2 rounded-2xl bg-surface p-4 shadow-sm ring-1 ring-gray-200/70"
             >
-              <span className="text-xs font-semibold text-navy">{b.label}</span>
+              <span className="text-xs font-semibold text-navy-ink">{b.label}</span>
               <span className="line-clamp-2 text-sm font-medium leading-snug">
                 {b.title}
               </span>

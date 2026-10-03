@@ -22,15 +22,15 @@ function facts(stats: SiteSettings["stats"], social: SiteSettings["socialLinks"]
     ["Records", `${stats.totalRecords} legislative records; ${stats.currentCongressBills} bills in the current 20th Congress`],
     ["Live status", "20th Congress bills (status, committee, summaries)"],
     ["Data sources", "BetterGov Open Congress API; BatasWatch"],
-    ["Website", <a key="w" href={SITE_URL} className="text-navy underline">{SITE_URL.replace("https://", "")}</a>],
-    ["Source code", <a key="r" href={REPO_URL} className="text-navy underline">github.com/joalroselin/civicsync-ph</a>],
+    ["Website", <a key="w" href={SITE_URL} className="text-navy-ink underline">{SITE_URL.replace("https://", "")}</a>],
+    ["Source code", <a key="r" href={REPO_URL} className="text-navy-ink underline">github.com/joalroselin/civicsync-ph</a>],
     ["Licence", "Open source (GNU AGPL-3.0); commercial licences available"],
     ...(social.length
       ? [[
           "Social",
           <span key="s" className="flex flex-wrap gap-x-3">
             {social.map((l) => (
-              <a key={l._key} href={l.url} className="text-navy underline">
+              <a key={l._key} href={l.url} className="text-navy-ink underline">
                 {l.platform}
               </a>
             ))}
@@ -98,7 +98,7 @@ export default async function PressPage() {
           <a
             href="/press/civicsync-fact-sheet.pdf"
             download
-            className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-3 text-sm font-semibold text-navy ring-1 ring-gray-200 hover:ring-navy/40"
+            className="inline-flex items-center gap-2 rounded-xl bg-surface px-4 py-3 text-sm font-semibold text-navy-ink ring-1 ring-gray-200 hover:ring-navy-ink/40"
           >
             <DownloadIcon /> Fact sheet (PDF)
           </a>
@@ -114,7 +114,7 @@ export default async function PressPage() {
       </Section>
 
       <Section title="Fact sheet">
-        <dl className="overflow-hidden rounded-2xl bg-white ring-1 ring-gray-200/70">
+        <dl className="overflow-hidden rounded-2xl bg-surface ring-1 ring-gray-200/70">
           {FACTS.map(([k, v]) => (
             <div key={k} className="grid gap-1 border-b border-gray-100 px-4 py-3 last:border-0 sm:grid-cols-[160px_1fr] sm:gap-4">
               <dt className="text-xs font-semibold uppercase tracking-wider text-gray-500 sm:pt-0.5">{k}</dt>
@@ -130,8 +130,8 @@ export default async function PressPage() {
       <Section title="Key features">
         <ul className="grid gap-3 md:grid-cols-2">
           {FEATURES.map(([name, desc]) => (
-            <li key={name} className="rounded-2xl bg-white p-4 ring-1 ring-gray-200/70">
-              <p className="font-display font-semibold text-navy">{name}</p>
+            <li key={name} className="rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70">
+              <p className="font-display font-semibold text-navy-ink">{name}</p>
               <p className="mt-1 text-sm leading-relaxed text-gray-700">{desc}</p>
             </li>
           ))}
@@ -141,7 +141,7 @@ export default async function PressPage() {
       <Section title="Logos">
         <ul className="grid gap-4 sm:grid-cols-2">
           {LOGOS.map((l) => (
-            <li key={l.file} className="overflow-hidden rounded-2xl bg-white ring-1 ring-gray-200/70">
+            <li key={l.file} className="overflow-hidden rounded-2xl bg-surface ring-1 ring-gray-200/70">
               <div className={`grid h-40 place-items-center p-6 ${l.dark ? "bg-navy" : "bg-paper"}`}>
                 <Image
                   src={`/press/logos/${l.file}`}
@@ -154,11 +154,11 @@ export default async function PressPage() {
               <div className="flex items-center justify-between gap-3 px-4 py-3 text-sm">
                 <span className="text-gray-700">{l.label}</span>
                 <span className="flex shrink-0 gap-3 font-semibold">
-                  <a href={`/press/logos/${l.file}`} download className="text-navy hover:underline">
+                  <a href={`/press/logos/${l.file}`} download className="text-navy-ink hover:underline">
                     PNG
                   </a>
                   {l.svg && (
-                    <a href={`/press/logos/${l.svg}`} download className="text-navy hover:underline">
+                    <a href={`/press/logos/${l.svg}`} download className="text-navy-ink hover:underline">
                       SVG
                     </a>
                   )}
@@ -168,7 +168,7 @@ export default async function PressPage() {
           ))}
         </ul>
         <div className="mt-4 grid gap-3 text-sm sm:grid-cols-2">
-          <div className="rounded-2xl bg-white p-4 ring-1 ring-gray-200/70">
+          <div className="rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70">
             <p className="font-semibold text-gray-900">Please do</p>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-gray-700">
               <li>Leave clear space around the logo, at least the height of the icon’s dot</li>
@@ -176,7 +176,7 @@ export default async function PressPage() {
               <li>Write the name as “CivicSync PH”, or “CivicSync” for short</li>
             </ul>
           </div>
-          <div className="rounded-2xl bg-white p-4 ring-1 ring-gray-200/70">
+          <div className="rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70">
             <p className="font-semibold text-gray-900">Please don’t</p>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-gray-700">
               <li>Recolour, stretch, rotate, or add effects to the logo</li>
@@ -206,7 +206,7 @@ export default async function PressPage() {
       <Section title="Brand">
         <ul className="grid gap-3 sm:grid-cols-3">
           {COLORS.map((c) => (
-            <li key={c.hex} className="overflow-hidden rounded-2xl bg-white ring-1 ring-gray-200/70">
+            <li key={c.hex} className="overflow-hidden rounded-2xl bg-surface ring-1 ring-gray-200/70">
               <div className={`flex h-20 items-end p-3 font-mono text-sm ${c.text}`} style={{ background: c.hex }}>
                 {c.hex}
               </div>
@@ -224,19 +224,19 @@ export default async function PressPage() {
       </Section>
 
       <Section title="Crediting the data">
-        <div className="rounded-2xl bg-white p-4 text-sm leading-relaxed text-gray-700 ring-1 ring-gray-200/70">
+        <div className="rounded-2xl bg-surface p-4 text-sm leading-relaxed text-gray-700 ring-1 ring-gray-200/70">
           <p>
             CivicSync is built on open civic data. When describing where its information comes from, please credit:
           </p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>
-              <a href="https://open-congress-api.bettergov.ph" className="text-navy underline">
+              <a href="https://open-congress-api.bettergov.ph" className="text-navy-ink underline">
                 BetterGov Open Congress API
               </a>{" "}
               for lawmaker profiles and authorship history
             </li>
             <li>
-              <a href="https://bills.juris.ph" className="text-navy underline">
+              <a href="https://bills.juris.ph" className="text-navy-ink underline">
                 BatasWatch
               </a>{" "}
               for live bill status, committees, and plain-language summaries
@@ -253,7 +253,7 @@ export default async function PressPage() {
       </Section>
 
       <Section title="FAQ">
-        <div className="divide-y divide-gray-100 overflow-hidden rounded-2xl bg-white ring-1 ring-gray-200/70">
+        <div className="divide-y divide-gray-100 overflow-hidden rounded-2xl bg-surface ring-1 ring-gray-200/70">
           {press.faq.map(({ _key, question: q, answer: a }) => (
             <details key={_key} className="group px-4 py-3">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-gray-900">
@@ -269,7 +269,7 @@ export default async function PressPage() {
       </Section>
 
       <Section title="Contact">
-        <div className="rounded-2xl bg-white p-4 text-sm leading-relaxed text-gray-700 ring-1 ring-gray-200/70">
+        <div className="rounded-2xl bg-surface p-4 text-sm leading-relaxed text-gray-700 ring-1 ring-gray-200/70">
           <p>
             <span className="font-semibold text-gray-900">HelloJoal</span> is the independent developer behind
             CivicSync PH.
@@ -278,14 +278,14 @@ export default async function PressPage() {
             {CONTACT_EMAIL ? (
               <>
                 Press enquiries:{" "}
-                <a href={mailtoHref(CONTACT_EMAIL, ENQUIRY_SUBJECTS.press)} className="font-semibold text-navy underline">
+                <a href={mailtoHref(CONTACT_EMAIL, ENQUIRY_SUBJECTS.press)} className="font-semibold text-navy-ink underline">
                   {CONTACT_EMAIL}
                 </a>
               </>
             ) : (
               <>
                 For press enquiries, open an issue on{" "}
-                <a href={`${REPO_URL}/issues`} className="font-semibold text-navy underline">
+                <a href={`${REPO_URL}/issues`} className="font-semibold text-navy-ink underline">
                   GitHub
                 </a>
                 .
@@ -312,7 +312,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function Boilerplate({ label, text, className = "" }: { label: string; text: string; className?: string }) {
   return (
-    <div className={`flex flex-col rounded-2xl bg-white p-4 ring-1 ring-gray-200/70 ${className}`}>
+    <div className={`flex flex-col rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70 ${className}`}>
       <div className="mb-2 flex items-center justify-between gap-3">
         <span className="text-xs font-semibold uppercase tracking-wider text-gray-500">{label}</span>
         <CopyButton text={text} />
@@ -331,14 +331,14 @@ function Screenshot({ file, label, phone }: { file: string; label: string; phone
           alt={`CivicSync PH: ${label}`}
           width={phone ? 390 : 1440}
           height={phone ? 844 : 900}
-          className={`w-full rounded-2xl bg-white ring-1 ring-gray-200 transition group-hover:ring-navy/40 ${
+          className={`w-full rounded-2xl bg-surface ring-1 ring-gray-200 transition group-hover:ring-navy-ink/40 ${
             phone ? "" : "aspect-[16/10] object-cover object-top"
           }`}
           sizes={phone ? "(min-width: 1024px) 180px, 45vw" : "(min-width: 768px) 45vw, 90vw"}
         />
         <span className="mt-1.5 flex items-center justify-between text-xs text-gray-600">
           {label}
-          <span className="font-semibold text-navy opacity-0 transition group-hover:opacity-100">Download</span>
+          <span className="font-semibold text-navy-ink opacity-0 transition group-hover:opacity-100">Download</span>
         </span>
       </a>
     </li>

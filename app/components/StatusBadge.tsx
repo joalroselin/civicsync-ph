@@ -2,9 +2,9 @@ import { statusTone, type StatusTone } from "@/lib/batasWatch";
 
 const toneClasses: Record<StatusTone, string> = {
   law: "bg-emerald-50 text-emerald-800 ring-emerald-200",
-  moving: "bg-blue-50 text-navy ring-blue-200",
+  moving: "bg-blue-50 text-navy-ink ring-blue-200",
   committee: "bg-amber-50 text-amber-800 ring-amber-200",
-  stalled: "bg-red-50 text-crimson ring-red-200",
+  stalled: "bg-red-50 text-crimson-ink ring-red-200",
   unknown: "bg-gray-100 text-gray-600 ring-gray-200",
 };
 

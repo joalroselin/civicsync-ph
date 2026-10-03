@@ -50,7 +50,7 @@ export function SearchNavigationProvider({ children }: { children: React.ReactNo
 function SearchingOverlay({ query }: { query: string }) {
   return (
     <div className="fixed inset-0 z-40 flex cursor-wait items-start justify-center bg-paper/70 px-5 pt-[35vh] backdrop-blur-[2px] animate-[fade-in_150ms_ease-out]">
-      <div role="status" className="flex max-w-full items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg ring-1 ring-gray-200">
+      <div role="status" className="flex max-w-full items-center gap-3 rounded-2xl bg-surface px-5 py-4 shadow-lg ring-1 ring-gray-200">
         <Spinner />
         <p className="min-w-0 text-sm text-gray-700">
           Searching for <span className="font-semibold text-gray-900">“{query}”</span>…
@@ -60,7 +60,7 @@ function SearchingOverlay({ query }: { query: string }) {
   );
 }
 
-export function Spinner({ className = "h-5 w-5 text-navy" }: { className?: string }) {
+export function Spinner({ className = "h-5 w-5 text-navy-ink" }: { className?: string }) {
   return (
     <svg className={`shrink-0 animate-spin ${className}`} viewBox="0 0 24 24" fill="none" aria-hidden>
       <circle cx="12" cy="12" r="9" stroke="currentColor" strokeOpacity="0.2" strokeWidth="3" />

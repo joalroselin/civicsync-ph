@@ -77,7 +77,7 @@ export function Term({ children, definition }: { children: React.ReactNode; defi
         onPointerLeave={(e) => e.pointerType === "mouse" && closeSoon()}
         onFocus={(e) => e.target.matches(":focus-visible") && open()}
         onBlur={close}
-        className="cursor-help underline decoration-gray-400 decoration-dotted decoration-[1.5px] underline-offset-[3px] transition-colors hover:decoration-navy focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy/40 aria-expanded:decoration-navy"
+        className="cursor-help underline decoration-gray-400 decoration-dotted decoration-[1.5px] underline-offset-[3px] transition-colors hover:decoration-navy-ink focus-visible:rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-navy-ink/40 aria-expanded:decoration-navy-ink"
       >
         {children}
       </button>
@@ -88,7 +88,7 @@ export function Term({ children, definition }: { children: React.ReactNode; defi
           onPointerEnter={() => clearTimeout(closeTimer.current)}
           onPointerLeave={(e) => e.pointerType === "mouse" && closeSoon()}
           style={{ top: pos.top, left: pos.left, width: Math.min(WIDTH, typeof window === "undefined" ? WIDTH : window.innerWidth - 32) }}
-          className={`fixed z-50 rounded-xl bg-gray-900 px-3 py-2 text-left text-[13px] font-normal leading-snug text-white shadow-lg ${pos.above ? "-translate-y-full" : ""}`}
+          className={`fixed z-50 rounded-xl bg-slate-900 ring-1 ring-white/10 px-3 py-2 text-left text-[13px] font-normal leading-snug text-white shadow-lg ${pos.above ? "-translate-y-full" : ""}`}
         >
           {definition}
         </span>

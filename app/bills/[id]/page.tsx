@@ -164,7 +164,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
             <Card title="Subjects">
               <div className="flex flex-wrap gap-1.5">
                 {bill.subjects.map((s) => (
-                  <span key={s} className="rounded-full bg-navy/5 px-2.5 py-1 text-xs text-navy">
+                  <span key={s} className="rounded-full bg-navy-ink/5 px-2.5 py-1 text-xs text-navy-ink">
                     {s}
                   </span>
                 ))}
@@ -176,7 +176,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
               <ul className="divide-y divide-gray-100">
                 {bill.sourceUrls.map((s) => (
                   <li key={s.url}>
-                    <a href={s.url} target="_blank" rel="noreferrer" className="flex items-center justify-between gap-3 py-2.5 text-sm font-medium text-navy">
+                    <a href={s.url} target="_blank" rel="noreferrer" className="flex items-center justify-between gap-3 py-2.5 text-sm font-medium text-navy-ink">
                       <span className="truncate">{s.label}</span>
                       <span aria-hidden>↗</span>
                     </a>
@@ -195,7 +195,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
           subject={reportSubject}
           body={reportBody}
           label="Report an issue"
-          buttonClassName="font-semibold text-crimson underline underline-offset-2"
+          buttonClassName="font-semibold text-crimson-ink underline underline-offset-2"
           align="center"
         />
       </div>
@@ -221,7 +221,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-4 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-200/70">
+    <section className="mt-4 rounded-2xl bg-surface p-4 shadow-sm ring-1 ring-gray-200/70">
       <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-500">{title}</h3>
       {children}
     </section>

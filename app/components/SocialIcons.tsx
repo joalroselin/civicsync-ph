@@ -9,7 +9,7 @@ const HOVER_COLOR: Record<string, string> = {
 /** Always shown after the social accounts. */
 const EXTRA_LINKS = [
   { key: "roadmap", label: "Roadmap", href: "https://civicsyncph.canny.io", external: true, hover: "hover:text-[#525DF4]" },
-  { key: "press", label: "Press kit", href: "/press", external: false, hover: "hover:text-crimson" },
+  { key: "press", label: "Press kit", href: "/press", external: false, hover: "hover:text-crimson-ink" },
 ] as const;
 
 /** Small, muted icons: social accounts (from Sanity → Site settings), then Roadmap and Press kit. */
@@ -24,7 +24,7 @@ export function SocialIcons({ links, className = "" }: { links: SocialLink[]; cl
             rel="noreferrer"
             aria-label={`CivicSync on ${l.platform}`}
             title={l.platform}
-            className={`block text-gray-400 transition ${HOVER_COLOR[l.platform.toLowerCase()] ?? "hover:text-navy"}`}
+            className={`block text-gray-400 transition ${HOVER_COLOR[l.platform.toLowerCase()] ?? "hover:text-navy-ink"}`}
           >
             <PlatformIcon platform={l.platform} />
           </a>

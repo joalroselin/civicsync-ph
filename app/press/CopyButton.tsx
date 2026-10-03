@@ -16,7 +16,7 @@ export function CopyButton({ text }: { text: string }) {
           // Clipboard blocked (e.g. insecure context) — the text is still selectable.
         }
       }}
-      className="rounded-lg px-2 py-1 text-xs font-semibold text-navy hover:bg-navy/5"
+      className="rounded-lg px-2 py-1 text-xs font-semibold text-navy-ink hover:bg-navy-ink/5"
     >
       {copied ? "Copied" : "Copy"}
     </button>

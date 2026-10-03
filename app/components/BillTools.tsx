@@ -26,7 +26,7 @@ export function BillTools({ bill, id, siteUrl }: { bill: CiteInput; id: string; 
         </ToolButton>
       </div>
       {open && (
-        <div className="mx-auto mt-3 max-w-xl rounded-2xl bg-white p-4 text-left shadow-sm ring-1 ring-gray-200/70">
+        <div className="mx-auto mt-3 max-w-xl rounded-2xl bg-surface p-4 text-left shadow-sm ring-1 ring-gray-200/70">
           {open === "cite" ? (
             <CitePanel bill={bill} />
           ) : open === "embed" ? (
@@ -50,7 +50,7 @@ function ToolButton({ active, onClick, label, children }: { active: boolean; onC
       type="button"
       onClick={onClick}
       aria-expanded={active}
-      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold text-navy hover:bg-navy/5 ${active ? "bg-navy/5" : ""}`}
+      className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-semibold text-navy-ink hover:bg-navy-ink/5 ${active ? "bg-navy-ink/5" : ""}`}
     >
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
         {children}
@@ -112,7 +112,7 @@ function Snippet({ name, hint, code, wrap = false }: { name: string; hint?: stri
             setCopied(true);
             setTimeout(() => setCopied(false), 1800);
           }}
-          className="shrink-0 text-xs font-semibold text-crimson"
+          className="shrink-0 text-xs font-semibold text-crimson-ink"
         >
           {copied ? "Copied" : "Copy"}
         </button>

@@ -96,7 +96,7 @@ export function ShareSiteButton({ label, className }: { label: string; className
         <div
           role="menu"
           aria-label="Share CivicSync"
-          className="absolute bottom-full left-0 z-20 mb-2 w-60 rounded-xl bg-white p-1.5 shadow-lg ring-1 ring-gray-200"
+          className="absolute bottom-full left-0 z-20 mb-2 w-60 rounded-xl bg-surface p-1.5 shadow-lg ring-1 ring-gray-200"
         >
           <a
             role="menuitem"
@@ -150,7 +150,7 @@ export function ShareSiteButton({ label, className }: { label: string; className
       )}
 
       {toast && (
-        <p role="status" className="absolute left-0 top-full z-20 mt-2 w-64 rounded-lg bg-gray-900 px-3 py-2 text-xs text-white shadow-lg">
+        <p role="status" className="absolute left-0 top-full z-20 mt-2 w-64 rounded-lg bg-slate-900 ring-1 ring-white/10 px-3 py-2 text-xs text-white shadow-lg">
           {toast}
         </p>
       )}

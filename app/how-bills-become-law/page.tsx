@@ -24,10 +24,10 @@ export default function HowBillsBecomeLawPage() {
 
         <ol className="mt-6 space-y-3">
           {STAGES.map((s, i) => (
-            <li key={s.short} className="flex gap-4 rounded-2xl bg-white p-4 ring-1 ring-gray-200/70 md:p-5">
+            <li key={s.short} className="flex gap-4 rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70 md:p-5">
               <span
                 className={`grid h-9 w-9 shrink-0 place-items-center rounded-full font-display text-sm font-semibold ${
-                  i === STAGES.length - 1 ? "bg-crimson text-white" : "bg-navy/10 text-navy"
+                  i === STAGES.length - 1 ? "bg-crimson text-white" : "bg-navy-ink/10 text-navy-ink"
                 }`}
               >
                 {i + 1}
@@ -42,7 +42,7 @@ export default function HowBillsBecomeLawPage() {
           ))}
         </ol>
 
-        <section className="mt-8 rounded-2xl bg-white p-5 ring-1 ring-gray-200/70">
+        <section className="mt-8 rounded-2xl bg-surface p-5 ring-1 ring-gray-200/70">
           <h2 className="font-display text-lg font-semibold">Good to know</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-gray-700">
             <li>
@@ -62,7 +62,7 @@ export default function HowBillsBecomeLawPage() {
           <Link href="/receipts" className="rounded-xl bg-navy px-4 py-3 text-sm font-semibold text-white hover:bg-blue-900">
             Look up a bill
           </Link>
-          <Link href="/watchlist" className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-navy ring-1 ring-gray-200 hover:ring-navy/40">
+          <Link href="/watchlist" className="rounded-xl bg-surface px-4 py-3 text-sm font-semibold text-navy-ink ring-1 ring-gray-200 hover:ring-navy-ink/40">
             Follow bills on your Watchlist
           </Link>
         </div>

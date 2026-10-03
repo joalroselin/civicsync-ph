@@ -40,6 +40,7 @@ export default async function PrivacyPage() {
               ["Your Watchlist", "The bills you follow: number, title and last-seen status."],
               ["Sign-in flag", "Remembers that you signed in, so syncing only loads when you use it."],
               ["Dismissed tips", "Remembers if you closed “Start here” or the “install app” suggestion."],
+              ["Theme", "Remembers if you picked Light or Dark instead of following your device."],
               ["Home feed choice", "Remembers whether you last viewed newly filed or moving bills, and which chamber."],
               ["Offline copies", "Recently viewed pages, so the app still opens without signal."],
             ]}
@@ -75,7 +76,7 @@ export default async function PrivacyPage() {
         <Section title="Where the bill data comes from">
           <p>
             Bill and lawmaker information is public record, from{" "}
-            <Link href="/about" className="font-semibold text-navy underline underline-offset-2">
+            <Link href="/about" className="font-semibold text-navy-ink underline underline-offset-2">
               our data sources
             </Link>
             . When we look up a bill for you, those sources see a request from CivicSync, not from you.
@@ -88,7 +89,7 @@ export default async function PrivacyPage() {
             <li>Sign out any time from the Watchlist page. Your on-device list stays.</li>
             <li>
               Ask us to delete your synced Watchlist, your sign-in record or a form you sent, or to send you a copy:{" "}
-              <a href={deleteHref} className="font-semibold text-crimson underline underline-offset-2">
+              <a href={deleteHref} className="font-semibold text-crimson-ink underline underline-offset-2">
                 {contactEmail}
               </a>
               .
@@ -105,8 +106,8 @@ export default async function PrivacyPage() {
 
 function Promise({ title, body }: { title: string; body: string }) {
   return (
-    <div className="rounded-2xl bg-white p-4 ring-1 ring-gray-200/70">
-      <h3 className="text-sm font-semibold text-navy">{title}</h3>
+    <div className="rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70">
+      <h3 className="text-sm font-semibold text-navy-ink">{title}</h3>
       <p className="mt-1 text-sm leading-relaxed text-gray-600">{body}</p>
     </div>
   );
@@ -123,7 +124,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function Table({ rows }: { rows: [string, string][] }) {
   return (
-    <dl className="divide-y divide-gray-100 rounded-2xl bg-white ring-1 ring-gray-200/70">
+    <dl className="divide-y divide-gray-100 rounded-2xl bg-surface ring-1 ring-gray-200/70">
       {rows.map(([k, v]) => (
         <div key={k} className="grid gap-1 p-4 sm:grid-cols-[160px_1fr] sm:gap-4">
           <dt className="text-sm font-semibold text-gray-900">{k}</dt>

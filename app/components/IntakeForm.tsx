@@ -74,7 +74,7 @@ export function IntakeForm({
   }
 
   const input =
-    "mt-1 w-full rounded-lg border-0 bg-white px-3 py-2 text-sm text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy";
+    "mt-1 w-full rounded-lg border-0 bg-surface px-3 py-2 text-sm text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-ink";
 
   return (
     <form onSubmit={submit} noValidate className="rounded-xl bg-gray-50 p-4 ring-1 ring-gray-200">
@@ -112,7 +112,7 @@ export function IntakeForm({
                   aria-invalid={!!err}
                 />
               )}
-              {err && <p className="mt-1 text-xs font-semibold text-crimson">{err}</p>}
+              {err && <p className="mt-1 text-xs font-semibold text-crimson-ink">{err}</p>}
             </div>
           );
         })}
@@ -129,7 +129,7 @@ export function IntakeForm({
         We’ll only use this to reply to you about this request. It’s stored privately and deleted on request.
       </p>
       {message && (
-        <p role="alert" className="mt-2 text-xs font-semibold text-crimson">
+        <p role="alert" className="mt-2 text-xs font-semibold text-crimson-ink">
           {message}
         </p>
       )}
@@ -143,7 +143,7 @@ export function IntakeForm({
       </div>
       <p className="mt-3 text-xs text-gray-500">
         Prefer email?{" "}
-        <a href={`mailto:${email}?subject=${encodeURIComponent(form.title + ": CivicSync PH")}`} className="font-semibold text-navy underline">
+        <a href={`mailto:${email}?subject=${encodeURIComponent(form.title + ": CivicSync PH")}`} className="font-semibold text-navy-ink underline">
           {email}
         </a>
       </p>

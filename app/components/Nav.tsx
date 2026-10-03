@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useWatchlist } from "./WatchlistProvider";
 import { Logo } from "./Logo";
 import { SocialIcons } from "./SocialIcons";
+import { ThemeToggle } from "./ThemeToggle";
 import type { SocialLink } from "@/lib/content";
 
 const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
@@ -34,7 +35,7 @@ const SECONDARY_PATHS = ["/about", "/get-involved", "/press"];
 function FooterLine({ className = "" }: { className?: string }) {
   return (
     <p className={`text-[11px] leading-relaxed text-gray-400 ${className}`}>
-      <Link href="/privacy" className="transition hover:text-crimson">
+      <Link href="/privacy" className="transition hover:text-crimson-ink">
         Privacy first
       </Link>{" "}
       · Built by{" "}
@@ -42,7 +43,7 @@ function FooterLine({ className = "" }: { className?: string }) {
         href={REPO_URL}
         target="_blank"
         rel="noreferrer"
-        className="font-semibold text-gray-500 underline decoration-gray-300 underline-offset-2 transition hover:text-crimson hover:decoration-crimson"
+        className="font-semibold text-gray-500 underline decoration-gray-300 underline-offset-2 transition hover:text-crimson-ink hover:decoration-crimson-ink"
       >
         HelloJoal
       </a>{" "}
@@ -61,7 +62,7 @@ export function BottomNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) 
   useEffect(() => setMoreOpen(false), [pathname]);
 
   const tabClass = (active: boolean) =>
-    `relative flex w-full flex-col items-center gap-0.5 py-2.5 text-[11px] font-semibold ${active ? "text-navy" : "text-gray-500"}`;
+    `relative flex w-full flex-col items-center gap-0.5 py-2.5 text-[11px] font-semibold ${active ? "text-navy-ink" : "text-gray-500"}`;
   const moreActive = moreOpen || SECONDARY_PATHS.some((p) => pathname.startsWith(p));
 
   return (
@@ -69,7 +70,7 @@ export function BottomNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) 
       {moreOpen && <MoreSheet socialLinks={socialLinks} onClose={() => setMoreOpen(false)} />}
       <nav
         aria-label="Main"
-        className="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-white/95 backdrop-blur pb-[env(safe-area-inset-bottom)] md:hidden"
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-surface/95 backdrop-blur pb-[env(safe-area-inset-bottom)] md:hidden"
       >
         <ul className="mx-auto flex max-w-md">
           {tabs.map(({ href, label, icon: Icon, match }) => {
@@ -116,8 +117,8 @@ function MoreSheet({ socialLinks, onClose }: { socialLinks: SocialLink[]; onClos
   const row = "flex items-center gap-3 rounded-xl px-3 py-3 text-[15px] font-semibold text-gray-800 active:bg-gray-100";
   return (
     <div className="fixed inset-0 z-30 md:hidden" role="dialog" aria-modal="true" aria-label="More">
-      <button type="button" aria-label="Close" onClick={onClose} className="absolute inset-0 bg-gray-900/30" />
-      <div className="absolute inset-x-0 bottom-0 rounded-t-3xl bg-white px-4 pb-[calc(76px+env(safe-area-inset-bottom))] pt-3 shadow-2xl">
+      <button type="button" aria-label="Close" onClick={onClose} className="absolute inset-0 bg-black/40" />
+      <div className="absolute inset-x-0 bottom-0 rounded-t-3xl bg-surface px-4 pb-[calc(76px+env(safe-area-inset-bottom))] pt-3 shadow-2xl">
         <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-gray-300" aria-hidden />
         <ul className="flex flex-col">
           {secondary.map(({ href, label, icon: Icon }) => (
@@ -140,7 +141,10 @@ function MoreSheet({ socialLinks, onClose }: { socialLinks: SocialLink[]; onClos
           </li>
         </ul>
         <div className="mt-3 border-t border-gray-100 px-3 pt-4">
-          <SocialIcons links={socialLinks} />
+          <div className="flex items-center justify-between gap-3">
+            <SocialIcons links={socialLinks} />
+            <ThemeToggle />
+          </div>
           <FooterLine className="mt-3" />
         </div>
       </div>
@@ -154,7 +158,7 @@ export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
   const { items } = useWatchlist();
 
   return (
-    <aside className="sticky top-0 hidden h-screen w-56 shrink-0 flex-col border-r border-gray-200 bg-white px-3 py-6 md:flex lg:w-64 lg:px-4">
+    <aside className="sticky top-0 hidden h-screen w-56 shrink-0 flex-col border-r border-gray-200 bg-surface px-3 py-6 md:flex lg:w-64 lg:px-4">
       <Link href="/" className="mb-8 flex items-center gap-2.5 px-3">
         <Logo size={28} />
         <span className="font-display text-lg font-semibold text-gray-900">CivicSync PH</span>
@@ -169,7 +173,7 @@ export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
                   href={href}
                   aria-current={active ? "page" : undefined}
                   className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-semibold transition ${
-                    active ? "bg-navy/10 text-navy" : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
+                    active ? "bg-navy-ink/10 text-navy-ink" : "text-gray-600 hover:bg-gray-100 hover:text-gray-900"
                   }`}
                 >
                   <Icon active={active} />
@@ -196,7 +200,7 @@ export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
                   href={href}
                   aria-current={active ? "page" : undefined}
                   className={`flex items-center gap-3 rounded-lg px-3 py-2 text-[13px] font-medium transition ${
-                    active ? "bg-crimson/10 text-crimson" : "text-gray-500 hover:bg-gray-100 hover:text-crimson"
+                    active ? "bg-crimson-ink/10 text-crimson-ink" : "text-gray-500 hover:bg-gray-100 hover:text-crimson-ink"
                   }`}
                 >
                   <Icon active={active} small />
@@ -209,7 +213,10 @@ export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
       </nav>
 
       <div className="mt-auto space-y-3 px-3">
-        <SocialIcons links={socialLinks} />
+        <div className="flex items-center justify-between gap-2">
+          <SocialIcons links={socialLinks} />
+          <ThemeToggle />
+        </div>
         <FooterLine />
       </div>
     </aside>

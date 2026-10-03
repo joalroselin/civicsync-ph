@@ -27,7 +27,7 @@ export default function WatchlistPage() {
     <main className="px-5 pb-5 md:pt-4">
       <PageHeader title="Watchlist" />
 
-      <section className="mb-5 max-w-2xl rounded-2xl bg-white p-4 text-sm shadow-sm ring-1 ring-gray-200/70">
+      <section className="mb-5 max-w-2xl rounded-2xl bg-surface p-4 text-sm shadow-sm ring-1 ring-gray-200/70">
         {!syncAvailable ? (
           <PrivacyNote>No account needed. Your Watchlist stays on this device.</PrivacyNote>
         ) : user ? (
@@ -35,7 +35,7 @@ export default function WatchlistPage() {
             <p className="min-w-0 text-gray-600">
               Synced as <span className="font-semibold text-gray-900">{user.displayName ?? user.email}</span>
             </p>
-            <button onClick={() => signOut()} className="shrink-0 text-sm font-semibold text-navy">
+            <button onClick={() => signOut()} className="shrink-0 text-sm font-semibold text-navy-ink">
               Sign out
             </button>
           </div>
@@ -53,7 +53,7 @@ export default function WatchlistPage() {
             </button>
           </div>
         )}
-        {authError && <p className="mt-2 text-xs text-crimson">{authError}</p>}
+        {authError && <p className="mt-2 text-xs text-crimson-ink">{authError}</p>}
       </section>
 
       {!ready ? (
@@ -78,11 +78,11 @@ export default function WatchlistPage() {
               <li key={b.id}>
                 <Link
                   href={`/bills/${b.id}`}
-                  className="flex h-full items-start gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-200/70 hover:ring-navy/30"
+                  className="flex h-full items-start gap-3 rounded-2xl bg-surface p-4 shadow-sm ring-1 ring-gray-200/70 hover:ring-navy-ink/30"
                 >
                   <div className="min-w-0 flex-1">
                     <div className="flex gap-2 text-xs text-gray-500">
-                      <span className="rounded-md bg-navy/10 px-1.5 py-0.5 font-semibold text-navy">{b.label}</span>
+                      <span className="rounded-md bg-navy-ink/10 px-1.5 py-0.5 font-semibold text-navy-ink">{b.label}</span>
                       <span>Saved {formatDate(new Date(b.savedAt).toISOString())}</span>
                     </div>
                     <p className="mt-1.5 line-clamp-3 text-[15px] font-medium leading-snug">{b.title}</p>

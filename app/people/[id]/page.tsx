@@ -60,7 +60,7 @@ export default async function PersonPage(props: {
       {/* Desktop: profile in a sticky left column, bills on the right. */}
       <div className="lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:items-start lg:gap-8">
         <div className="lg:sticky lg:top-20">
-          <section className="flex items-center gap-4 rounded-[20px] bg-white p-5 shadow-sm ring-1 ring-gray-200/70 lg:flex-col lg:items-start lg:p-6">
+          <section className="flex items-center gap-4 rounded-[20px] bg-surface p-5 shadow-sm ring-1 ring-gray-200/70 lg:flex-col lg:items-start lg:p-6">
             <Avatar person={person} size={60} />
             <div className="min-w-0">
               <h2 className="font-display text-xl font-semibold leading-tight lg:text-2xl">{personName(person)}</h2>
@@ -86,11 +86,11 @@ export default async function PersonPage(props: {
           {served.length > 0 && (
             <>
               {/* Collapsed on phones to save space; always open in the desktop column. */}
-              <details className="mt-3 rounded-2xl bg-white p-4 text-sm ring-1 ring-gray-200/70 lg:hidden">
+              <details className="mt-3 rounded-2xl bg-surface p-4 text-sm ring-1 ring-gray-200/70 lg:hidden">
                 <summary className="cursor-pointer font-semibold text-gray-700">Service record</summary>
                 <ServiceRecord served={served} />
               </details>
-              <section className="mt-3 hidden rounded-2xl bg-white p-4 text-sm ring-1 ring-gray-200/70 lg:block">
+              <section className="mt-3 hidden rounded-2xl bg-surface p-4 text-sm ring-1 ring-gray-200/70 lg:block">
                 <h3 className="font-semibold text-gray-700">Service record</h3>
                 <ServiceRecord served={served} />
               </section>
@@ -123,10 +123,10 @@ export default async function PersonPage(props: {
               congress === BATASWATCH_CONGRESS ? (
                 <LiveDataUnavailable what="The 20th Congress list" />
               ) : (
-                <p className="text-sm text-crimson">Couldn’t reach Open Congress right now. Try again shortly.</p>
+                <p className="text-sm text-crimson-ink">Couldn’t reach Open Congress right now. Try again shortly.</p>
               )
             ) : bills.data.length === 0 ? (
-              <p className="rounded-2xl bg-white p-5 text-center text-sm text-gray-500 ring-1 ring-gray-200">
+              <p className="rounded-2xl bg-surface p-5 text-center text-sm text-gray-500 ring-1 ring-gray-200">
                 No authored bills on record{congress ? ` for the ${ordinal(congress)} Congress` : ""}.
               </p>
             ) : (
@@ -142,7 +142,7 @@ export default async function PersonPage(props: {
                   <a
                     href={`/people/${person.id}/bills.csv?congress=${filter}`}
                     download
-                    className="text-xs font-semibold text-navy hover:text-crimson"
+                    className="text-xs font-semibold text-navy-ink hover:text-crimson-ink"
                   >
                     Download CSV
                   </a>
@@ -183,7 +183,7 @@ function FilterChip({ href, active, label }: { href: string; active: boolean; la
       aria-selected={active}
       scroll={false}
       className={`shrink-0 rounded-full px-3.5 py-1.5 text-sm font-medium ring-1 ring-inset ${
-        active ? "bg-navy text-white ring-navy" : "bg-white text-gray-700 ring-gray-200"
+        active ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-700 ring-gray-200"
       }`}
     >
       {label}

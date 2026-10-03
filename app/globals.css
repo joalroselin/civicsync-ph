@@ -2,6 +2,75 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Theme colours (RGB triplets, used by tailwind.config.ts). Light by default;
+   html.dark switches to the dark set. Set before first paint by the script in
+   app/layout.tsx, from the saved choice or the device setting. */
+:root {
+  color-scheme: light;
+  --paper: 249 250 251;
+  --surface: 255 255 255;
+  --navy-ink: 30 58 138;
+  --crimson-ink: 153 27 27;
+  --gray-50: 249 250 251;
+  --gray-100: 243 244 246;
+  --gray-200: 229 231 235;
+  --gray-300: 209 213 219;
+  --gray-400: 156 163 175;
+  --gray-500: 107 114 128;
+  --gray-600: 75 85 99;
+  --gray-700: 55 65 81;
+  --gray-800: 31 41 55;
+  --gray-900: 17 24 39;
+  --amber-50: 255 251 235;
+  --amber-100: 254 243 199;
+  --amber-200: 253 230 138;
+  --amber-800: 146 64 14;
+  --amber-900: 120 53 15;
+  --emerald-50: 236 253 245;
+  --emerald-200: 167 243 208;
+  --emerald-600: 5 150 105;
+  --emerald-700: 4 120 87;
+  --emerald-800: 6 95 70;
+  --emerald-900: 6 78 59;
+  --red-50: 254 242 242;
+  --red-200: 254 202 202;
+  --blue-50: 239 246 255;
+  --blue-200: 191 219 254;
+}
+
+html.dark {
+  color-scheme: dark;
+  --paper: 11 16 30;
+  --surface: 20 28 46;
+  --navy-ink: 165 180 252;
+  --crimson-ink: 252 165 165;
+  --gray-50: 27 37 58;
+  --gray-100: 33 45 69;
+  --gray-200: 47 61 87;
+  --gray-300: 68 83 110;
+  --gray-400: 120 133 156;
+  --gray-500: 145 157 178;
+  --gray-600: 172 183 201;
+  --gray-700: 200 208 221;
+  --gray-800: 224 230 239;
+  --gray-900: 241 245 249;
+  --amber-50: 58 44 14;
+  --amber-100: 74 55 16;
+  --amber-200: 110 80 20;
+  --amber-800: 252 211 77;
+  --amber-900: 253 230 138;
+  --emerald-50: 9 48 38;
+  --emerald-200: 18 92 70;
+  --emerald-600: 52 211 153;
+  --emerald-700: 110 231 183;
+  --emerald-800: 110 231 183;
+  --emerald-900: 167 243 208;
+  --red-50: 64 18 22;
+  --red-200: 118 34 40;
+  --blue-50: 24 38 78;
+  --blue-200: 48 70 130;
+}
+
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;

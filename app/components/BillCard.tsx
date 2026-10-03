@@ -11,11 +11,11 @@ export function BillCard({ bill, hideAuthor = false, highlight }: { bill: BillSu
   return (
     <Link
       href={`/bills/${bill.routeId}`}
-      className="flex items-start gap-3 rounded-2xl bg-white p-4 shadow-sm ring-1 ring-gray-200/70 transition hover:ring-navy/30"
+      className="flex items-start gap-3 rounded-2xl bg-surface p-4 shadow-sm ring-1 ring-gray-200/70 transition hover:ring-navy-ink/30"
     >
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500">
-          <span className="rounded-md bg-navy/10 px-1.5 py-0.5 font-semibold text-navy">{bill.label}</span>
+          <span className="rounded-md bg-navy-ink/10 px-1.5 py-0.5 font-semibold text-navy-ink">{bill.label}</span>
           <span>
             {ordinal(bill.congress)} Congress{bill.dateFiled && ` · Filed ${formatDate(bill.dateFiled)}`}
           </span>
@@ -74,7 +74,7 @@ export function BillRow({ bill, movedOn, summary, highlight }: { bill: BillSumma
     <Link href={`/bills/${bill.routeId}`} className="flex items-start gap-3 px-4 py-3.5 transition hover:bg-gray-50">
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2 text-xs text-gray-500">
-          <span className="font-semibold text-navy">{bill.label}</span>
+          <span className="font-semibold text-navy-ink">{bill.label}</span>
           {movedOn ? <span>· Moved {formatDate(movedOn)}</span> : bill.dateFiled && <span>· Filed {formatDate(bill.dateFiled)}</span>}
         </div>
         <p className="mt-1 line-clamp-2 text-[15px] font-medium leading-snug text-gray-900">

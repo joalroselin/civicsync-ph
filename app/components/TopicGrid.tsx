@@ -9,7 +9,7 @@ export function TopicGrid({ topics }: { topics: PolicyArea[] }) {
         <li key={t.id}>
           <Link
             href={`/topics/${t.id}`}
-            className="flex h-full flex-col justify-between gap-1 rounded-2xl bg-white p-3.5 ring-1 ring-gray-200/70 transition hover:ring-navy/30"
+            className="flex h-full flex-col justify-between gap-1 rounded-2xl bg-surface p-3.5 ring-1 ring-gray-200/70 transition hover:ring-navy-ink/30"
           >
             <span className="text-sm font-semibold leading-snug text-gray-900">{t.label}</span>
             <span className="text-xs text-gray-500">{t.primaryBillCount.toLocaleString()} bills</span>

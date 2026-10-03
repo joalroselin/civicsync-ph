@@ -62,7 +62,7 @@ export function AuthorList({ people, names, ids = [], role }: { people: OpenCong
                 <span className="truncate" title={`${role} ${name}`}>
                   {name}
                 </span>
-                <span className="shrink-0 text-xs text-navy">Receipts →</span>
+                <span className="shrink-0 text-xs text-navy-ink">Receipts →</span>
               </>
             );
             const cls = "flex items-center justify-between py-2.5 text-sm font-medium";
@@ -96,18 +96,18 @@ export function AuthorList({ people, names, ids = [], role }: { people: OpenCong
                   onChange={(e) => setFilter(e.target.value)}
                   placeholder="Find an author"
                   aria-label="Find an author"
-                  className="mb-3 w-full rounded-xl bg-gray-50 px-3 py-2 text-sm ring-1 ring-gray-200 focus:outline-none focus:ring-navy/40"
+                  className="mb-3 w-full rounded-xl bg-gray-50 px-3 py-2 text-sm ring-1 ring-gray-200 focus:outline-none focus:ring-navy-ink/40"
                 />
               )}
               <ul className="grid grid-cols-2 gap-x-3 gap-y-1 text-[13px]">
                 {rest.map((i) => (
                   <li key={i.key} className="truncate" title={i.name}>
                     {i.href ? (
-                      <Link href={i.href} className="text-gray-700 hover:text-navy hover:underline">
+                      <Link href={i.href} className="text-gray-700 hover:text-navy-ink hover:underline">
                         {shortName(i.name)}
                       </Link>
                     ) : (
-                      <SearchLink q={i.name.replace(/"[^"]*"/g, "").replace(/\s+/g, " ").trim()} className="text-gray-700 hover:text-navy hover:underline">
+                      <SearchLink q={i.name.replace(/"[^"]*"/g, "").replace(/\s+/g, " ").trim()} className="text-gray-700 hover:text-navy-ink hover:underline">
                         {shortName(i.name)}
                       </SearchLink>
                     )}
@@ -124,7 +124,7 @@ export function AuthorList({ people, names, ids = [], role }: { people: OpenCong
               setFilter("");
             }}
             aria-expanded={open}
-            className="text-sm font-semibold text-navy hover:text-crimson"
+            className="text-sm font-semibold text-navy-ink hover:text-crimson-ink"
           >
             {open ? "Show fewer" : `Show all ${total} authors`}
           </button>

@@ -39,7 +39,7 @@ const components: PortableTextComponents = {
     strong: ({ children }) => <strong className="font-semibold text-gray-900">{children}</strong>,
     link: ({ value, children }) => {
       const href: string = value?.href ?? "#";
-      const cls = "font-medium text-navy underline decoration-navy/30 underline-offset-2 hover:decoration-navy";
+      const cls = "font-medium text-navy-ink underline decoration-navy-ink/30 underline-offset-2 hover:decoration-navy-ink";
       return href.startsWith("/") ? (
         <Link href={href} className={cls}>
           {children}
@@ -82,10 +82,10 @@ export default async function AboutPage() {
           <Link href="/receipts" className="rounded-xl bg-navy px-4 py-3 text-sm font-semibold text-white hover:bg-blue-900">
             Start searching
           </Link>
-          <Link href="/get-involved" className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-crimson ring-1 ring-gray-200 hover:ring-crimson/40">
+          <Link href="/get-involved" className="rounded-xl bg-surface px-4 py-3 text-sm font-semibold text-crimson-ink ring-1 ring-gray-200 hover:ring-crimson-ink/40">
             Get involved
           </Link>
-          <Link href="/press" className="rounded-xl bg-white px-4 py-3 text-sm font-semibold text-navy ring-1 ring-gray-200 hover:ring-navy/40">
+          <Link href="/press" className="rounded-xl bg-surface px-4 py-3 text-sm font-semibold text-navy-ink ring-1 ring-gray-200 hover:ring-navy-ink/40">
             Press kit
           </Link>
         </div>
@@ -97,10 +97,10 @@ export default async function AboutPage() {
 
 function Stat({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-2xl bg-white p-3 text-center ring-1 ring-gray-200/70 md:p-4">
+    <div className="rounded-2xl bg-surface p-3 text-center ring-1 ring-gray-200/70 md:p-4">
       <dt className="sr-only">{label}</dt>
       <dd>
-        <span className="block font-display text-xl font-semibold text-navy md:text-2xl">{value}</span>
+        <span className="block font-display text-xl font-semibold text-navy-ink md:text-2xl">{value}</span>
         <span className="mt-0.5 block text-[11px] leading-tight text-gray-500 md:text-xs">{label}</span>
       </dd>
     </div>
