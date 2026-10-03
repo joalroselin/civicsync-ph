@@ -62,3 +62,28 @@ export function BillList({ bills, hideAuthor = false }: { bills: BillSummary[]; 
     </ul>
   );
 }
+
+/** Compact row for grouped lists (e.g. one panel per chamber on the home page). */
+export function BillRow({ bill }: { bill: BillSummary }) {
+  const title = toTitleCase(bill.title);
+  const byline = authorLine(bill);
+  return (
+    <Link href={`/bills/${bill.routeId}`} className="flex items-start gap-3 px-4 py-3.5 transition hover:bg-gray-50">
+      <div className="min-w-0 flex-1">
+        <div className="flex items-center gap-2 text-xs text-gray-500">
+          <span className="font-semibold text-navy">{bill.label}</span>
+          {bill.dateFiled && <span>· {formatDate(bill.dateFiled)}</span>}
+        </div>
+        <p className="mt-1 line-clamp-2 text-[15px] font-medium leading-snug text-gray-900">{title}</p>
+        <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
+          {bill.status !== undefined && <StatusBadge status={bill.status} />}
+          {byline && <span className="truncate text-xs text-gray-500">{byline}</span>}
+        </div>
+      </div>
+      <WatchButton
+        variant="icon"
+        bill={{ id: bill.routeId, label: bill.label, title, congress: bill.congress, status: bill.status ?? null, authorLine: byline ?? undefined }}
+      />
+    </Link>
+  );
+}

@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import { CURRENT_CONGRESS } from "@/lib/openCongress";
 import { getSiteSettings } from "@/lib/content";
 import { listMeasures } from "@/lib/batasWatch";
-import { summaryFromBatasWatch } from "@/lib/bills";
-import { BillList } from "./components/BillCard";
+import { summaryFromBatasWatch, type BillSummary } from "@/lib/bills";
+import { BillRow } from "./components/BillCard";
 import { Greeting } from "./components/Greeting";
 import { SearchBar } from "./components/SearchBar";
 import { SearchLink } from "./components/SearchNavigation";
@@ -11,61 +11,71 @@ import { WatchlistPreview } from "./components/WatchlistPreview";
 import { BillListSkeleton } from "./components/Skeleton";
 import { LiveDataUnavailable } from "./components/LiveDataUnavailable";
 import { Logo } from "./components/Logo";
-import { NewHereCard } from "./components/NewHereCard";
+import { HeroAnimation } from "./components/HeroAnimation";
+import { SectionHeading, StartHere } from "./components/StartHere";
 
 export const revalidate = 1800;
 
 export default async function Home() {
   const { homeSuggestions } = await getSiteSettings();
   return (
-    <main className="flex flex-col gap-7 p-5 md:py-8 lg:gap-8">
-      <header className="rounded-[20px] bg-navy p-5 pb-6 text-white shadow-md md:p-8 lg:p-10">
-        {/* The sidebar carries the brand from md up. */}
-        <div className="mb-4 flex items-center gap-2 md:hidden">
-          <Logo inverted />
-          <span className="font-display text-sm font-semibold tracking-wide">CivicSync PH</span>
+    <main className="flex flex-col gap-8 p-5 md:py-8 lg:gap-10">
+      {/* 1. Primary action: search. The pulse strip gives context at a glance. */}
+      <header className="overflow-hidden rounded-[20px] bg-navy text-white shadow-md">
+        <div className="flex items-center gap-10 p-5 pb-6 md:p-8 lg:p-10">
+          <div className="min-w-0 flex-1">
+          {/* The sidebar carries the brand from md up. */}
+          <div className="mb-4 flex items-center gap-2 md:hidden">
+            <Logo inverted />
+            <span className="font-display text-sm font-semibold tracking-wide">CivicSync PH</span>
+          </div>
+          <Greeting />
+          <h1 className="mt-1 max-w-2xl font-display text-2xl font-semibold leading-tight md:text-3xl lg:text-4xl">
+            Search a politician or a bill to get started.
+          </h1>
+          <div className="mt-5 max-w-2xl md:mt-6">
+            <SearchBar />
+          </div>
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <span className="text-xs text-indigo-200">Try</span>
+            {homeSuggestions.map((s) => (
+              <SearchLink
+                key={s}
+                q={s}
+                className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-indigo-100 hover:bg-white/20 md:text-sm"
+              >
+                {s}
+              </SearchLink>
+            ))}
+          </div>
+          </div>
+          {/* Fills the empty right side on wide screens only. */}
+          <div className="hidden shrink-0 xl:block">
+            <HeroAnimation />
+          </div>
         </div>
-        <Greeting />
-        <h1 className="mt-1 max-w-2xl font-display text-2xl font-semibold leading-tight md:text-3xl lg:text-4xl">
-          Search a politician or a bill to get started.
-        </h1>
-        <div className="mt-5 max-w-2xl md:mt-6">
-          <SearchBar />
-        </div>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {homeSuggestions.map((s) => (
-            <SearchLink
-              key={s}
-              q={s}
-              className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-indigo-100 hover:bg-white/20 md:text-sm"
-            >
-              {s}
-            </SearchLink>
-          ))}
-        </div>
+        <Suspense fallback={<PulseStrip />}>
+          <Pulse />
+        </Suspense>
       </header>
 
-      <div className="flex flex-col gap-7 lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-8">
-        {/* Phones show the Watchlist first; desktop moves it to the side column. */}
-        <aside className="flex flex-col gap-7 lg:sticky lg:top-8 lg:col-start-2 lg:row-start-1">
-          <NewHereCard />
+      <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-10">
+        {/* 2. Main content: what's new in Congress, one panel per chamber. */}
+        <section aria-labelledby="recent-heading" className="lg:col-start-1 lg:row-start-1">
+          <SectionHeading id="recent-heading" eyebrow={`${CURRENT_CONGRESS}th Congress · live`} title="Latest from Congress" />
+          <Suspense fallback={<ChamberSkeleton />}>
+            <RecentBills />
+          </Suspense>
+        </section>
+
+        {/* 3. Personal + help. Watchlist shows first for returning visitors. */}
+        <aside className="flex flex-col gap-8 lg:sticky lg:top-8 lg:col-start-2 lg:row-start-1">
           <WatchlistPreview />
+          <StartHere />
           <div className="hidden lg:block">
             <SourcesNote />
           </div>
         </aside>
-
-        <section aria-labelledby="recent-heading" className="lg:col-start-1 lg:row-start-1">
-          <div className="mb-3">
-            <h2 id="recent-heading" className="font-display text-lg font-semibold lg:text-xl">
-              Recently filed
-            </h2>
-            <p className="text-xs text-gray-500">{CURRENT_CONGRESS}th Congress · Senate and House</p>
-          </div>
-          <Suspense fallback={<BillListSkeleton count={4} />}>
-            <RecentBills />
-          </Suspense>
-        </section>
 
         <div className="lg:hidden">
           <SourcesNote />
@@ -75,10 +85,63 @@ export default async function Home() {
   );
 }
 
+/** Live counts for the hero: this Congress so far, and the past week. */
+async function Pulse() {
+  const [senate, house] = await Promise.all([chamberPulse("senate"), chamberPulse("house")]);
+  if (!senate && !house) return null;
+  return (
+    <PulseStrip
+      stats={[
+        { value: ((senate?.total ?? 0) + (house?.total ?? 0)).toLocaleString(), label: "bills filed this Congress" },
+        { value: ((senate?.week ?? 0) + (house?.week ?? 0)).toLocaleString(), label: "filed in the last 7 days" },
+        { value: `${(senate?.total ?? 0).toLocaleString()}/${(house?.total ?? 0).toLocaleString()}`, label: "Senate / House" },
+      ]}
+    />
+  );
+}
+
+async function chamberPulse(chamber: "senate" | "house") {
+  try {
+    const since = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
+    let week = 0;
+    let total = 0;
+    // Newest first; stop once filings are older than a week (capped for politeness).
+    for (let page = 1; page <= 8; page++) {
+      const res = await listMeasures({ chamber, sort: "latest", page });
+      total = res.total;
+      const recent = res.items.filter((m) => (m.filedAt ?? "") > since).length;
+      week += recent;
+      if (recent < res.items.length || !res.hasMore) break;
+    }
+    return { total, week };
+  } catch {
+    return null;
+  }
+}
+
+function PulseStrip({ stats }: { stats?: { value: string; label: string }[] }) {
+  const items = stats ?? Array.from({ length: 3 }, () => ({ value: "", label: "" }));
+  return (
+    <dl className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-white/5">
+      {items.map((s, i) => (
+        <div key={i} className="px-2.5 py-3 sm:px-3 md:px-6 md:py-4 lg:px-10">
+          <dt className="sr-only">{s.label}</dt>
+          <dd>
+            <span className="block min-h-[1.75rem] whitespace-nowrap font-display text-base font-semibold tracking-tight sm:text-lg md:text-2xl">
+              {s.value || <span className="inline-block h-5 w-14 animate-pulse rounded bg-white/15 align-middle" />}
+            </span>
+            <span className="mt-0.5 block min-h-[1rem] text-[11px] leading-tight text-indigo-200 md:text-xs">{s.label}</span>
+          </dd>
+        </div>
+      ))}
+    </dl>
+  );
+}
+
 async function RecentBills() {
   // Open Congress's catalogue lags by about a year, so the live feed comes
-  // from BatasWatch. Take the newest from each chamber so the Senate isn't
-  // drowned out by the House's much higher filing volume.
+  // from BatasWatch. One panel per chamber so the Senate isn't drowned out
+  // by the House's much higher filing volume.
   const [senate, house] = await Promise.all([
     listMeasures({ chamber: "senate", sort: "latest" }).catch(() => null),
     listMeasures({ chamber: "house", sort: "latest" }).catch(() => null),
@@ -86,13 +149,52 @@ async function RecentBills() {
   if (!senate && !house) {
     return <LiveDataUnavailable what="The latest filings feed" />;
   }
-  const bills = [...(senate?.items.slice(0, 3) ?? []), ...(house?.items.slice(0, 3) ?? [])]
-    .filter((m) => m.title || m.longTitle)
-    .sort((x, y) => (y.filedAt ?? "").localeCompare(x.filedAt ?? ""))
-    .map(summaryFromBatasWatch);
+  const pick = (res: typeof senate) =>
+    (res?.items ?? [])
+      .filter((m) => m.title || m.longTitle)
+      .slice(0, 4)
+      .map(summaryFromBatasWatch);
 
-  if (bills.length === 0) return <p className="text-sm text-gray-500">No recently filed bills found.</p>;
-  return <BillList bills={bills} />;
+  return (
+    <div className="grid items-start gap-4 xl:grid-cols-2">
+      <ChamberPanel name="Senate" bills={pick(senate)} />
+      <ChamberPanel name="House of Representatives" bills={pick(house)} />
+    </div>
+  );
+}
+
+function ChamberPanel({ name, bills }: { name: string; bills: BillSummary[] }) {
+  return (
+    <section className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200/70" aria-label={name}>
+      <h3 className="flex items-center justify-between border-b border-gray-100 bg-gray-50/80 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-gray-600">
+        {name}
+        <span className="font-normal normal-case tracking-normal text-gray-400">Newest first</span>
+      </h3>
+      {bills.length === 0 ? (
+        <p className="p-4 text-sm text-gray-500">Couldn’t load the latest filings right now.</p>
+      ) : (
+        <ul className="divide-y divide-gray-100">
+          {bills.map((b) => (
+            <li key={b.routeId}>
+              <BillRow bill={b} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  );
+}
+
+function ChamberSkeleton() {
+  return (
+    <div className="grid gap-4 xl:grid-cols-2">
+      {[0, 1].map((i) => (
+        <div key={i} className="rounded-2xl bg-white p-1 ring-1 ring-gray-200/70">
+          <BillListSkeleton count={3} />
+        </div>
+      ))}
+    </div>
+  );
 }
 
 function SourcesNote() {

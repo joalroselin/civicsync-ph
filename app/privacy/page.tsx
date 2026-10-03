@@ -39,7 +39,7 @@ export default async function PrivacyPage() {
             rows={[
               ["Your Watchlist", "The bills you follow: number, title and last-seen status."],
               ["Sign-in flag", "Remembers that you signed in, so syncing only loads when you use it."],
-              ["Dismissed tips", "Remembers if you closed the “New here?” card or the “install app” suggestion."],
+              ["Dismissed tips", "Remembers if you dismissed the “install app” suggestion."],
               ["Offline copies", "Recently viewed pages, so the app still opens without signal."],
             ]}
           />

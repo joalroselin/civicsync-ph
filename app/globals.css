@@ -19,3 +19,34 @@
     display: none;
   }
 }
+
+/* Home hero decoration (HeroAnimation). 12s loop: five 2.4s steps. */
+.hero-anim-back { animation: hero-float 7s ease-in-out infinite; }
+.hero-anim-mid { animation: hero-float 7s ease-in-out -2.3s infinite; }
+.hero-anim-front { animation: hero-float 7s ease-in-out -4.6s infinite; }
+.hero-anim-label { opacity: 0; animation: hero-label 12s ease-in-out infinite; }
+.hero-anim-fill { width: 0; animation: hero-fill 12s cubic-bezier(.6, 0, .3, 1) infinite; }
+
+@keyframes hero-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+@keyframes hero-label {
+  0% { opacity: 0; transform: translateY(4px); }
+  3%, 17% { opacity: 1; transform: translateY(0); }
+  20%, 100% { opacity: 0; transform: translateY(-4px); }
+}
+@keyframes hero-fill {
+  0%, 4% { width: 4%; }
+  20%, 24% { width: 27%; }
+  40%, 44% { width: 51%; }
+  60%, 64% { width: 75%; }
+  80%, 96% { width: 100%; }
+  100% { width: 4%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim * { animation: none !important; }
+  .hero-anim-label:first-child { opacity: 1; }
+  .hero-anim-fill { width: 27%; }
+}
