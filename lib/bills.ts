@@ -18,7 +18,7 @@ import {
   type BatasWatchMeasure,
   type SemanticHit,
 } from "@/lib/batasWatch";
-import { getAuthorIndex, normName } from "@/lib/authorIndex";
+import { getAuthorIndex, normName, withProfiles } from "@/lib/authorIndex";
 
 /**
  * Open Congress's catalogue currently stops around Sept 2025, while
@@ -219,7 +219,7 @@ async function merge(oc: OpenCongressBill | null, bw: BatasWatchMeasure | null):
     dateFiled: oc?.date_filed ?? bw?.filedAt ?? null,
     scope: oc?.scope ?? null,
     subjects: oc?.subjects ?? [],
-    authors: oc?.authors ?? [],
+    authors: oc?.authors?.length ? await withProfiles(oc.authors) : [],
     authorNames: bw?.authorCredits?.length
       ? bw.authorCredits.map((a) => displayAuthorName(a.name))
       : oc?.authors_raw

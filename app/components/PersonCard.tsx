@@ -13,7 +13,7 @@ export function PersonCard({ person, role }: { person: OpenCongressPerson; role?
         <p className="truncate font-semibold text-gray-900">{personShortName(person)}</p>
         <p className="truncate text-xs text-gray-500">
           {role && <span className="mr-1.5 rounded bg-navy-ink/10 px-1.5 py-0.5 font-semibold text-navy-ink">{role}</span>}
-          {personName(person)}
+          {subtitle(person, role)}
         </p>
       </div>
       <span className="shrink-0 text-xs font-semibold text-navy-ink">Receipts →</span>
@@ -22,6 +22,20 @@ export function PersonCard({ person, role }: { person: OpenCongressPerson; role?
 }
 
 export function Avatar({ person, size = 44 }: { person: OpenCongressPerson; size?: number }) {
+  const photo = person.profile?.portraitUrl;
+  if (photo)
+    return (
+      // eslint-disable-next-line @next/next/no-img-element -- small public-domain portraits from BatasWatch's CDN
+      <img
+        src={photo}
+        alt=""
+        width={size}
+        height={size}
+        loading="lazy"
+        className="shrink-0 rounded-full bg-navy-ink/10 object-cover object-top"
+        style={{ width: size, height: size }}
+      />
+    );
   return (
     <span
       className="grid shrink-0 place-items-center rounded-full bg-navy-ink/10 font-display font-semibold text-navy-ink"
@@ -31,4 +45,10 @@ export function Avatar({ person, size = 44 }: { person: OpenCongressPerson; size
       {personInitials(person)}
     </span>
   );
+}
+
+/** District/party-list or position (e.g. "Senate Minority Leader"), unless it just repeats the role badge. */
+function subtitle(person: OpenCongressPerson, role?: string) {
+  const extra = person.profile?.representation ?? person.profile?.position;
+  return extra && extra.toLowerCase() !== role?.toLowerCase() && extra.toLowerCase() !== "senator" ? extra : personName(person);
 }

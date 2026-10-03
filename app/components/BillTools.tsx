@@ -12,13 +12,17 @@ export function BillTools({ bill, id, siteUrl }: { bill: CiteInput; id: string; 
   const toggle = (p: Panel) => setOpen((o) => (o === p ? null : p));
 
   return (
-    <div className="mt-4 text-center">
+    <div className="mt-4 text-center print:hidden">
       <div className="inline-flex flex-wrap justify-center gap-1">
         <ToolButton active={open === "cite"} onClick={() => toggle("cite")} label="Cite this bill">
           <path d="M7 7h4v4c0 3-1.5 5-4 6M15 7h4v4c0 3-1.5 5-4 6" strokeLinecap="round" strokeLinejoin="round" />
         </ToolButton>
         <ToolButton active={open === "embed"} onClick={() => toggle("embed")} label="Embed this bill">
           <path d="m8 7-5 5 5 5M16 7l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
+        </ToolButton>
+        <ToolButton active={false} onClick={() => window.print()} label="Print">
+          <path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2" strokeLinecap="round" strokeLinejoin="round" />
+          <rect x="6" y="14" width="12" height="7" rx="1" />
         </ToolButton>
         <ToolButton active={open === "image"} onClick={() => toggle("image")} label="Share as image">
           <rect x="4" y="3" width="16" height="18" rx="2" />

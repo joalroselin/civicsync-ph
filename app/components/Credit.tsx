@@ -3,7 +3,7 @@ const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
 /** "Built by HelloJoal". The AI note is shown only where `showAiCredit` is set (the sidebar). */
 export function Credit({ className = "", showAiCredit = false }: { className?: string; showAiCredit?: boolean }) {
   return (
-    <p className={`text-[11px] text-gray-400 ${className}`}>
+    <p className={`text-[11px] text-gray-500 ${className}`}>
       Built by{" "}
       <a
         href={REPO_URL}

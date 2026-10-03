@@ -27,6 +27,18 @@ export interface OpenCongressPerson {
     congress_ordinal: string;
     position: string;
   }[];
+  /** Added from BatasWatch for current (20th Congress) members; see lib/authorIndex.ts */
+  profile?: LawmakerProfile;
+}
+
+export interface LawmakerProfile {
+  portraitUrl: string | null;
+  /** District or party-list, e.g. "Manila, 6th District" or "TINGOG" */
+  representation: string | null;
+  /** e.g. "Senate Minority Leader" */
+  position: string | null;
+  photoCredit: string | null;
+  photoSourceUrl: string | null;
 }
 
 export interface OpenCongressBill {

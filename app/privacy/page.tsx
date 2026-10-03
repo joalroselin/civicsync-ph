@@ -98,7 +98,7 @@ export default async function PrivacyPage() {
           <p>We follow the Philippine Data Privacy Act of 2012 (Republic Act No. 10173).</p>
         </Section>
 
-        <p className="mt-10 text-xs text-gray-400">Last updated {UPDATED}. The code is open source, so you can check all of this yourself.</p>
+        <p className="mt-10 text-xs text-gray-500">Last updated {UPDATED}. The code is open source, so you can check all of this yourself.</p>
       </div>
     </main>
   );

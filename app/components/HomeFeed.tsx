@@ -81,7 +81,7 @@ export function HomeFeed({ filed, moved }: { filed: { senate: FeedBill[]; house:
           <Empty view={view} chamber={chamber} unavailable={view === "filed" ? !filed : !moved} />
         )}
         {view === "moved" && rows.length > 0 && (
-          <p className="border-t border-gray-100 px-4 py-2.5 text-[11px] text-gray-400">
+          <p className="border-t border-gray-100 px-4 py-2.5 text-[11px] text-gray-500">
             Bills that passed a reading, were scheduled for debate, or moved between chambers in the last 45 days.{" "}
             <Link href="/how-bills-become-law" className="underline underline-offset-2 hover:text-navy-ink">
               What the steps mean
@@ -123,7 +123,7 @@ function Segmented<T extends string>({
           aria-selected={value === o.value}
           onClick={() => onChange(o.value)}
           className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition ${
-            value === o.value ? "bg-surface text-navy-ink shadow-sm" : "text-gray-500 hover:text-gray-800"
+            value === o.value ? "bg-surface text-navy-ink shadow-sm" : "text-gray-600 hover:text-gray-800"
           }`}
         >
           {o.label}

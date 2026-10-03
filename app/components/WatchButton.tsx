@@ -24,7 +24,7 @@ export function WatchButton({
         aria-pressed={watched}
         aria-label={watched ? `Remove ${bill.label} from Watchlist` : `Add ${bill.label} to Watchlist`}
         className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition ${
-          watched ? "bg-crimson-ink/10 text-crimson-ink" : "text-gray-400 hover:bg-gray-100 hover:text-gray-600"
+          watched ? "bg-crimson-ink/10 text-crimson-ink" : "text-gray-500 hover:bg-gray-100 hover:text-gray-600"
         }`}
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill={watched ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" aria-hidden>

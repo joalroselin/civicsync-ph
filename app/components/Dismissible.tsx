@@ -48,7 +48,7 @@ export function Dismissible({ storageKey, gap = 32, label, children }: { storage
         onClick={dismiss}
         aria-label={`Dismiss ${label}`}
         disabled={phase !== "shown"}
-        className="absolute right-0 top-0 grid h-8 w-8 place-items-center rounded-full text-gray-400 transition hover:bg-gray-200/60 hover:text-gray-700"
+        className="absolute right-0 top-0 grid h-8 w-8 place-items-center rounded-full text-gray-500 transition hover:bg-gray-200/60 hover:text-gray-700"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" aria-hidden>
           <path d="M6 6l12 12M18 6 6 18" strokeLinecap="round" />

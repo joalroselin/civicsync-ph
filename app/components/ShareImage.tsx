@@ -51,7 +51,7 @@ export function ShareImagePanel({ src, filename, intro }: { src: string; filenam
         </button>
       </div>
       {error && <p className="mt-2 text-xs text-crimson-ink">Couldn’t make the image right now. Try again in a moment.</p>}
-      <p className="mt-2 text-[11px] text-gray-400">On phones this opens your share menu. On computers the image downloads.</p>
+      <p className="mt-2 text-[11px] text-gray-500">On phones this opens your share menu. On computers the image downloads.</p>
     </div>
   );
 }

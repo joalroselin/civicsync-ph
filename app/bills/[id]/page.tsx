@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { getBillDetail, LiveSourceUnavailableError, type BillDetail } from "@/lib/bills";
 import { getSiteSettings } from "@/lib/content";
@@ -6,6 +7,7 @@ import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
 import { formatDate, ordinal, toTitleCase } from "@/lib/format";
 import { PageHeader } from "../../components/PageHeader";
 import { AuthorList } from "../../components/AuthorList";
+import { SimilarBills } from "../../components/SimilarBills";
 import { StatusBadge } from "../../components/StatusBadge";
 import { StatusHelp } from "../../components/StatusHelp";
 import { WatchButton } from "../../components/WatchButton";
@@ -82,7 +84,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
       */}
       <div className="flex flex-col xl:grid xl:grid-cols-[minmax(0,1fr)_340px] xl:grid-rows-[auto_1fr] xl:gap-x-8">
         <div className="xl:col-start-1 xl:row-start-1">
-          <section className="rounded-[20px] bg-navy p-5 text-white shadow-md md:p-8">
+          <section className="print-plain rounded-[20px] bg-navy p-5 text-white shadow-md md:p-8">
             <div className="flex flex-wrap gap-x-2 text-xs font-medium text-indigo-200">
               <span>{bill.chamber}</span>
               <span>·</span>
@@ -100,7 +102,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
         </div>
 
         <aside className="xl:sticky xl:top-20 xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:self-start">
-          <div className="mt-4 xl:mt-0">
+          <div className="mt-4 xl:mt-0 print:hidden">
             <WatchButton bill={{ id: bill.id, label: bill.label, title, congress: bill.congress, status: bill.status }} />
           </div>
           <Card title="Status">
@@ -120,7 +122,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
                     )}
                   </dl>
                 )}
-                <p className="mt-3 text-[11px] text-gray-400">Status via BatasWatch (independent source)</p>
+                <p className="mt-3 text-[11px] text-gray-500">Status via BatasWatch (independent source)</p>
               </>
             ) : (
               <p className="text-sm text-gray-500">
@@ -150,7 +152,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
                   ))}
                 </div>
               )}
-              <p className="mt-3 text-[11px] text-gray-400">
+              <p className="mt-3 text-[11px] text-gray-500">
                 Automated summary by BatasWatch. It may miss nuance — read the bill text before citing it.
               </p>
             </Card>
@@ -185,10 +187,13 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
               </ul>
             </Card>
           )}
+          <Suspense fallback={null}>
+            <SimilarBills query={bill.analysis?.overview ?? title} excludeNumber={bill.billNumber} />
+          </Suspense>
         </div>
       </div>
 
-      <div className="mt-8 text-center text-sm text-gray-600">
+      <div className="mt-8 text-center text-sm text-gray-600 print:hidden">
         <span>Spot something wrong? </span>
         <EmailAction
           email={contactEmail}
@@ -211,7 +216,11 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
           url: bill.sourceUrls[0]?.url ?? `${SITE_URL}/bills/${bill.id}`,
         }}
       />
-      <p className="mt-2 text-center text-[11px] text-gray-400">
+      {/* Print only: where this came from, for handouts and class notes. */}
+      <p className="hidden text-xs text-gray-700 print:mt-6 print:block">
+        Printed from CivicSync PH: {SITE_URL}/bills/{bill.id}. Status changes over time; check the link for the latest.
+      </p>
+      <p className="mt-2 text-center text-[11px] text-gray-500">
         {bill.billNumber} · Sources:{" "}
         {[bill.inOpenCongress && "BetterGov Open Congress", bill.statusSource && "BatasWatch"].filter(Boolean).join(", ")}
       </p>

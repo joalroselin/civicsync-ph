@@ -38,6 +38,8 @@
   --blue-200: 191 219 254;
 }
 
+/* Screen only: printing always uses the light colours. */
+@media screen {
 html.dark {
   color-scheme: dark;
   --paper: 11 16 30;
@@ -69,6 +71,7 @@ html.dark {
   --red-200: 118 34 40;
   --blue-50: 24 38 78;
   --blue-200: 48 70 130;
+}
 }
 
 @layer base {
@@ -118,4 +121,15 @@ html.dark {
   .hero-anim * { animation: none !important; }
   .hero-anim-label:first-child { opacity: 1; }
   .hero-anim-fill { width: 27%; }
+}
+
+/* Printing (e.g. a bill page as a class handout): plain, ink-friendly. */
+@media print {
+  @page { margin: 16mm; }
+  body { background: white !important; }
+  .shadow-sm, .shadow-md, .shadow-lg { box-shadow: none !important; }
+  /* Printers drop backgrounds, so coloured blocks print as plain text. */
+  .print-plain { background: none !important; padding-left: 0 !important; padding-right: 0 !important; box-shadow: none !important; }
+  .print-plain, .print-plain * { color: #111827 !important; }
+  a { text-decoration: none; }
 }

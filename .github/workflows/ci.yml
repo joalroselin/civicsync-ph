@@ -28,8 +28,10 @@ jobs:
       # No secrets needed: without Sanity or Firebase keys the app uses its
       # built-in default content and hides sign-in.
       - run: npm run build
-      - name: Smoke test
+      - name: Smoke and accessibility tests
         run: |
           npm run start -- -p 3000 &
           for i in $(seq 1 30); do curl -sf http://localhost:3000/robots.txt >/dev/null && break; sleep 2; done
           npm run smoke -- http://localhost:3000
+          # Accessibility (CS-105): axe-core in light and dark mode, using the runner's Chrome.
+          CHROME_PATH=$(which google-chrome || which google-chrome-stable) npm run a11y -- http://localhost:3000

@@ -1,13 +1,16 @@
 import { ImageResponse } from "next/og";
 import { getPerson, getPersonBills, personName } from "@/lib/openCongress";
 import { SHARE_SIZES, ShareFrame, ogFonts, shareFormat, truncate } from "@/lib/og";
+import { withProfiles } from "@/lib/authorIndex";
 
 /** Share image for a lawmaker: /people/[id]/card?format=post|story (CS-204). Facts only. */
 export async function GET(req: Request, props: { params: Promise<{ id: string }> }) {
   const { id } = await props.params;
   const format = shareFormat(new URL(req.url).searchParams.get("format"));
   const [person, bills, fonts] = await Promise.all([
-    getPerson(id).catch(() => null),
+    getPerson(id)
+      .then((p) => withProfiles([p]).then(([x]) => x))
+      .catch(() => null),
     getPersonBills(id, { limit: 1 }).catch(() => null),
     ogFonts(),
   ]);
@@ -20,9 +23,17 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   return new ImageResponse(
     (
       <ShareFrame format={format} path="" hint={`Search “${(person.last_name ?? personName(person)).split("-")[0]}” on`}>
+        {person.profile?.portraitUrl && (
+          // eslint-disable-next-line @next/next/no-img-element -- rendered by next/og, not the browser
+          <img src={person.profile.portraitUrl} width={160} height={160} style={{ borderRadius: 999, objectFit: "cover", objectPosition: "top", marginBottom: 36, border: "4px solid rgba(255,255,255,0.25)" }} alt="" />
+        )}
         <div style={{ fontSize: 30, color: "#FCA5A5", fontWeight: 600, letterSpacing: 3 }}>RECEIPTS</div>
         <div style={{ fontFamily: "Space Grotesk", fontSize: 84, fontWeight: 700, lineHeight: 1.05, marginTop: 20 }}>{truncate(personName(person), 48)}</div>
-        {latest && <div style={{ display: "flex", fontSize: 34, color: "#C7D2FE", marginTop: 20 }}>{`${latest.position}, ${latest.congress_ordinal} Congress`}</div>}
+        {latest && (
+          <div style={{ display: "flex", fontSize: 34, color: "#C7D2FE", marginTop: 20 }}>
+            {`${person.profile?.position ?? latest.position}, ${latest.congress_ordinal} Congress${person.profile?.representation ? ` · ${person.profile.representation}` : ""}`}
+          </div>
+        )}
         <div style={{ display: "flex", gap: 24, marginTop: 56 }}>
           <Stat value={congresses ? String(congresses) : "–"} label={congresses === 1 ? "congress served" : "congresses served"} />
           <Stat value={bills ? bills.total.toLocaleString() : "–"} label="bills on record" />

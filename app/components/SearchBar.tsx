@@ -38,8 +38,18 @@ export function SearchBar({ defaultValue = "", autoFocus = false }: { defaultVal
         autoFocus={autoFocus}
         enterKeyHint="search"
         placeholder="Politician, bill title, or topic"
-        className="w-full rounded-2xl border-0 bg-surface py-3.5 pl-11 pr-4 text-[15px] text-gray-900 shadow-sm ring-1 ring-gray-200 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-ink"
+        aria-keyshortcuts="/"
+        className="peer w-full rounded-2xl border-0 bg-surface py-3.5 pl-11 pr-4 text-[15px] text-gray-900 shadow-sm ring-1 ring-gray-200 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-ink"
       />
+      {/* Keyboard hint, desktop only; hidden while typing or focused. */}
+      {!q && (
+        <kbd
+          aria-hidden
+          className="pointer-events-none absolute right-3.5 top-1/2 hidden -translate-y-1/2 rounded-md px-2 py-0.5 font-sans text-xs text-gray-500 ring-1 ring-gray-200 peer-focus:opacity-0 md:block"
+        >
+          /
+        </kbd>
+      )}
     </form>
   );
 }

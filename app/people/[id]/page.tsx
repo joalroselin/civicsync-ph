@@ -5,6 +5,7 @@ import { getPerson, getPersonBills, personName, type OpenCongressPerson } from "
 import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
 import { summaryFromOpenCongress } from "@/lib/bills";
 import { liveBills } from "@/lib/people";
+import { withProfiles } from "@/lib/authorIndex";
 import { ordinal } from "@/lib/format";
 import { BillList } from "../../components/BillCard";
 import { Avatar } from "../../components/PersonCard";
@@ -16,7 +17,8 @@ const PAGE_SIZE = 20;
 
 async function loadPerson(id: string): Promise<OpenCongressPerson | null> {
   try {
-    return await getPerson(id);
+    const [person] = await withProfiles([await getPerson(id)]);
+    return person;
   } catch {
     return null;
   }
@@ -61,17 +63,30 @@ export default async function PersonPage(props: {
       <div className="lg:grid lg:grid-cols-[300px_minmax(0,1fr)] lg:items-start lg:gap-8">
         <div className="lg:sticky lg:top-20">
           <section className="flex items-center gap-4 rounded-[20px] bg-surface p-5 shadow-sm ring-1 ring-gray-200/70 lg:flex-col lg:items-start lg:p-6">
-            <Avatar person={person} size={60} />
+            <Avatar person={person} size={72} />
             <div className="min-w-0">
               <h2 className="font-display text-xl font-semibold leading-tight lg:text-2xl">{personName(person)}</h2>
               {latest && (
                 <p className="mt-0.5 text-sm text-gray-600">
-                  {latest.position}, {latest.congress_ordinal} Congress
+                  {person.profile?.position ?? latest.position}, {latest.congress_ordinal} Congress
                 </p>
               )}
+              {person.profile?.representation && <p className="mt-0.5 text-sm font-medium text-gray-800">{person.profile.representation}</p>}
               {served.length > 0 && (
                 <p className="mt-1 text-xs text-gray-500">
                   Served in {congresses.length} {congresses.length === 1 ? "congress" : "congresses"}
+                </p>
+              )}
+              {person.profile?.photoCredit && (
+                <p className="mt-2 text-[10px] text-gray-500">
+                  Photo:{" "}
+                  {person.profile.photoSourceUrl ? (
+                    <a href={person.profile.photoSourceUrl} target="_blank" rel="noreferrer" className="underline underline-offset-2">
+                      {person.profile.photoCredit}
+                    </a>
+                  ) : (
+                    person.profile.photoCredit
+                  )}
                 </p>
               )}
             </div>
@@ -133,7 +148,7 @@ export default async function PersonPage(props: {
               <>
                 <BillList bills={bills.data} hideAuthor />
                 <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <p className="text-[11px] text-gray-400">
+                  <p className="text-[11px] text-gray-500">
                     {congress === BATASWATCH_CONGRESS
                       ? "Current list via BatasWatch (independent tracker)."
                       : "Via BetterGov Open Congress. Its catalogue currently runs to around September 2025."}

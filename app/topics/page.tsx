@@ -18,7 +18,7 @@ export default async function TopicsPage() {
         Bills filed in the 20th Congress, grouped by what they’re about. Counts are bills where it’s the main topic.
       </p>
       <div className="max-w-4xl">{topics ? <TopicGrid topics={topics} /> : <LiveDataUnavailable what="The topic list" />}</div>
-      <p className="mt-6 max-w-2xl text-[11px] text-gray-400">Topics are assigned automatically by BatasWatch from each bill’s text, so a few may be off.</p>
+      <p className="mt-6 max-w-2xl text-[11px] text-gray-500">Topics are assigned automatically by BatasWatch from each bill’s text, so a few may be off.</p>
     </main>
   );
 }

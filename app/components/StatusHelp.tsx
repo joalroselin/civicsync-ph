@@ -6,7 +6,7 @@ export function StatusHelp({ status }: { status: string | null }) {
   const help = explainStatus(status);
   if (!help) return null;
   return (
-    <details className="group mt-3 rounded-xl bg-gray-50 px-3 py-2 text-sm open:pb-3">
+    <details className="group mt-3 print:hidden rounded-xl bg-gray-50 px-3 py-2 text-sm open:pb-3">
       <summary className="cursor-pointer list-none font-semibold text-navy-ink marker:hidden">
         <span className="inline-flex items-center gap-1">
           What does this mean?

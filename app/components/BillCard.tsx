@@ -42,7 +42,7 @@ export function BillCard({ bill, hideAuthor = false, highlight }: { bill: BillSu
 export function AuthorByline({ text, role }: { text: string; role: string }) {
   return (
     <p className="mt-1 flex items-center gap-1.5 text-xs text-gray-600" title={role}>
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-gray-400" aria-hidden>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-gray-500" aria-hidden>
         <circle cx="12" cy="8" r="4" />
         <path d="M4 21a8 8 0 0 1 16 0" strokeLinecap="round" />
       </svg>

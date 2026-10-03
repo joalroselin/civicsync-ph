@@ -69,7 +69,7 @@ const SCREENSHOTS = [
 const COLORS = [
   { name: "Navy", hex: "#1E3A8A", use: "Primary: brand, headers, links", text: "text-white" },
   { name: "Crimson", hex: "#991B1B", use: "Accent: logo dot, Watchlist", text: "text-white" },
-  { name: "Paper", hex: "#F9FAFB", use: "Background", text: "text-gray-900" },
+  { name: "Paper", hex: "#F9FAFB", use: "Background", text: "text-[#111827]" },
 ];
 
 /** Copy (descriptions, FAQ, contact, figures) is edited in Sanity Studio; see lib/content.ts. */
@@ -123,7 +123,7 @@ export default async function PressPage() {
           ))}
         </dl>
         {settings.stats.asOf && (
-          <p className="mt-2 text-xs text-gray-400">Record counts as of {formatDate(settings.stats.asOf)}.</p>
+          <p className="mt-2 text-xs text-gray-500">Record counts as of {formatDate(settings.stats.asOf)}.</p>
         )}
       </Section>
 
@@ -198,7 +198,7 @@ export default async function PressPage() {
             <Screenshot key={s.file} {...s} />
           ))}
         </ul>
-        <p className="mt-2 text-xs text-gray-400">
+        <p className="mt-2 text-xs text-gray-500">
           Phone: 1170×2532 · Desktop: 2880×1800. Screens show real 20th Congress bills as of September 2026.
         </p>
       </Section>
@@ -258,7 +258,7 @@ export default async function PressPage() {
             <details key={_key} className="group px-4 py-3">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-3 font-semibold text-gray-900">
                 {q}
-                <span className="text-gray-400 transition group-open:rotate-45" aria-hidden>
+                <span className="text-gray-500 transition group-open:rotate-45" aria-hidden>
                   +
                 </span>
               </summary>

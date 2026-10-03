@@ -74,7 +74,7 @@ export default async function TopicPage(props: { params: Promise<{ id: string }>
             ))}
           </ul>
         )}
-        <p className="mt-3 text-[11px] text-gray-400">
+        <p className="mt-3 text-[11px] text-gray-500">
           Showing up to 50 of the closest matches. Topics are assigned automatically by BatasWatch from each bill’s text, so a few may be off.
         </p>
       </div>

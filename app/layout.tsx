@@ -9,6 +9,7 @@ import { AnnouncementBanner } from "./components/AnnouncementBanner";
 import { getSiteSettings } from "@/lib/content";
 import { Analytics } from "@vercel/analytics/next";
 import { themeScript } from "./components/ThemeToggle";
+import { KeyboardShortcuts } from "./components/KeyboardShortcuts";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -50,6 +51,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body className="bg-paper font-sans text-gray-900 antialiased">
+        <a
+          href="#content"
+          className="sr-only z-50 rounded-lg bg-navy px-4 py-2 text-sm font-semibold text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+        >
+          Skip to content
+        </a>
         <WatchlistProvider>
           <SearchNavigationProvider>
             <div className="md:flex">
@@ -57,7 +64,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <div className="min-w-0 flex-1">
                 <AnnouncementBanner />
                 {/* Phone: narrow column above the tab bar. Tablet/desktop: wider, no tab bar. */}
-                <div className="mx-auto min-h-screen max-w-md pb-[calc(80px+env(safe-area-inset-bottom))] md:max-w-3xl md:px-4 md:pb-12 lg:max-w-6xl lg:px-8">
+                <div id="content" tabIndex={-1} className="mx-auto min-h-screen max-w-md outline-none pb-[calc(80px+env(safe-area-inset-bottom))] md:max-w-3xl md:px-4 md:pb-12 lg:max-w-6xl lg:px-8">
                   {children}
                 </div>
               </div>
@@ -65,6 +72,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <BottomNav socialLinks={socialLinks} />
           </SearchNavigationProvider>
           <PwaSupport />
+          <KeyboardShortcuts />
         </WatchlistProvider>
         {/* Cookieless, aggregate page-view counts; no personal data or cross-site tracking. */}
         <Analytics />

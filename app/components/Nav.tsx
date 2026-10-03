@@ -34,7 +34,7 @@ const SECONDARY_PATHS = ["/about", "/get-involved", "/press"];
 /** One compact line: privacy promise + credit (the AI note lives only here). */
 function FooterLine({ className = "" }: { className?: string }) {
   return (
-    <p className={`text-[11px] leading-relaxed text-gray-400 ${className}`}>
+    <p className={`text-[11px] leading-relaxed text-gray-500 ${className}`}>
       <Link href="/privacy" className="transition hover:text-crimson-ink">
         Privacy first
       </Link>{" "}
@@ -70,7 +70,7 @@ export function BottomNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) 
       {moreOpen && <MoreSheet socialLinks={socialLinks} onClose={() => setMoreOpen(false)} />}
       <nav
         aria-label="Main"
-        className="fixed inset-x-0 bottom-0 z-40 border-t border-gray-200 bg-surface/95 backdrop-blur pb-[env(safe-area-inset-bottom)] md:hidden"
+        className="fixed inset-x-0 bottom-0 z-40 print:hidden border-t border-gray-200 bg-surface/95 backdrop-blur pb-[env(safe-area-inset-bottom)] md:hidden"
       >
         <ul className="mx-auto flex max-w-md">
           {tabs.map(({ href, label, icon: Icon, match }) => {
@@ -136,13 +136,14 @@ function MoreSheet({ socialLinks, onClose }: { socialLinks: SocialLink[]; onClos
           <li>
             <a href={ROADMAP_URL} target="_blank" rel="noreferrer" className={row}>
               <RoadmapIcon /> Roadmap
-              <span className="ml-auto text-xs font-normal text-gray-400">Suggest &amp; vote ↗</span>
+              <span className="ml-auto text-xs font-normal text-gray-500">Suggest &amp; vote ↗</span>
             </a>
           </li>
         </ul>
         <div className="mt-3 border-t border-gray-100 px-3 pt-4">
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-3">
             <SocialIcons links={socialLinks} />
+            <span className="h-4 w-px bg-gray-200" aria-hidden />
             <ThemeToggle />
           </div>
           <FooterLine className="mt-3" />
@@ -158,7 +159,7 @@ export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
   const { items } = useWatchlist();
 
   return (
-    <aside className="sticky top-0 hidden h-screen w-56 shrink-0 flex-col border-r border-gray-200 bg-surface px-3 py-6 md:flex lg:w-64 lg:px-4">
+    <aside className="sticky top-0 hidden h-screen w-56 print:!hidden shrink-0 flex-col border-r border-gray-200 bg-surface px-3 py-6 md:flex lg:w-64 lg:px-4">
       <Link href="/" className="mb-8 flex items-center gap-2.5 px-3">
         <Logo size={28} />
         <span className="font-display text-lg font-semibold text-gray-900">CivicSync PH</span>
@@ -213,8 +214,9 @@ export function SideNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) {
       </nav>
 
       <div className="mt-auto space-y-3 px-3">
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex items-center gap-3">
           <SocialIcons links={socialLinks} />
+          <span className="h-4 w-px bg-gray-200" aria-hidden />
           <ThemeToggle />
         </div>
         <FooterLine />

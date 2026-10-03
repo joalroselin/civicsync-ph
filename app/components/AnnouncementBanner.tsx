@@ -9,7 +9,7 @@ export async function AnnouncementBanner() {
   const { message, linkLabel, linkUrl } = announcement;
   const internal = linkUrl?.startsWith("/");
   return (
-    <div role="status" className="bg-crimson px-4 py-2.5 text-center text-sm text-white">
+    <div role="status" className="print:hidden bg-crimson px-4 py-2.5 text-center text-sm text-white">
       <span>{message}</span>
       {linkUrl && (
         <>

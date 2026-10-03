@@ -72,7 +72,7 @@ export default async function AboutPage() {
           <Stat value={stats.totalRecords} label="legislative records" />
           <Stat value={stats.currentCongressBills} label="bills this Congress" />
         </dl>
-        {stats.asOf && <p className="mt-1.5 text-right text-[11px] text-gray-400">Figures as of {formatDate(stats.asOf)}</p>}
+        {stats.asOf && <p className="mt-1.5 text-right text-[11px] text-gray-500">Figures as of {formatDate(stats.asOf)}</p>}
 
         <article className="mt-8">
           <PortableText value={about.body} components={components} />

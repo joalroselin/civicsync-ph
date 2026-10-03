@@ -9,6 +9,8 @@
  * - Senate (24 members, different codes): match surname + a given name,
  *   and only when exactly one senator fits.
  */
+import type { LawmakerProfile } from "./openCongress";
+
 const BW = "https://bills.juris.ph/api";
 const OC = "https://open-congress-api.bettergov.ph/api";
 const DAY = 86400;
@@ -17,6 +19,12 @@ interface BwAuthor {
   canonicalName: string;
   chamber: string;
   officialMemberId: string | null;
+  portraitUrl?: string | null;
+  portraitAttribution?: string | null;
+  portraitLicense?: string | null;
+  portraitSourceUrl?: string | null;
+  representation?: string | null;
+  position?: string | null;
 }
 interface OcPerson {
   id: string;
@@ -33,6 +41,8 @@ export interface AuthorIndex {
   idByName: Map<string, string>;
   /** Open Congress person ID → every BatasWatch name they appear under */
   namesById: Map<string, string[]>;
+  /** Open Congress person ID → portrait, district/party-list, position */
+  profileById: Map<string, LawmakerProfile>;
 }
 
 let cached: { at: number; index: Promise<AuthorIndex> } | null = null;
@@ -42,7 +52,7 @@ export function getAuthorIndex(): Promise<AuthorIndex> {
   const index = build().catch((err) => {
     console.error("Author index failed", err);
     cached = null;
-    return { idByName: new Map(), namesById: new Map() } as AuthorIndex;
+    return { idByName: new Map(), namesById: new Map(), profileById: new Map() } as AuthorIndex;
   });
   cached = { at: Date.now(), index };
   return index;
@@ -54,13 +64,29 @@ async function build(): Promise<AuthorIndex> {
   for (const p of people) for (const k of p.congress_website_author_keys ?? []) byHouseKey.set(k, p.id);
 
   const idByName = new Map<string, string>();
+  const profileById = new Map<string, LawmakerProfile>();
   for (const a of authors) {
     const id = a.chamber === "house" && a.officialMemberId ? byHouseKey.get(a.officialMemberId) : matchByName(a.canonicalName, people);
-    if (id) idByName.set(normName(a.canonicalName), id);
+    if (!id) continue;
+    idByName.set(normName(a.canonicalName), id);
+    profileById.set(id, {
+      portraitUrl: a.portraitUrl ?? null,
+      representation: a.representation ?? null,
+      position: a.position ?? null,
+      photoCredit: a.portraitAttribution ? `${a.portraitAttribution}${a.portraitLicense ? ` (${a.portraitLicense.toLowerCase()})` : ""}` : null,
+      photoSourceUrl: a.portraitSourceUrl ?? null,
+    });
   }
   const namesById = new Map<string, string[]>();
   for (const [name, id] of idByName) namesById.set(id, [...(namesById.get(id) ?? []), name]);
-  return { idByName, namesById };
+  return { idByName, namesById, profileById };
+}
+
+/** Adds `profile` (portrait, district, position) to current members; others pass through. */
+export async function withProfiles<T extends { id: string; profile?: LawmakerProfile }>(people: T[]): Promise<T[]> {
+  if (!people.length) return people;
+  const { profileById } = await getAuthorIndex();
+  return people.map((p) => (profileById.has(p.id) ? { ...p, profile: profileById.get(p.id) } : p));
 }
 
 /** "TULFO, ERWIN T." → the one 20th Congress lawmaker with that surname and given name, if unique. */

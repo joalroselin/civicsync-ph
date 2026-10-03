@@ -6,6 +6,7 @@ import { BATASWATCH_CONGRESS, getMeasureByNumber, listPolicyAreas, semanticSearc
 import { summaryFromBatasWatch, summaryFromOpenCongress, summaryFromSemantic } from "@/lib/bills";
 import { getSiteSettings } from "@/lib/content";
 import { highlightTerms, nameMatches } from "@/lib/search";
+import { withProfiles } from "@/lib/authorIndex";
 import { BillList, BillRow } from "../components/BillCard";
 import { LiveDataUnavailable } from "../components/LiveDataUnavailable";
 import { PersonCard } from "../components/PersonCard";
@@ -56,7 +57,9 @@ async function Results({ q, page, chamber, congress }: { q: string; page: number
   const firstPage = page === 1;
   const terms = billNo ? [] : highlightTerms(q);
 
-  const people = billNo || !firstPage ? [] : await searchPeople({ q, limit: 8 }).then((ps) => ps.filter((p) => nameMatches(p, q)).slice(0, 6)).catch(() => null);
+  const people = billNo || !firstPage ? [] : await searchPeople({ q, limit: 8 })
+          .then((ps) => withProfiles(ps.filter((p) => nameMatches(p, q)).slice(0, 6)))
+          .catch(() => null);
   const isPersonSearch = (people?.length ?? 0) > 0;
   const showBest = !billNo && !isPersonSearch && firstPage && (!congress || congress === BATASWATCH_CONGRESS);
 
@@ -184,7 +187,7 @@ function BillsFallback() {
   return (
     <section aria-label="Loading bills on record">
       <div className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-500">
-        <Spinner className="h-3.5 w-3.5 text-gray-400" />
+        <Spinner className="h-3.5 w-3.5 text-gray-500" />
         Searching all 13 congresses…
       </div>
       <BillListSkeleton count={3} />
@@ -199,7 +202,7 @@ function Section({ id, title, note, children }: { id: string; title: string; not
         <h2 id={`${id}-heading`} className="text-xs font-semibold uppercase tracking-wider text-gray-500">
           {title}
         </h2>
-        {note && <p className="mt-0.5 text-xs text-gray-400">{note}</p>}
+        {note && <p className="mt-0.5 text-xs text-gray-500">{note}</p>}
       </div>
       {children}
     </section>
