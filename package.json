@@ -8,7 +8,8 @@
     "start": "next start",
     "test": "vitest run",
     "smoke": "node scripts/smoke.mts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "roadmap": "node --env-file-if-exists=.env.local scripts/roadmap.mts"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",

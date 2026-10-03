@@ -5,6 +5,7 @@
  *   node --env-file=.env.local scripts/canny-sync.mts --apply   # creates/updates posts
  *   add --no-create to only update posts that already exist on Canny
  *   add --push-status to overwrite Canny statuses with the CSV's
+ *   or --push-status=CS-119,CS-120 to push only those tickets' statuses
  *
  * Statuses: Canny is the source of truth. Status changes made in Canny are
  * copied back into the CSV (on --apply) and never overwritten, unless you
@@ -30,7 +31,11 @@ const APPLY = process.argv.includes("--apply");
 /** Update existing posts only; don't recreate posts missing on Canny (e.g. deleted there on purpose). */
 const NO_CREATE = process.argv.includes("--no-create");
 /** Overwrite statuses on Canny with the CSV's (otherwise Canny's statuses win and are pulled into the CSV). */
-const PUSH_STATUS = process.argv.includes("--push-status");
+const pushArg = process.argv.find((a) => a.startsWith("--push-status"));
+const PUSH_STATUS = pushArg === "--push-status";
+/** --push-status=CS-1,CS-2: push only these; Canny still wins for the rest. */
+const PUSH_ONLY = pushArg?.includes("=") ? new Set(pushArg.split("=")[1].split(",").map((s) => s.trim())) : null;
+const shouldPush = (id: string) => PUSH_STATUS || !!PUSH_ONLY?.has(id);
 const BOARD_URL_NAME = "feature-requests";
 
 if (!KEY) {
@@ -165,8 +170,10 @@ console.log(`Posts to create: ${plan.filter((p) => !p.existing).length} · exist
 const statusDiffs = plan.filter((p) => p.existing && p.existing.status !== p.status);
 if (statusDiffs.length)
   console.log(
-    `Statuses that differ (${PUSH_STATUS ? "will push CSV → Canny" : "will keep Canny's and update the CSV"}):\n  ` +
-      statusDiffs.map((p) => `${p.t["Ticket ID"]} ${p.t.Title}: CSV ${p.t.Status} / Canny ${LABEL_OF[p.existing!.status] ?? p.existing!.status}`).join("\n  ")
+    "Statuses that differ:\n  " +
+      statusDiffs
+        .map((p) => `${shouldPush(p.t["Ticket ID"]) ? "push" : "pull"}  ${p.t["Ticket ID"]} ${p.t.Title}: CSV ${p.t.Status} / Canny ${LABEL_OF[p.existing!.status] ?? p.existing!.status}`)
+        .join("\n  ")
   );
 
 if (!APPLY) {
@@ -251,7 +258,7 @@ for (const { t, existing, status } of plan) {
   if (!existing) {
     if (status !== "open") await setStatus(postID!, status, t);
   } else if (existing.status !== status) {
-    if (PUSH_STATUS) await setStatus(postID!, status, t);
+    if (shouldPush(t["Ticket ID"])) await setStatus(postID!, status, t);
     else {
       // Changed in Canny: keep it, and record it in the CSV
       pulled.push(`${t["Ticket ID"]} ${t.Title}: ${t.Status} → ${LABEL_OF[existing.status] ?? existing.status}`);

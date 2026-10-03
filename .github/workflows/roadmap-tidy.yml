@@ -1,0 +1,35 @@
+# Daily: tickets shipped more than 30 days ago lose the "Deployed" tag
+# (they stay Complete), on Canny and in docs/roadmap-canny.csv.
+# Needs the repository secret CANNY_API_KEY (Settings → Secrets → Actions).
+name: Roadmap tidy
+
+on:
+  schedule:
+    - cron: "0 17 * * *" # 01:00 Manila
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tidy:
+    runs-on: ubuntu-latest
+    if: ${{ github.repository == 'joalroselin/civicsync-ph' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Tidy roadmap
+        env:
+          CANNY_API_KEY: ${{ secrets.CANNY_API_KEY }}
+        run: |
+          if [ -z "$CANNY_API_KEY" ]; then echo "CANNY_API_KEY secret not set; skipping."; exit 0; fi
+          node scripts/roadmap.mts tidy
+      - name: Commit CSV changes
+        run: |
+          git diff --quiet docs/roadmap-canny.csv && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Roadmap: tidy Deployed tags older than 30 days"
+          git push
