@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image" },
   description: "Receipts and a Civic Watchlist for Philippine legislation.",
   manifest: "/manifest.json",
+  alternates: {
+    types: {
+      "application/rss+xml": [
+        { url: "/feeds/latest", title: "CivicSync PH: Newly filed bills" },
+        { url: "/feeds/moving", title: "CivicSync PH: Bills on the move" },
+      ],
+    },
+  },
   appleWebApp: { capable: true, title: "CivicSync", statusBarStyle: "default" },
   icons: { icon: "/icon.svg", apple: "/apple-touch-icon.png" },
   // Google Search Console ownership (public by design; also see public/google*.html).

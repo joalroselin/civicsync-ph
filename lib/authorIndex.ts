@@ -25,6 +25,7 @@ interface BwAuthor {
   portraitSourceUrl?: string | null;
   representation?: string | null;
   position?: string | null;
+  billCount?: number | null;
 }
 interface OcPerson {
   id: string;
@@ -75,6 +76,7 @@ async function build(): Promise<AuthorIndex> {
       position: a.position ?? null,
       photoCredit: a.portraitAttribution ? `${a.portraitAttribution}${a.portraitLicense ? ` (${a.portraitLicense.toLowerCase()})` : ""}` : null,
       photoSourceUrl: a.portraitSourceUrl ?? null,
+      currentBillCount: a.billCount ?? null,
     });
   }
   const namesById = new Map<string, string[]>();

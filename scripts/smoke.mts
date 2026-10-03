@@ -24,6 +24,9 @@ const checks: { path: string; status?: number[]; contains?: string; type?: strin
   { path: "/embed/bill/SBN-1294/badge.svg", status: [200, 404], type: "image/svg+xml" },
   { path: "/api/health", status: [200, 503], contains: "\"sources\"" },
   { path: "/manifest.json", contains: "CivicSync" },
+  { path: "/feeds", contains: "News feeds" },
+  { path: "/feeds/latest", contains: "<rss", type: "rss+xml" },
+  { path: "/feeds/topics/health", contains: "<item>", type: "rss+xml" },
   { path: "/this-page-does-not-exist", status: [404] },
 ];
 

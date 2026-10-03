@@ -39,6 +39,8 @@ export interface LawmakerProfile {
   position: string | null;
   photoCredit: string | null;
   photoSourceUrl: string | null;
+  /** Bills filed in the 20th Congress so far (BatasWatch, more current than Open Congress) */
+  currentBillCount: number | null;
 }
 
 export interface OpenCongressBill {

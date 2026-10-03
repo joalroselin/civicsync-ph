@@ -6,6 +6,7 @@ import { summaryFromSemantic } from "@/lib/bills";
 import { BillRow } from "../../components/BillCard";
 import { PageHeader } from "../../components/PageHeader";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
+import { RssLink } from "../../components/RssLink";
 
 async function loadTopic(id: string): Promise<PolicyArea | null> {
   const topics = await listPolicyAreas().catch(() => []);
@@ -15,7 +16,11 @@ async function loadTopic(id: string): Promise<PolicyArea | null> {
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const topic = await loadTopic((await props.params).id);
   if (!topic) return { title: "Topic" };
-  return { title: `${topic.label} bills`, description: `${topic.description} Bills filed in the 20th Congress of the Philippines.` };
+  return {
+    title: `${topic.label} bills`,
+    description: `${topic.description} Bills filed in the 20th Congress of the Philippines.`,
+    alternates: { types: { "application/rss+xml": [{ url: `/feeds/topics/${topic.id}`, title: `CivicSync PH: ${topic.label} bills` }] } },
+  };
 }
 
 export default async function TopicPage(props: { params: Promise<{ id: string }>; searchParams: Promise<{ chamber?: string }> }) {
@@ -48,7 +53,9 @@ export default async function TopicPage(props: { params: Promise<{ id: string }>
 
         <div className="mb-3 mt-6 flex flex-wrap items-center justify-between gap-2">
           <h2 className="text-xs font-semibold uppercase tracking-wider text-gray-500">Most relevant bills</h2>
-          <div className="flex gap-1" role="group" aria-label="Chamber">
+          <div className="flex items-center gap-1" role="group" aria-label="Chamber">
+            <RssLink href={`/feeds/topics/${id}`} />
+            <span className="mx-1 h-4 w-px bg-gray-200" aria-hidden />
             {[
               { v: undefined, label: "All" },
               { v: "senate", label: "Senate" },

@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
+import { LawmakerRecord, RecordFallback } from "./Record";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPerson, getPersonBills, personName, type OpenCongressPerson } from "@/lib/openCongress";
@@ -12,6 +14,7 @@ import { Avatar } from "../../components/PersonCard";
 import { PageHeader, Pager } from "../../components/PageHeader";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
 import { ShareImageButton } from "../../components/ShareImage";
+import { RssLink } from "../../components/RssLink";
 
 const PAGE_SIZE = 20;
 
@@ -27,7 +30,12 @@ async function loadPerson(id: string): Promise<OpenCongressPerson | null> {
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const params = await props.params;
   const person = await loadPerson(params.id);
-  return { title: person ? personName(person) : "Lawmaker" };
+  if (!person) return { title: "Lawmaker" };
+  const current = (person.congresses_served ?? []).some((c) => c.congress_number === 20);
+  return {
+    title: personName(person),
+    ...(current && { alternates: { types: { "application/rss+xml": [{ url: `/feeds/people/${person.id}`, title: `CivicSync PH: Bills by ${personName(person)}` }] } } }),
+  };
 }
 
 export default async function PersonPage(props: {
@@ -92,25 +100,20 @@ export default async function PersonPage(props: {
             </div>
           </section>
 
+
+          <Suspense fallback={<RecordFallback />}>
+            <LawmakerRecord person={person} />
+          </Suspense>
+          {servesNow && (
+            <div className="mt-3 print:hidden">
+              <RssLink href={`/feeds/people/${person.id}`} label="RSS: new bills and status changes" />
+            </div>
+          )}
           <ShareImageButton
             src={`/people/${person.id}/card`}
             filename={`civicsync-${personName(person).toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
             intro="An image of this lawmaker’s record for Instagram, Facebook or group chats. Facts only: role, congresses served and bills on record."
           />
-
-          {served.length > 0 && (
-            <>
-              {/* Collapsed on phones to save space; always open in the desktop column. */}
-              <details className="mt-3 rounded-2xl bg-surface p-4 text-sm ring-1 ring-gray-200/70 lg:hidden">
-                <summary className="cursor-pointer font-semibold text-gray-700">Service record</summary>
-                <ServiceRecord served={served} />
-              </details>
-              <section className="mt-3 hidden rounded-2xl bg-surface p-4 text-sm ring-1 ring-gray-200/70 lg:block">
-                <h3 className="font-semibold text-gray-700">Service record</h3>
-                <ServiceRecord served={served} />
-              </section>
-            </>
-          )}
         </div>
 
         <section className="mt-6 lg:mt-0" aria-labelledby="authored-heading">
@@ -174,19 +177,6 @@ export default async function PersonPage(props: {
         </section>
       </div>
     </main>
-  );
-}
-
-function ServiceRecord({ served }: { served: NonNullable<OpenCongressPerson["congresses_served"]> }) {
-  return (
-    <ul className="mt-3 divide-y divide-gray-100">
-      {served.map((c, i) => (
-        <li key={i} className="flex justify-between py-2">
-          <span>{c.congress_ordinal} Congress</span>
-          <span className="text-gray-500">{c.position}</span>
-        </li>
-      ))}
-    </ul>
   );
 }
 

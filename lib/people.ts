@@ -56,3 +56,54 @@ export async function allPersonBills(person: OpenCongressPerson, congress: numbe
   }
   return out;
 }
+
+// --- Lawmaker record: counts per congress and laws (CS-302) ----------------
+
+/** Status text BatasWatch uses once a bill is law, e.g. "REPUBLIC ACT RA12324 (Lapsed into law on …)". */
+const BECAME_LAW = /republic act|lapsed into law|approved by the president/i;
+
+export interface LawmakerRecord {
+  /** All bills on record, every congress: Open Congress history plus the live 20th Congress count. */
+  totalOnRecord: number | null;
+  /** Bills per congress served, newest first. 20th Congress uses the live count. */
+  byCongress: { congress: number; bills: number | null }[];
+  /** 20th Congress only: what's filed so far and which became law. */
+  current: { filed: number | null; becameLaw: BillSummary[] } | null;
+}
+
+export async function getLawmakerRecord(person: OpenCongressPerson): Promise<LawmakerRecord> {
+  const congresses = [...new Set((person.congresses_served ?? []).map((c) => c.congress_number))].sort((a, b) => b - a);
+  const servesNow = congresses.includes(20);
+  const count = (congress?: number) =>
+    getPersonBills(person.id, { congress, limit: 1 })
+      .then((r) => r.total)
+      .catch(() => null);
+
+  const [totalOnRecord, perCongress, laws] = await Promise.all([
+    count(),
+    Promise.all(congresses.map(async (c) => ({ congress: c, bills: c === 20 && person.profile?.currentBillCount != null ? person.profile.currentBillCount : await count(c) }))),
+    servesNow ? currentLaws(person) : Promise.resolve(null),
+  ]);
+  // Open Congress stops around Sept 2025, so its 20th Congress count is short.
+  // Total = its count for earlier congresses + the live 20th Congress count.
+  const oc20 = servesNow ? await count(20) : null;
+  const live20 = perCongress.find((c) => c.congress === 20)?.bills ?? null;
+  const total = totalOnRecord == null ? null : servesNow && oc20 != null && live20 != null ? totalOnRecord - oc20 + live20 : totalOnRecord;
+  return {
+    totalOnRecord: total,
+    byCongress: perCongress,
+    current: servesNow ? { filed: person.profile?.currentBillCount ?? perCongress.find((c) => c.congress === 20)?.bills ?? null, becameLaw: laws ?? [] } : null,
+  };
+}
+
+/** Walks the lawmaker's live 20th Congress list and keeps bills whose status says they became law. */
+async function currentLaws(person: OpenCongressPerson): Promise<BillSummary[]> {
+  const out: BillSummary[] = [];
+  for (let page = 1; page <= MAX_LIVE_PAGES; page++) {
+    const res = await liveBills(person, page);
+    if (!res) break;
+    out.push(...res.data.filter((b) => b.status && BECAME_LAW.test(b.status)));
+    if (!res.hasMore) break;
+  }
+  return out;
+}

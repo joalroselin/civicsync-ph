@@ -13,6 +13,7 @@ import { LiveDataUnavailable } from "./components/LiveDataUnavailable";
 import { Logo } from "./components/Logo";
 import { HeroAnimation } from "./components/HeroAnimation";
 import { Dismissible } from "./components/Dismissible";
+import { RssLink } from "./components/RssLink";
 import { SectionHeading, StartHere } from "./components/StartHere";
 
 export const revalidate = 1800;
@@ -63,7 +64,7 @@ export default async function Home() {
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-10">
         {/* 2. Main content: what's new in Congress, one panel per chamber. */}
         <section aria-labelledby="recent-heading" className="lg:col-start-1 lg:row-start-1">
-          <SectionHeading id="recent-heading" eyebrow={`${CURRENT_CONGRESS}th Congress · live`} title="Latest from Congress" />
+          <SectionHeading id="recent-heading" eyebrow={`${CURRENT_CONGRESS}th Congress · live`} title="Latest from Congress" action={<RssLink href="/feeds" />} />
           <Suspense fallback={<ChamberSkeleton />}>
             <RecentBills />
           </Suspense>

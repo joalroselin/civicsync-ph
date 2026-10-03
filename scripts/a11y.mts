@@ -17,7 +17,7 @@ const chrome = [process.env.CHROME_PATH, "/Applications/Google Chrome.app/Conten
 if (!chrome) throw new Error("Chrome not found; set CHROME_PATH");
 const axeSource = readFileSync(createRequire(import.meta.url).resolve("axe-core/axe.min.js"), "utf8");
 
-const pages = ["/", "/receipts", "/receipts?q=rice", "/bills/SBN-1294", "/people/01K5S6MAZ4YBST5GDJV827A0J8", "/topics", "/how-bills-become-law", "/watchlist", "/about", "/get-involved", "/press", "/privacy", "/not-a-page"];
+const pages = ["/", "/receipts", "/receipts?q=rice", "/bills/SBN-1294", "/people/01K5S6MAZ4YBST5GDJV827A0J8", "/topics", "/feeds", "/how-bills-become-law", "/watchlist", "/about", "/get-involved", "/press", "/privacy", "/not-a-page"];
 
 const browser = await puppeteer.launch({ executablePath: chrome, headless: true, args: ["--no-sandbox"] });
 let failures = 0;

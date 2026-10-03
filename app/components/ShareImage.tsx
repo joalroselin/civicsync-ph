@@ -1,20 +1,28 @@
 "use client";
 
 import { useState } from "react";
+import { Spinner } from "./SearchNavigation";
 
 type Format = "post" | "story";
+const FORMATS: { value: Format; label: string; ratio: string; aspect: string }[] = [
+  { value: "post", label: "Post", ratio: "4:5", aspect: "aspect-[4/5]" },
+  { value: "story", label: "Story", ratio: "9:16", aspect: "aspect-[9/16]" },
+];
 
 /**
- * Preview + "share or save" for a generated card image (CS-204). Phones
- * open the share sheet with the image attached (Instagram, Messenger…);
- * elsewhere the image downloads.
+ * Preview both sizes, pick one, then share or save it (CS-204). Phones open
+ * the share sheet with the image attached (Instagram, Messenger…); elsewhere
+ * the image downloads. Images are generated on demand, so each preview and
+ * the button show a spinner until they're ready.
  */
 export function ShareImagePanel({ src, filename, intro }: { src: string; filename: string; intro: string }) {
-  const [busy, setBusy] = useState<Format | null>(null);
+  const [format, setFormat] = useState<Format>("post");
+  const [loaded, setLoaded] = useState<Record<Format, boolean>>({ post: false, story: false });
+  const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
 
-  const go = async (format: Format) => {
-    setBusy(format);
+  const go = async () => {
+    setBusy(true);
     setError(false);
     try {
       const res = await fetch(`${src}?format=${format}`);
@@ -32,24 +40,60 @@ export function ShareImagePanel({ src, filename, intro }: { src: string; filenam
     } catch {
       setError(true);
     } finally {
-      setBusy(null);
+      setBusy(false);
     }
   };
 
-  const btn = "inline-flex flex-1 items-center justify-center gap-1.5 rounded-xl px-3 py-2.5 text-sm font-semibold ring-1 transition disabled:opacity-60";
   return (
     <div>
       <p className="text-sm text-gray-600">{intro}</p>
-      {/* eslint-disable-next-line @next/next/no-img-element -- generated on demand; next/image adds nothing here */}
-      <img src={`${src}?format=post`} alt="Preview of the share image" className="mx-auto mt-3 w-full max-w-[260px] rounded-xl shadow-md ring-1 ring-gray-200" loading="lazy" />
-      <div className="mt-4 flex gap-2">
-        <button type="button" onClick={() => go("post")} disabled={!!busy} className={`${btn} bg-navy text-white ring-navy-ink hover:bg-blue-900`}>
-          {busy === "post" ? "Preparing…" : "Post (4:5)"}
-        </button>
-        <button type="button" onClick={() => go("story")} disabled={!!busy} className={`${btn} bg-surface text-navy-ink ring-gray-200 hover:ring-navy-ink/40`}>
-          {busy === "story" ? "Preparing…" : "Story (9:16)"}
-        </button>
+      <div role="radiogroup" aria-label="Image size" className="mt-3 flex items-end justify-center gap-3">
+        {FORMATS.map((f) => {
+          const selected = format === f.value;
+          return (
+            <button
+              key={f.value}
+              type="button"
+              role="radio"
+              aria-checked={selected}
+              onClick={() => setFormat(f.value)}
+              className={`group flex flex-col items-center gap-1.5 rounded-xl p-1.5 transition ${selected ? "bg-navy-ink/10" : "hover:bg-gray-100"}`}
+            >
+              <span
+                className={`relative block overflow-hidden rounded-lg bg-gray-100 ring-2 ${f.aspect} ${f.value === "post" ? "w-36" : "w-[101px]"} ${
+                  selected ? "ring-navy-ink" : "ring-transparent"
+                }`}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element -- generated on demand */}
+                <img
+                  src={`${src}?format=${f.value}`}
+                  alt={`${f.label} preview`}
+                  onLoad={() => setLoaded((l) => ({ ...l, [f.value]: true }))}
+                  className={`h-full w-full object-cover transition-opacity duration-300 ${loaded[f.value] ? "opacity-100" : "opacity-0"}`}
+                />
+                {!loaded[f.value] && (
+                  <span className="absolute inset-0 grid place-items-center" aria-label="Generating preview">
+                    <Spinner className="h-5 w-5 text-gray-500" />
+                  </span>
+                )}
+              </span>
+              <span className={`text-xs font-semibold ${selected ? "text-navy-ink" : "text-gray-600"}`}>
+                {f.label} <span className="font-normal text-gray-500">{f.ratio}</span>
+              </span>
+            </button>
+          );
+        })}
       </div>
+      <button
+        type="button"
+        onClick={go}
+        disabled={busy}
+        aria-busy={busy}
+        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-navy px-3 py-2.5 text-sm font-semibold text-white transition hover:bg-blue-900 disabled:opacity-80"
+      >
+        {busy && <Spinner className="h-4 w-4 text-white" />}
+        {busy ? "Preparing image…" : `Share or save ${format === "post" ? "post" : "story"}`}
+      </button>
       {error && <p className="mt-2 text-xs text-crimson-ink">Couldn’t make the image right now. Try again in a moment.</p>}
       <p className="mt-2 text-[11px] text-gray-500">On phones this opens your share menu. On computers the image downloads.</p>
     </div>
@@ -60,7 +104,7 @@ export function ShareImagePanel({ src, filename, intro }: { src: string; filenam
 export function ShareImageButton(props: { src: string; filename: string; intro: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="mt-3">
+    <div className="mt-3 print:hidden">
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
