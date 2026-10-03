@@ -4,7 +4,8 @@ import { EMBED_CACHE, TONE_COLORS, esc, loadEmbedBill } from "@/lib/embed";
  * Status badge image for places that don't allow iframes (GitHub READMEs,
  * Medium, Notion, email newsletters): "SB 1294 | Pending in committee".
  */
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
+export async function GET(_req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const bill = await loadEmbedBill(params.id);
   const left = bill?.label ?? "Bill";
   const right = bill ? (bill.status.length > 48 ? `${bill.status.slice(0, 47)}…` : bill.status) : "unavailable";

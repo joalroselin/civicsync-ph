@@ -17,7 +17,7 @@ export function ShareSiteButton({ label, className }: { label: string; className
   const [toast, setToast] = useState<string | null>(null);
   const [canNativeShare, setCanNativeShare] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
-  const closeTimer = useRef<ReturnType<typeof setTimeout>>();
+  const closeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   // True while the menu is open because of hover, so a click doesn't close it.
   const openedByHover = useRef(false);
 

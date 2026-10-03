@@ -21,18 +21,17 @@ async function loadPerson(id: string): Promise<OpenCongressPerson | null> {
   }
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const person = await loadPerson(params.id);
   return { title: person ? personName(person) : "Lawmaker" };
 }
 
-export default async function PersonPage({
-  params,
-  searchParams,
-}: {
-  params: { id: string };
-  searchParams: { congress?: string; page?: string };
+export default async function PersonPage(props: {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ congress?: string; page?: string }>;
 }) {
+  const [params, searchParams] = await Promise.all([props.params, props.searchParams]);
   const person = await loadPerson(params.id);
   if (!person) notFound();
 

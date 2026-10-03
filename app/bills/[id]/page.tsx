@@ -25,13 +25,15 @@ async function load(id: string): Promise<BillDetail | "unavailable" | null> {
   }
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const params = await props.params;
   const bill = await load(params.id);
   if (!bill || bill === "unavailable") return { title: "Bill" };
   return { title: `${bill.label}: ${toTitleCase(bill.title)}`, description: bill.analysis?.overview ?? bill.subtitle ?? undefined };
 }
 
-export default async function BillPage({ params }: { params: { id: string } }) {
+export default async function BillPage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const bill = await load(params.id);
   if (!bill) notFound();
   if (bill === "unavailable") {

@@ -13,6 +13,7 @@ export async function POST(req: NextRequest) {
   if (!secret || req.headers.get("x-revalidate-secret") !== secret) {
     return NextResponse.json({ ok: false, error: "Unauthorized" }, { status: 401 });
   }
-  revalidateTag(CONTENT_TAG);
+  // Webhook (not a Server Action): expire now so the next request reads fresh content.
+  revalidateTag(CONTENT_TAG, { expire: 0 });
   return NextResponse.json({ ok: true, revalidated: CONTENT_TAG, at: new Date().toISOString() });
 }

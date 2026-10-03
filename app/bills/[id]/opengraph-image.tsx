@@ -8,7 +8,8 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 export const revalidate = 1800;
 
-export default async function Image({ params }: { params: { id: string } }) {
+export default async function Image(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const bill = await getBillDetail(params.id).catch(() => null);
   const fonts = await ogFonts();
 

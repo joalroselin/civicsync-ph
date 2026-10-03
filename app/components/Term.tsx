@@ -13,7 +13,7 @@ const WIDTH = 260;
 export function Term({ children, definition }: { children: React.ReactNode; definition: string }) {
   const id = useId();
   const ref = useRef<HTMLButtonElement>(null);
-  const closeTimer = useRef<ReturnType<typeof setTimeout>>();
+  const closeTimer = useRef<ReturnType<typeof setTimeout>>(undefined);
   // A mouse click right after hover-open should keep it open, not toggle it shut.
   const openedByHover = useRef(false);
   const [pos, setPos] = useState<{ top: number; left: number; above: boolean } | null>(null);

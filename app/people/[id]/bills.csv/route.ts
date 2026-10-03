@@ -6,7 +6,8 @@ import { toTitleCase } from "@/lib/format";
 import { SITE_URL } from "@/lib/site";
 
 /** A lawmaker's authored bills as CSV, for researchers and journalists. ?congress=20 | 19 | … | all */
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const person = await getPerson(params.id).catch(() => null);
   if (!person) return new Response("Lawmaker not found", { status: 404 });
 

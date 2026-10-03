@@ -14,13 +14,17 @@ import { isIntakeKind, validateIntake } from "@/lib/intake";
  * Spam protection: a hidden honeypot field, a minimum time-to-submit, size
  * limits, and a per-instance rate limit.
  */
-const writeClient = createClient({
-  projectId: process.env.SANITY_API_PROJECT_ID ?? process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  dataset: process.env.SANITY_API_DATASET ?? "production",
-  apiVersion: "2025-01-01",
-  token: process.env.SANITY_API_WRITE_TOKEN,
-  useCdn: false,
-});
+const projectId = process.env.SANITY_API_PROJECT_ID ?? process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+// Null without Sanity config (local dev, CI): the form then reports it can't send.
+const writeClient = projectId
+  ? createClient({
+      projectId,
+      dataset: process.env.SANITY_API_DATASET ?? "production",
+      apiVersion: "2025-01-01",
+      token: process.env.SANITY_API_WRITE_TOKEN,
+      useCdn: false,
+    })
+  : null;
 
 const WINDOW_MS = 10 * 60 * 1000;
 const MAX_PER_WINDOW = 5;
@@ -68,6 +72,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    if (!writeClient) throw new Error("Sanity is not configured");
     await writeClient.create({
       _id: `inbox.${randomUUID()}`,
       _type: "intakeSubmission",

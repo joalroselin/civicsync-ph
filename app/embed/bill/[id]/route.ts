@@ -8,7 +8,8 @@ import { withUtm } from "@/lib/site";
  * Add ?theme=dark for dark sites.
  * Plain HTML (no app shell, no scripts, no cookies) so it loads fast anywhere.
  */
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const bill = await loadEmbedBill(params.id);
   const link = withUtm(`/bills/${params.id}`, "embed", "widget", "bill-embed");
   // Light by default so it matches most host sites; ?theme=dark opts in.

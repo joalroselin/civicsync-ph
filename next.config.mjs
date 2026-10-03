@@ -1,9 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    // Link-preview images read these fonts from disk at request time.
-    outputFileTracingIncludes: { "/**": ["./assets/fonts/**/*"] },
-  },
+  // Link-preview images read these fonts from disk at request time.
+  outputFileTracingIncludes: { "/**": ["./assets/fonts/**/*"] },
   async headers() {
     return [
       {

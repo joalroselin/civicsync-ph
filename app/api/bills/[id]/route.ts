@@ -7,7 +7,8 @@ import { getBillDetail } from "@/lib/bills";
  * Bill detail merged from Open Congress (authorship) and BatasWatch
  * (status, best-effort). See lib/bills.ts.
  */
-export async function GET(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(_req: NextRequest, props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   try {
     return NextResponse.json(await getBillDetail(params.id));
   } catch (err) {
