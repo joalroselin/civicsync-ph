@@ -12,6 +12,7 @@ import { BillListSkeleton } from "./components/Skeleton";
 import { LiveDataUnavailable } from "./components/LiveDataUnavailable";
 import { Logo } from "./components/Logo";
 import { HeroAnimation } from "./components/HeroAnimation";
+import { Dismissible } from "./components/Dismissible";
 import { SectionHeading, StartHere } from "./components/StartHere";
 
 export const revalidate = 1800;
@@ -71,15 +72,11 @@ export default async function Home() {
         {/* 3. Personal + help. Watchlist shows first for returning visitors. */}
         <aside className="flex flex-col gap-8 lg:sticky lg:top-8 lg:col-start-2 lg:row-start-1">
           <WatchlistPreview />
-          <StartHere />
-          <div className="hidden lg:block">
-            <SourcesNote />
-          </div>
-        </aside>
-
-        <div className="lg:hidden">
+          <Dismissible storageKey="civicsync:start-dismissed" label="Start here">
+            <StartHere />
+          </Dismissible>
           <SourcesNote />
-        </div>
+        </aside>
       </div>
     </main>
   );
