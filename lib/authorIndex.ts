@@ -10,6 +10,7 @@
  *   and only when exactly one senator fits.
  */
 import type { LawmakerProfile } from "./openCongress";
+import { matchByName } from "./authorMatch";
 
 const BW = "https://bills.juris.ph/api";
 const OC = "https://open-congress-api.bettergov.ph/api";
@@ -67,7 +68,7 @@ async function build(): Promise<AuthorIndex> {
   const idByName = new Map<string, string>();
   const profileById = new Map<string, LawmakerProfile>();
   for (const a of authors) {
-    const id = a.chamber === "house" && a.officialMemberId ? byHouseKey.get(a.officialMemberId) : matchByName(a.canonicalName, people);
+    const id = a.chamber === "house" && a.officialMemberId ? byHouseKey.get(a.officialMemberId) : matchByName(a.canonicalName, people)?.id;
     if (!id) continue;
     idByName.set(normName(a.canonicalName), id);
     profileById.set(id, {
@@ -91,19 +92,6 @@ export async function withProfiles<T extends { id: string; profile?: LawmakerPro
   return people.map((p) => (profileById.has(p.id) ? { ...p, profile: profileById.get(p.id) } : p));
 }
 
-/** "TULFO, ERWIN T." → the one 20th Congress lawmaker with that surname and given name, if unique. */
-function matchByName(canonical: string, people: OcPerson[]): string | undefined {
-  const [last, first = ""] = canonical.toUpperCase().split(",");
-  const surname = last.trim();
-  const given = first.replace(/"[^"]*"/g, " ").split(/[\s.]+/).filter((g) => g.length > 1);
-  const hits = people.filter((p) => {
-    const pl = (p.last_name ?? "").toUpperCase();
-    const surnameOk = pl === surname || pl.split("-").includes(surname);
-    const names = [...(p.first_name ?? "").toUpperCase().split(/\s+/), ...(p.aliases ?? []).map((a) => a.toUpperCase())];
-    return surnameOk && given.some((g) => names.includes(g));
-  });
-  return hits.length === 1 ? hits[0].id : undefined;
-}
 
 async function bwAuthors(): Promise<BwAuthor[]> {
   const res = await fetch(`${BW}/authors?congress=20&limit=500`, { next: { revalidate: DAY }, signal: AbortSignal.timeout(10_000) });
