@@ -16,6 +16,7 @@ import {
   getMeasureByNumber,
   toBatasWatchNumber,
   type BatasWatchMeasure,
+  type SemanticHit,
 } from "@/lib/batasWatch";
 
 /**
@@ -82,6 +83,21 @@ export function summaryFromOpenCongress(bill: OpenCongressBill, status?: string 
       : bill.authors_raw
         ? bill.authors_raw.split(/;|\band\b/).map((n) => displayAuthorName(n.trim())).filter(Boolean)
         : [],
+  };
+}
+
+/** A semantic-search hit as a list row; `summary` is the plain-language overview. */
+export function summaryFromSemantic(h: SemanticHit): BillSummary & { summary: string | null } {
+  const parsed = fromBatasWatchNumber(h.number);
+  return {
+    routeId: h.number,
+    label: parsed ? `${parsed.subtype} ${parsed.number}` : h.number,
+    congress: h.congress,
+    title: h.title || "Untitled bill",
+    dateFiled: h.filedAt,
+    status: h.status ?? "Filed",
+    authors: (h.authorCredits ?? []).map((a) => displayAuthorName(a.name)),
+    summary: h.summary,
   };
 }
 

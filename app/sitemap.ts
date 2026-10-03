@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { SITE_URL } from "@/lib/site";
-import { listMeasures, toBatasWatchNumber } from "@/lib/batasWatch";
+import { listMeasures, listPolicyAreas, toBatasWatchNumber } from "@/lib/batasWatch";
 
 /**
  * Every 20th Congress bill and every lawmaker, so search engines can find
@@ -40,11 +40,11 @@ async function allPeopleIds(): Promise<string[]> {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [sb, hb, people] = await Promise.all([latestNumber("senate"), latestNumber("house"), allPeopleIds()]);
+  const [sb, hb, people, topics] = await Promise.all([latestNumber("senate"), latestNumber("house"), allPeopleIds(), listPolicyAreas().catch(() => [])]);
 
   const pages: MetadataRoute.Sitemap = [
     { url: SITE_URL, changeFrequency: "daily", priority: 1 },
-    ...["receipts", "how-bills-become-law", "about", "get-involved", "press", "privacy"].map((p) => ({ url: `${SITE_URL}/${p}`, changeFrequency: "weekly" as const, priority: 0.6 })),
+    ...["receipts", "topics", "how-bills-become-law", "about", "get-involved", "press", "privacy"].map((p) => ({ url: `${SITE_URL}/${p}`, changeFrequency: "weekly" as const, priority: 0.6 })),
   ];
   const bills = (subtype: "SB" | "HB", max: number): MetadataRoute.Sitemap =>
     Array.from({ length: max }, (_, i) => ({
@@ -58,5 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...pages, ...lawmakers, ...bills("SB", sb), ...bills("HB", hb)];
+  const topicPages: MetadataRoute.Sitemap = topics.map((t) => ({ url: `${SITE_URL}/topics/${t.id}`, changeFrequency: "daily", priority: 0.7 }));
+
+  return [...pages, ...topicPages, ...lawmakers, ...bills("SB", sb), ...bills("HB", hb)];
 }

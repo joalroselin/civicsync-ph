@@ -3,8 +3,9 @@ import { authorLine, authorRole, type BillSummary } from "@/lib/bills";
 import { StatusBadge } from "./StatusBadge";
 import { WatchButton } from "./WatchButton";
 import { formatDate, ordinal, toTitleCase } from "@/lib/format";
+import { Highlight } from "./Highlight";
 
-export function BillCard({ bill, hideAuthor = false }: { bill: BillSummary; hideAuthor?: boolean }) {
+export function BillCard({ bill, hideAuthor = false, highlight }: { bill: BillSummary; hideAuthor?: boolean; highlight?: string[] }) {
   const title = toTitleCase(bill.title);
   const byline = hideAuthor ? null : authorLine(bill);
   return (
@@ -19,7 +20,9 @@ export function BillCard({ bill, hideAuthor = false }: { bill: BillSummary; hide
             {ordinal(bill.congress)} Congress{bill.dateFiled && ` · Filed ${formatDate(bill.dateFiled)}`}
           </span>
         </div>
-        <p className="mt-1.5 line-clamp-3 text-[15px] font-medium leading-snug text-gray-900">{title}</p>
+        <p className="mt-1.5 line-clamp-3 text-[15px] font-medium leading-snug text-gray-900">
+          <Highlight text={title} terms={highlight} />
+        </p>
         {byline && <AuthorByline text={byline} role={authorRole(bill.label)} />}
         {bill.status !== undefined && (
           <div className="mt-2">
@@ -51,12 +54,12 @@ export function AuthorByline({ text, role }: { text: string; role: string }) {
   );
 }
 
-export function BillList({ bills, hideAuthor = false }: { bills: BillSummary[]; hideAuthor?: boolean }) {
+export function BillList({ bills, hideAuthor = false, highlight }: { bills: BillSummary[]; hideAuthor?: boolean; highlight?: string[] }) {
   return (
     <ul className="flex flex-col gap-3">
       {bills.map((b) => (
         <li key={b.routeId}>
-          <BillCard bill={b} hideAuthor={hideAuthor} />
+          <BillCard bill={b} hideAuthor={hideAuthor} highlight={highlight} />
         </li>
       ))}
     </ul>
@@ -64,7 +67,7 @@ export function BillList({ bills, hideAuthor = false }: { bills: BillSummary[]; 
 }
 
 /** Compact row for grouped lists (e.g. one panel per chamber on the home page). */
-export function BillRow({ bill, movedOn }: { bill: BillSummary; movedOn?: string }) {
+export function BillRow({ bill, movedOn, summary, highlight }: { bill: BillSummary; movedOn?: string; summary?: string | null; highlight?: string[] }) {
   const title = toTitleCase(bill.title);
   const byline = authorLine(bill);
   return (
@@ -74,7 +77,10 @@ export function BillRow({ bill, movedOn }: { bill: BillSummary; movedOn?: string
           <span className="font-semibold text-navy">{bill.label}</span>
           {movedOn ? <span>· Moved {formatDate(movedOn)}</span> : bill.dateFiled && <span>· Filed {formatDate(bill.dateFiled)}</span>}
         </div>
-        <p className="mt-1 line-clamp-2 text-[15px] font-medium leading-snug text-gray-900">{title}</p>
+        <p className="mt-1 line-clamp-2 text-[15px] font-medium leading-snug text-gray-900">
+          <Highlight text={title} terms={highlight} />
+        </p>
+        {summary && <p className="mt-1 line-clamp-2 text-sm leading-snug text-gray-600">{summary}</p>}
         <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">
           {bill.status !== undefined && <StatusBadge status={bill.status} />}
           {byline && <span className="truncate text-xs text-gray-500">{byline}</span>}

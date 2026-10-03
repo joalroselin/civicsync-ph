@@ -156,3 +156,69 @@ export function statusTone(status: string | null | undefined): StatusTone {
     return "moving";
   return "unknown";
 }
+
+// --- Semantic search and topics ----------------------------------------------
+
+export interface SemanticHit {
+  number: string;
+  chamber: string;
+  congress: number;
+  title: string;
+  filedAt: string | null;
+  status: string | null;
+  summary: string | null;
+  score: number;
+  primaryCategory: string | null;
+  authorCredits?: { name: string; role?: string }[];
+}
+
+/** Some upstream titles carry HTML entities ("H&#1040;"); decode the numeric ones. */
+const decodeEntities = (s: string) =>
+  s.replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/&amp;/g, "&").replace(/&quot;/g, '"');
+
+/**
+ * Meaning-based search over BatasWatch's bill analyses (20th Congress only):
+ * "rice" finds the RICE Act, not bills about "prices". Not useful for
+ * lawmaker names (it matches places), so callers skip it for those.
+ * `category` is a policy-area label, e.g. "Health". Max 50 results.
+ */
+export async function semanticSearch(params: {
+  q: string;
+  chamber?: "senate" | "house";
+  category?: string;
+  limit?: number;
+  minScore?: number;
+}): Promise<SemanticHit[]> {
+  const qs = new URLSearchParams({ q: params.q, limit: String(Math.min(params.limit ?? 20, 50)) });
+  if (params.chamber) qs.set("chamber", params.chamber);
+  if (params.category) qs.set("category", params.category);
+  const res = await fetch(`${BASE_URL}/search/vector?${qs}`, {
+    next: { revalidate: REVALIDATE_SECONDS },
+    signal: AbortSignal.timeout(8000),
+  });
+  if (!res.ok) throw new Error(`BatasWatch search failed: ${res.status}`);
+  const json = await res.json();
+  const seen = new Set<string>();
+  return ((json?.items ?? []) as SemanticHit[])
+    .filter((h) => h.score >= (params.minScore ?? 0) && !seen.has(h.number) && seen.add(h.number))
+    .map((h) => ({ ...h, title: decodeEntities(h.title ?? ""), summary: h.summary ? decodeEntities(h.summary) : null }));
+}
+
+export interface PolicyArea {
+  id: string;
+  label: string;
+  description: string;
+  primaryBillCount: number;
+  senatePrimaryBillCount: number;
+  housePrimaryBillCount: number;
+}
+
+/** BatasWatch's topic list (20th Congress), largest first. Changes rarely. */
+export async function listPolicyAreas(): Promise<PolicyArea[]> {
+  const res = await fetch(`${BASE_URL}/policy-areas`, { next: { revalidate: 86400 }, signal: AbortSignal.timeout(8000) });
+  if (!res.ok) throw new Error(`BatasWatch policy areas failed: ${res.status}`);
+  const json = await res.json();
+  return ((json?.items ?? []) as PolicyArea[])
+    .filter((a) => a.id !== "other")
+    .sort((a, b) => b.primaryBillCount - a.primaryBillCount);
+}
