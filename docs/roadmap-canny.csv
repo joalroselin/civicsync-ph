@@ -19,18 +19,18 @@ CS-017,Lawmaker profiles with service record,"See which congresses a lawmaker se
 CS-018,Filter a lawmaker's bills by congress,"Tabs for each congress a lawmaker served in, plus their full history.",Complete,Receipts,Deployed,2026-09-24
 CS-019,Live list of each lawmaker's current bills,"The 20th Congress tab updates from the live tracker, including bills filed since late 2025.",Complete,Receipts,Deployed,2026-09-24
 CS-020,Recently filed bills on the home page,"The newest Senate and House filings, right on the home page.",In Progress,Bills,Deployed,2026-09-24
-CS-021,Plain-language bill summaries,"Short, readable summaries of what a bill does, clearly labelled as automated, with the full text a tap away.",In Progress,Bills,Deployed,2026-09-24
+CS-021,Plain-language bill summaries,"Short, readable summaries of what a bill does, clearly labelled as automated, with the full text a tap away.",Complete,Bills,Deployed,2026-09-24
 CS-022,Links to the official record,"Every bill links to its Senate or House record and the bill text, so you can verify at the source.",Complete,Bills,Deployed,2026-09-24
 CS-023,Status at a glance,"Colour-coded status badges show whether a bill is in committee, moving, or law.",Complete,Bills,Deployed,2026-09-24
 CS-024,Quick search suggestions,One-tap example searches on the home page to help you get started.,Complete,Receipts,Deployed,2026-09-24
-CS-025,Clear notice when live data is unavailable,"If the live tracker is down, you'll see a clear message and everything else keeps working.",In Progress,Trust,Deployed,2026-09-24
+CS-025,Clear notice when live data is unavailable,"If the live tracker is down, you'll see a clear message and everything else keeps working.",Complete,Trust,Deployed,2026-09-24
 CS-026,Accurate authorship for shared surnames,"Lawmakers who share a surname (there are four Tulfos) are kept apart, so each profile shows only their own bills.",Complete,Data,Deployed,2026-09-24
 CS-027,Greetings in Filipino,A “Magandang umaga / tanghali / hapon / gabi” greeting that follows the time of day in Manila.,Complete,Language,Deployed,2026-09-24
-CS-028,Share a bill from its page,"A share button on every bill page, using your phone's share sheet or copying the link.",In Progress,Sharing,Deployed,2026-09-24
-CS-029,Friendly error and offline pages,"Helpful pages when something isn't found, a source is slow, or you're offline.",In Progress,Platform,Deployed,2026-09-24
+CS-028,Share a bill from its page,"A share button on every bill page, using your phone's share sheet or copying the link.",Complete,Sharing,Deployed,2026-09-24
+CS-029,Friendly error and offline pages,"Helpful pages when something isn't found, a source is slow, or you're offline.",Complete,Platform,Deployed,2026-09-24
 CS-030,Instant content updates,"Site text like the About page and FAQ updates within seconds, without downtime.",Complete,Under the hood,Performance;Deployed,2026-09-30
-CS-031,Contributing guide and code of conduct,"Clear guidance for anyone who wants to help build CivicSync, with a commitment to staying non-partisan.",In Progress,Community,Open source;Deployed,2026-09-30
-CS-032,Public roadmap,"This board: see what's shipped, what's next, and suggest or vote on ideas.",In Progress,Community,Deployed,2026-09-30
+CS-031,Contributing guide and code of conduct,"Clear guidance for anyone who wants to help build CivicSync, with a commitment to staying non-partisan.",Complete,Community,Open source;Deployed,2026-09-30
+CS-032,Public roadmap,"This board: see what's shipped, what's next, and suggest or vote on ideas.",Complete,Community,Deployed,2026-09-30
 CS-033,"Simpler navigation, with a More menu on phones","A cleaner sidebar (main pages first, About and Get involved below) and a new More tab on phones, so every page is one tap away from anywhere.",Complete,Design,Deployed,2026-09-30
 CS-034,Author's role shown on every bill,"Every Senate and House bill shows who filed it and their role, Senator or Representative, in bill lists and on the bill page.",Complete,Bills,Deployed,2026-09-30
 CS-101,Faster loading for users in the Philippines,"The app's servers now run in Singapore, closer to Philippine users.",Complete,Performance,Performance;Deployed,2026-09-30
@@ -63,3 +63,9 @@ CS-901,Automated testing on every change,So updates don't break search or bill p
 CS-902,Uptime monitoring,So we catch data-source outages before you do.,Planned,Under the hood,Under the hood,
 CS-903,Backup source for bill status,So status still loads if our main tracker is down.,Open,Under the hood,Under the hood,
 CS-904,Finalise contributor licensing,"Lawyer review of the Contributor License Agreement, a commercial licence template, and CLA Assistant on GitHub before accepting outside code.",Planned,Under the hood,Under the hood;Open source,
+CS-111,Find CivicSync on Google,"Every bill and lawmaker page is listed for search engines, with structured data, so searches like ""SB 1294 status"" lead straight to the bill.",In Progress,Discovery,,
+CS-112,Embed a bill's live status on your site,"A copy-paste card or badge for blogs, newsrooms, school sites, GitHub, Notion and newsletters. Updates as the bill moves.",In Progress,Sharing,,
+CS-113,Calendar and RSS feeds for your Watchlist,"Subscribe in Google Calendar, Apple Calendar or any news reader to see hearings and status changes where you already look.",Open,Watchlist,,
+CS-114,Ask about a bill on Messenger or Viber,Send a bill number or lawmaker name to a chat bot and get the status and a link back. No app needed.,Open,Discovery,,
+CS-115,Bill status inside news articles,"A browser extension that recognises bill numbers on any page (news, Facebook) and shows the live status on hover.",Open,Discovery,,
+CS-116,Cite this bill,"One-tap citations (APA, MLA, Chicago) and a CSV export for students, researchers and journalists.",Open,Research,,

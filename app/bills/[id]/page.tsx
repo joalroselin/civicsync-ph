@@ -12,6 +12,9 @@ import { ShareButton } from "../../components/ShareButton";
 import { SearchLink } from "../../components/SearchNavigation";
 import { EmailAction } from "../../components/EmailAction";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
+import { EmbedPanel } from "../../components/EmbedPanel";
+import { SITE_URL } from "@/lib/site";
+import { personName } from "@/lib/openCongress";
 
 async function load(id: string): Promise<BillDetail | "unavailable" | null> {
   try {
@@ -48,8 +51,23 @@ export default async function BillPage({ params }: { params: { id: string } }) {
   const reportSubject = `Data correction: ${bill.label} (CivicSync PH)`;
   const reportBody = `Bill: ${bill.label}, ${ordinal(bill.congress)} Congress\nPage: https://civicsync-ph-gamma.vercel.app/bills/${bill.id}\n\nWhat looks wrong (status, author, title, committee…):\n\nWhat it should say:\n\nWhere you saw the correct information (link to the official Senate or House record, if you have one):\n`;
 
+  // schema.org Legislation, so search engines understand what this page is.
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Legislation",
+    name: `${bill.label}: ${title}`,
+    legislationIdentifier: bill.billNumber,
+    legislationJurisdiction: "PH",
+    ...(bill.dateFiled && { dateCreated: bill.dateFiled }),
+    ...(bill.analysis?.overview && { abstract: bill.analysis.overview }),
+    author: (bill.authors.length ? bill.authors.map(personName) : bill.authorNames).map((name) => ({ "@type": "Person", name })),
+    url: `${SITE_URL}/bills/${bill.id}`,
+    ...(bill.sourceUrls[0] && { sameAs: bill.sourceUrls.map((s) => s.url) }),
+  };
+
   return (
     <main className="px-5 pb-5 md:pt-4">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <PageHeader title={bill.label} back="/receipts">
         <ShareButton title={`${bill.label}: ${title}`} />
       </PageHeader>
@@ -226,6 +244,7 @@ export default async function BillPage({ params }: { params: { id: string } }) {
           align="center"
         />
       </div>
+      <EmbedPanel id={bill.id} label={bill.label} siteUrl={SITE_URL} />
       <p className="mt-2 text-center text-[11px] text-gray-400">
         {bill.billNumber} · Sources:{" "}
         {[bill.inOpenCongress && "BetterGov Open Congress", bill.statusSource && "BatasWatch"].filter(Boolean).join(", ")}
