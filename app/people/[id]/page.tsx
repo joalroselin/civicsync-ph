@@ -10,6 +10,7 @@ import { BillList } from "../../components/BillCard";
 import { Avatar } from "../../components/PersonCard";
 import { PageHeader, Pager } from "../../components/PageHeader";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
+import { ShareImageButton } from "../../components/ShareImage";
 
 const PAGE_SIZE = 20;
 
@@ -75,6 +76,12 @@ export default async function PersonPage(props: {
               )}
             </div>
           </section>
+
+          <ShareImageButton
+            src={`/people/${person.id}/card`}
+            filename={`civicsync-${personName(person).toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}
+            intro="An image of this lawmaker’s record for Instagram, Facebook or group chats. Facts only: role, congresses served and bills on record."
+          />
 
           {served.length > 0 && (
             <>

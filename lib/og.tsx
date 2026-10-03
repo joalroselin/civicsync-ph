@@ -85,3 +85,59 @@ export function OgStatus({ status }: { status: string }) {
     </div>
   );
 }
+
+// --- Share cards (CS-204): portrait images for Instagram/Facebook posts and stories ---
+
+export const SHARE_SIZES = { post: { width: 1080, height: 1350 }, story: { width: 1080, height: 1920 } } as const;
+export type ShareFormat = keyof typeof SHARE_SIZES;
+export const shareFormat = (v: string | null): ShareFormat => (v === "story" ? "story" : "post");
+
+/** Portrait frame: brand at top, content, then a link back. Stories get extra room for IG's top/bottom UI. */
+export function ShareFrame({ format, children, path, hint }: { format: ShareFormat; children: React.ReactNode; path: string; hint?: string }) {
+  const story = format === "story";
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        padding: story ? "180px 80px 260px" : "72px 80px",
+        background: "linear-gradient(160deg, #2747A6 0%, #1E3A8A 45%, #152A66 100%)",
+        color: "white",
+        fontFamily: "Inter",
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+        <Logo size={60} />
+        <span style={{ fontFamily: "Space Grotesk", fontSize: 38, fontWeight: 700 }}>CivicSync PH</span>
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", flex: 1, justifyContent: "center" }}>{children}</div>
+      <div style={{ display: "flex", flexDirection: "column", gap: 6, fontSize: 26, color: "#C7D2FE" }}>
+        <span>{hint ?? "Free, no sign-up. Check the receipts:"}</span>
+        <span style={{ fontWeight: 600, color: "white", fontSize: 30 }}>{`${SITE_HOST}${path}`}</span>
+      </div>
+    </div>
+  );
+}
+
+/** Eight-step progress bar matching the app's "path to law". */
+export function ShareProgress({ stage, labels }: { stage: number; labels: readonly string[] }) {
+  return (
+    <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+      <div style={{ display: "flex", gap: 8 }}>
+        {labels.map((_, i) => (
+          <div
+            key={i}
+            style={{ flex: 1, height: 12, borderRadius: 999, background: i < stage ? "rgba(255,255,255,0.65)" : i === stage ? "#FCA5A5" : "rgba(255,255,255,0.15)" }}
+          />
+        ))}
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 22, color: "#C7D2FE" }}>
+        <span>{labels[0]}</span>
+        <span style={{ color: "#FCA5A5", fontWeight: 600 }}>{`Now: ${labels[stage]}`}</span>
+        <span>{labels[labels.length - 1]}</span>
+      </div>
+    </div>
+  );
+}

@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { citations, type CiteInput } from "@/lib/cite";
+import { ShareImagePanel } from "./ShareImage";
 
-type Panel = "cite" | "embed" | null;
+type Panel = "cite" | "embed" | "image" | null;
 
 /** "Cite" and "Embed" on the bill page: copy-paste text for students, researchers, newsrooms and bloggers. */
 export function BillTools({ bill, id, siteUrl }: { bill: CiteInput; id: string; siteUrl: string }) {
@@ -12,17 +13,31 @@ export function BillTools({ bill, id, siteUrl }: { bill: CiteInput; id: string; 
 
   return (
     <div className="mt-4 text-center">
-      <div className="inline-flex gap-1">
+      <div className="inline-flex flex-wrap justify-center gap-1">
         <ToolButton active={open === "cite"} onClick={() => toggle("cite")} label="Cite this bill">
           <path d="M7 7h4v4c0 3-1.5 5-4 6M15 7h4v4c0 3-1.5 5-4 6" strokeLinecap="round" strokeLinejoin="round" />
         </ToolButton>
         <ToolButton active={open === "embed"} onClick={() => toggle("embed")} label="Embed this bill">
           <path d="m8 7-5 5 5 5M16 7l5 5-5 5" strokeLinecap="round" strokeLinejoin="round" />
         </ToolButton>
+        <ToolButton active={open === "image"} onClick={() => toggle("image")} label="Share as image">
+          <rect x="4" y="3" width="16" height="18" rx="2" />
+          <path d="m4 16 4-4 4 4 3-3 5 5" strokeLinecap="round" strokeLinejoin="round" />
+        </ToolButton>
       </div>
       {open && (
         <div className="mx-auto mt-3 max-w-xl rounded-2xl bg-white p-4 text-left shadow-sm ring-1 ring-gray-200/70">
-          {open === "cite" ? <CitePanel bill={bill} /> : <EmbedPanel id={id} label={bill.label} siteUrl={siteUrl} />}
+          {open === "cite" ? (
+            <CitePanel bill={bill} />
+          ) : open === "embed" ? (
+            <EmbedPanel id={id} label={bill.label} siteUrl={siteUrl} />
+          ) : (
+            <ShareImagePanel
+              src={`/bills/${id}/card`}
+              filename={`civicsync-${bill.label.replace(/\s+/g, "").toLowerCase()}`}
+              intro="An image of this bill’s status and summary for Instagram, Facebook or group chats."
+            />
+          )}
         </div>
       )}
     </div>

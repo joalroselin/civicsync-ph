@@ -22,7 +22,19 @@ export function ordinal(n: number) {
 }
 
 /** Upstream titles are often ALL CAPS — soften them for reading. */
-export function toTitleCase(s: string) {
+/** Cyrillic letters that look Latin (seen in some upstream titles, e.g. "ACТ" with a Cyrillic Т). */
+const HOMOGLYPHS: Record<string, string> = {
+  А: "A", В: "B", Е: "E", К: "K", М: "M", Н: "H", О: "O", Р: "P", С: "C", Т: "T", Х: "X", У: "Y",
+  а: "a", е: "e", о: "o", р: "p", с: "c", у: "y", х: "x", т: "t", к: "k", м: "m", н: "h", в: "b",
+};
+export function fixHomoglyphs(s: string) {
+  // Only touch text that is otherwise Latin, so genuine Cyrillic stays intact.
+  if (!/[A-Za-z]/.test(s)) return s;
+  return s.replace(/[\u0400-\u04FF]/g, (c) => HOMOGLYPHS[c] ?? c);
+}
+
+export function toTitleCase(input: string) {
+  const s = fixHomoglyphs(input);
   // Treat as shouting if most letters are capitals (some titles have a stray lowercase "Inc." or similar).
   const letters = s.match(/\p{L}/gu) ?? [];
   const upper = letters.filter((c) => c !== c.toLowerCase()).length;

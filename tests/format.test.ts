@@ -50,3 +50,15 @@ describe("statusTone", () => {
     [null, "unknown"],
   ])("%s → %s", (s, tone) => expect(statusTone(s)).toBe(tone));
 });
+
+describe("fixHomoglyphs", () => {
+  it("replaces Cyrillic look-alikes in Latin titles", async () => {
+    const { fixHomoglyphs } = await import("@/lib/format");
+    expect(fixHomoglyphs("AN ACТ STRENGTHENING")).toBe("AN ACT STRENGTHENING");
+    expect(toTitleCase("AN ACТ STRENGTHENING THE COAST GUARD")).toBe("An Act Strengthening the Coast Guard");
+  });
+  it("leaves fully Cyrillic text alone", async () => {
+    const { fixHomoglyphs } = await import("@/lib/format");
+    expect(fixHomoglyphs("Тест")).toBe("Тест");
+  });
+});
