@@ -12,3 +12,4 @@ marketing/
 !.env.example
 studio/dist
 studio/.sanity
+tsconfig.tsbuildinfo

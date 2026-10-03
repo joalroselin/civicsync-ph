@@ -1,0 +1,35 @@
+# Runs on every push and pull request: type-check, unit tests, production
+# build, then a smoke test against the built site (CS-901).
+# Vercel deploys separately; a red run here means "check before trusting it".
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      # No secrets needed: without Sanity or Firebase keys the app uses its
+      # built-in default content and hides sign-in.
+      - run: npm run build
+      - name: Smoke test
+        run: |
+          npm run start -- -p 3000 &
+          for i in $(seq 1 30); do curl -sf http://localhost:3000/robots.txt >/dev/null && break; sleep 2; done
+          npm run smoke -- http://localhost:3000
