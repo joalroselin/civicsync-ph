@@ -18,6 +18,7 @@ import {
   type BatasWatchMeasure,
   type SemanticHit,
 } from "@/lib/batasWatch";
+import { getAuthorIndex, normName } from "@/lib/authorIndex";
 
 /**
  * Open Congress's catalogue currently stops around Sept 2025, while
@@ -134,6 +135,8 @@ export interface BillDetail {
   authors: OpenCongressPerson[];
   /** Plain names, used when there are no linked profiles. */
   authorNames: string[];
+  /** Open Congress profile ID for each of `authorNames`, when we can tell who it is. */
+  authorIds: (string | null)[];
   sourceUrls: { label: string; url: string }[];
   // BatasWatch — null when unavailable or outside the 20th Congress
   status: string | null;
@@ -185,7 +188,7 @@ async function findOpenCongressBill(subtype: "SB" | "HB", number: number, congre
   return hit ? getBill(hit.id) : null;
 }
 
-function merge(oc: OpenCongressBill | null, bw: BatasWatchMeasure | null): BillDetail {
+async function merge(oc: OpenCongressBill | null, bw: BatasWatchMeasure | null): Promise<BillDetail> {
   const parsed = oc ? { subtype: oc.subtype, number: oc.bill_number } : fromBatasWatchNumber(bw!.number)!;
   const congress = oc?.congress ?? bw!.congress;
 
@@ -200,6 +203,7 @@ function merge(oc: OpenCongressBill | null, bw: BatasWatchMeasure | null): BillD
       url: bw.officialRecordUrl,
     });
 
+  const authorIndex = bw?.authorCredits?.length && !oc?.authors?.length ? await getAuthorIndex() : { idByName: new Map<string, string>() };
   const ocTitle = oc ? billTitle(oc) : null;
   const title = oc && ocTitle !== "Untitled bill" ? ocTitle! : bw?.title ?? bw?.longTitle ?? "Untitled bill";
   const subtitle = oc ? billSubtitle(oc) : bw?.longTitle && bw.longTitle !== title ? bw.longTitle : null;
@@ -221,6 +225,7 @@ function merge(oc: OpenCongressBill | null, bw: BatasWatchMeasure | null): BillD
       : oc?.authors_raw
         ? [oc.authors_raw]
         : [],
+    authorIds: bw?.authorCredits?.length ? bw.authorCredits.map((a) => authorIndex.idByName.get(normName(a.name)) ?? null) : [],
     sourceUrls,
     status: bw ? statusText(bw) : null,
     committee: bw?.primaryCommittee ?? null,

@@ -62,3 +62,17 @@ describe("fixHomoglyphs", () => {
     expect(fixHomoglyphs("Тест")).toBe("Тест");
   });
 });
+
+describe("suffixes", () => {
+  it("doesn't double the period on Jr.", () => {
+    expect(displayAuthorName("CRUZ, RICARDO JR. S.")).toBe("Ricardo Jr. S. Cruz");
+    expect(displayAuthorName("TANJUATCO, EMIGDIO III P.")).toBe("Emigdio III P. Tanjuatco");
+    expect(displayAuthorName("MOMO, ROMEO SR. S.")).toBe("Romeo Sr. S. Momo");
+  });
+});
+
+describe("malformed author names", () => {
+  it("treats a period after the surname as the comma", () => {
+    expect(displayAuthorName("MADRONA. ELEANDRO JESUS F.")).toBe("Eleandro Jesus F. Madrona");
+  });
+});

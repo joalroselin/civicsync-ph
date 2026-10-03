@@ -133,13 +133,15 @@ export function authoredBy(
 }
 
 /** "HONTIVEROS, RISA" → "Risa Hontiveros" */
-export function displayAuthorName(name: string): string {
+export function displayAuthorName(raw: string): string {
+  // Some records use a period instead of the comma: "MADRONA. ELEANDRO JESUS F."
+  const name = raw.includes(",") ? raw : raw.replace(/^([A-Z\u00C0-\u017F'-]{2,})\.\s+/, "$1, ");
   const [last, first] = name.split(",").map((s) => s.trim());
   const cap = (s: string) =>
     s
       .toLowerCase()
       .replace(/(^|[\s"(-])(\p{L})/gu, (_, p, c) => p + c.toUpperCase())
-      .replace(/\b(Ii|Iii|Iv|Jr)\b/g, (x) => (x === "Jr" ? "Jr." : x.toUpperCase()));
+      .replace(/\b(Ii|Iii|Iv|Jr|Sr)\b\.?/g, (x) => (/^[JS]r/.test(x) ? `${x.slice(0, 2)}.` : x.toUpperCase()));
   return first ? `${cap(first)} ${cap(last)}` : cap(last);
 }
 

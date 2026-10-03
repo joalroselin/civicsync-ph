@@ -1,5 +1,6 @@
 import { getPersonBills, type OpenCongressPerson } from "./openCongress";
 import { authoredBy, listMeasures } from "./batasWatch";
+import { getAuthorIndex, normName } from "./authorIndex";
 import { summaryFromBatasWatch, summaryFromOpenCongress, type BillSummary } from "./bills";
 
 /**
@@ -10,10 +11,20 @@ export async function liveBills(
   person: OpenCongressPerson,
   page: number
 ): Promise<{ data: BillSummary[]; total: number | null; hasMore: boolean } | null> {
-  const last = person.last_name ?? "";
-  const surname = last.includes("-") ? last.split("-")[0] : last;
-  const givenNames = [...(person.first_name?.split(/\s+/) ?? []), ...(person.aliases ?? [])];
+  // Prefer the exact names BatasWatch files this person under (e.g. Open
+  // Congress's "Brian Daniel Llamanzares" is "POE, BRIAN" there).
+  const known = (await getAuthorIndex()).namesById.get(person.id) ?? [];
   try {
+    if (known.length) {
+      const surname = known[0].split(",")[0].trim();
+      const res = await listMeasures({ q: surname, sort: "latest", page });
+      const names = new Set(known);
+      const mine = res.items.filter((m) => (m.authorCredits ?? []).some((a) => names.has(normName(a.name))));
+      return { data: mine.map(summaryFromBatasWatch), total: null, hasMore: res.hasMore };
+    }
+    const last = person.last_name ?? "";
+    const surname = last.includes("-") ? last.split("-")[0] : last;
+    const givenNames = [...(person.first_name?.split(/\s+/) ?? []), ...(person.aliases ?? [])];
     const res = await listMeasures({ q: surname, sort: "latest", page });
     const mine = res.items.filter((m) => authoredBy(m, { surname, givenNames }));
     return { data: mine.map(summaryFromBatasWatch), total: null, hasMore: res.hasMore };

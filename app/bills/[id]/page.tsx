@@ -5,12 +5,11 @@ import { getSiteSettings } from "@/lib/content";
 import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
 import { formatDate, ordinal, toTitleCase } from "@/lib/format";
 import { PageHeader } from "../../components/PageHeader";
-import { PersonCard } from "../../components/PersonCard";
+import { AuthorList } from "../../components/AuthorList";
 import { StatusBadge } from "../../components/StatusBadge";
 import { StatusHelp } from "../../components/StatusHelp";
 import { WatchButton } from "../../components/WatchButton";
 import { ShareButton } from "../../components/ShareButton";
-import { SearchLink } from "../../components/SearchNavigation";
 import { EmailAction } from "../../components/EmailAction";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
 import { BillTools } from "../../components/BillTools";
@@ -132,32 +131,8 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
             )}
           </Card>
           <div className="hidden xl:block">
-            <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${role}s`}>
-              {bill.authors.length > 0 ? (
-                <ul className="-mx-1 flex flex-col gap-2">
-                  {bill.authors.map((a) => (
-                    <li key={a.id}>
-                      <PersonCard person={a} role={role} />
-                    </li>
-                  ))}
-                </ul>
-              ) : bill.authorNames.length > 0 ? (
-                <ul className="divide-y divide-gray-100">
-                  {bill.authorNames.map((name) => (
-                    <li key={name}>
-                      <SearchLink q={surnameOf(name)} className="flex items-center justify-between py-2.5 text-sm font-medium">
-                        <span className="flex min-w-0 items-center gap-2">
-                          <span className="shrink-0 rounded bg-navy/10 px-1.5 py-0.5 text-[11px] font-semibold text-navy">{role}</span>
-                          <span className="truncate">{name}</span>
-                        </span>
-                        <span className="shrink-0 text-xs text-navy">Receipts →</span>
-                      </SearchLink>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-sm text-gray-500">No authors on record yet.</p>
-              )}
+            <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${authorCount} ${role}s`}>
+              <AuthorList people={bill.authors} names={bill.authorNames} ids={bill.authorIds} role={role} />
             </Card>
           </div>
         </aside>
@@ -181,32 +156,8 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
             </Card>
           )}
           <div className="xl:hidden">
-            <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${role}s`}>
-              {bill.authors.length > 0 ? (
-                <ul className="-mx-1 flex flex-col gap-2">
-                  {bill.authors.map((a) => (
-                    <li key={a.id}>
-                      <PersonCard person={a} role={role} />
-                    </li>
-                  ))}
-                </ul>
-              ) : bill.authorNames.length > 0 ? (
-                <ul className="divide-y divide-gray-100">
-                  {bill.authorNames.map((name) => (
-                    <li key={name}>
-                      <SearchLink q={surnameOf(name)} className="flex items-center justify-between py-2.5 text-sm font-medium">
-                        <span className="flex min-w-0 items-center gap-2">
-                          <span className="shrink-0 rounded bg-navy/10 px-1.5 py-0.5 text-[11px] font-semibold text-navy">{role}</span>
-                          <span className="truncate">{name}</span>
-                        </span>
-                        <span className="shrink-0 text-xs text-navy">Receipts →</span>
-                      </SearchLink>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <p className="text-sm text-gray-500">No authors on record yet.</p>
-              )}
+            <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${authorCount} ${role}s`}>
+              <AuthorList people={bill.authors} names={bill.authorNames} ids={bill.authorIds} role={role} />
             </Card>
           </div>
           {bill.subjects.length > 0 && (
@@ -277,8 +228,3 @@ function Card({ title, children }: { title: string; children: React.ReactNode })
   );
 }
 
-/** "Erwin Tulfo" → "Tulfo"; "Vicente Sotto III" → "Sotto" */
-function surnameOf(name: string) {
-  const parts = name.replace(/"[^"]*"/g, "").trim().split(/\s+/).filter((p) => !/^(Jr\.?|Sr\.?|I{1,3}|IV)$/.test(p));
-  return parts[parts.length - 1] ?? name;
-}
