@@ -34,7 +34,7 @@ const SECONDARY_PATHS = ["/about", "/get-involved", "/press"];
 function FooterLine({ className = "" }: { className?: string }) {
   return (
     <p className={`text-[11px] leading-relaxed text-gray-400 ${className}`}>
-      <Link href="/about#your-privacy" className="transition hover:text-crimson">
+      <Link href="/privacy" className="transition hover:text-crimson">
         Privacy first
       </Link>{" "}
       · Built by{" "}

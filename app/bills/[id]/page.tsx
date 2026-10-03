@@ -7,12 +7,13 @@ import { formatDate, ordinal, toTitleCase } from "@/lib/format";
 import { PageHeader } from "../../components/PageHeader";
 import { PersonCard } from "../../components/PersonCard";
 import { StatusBadge } from "../../components/StatusBadge";
+import { StatusHelp } from "../../components/StatusHelp";
 import { WatchButton } from "../../components/WatchButton";
 import { ShareButton } from "../../components/ShareButton";
 import { SearchLink } from "../../components/SearchNavigation";
 import { EmailAction } from "../../components/EmailAction";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
-import { EmbedPanel } from "../../components/EmbedPanel";
+import { BillTools } from "../../components/BillTools";
 import { SITE_URL } from "@/lib/site";
 import { personName } from "@/lib/openCongress";
 
@@ -105,6 +106,7 @@ export default async function BillPage({ params }: { params: { id: string } }) {
             {bill.statusSource ? (
               <>
                 <StatusBadge status={bill.status} size="md" />
+                <StatusHelp status={bill.status} />
                 {bill.committee && (
                   <dl className="mt-3 text-sm">
                     <dt className="text-xs text-gray-500">Primary committee</dt>
@@ -244,7 +246,18 @@ export default async function BillPage({ params }: { params: { id: string } }) {
           align="center"
         />
       </div>
-      <EmbedPanel id={bill.id} label={bill.label} siteUrl={SITE_URL} />
+      <BillTools
+        id={bill.id}
+        siteUrl={SITE_URL}
+        bill={{
+          label: bill.label,
+          chamber: bill.chamber,
+          congress: bill.congress,
+          title,
+          dateFiled: bill.dateFiled,
+          url: bill.sourceUrls[0]?.url ?? `${SITE_URL}/bills/${bill.id}`,
+        }}
+      />
       <p className="mt-2 text-center text-[11px] text-gray-400">
         {bill.billNumber} · Sources:{" "}
         {[bill.inOpenCongress && "BetterGov Open Congress", bill.statusSource && "BatasWatch"].filter(Boolean).join(", ")}

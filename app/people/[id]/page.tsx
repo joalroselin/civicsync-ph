@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPerson, getPersonBills, personName, type OpenCongressPerson } from "@/lib/openCongress";
-import { authoredBy, BATASWATCH_CONGRESS, listMeasures } from "@/lib/batasWatch";
-import { summaryFromBatasWatch, summaryFromOpenCongress, type BillSummary } from "@/lib/bills";
+import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
+import { summaryFromOpenCongress } from "@/lib/bills";
+import { liveBills } from "@/lib/people";
 import { ordinal } from "@/lib/format";
 import { BillList } from "../../components/BillCard";
 import { Avatar } from "../../components/PersonCard";
@@ -125,11 +126,21 @@ export default async function PersonPage({
             ) : (
               <>
                 <BillList bills={bills.data} hideAuthor />
-                <p className="mt-3 text-[11px] text-gray-400">
-                  {congress === BATASWATCH_CONGRESS
-                    ? "Current list via BatasWatch (independent tracker)."
-                    : "Via BetterGov Open Congress. Its catalogue currently runs to around September 2025."}
-                </p>
+                <div className="mt-3 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                  <p className="text-[11px] text-gray-400">
+                    {congress === BATASWATCH_CONGRESS
+                      ? "Current list via BatasWatch (independent tracker)."
+                      : "Via BetterGov Open Congress. Its catalogue currently runs to around September 2025."}
+                  </p>
+                  {/* Plain link: a file download, not a page. */}
+                  <a
+                    href={`/people/${person.id}/bills.csv?congress=${filter}`}
+                    download
+                    className="text-xs font-semibold text-navy hover:text-crimson"
+                  >
+                    Download CSV
+                  </a>
+                </div>
                 <Pager
                   basePath={`/people/${person.id}`}
                   params={{ congress: filter }}
@@ -143,26 +154,6 @@ export default async function PersonPage({
       </div>
     </main>
   );
-}
-
-/**
- * BatasWatch has no author filter, but its text search matches author
- * names; filter to exact authorship so shared surnames don't bleed in.
- */
-async function liveBills(
-  person: OpenCongressPerson,
-  page: number
-): Promise<{ data: BillSummary[]; total: number | null; hasMore: boolean } | null> {
-  const last = person.last_name ?? "";
-  const surname = last.includes("-") ? last.split("-")[0] : last;
-  const givenNames = [...(person.first_name?.split(/\s+/) ?? []), ...(person.aliases ?? [])];
-  try {
-    const res = await listMeasures({ q: surname, sort: "latest", page });
-    const mine = res.items.filter((m) => authoredBy(m, { surname, givenNames }));
-    return { data: mine.map(summaryFromBatasWatch), total: null, hasMore: res.hasMore };
-  } catch {
-    return null;
-  }
 }
 
 function ServiceRecord({ served }: { served: NonNullable<OpenCongressPerson["congresses_served"]> }) {

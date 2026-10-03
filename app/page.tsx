@@ -11,6 +11,7 @@ import { WatchlistPreview } from "./components/WatchlistPreview";
 import { BillListSkeleton } from "./components/Skeleton";
 import { LiveDataUnavailable } from "./components/LiveDataUnavailable";
 import { Logo } from "./components/Logo";
+import { NewHereCard } from "./components/NewHereCard";
 
 export const revalidate = 1800;
 
@@ -47,6 +48,7 @@ export default async function Home() {
       <div className="flex flex-col gap-7 lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:items-start lg:gap-8">
         {/* Phones show the Watchlist first; desktop moves it to the side column. */}
         <aside className="flex flex-col gap-7 lg:sticky lg:top-8 lg:col-start-2 lg:row-start-1">
+          <NewHereCard />
           <WatchlistPreview />
           <div className="hidden lg:block">
             <SourcesNote />

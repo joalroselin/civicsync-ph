@@ -46,8 +46,8 @@ CS-201,Get notified when a bill you follow moves,Receive a push notification or 
 CS-202,Filipino / Tagalog language option,"Switch the whole app to Filipino, translated and reviewed by people.",Planned,Language,,
 CS-203,Dark mode,"A darker colour scheme that's easier on the eyes at night, and follows your phone's setting automatically.",Open,Design,,
 CS-204,Shareable bill and lawmaker cards,One-tap image cards for sharing on social media.,Open,Sharing,,
-CS-205,“What does this status mean?” explainers,"Plain-language help for terms like “Pending Second Reading”, plus a short intro for first-time visitors.",Planned,Education,,
-CS-206,Privacy page,"A full explanation of what's stored on your device, what's stored when you sign in, and what we never collect.",In Progress,Trust,Privacy,
+CS-205,“What does this status mean?” explainers,"Plain-language help for every bill status, a step-by-step ""How a bill becomes law"" guide, and a short intro for first-time visitors.",Complete,Education,Deployed,2026-10-03
+CS-206,Privacy page,"A full explanation of what's stored on your device, what's stored when you sign in, and what we never collect.",Complete,Trust,Privacy;Deployed,2026-10-03
 CS-207,Major regional languages,"Cebuano, Ilocano, Hiligaynon, Waray, Bikol, Kapampangan, and Pangasinan, reviewed by native speakers.",Open,Language,,
 CS-208,Translated bill summaries,"Plain-language summaries in more languages, clearly labelled as machine-translated, with the original alongside.",Open,Language,,
 CS-301,Browse bills by topic,"Explore bills by area, like Agriculture, Health, or Labor.",Open,Discovery,,
@@ -60,12 +60,12 @@ CS-307,Open dataset for other civic projects,"Publish cleaned, merged legislativ
 CS-308,Exploring: voting records,Researching whether we can show how lawmakers voted. This isn't available from our current sources yet.,Open,Research,,
 CS-309,Community-contributed languages,Volunteers can add and review new languages; each goes live only after a native-speaker review.,Open,Language,,
 CS-901,Automated testing on every change,So updates don't break search or bill pages. Approved; scheduled for a later sprint.,In Progress,Under the hood,Under the hood,
-CS-902,Uptime monitoring,So we catch data-source outages before you do.,Planned,Under the hood,Under the hood,
+CS-902,Uptime monitoring,So we catch data-source outages before you do.,In Progress,Under the hood,Under the hood,
 CS-903,Backup source for bill status,So status still loads if our main tracker is down.,Open,Under the hood,Under the hood,
 CS-904,Finalise contributor licensing,"Lawyer review of the Contributor License Agreement, a commercial licence template, and CLA Assistant on GitHub before accepting outside code.",Planned,Under the hood,Under the hood;Open source,
-CS-111,Find CivicSync on Google,"Every bill and lawmaker page is listed for search engines, with structured data, so searches like ""SB 1294 status"" lead straight to the bill.",In Progress,Discovery,,
-CS-112,Embed a bill's live status on your site,"A copy-paste card or badge for blogs, newsrooms, school sites, GitHub, Notion and newsletters. Updates as the bill moves.",In Progress,Sharing,,
+CS-111,Find CivicSync on Google,"Every bill and lawmaker page is listed for search engines, with structured data, so searches like ""SB 1294 status"" lead straight to the bill.",Complete,Discovery,Deployed,2026-10-03
+CS-112,Embed a bill's live status on your site,"A copy-paste card or badge for blogs, newsrooms, school sites, GitHub, Notion and newsletters. Updates as the bill moves.",Complete,Sharing,Deployed,2026-10-03
 CS-113,Calendar and RSS feeds for your Watchlist,"Subscribe in Google Calendar, Apple Calendar or any news reader to see hearings and status changes where you already look.",Open,Watchlist,,
 CS-114,Ask about a bill on Messenger or Viber,Send a bill number or lawmaker name to a chat bot and get the status and a link back. No app needed.,Open,Discovery,,
 CS-115,Bill status inside news articles,"A browser extension that recognises bill numbers on any page (news, Facebook) and shows the live status on hover.",Open,Discovery,,
-CS-116,Cite this bill,"One-tap citations (APA, MLA, Chicago) and a CSV export for students, researchers and journalists.",Open,Research,,
+CS-116,Cite this bill,"One-tap citations (APA, MLA, Chicago, BibTeX) on every bill, and a CSV download of any lawmaker's bills, for students, researchers and journalists.",Complete,Research,Deployed,2026-10-03
