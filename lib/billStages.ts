@@ -4,17 +4,18 @@
  * ("PENDING IN THE COMMITTEE", "Pending with the Committee on HEALTH
  * since …"), so we match on keywords and map to the steps below.
  */
+/** `body` may mark glossary terms as [[term]]; render it with GlossaryText. */
 export const STAGES = [
-  { short: "Filed", title: "Filed", body: "A senator or representative files the bill and it gets a number, like SB 1294 or HB 4659." },
+  { short: "Filed", title: "Filed", body: "A [[senator]] or [[representative]] files the bill and it gets a number, like SB 1294 or HB 4659." },
   {
     short: "Committee",
     title: "First reading and committee",
-    body: "The title is read on the floor, then the bill goes to a committee. The committee studies it, may hold public hearings, and decides whether to recommend it. Most bills never leave this stage.",
+    body: "The title is read on the [[floor]], then the bill goes to a [[committee]]. The committee studies it, may hold [[public hearings]], and decides whether to recommend it. Most bills never leave this stage.",
   },
   {
     short: "Debate",
     title: "Second reading",
-    body: "The whole chamber debates the bill and votes on amendments. The Rules Committee decides when bills get floor time.",
+    body: "The whole [[chamber]] debates the bill and votes on [[amendments]]. The [[Rules Committee]] decides when bills get [[floor time|floor]].",
   },
   {
     short: "Final vote",
@@ -24,19 +25,19 @@ export const STAGES = [
   {
     short: "Other chamber",
     title: "The other chamber",
-    body: "The bill goes to the other chamber (House or Senate), which repeats the same steps with its own version.",
+    body: "The bill goes to the other chamber (House or Senate), which repeats the same steps with its own [[version]].",
   },
   {
     short: "Bicam",
     title: "Bicameral conference",
-    body: "If the two versions differ, members of both chambers meet to agree on one text. Both chambers then ratify it.",
+    body: "If the two versions differ, members of both chambers meet to agree on one text. Both chambers then [[ratify]] it.",
   },
   {
     short: "President",
     title: "The President",
-    body: "The final text is sent to Malacañang. The President has 30 days to sign or veto it. If they do neither, it becomes law anyway.",
+    body: "The final text is sent to [[Malacañang]]. The President has 30 days to sign or [[veto]] it. If they do neither, it becomes law anyway.",
   },
-  { short: "Law", title: "Republic Act", body: "The bill is now law, with a Republic Act number. It usually takes effect 15 days after publication." },
+  { short: "Law", title: "Republic Act", body: "The bill is now law, with a [[Republic Act]] number. It usually takes effect 15 days after [[publication]]." },
 ] as const;
 
 export interface StatusHelp {

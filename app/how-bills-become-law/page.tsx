@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { STAGES } from "@/lib/billStages";
 import { PageHeader } from "../components/PageHeader";
+import { GlossaryText } from "../components/GlossaryText";
 
 export const metadata: Metadata = {
   title: "How a bill becomes law in the Philippines",
@@ -33,7 +34,9 @@ export default function HowBillsBecomeLawPage() {
               </span>
               <div>
                 <h3 className="font-display text-lg font-semibold">{s.title}</h3>
-                <p className="mt-1 text-[15px] leading-relaxed text-gray-700">{s.body}</p>
+                <p className="mt-1 text-[15px] leading-relaxed text-gray-700">
+                  <GlossaryText text={s.body} />
+                </p>
               </div>
             </li>
           ))}
@@ -43,14 +46,14 @@ export default function HowBillsBecomeLawPage() {
           <h2 className="font-display text-lg font-semibold">Good to know</h2>
           <ul className="mt-3 list-disc space-y-2 pl-5 text-[15px] leading-relaxed text-gray-700">
             <li>
-              <strong>Consolidated or substituted</strong> means a committee merged similar bills into one new bill. The ideas continue in that bill,
-              even though the original number stops moving.
+              <strong>Consolidated or substituted</strong> means a committee merged similar bills into one{" "}
+              <GlossaryText text="[[substitute bill]]" />. The ideas continue in that bill, even though the original number stops moving.
             </li>
             <li>
-              <strong>Bills don’t carry over.</strong> Anything not passed when a Congress ends (every three years) has to be filed again.
+              <strong>Bills don’t carry over.</strong> <GlossaryText text="Anything not passed when a [[Congress]] ends (every three years) has to be filed again." />
             </li>
             <li>
-              A bill can start in either chamber, except bills about money (spending, taxes, tariffs, public debt) and local or private bills, which must start in the House.
+              <GlossaryText text="A bill can start in either [[chamber]], except bills about money (spending, taxes, tariffs, public debt) and [[local or private bills]], which must start in the House." />
             </li>
           </ul>
         </section>
