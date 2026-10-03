@@ -44,7 +44,7 @@ CS-108,"Upgrade to the latest app framework (Next.js 16, React 19)","Why: CivicS
 CS-110,Built-in forms for ideas and volunteers,"Join the translator list, propose a partnership, or ask about a commercial licence with a short form, without leaving CivicSync or needing an email app. Submissions are stored privately.",Complete,Community,Deployed,2026-09-30
 CS-201,Get notified when a bill you follow moves,Receive a push notification or email digest when a Watchlist bill changes status.,Planned,Watchlist,,
 CS-202,Filipino / Tagalog language option,"Switch the whole app to Filipino, translated and reviewed by people.",Planned,Language,,
-CS-203,Dark mode,"A darker colour scheme that's easier on the eyes at night, and follows your phone's setting automatically.",Open,Design,,
+CS-203,Dark mode,"A darker colour scheme that's easier on the eyes at night. Follows your phone's setting automatically, or pick Light or Dark from the menu.",Complete,Design,Deployed,2026-10-03
 CS-204,Shareable bill and lawmaker cards,"Save a bill or lawmaker as an image for Instagram, Facebook or group chats, in post (4:5) or story (9:16) size. Bill cards show the status, a plain-language summary and how far along it is; lawmaker cards show facts only.",Complete,Sharing,Deployed,2026-10-03
 CS-205,“What does this status mean?” explainers,"Plain-language help for every bill status, a step-by-step ""How a bill becomes law"" guide with tap-or-hover definitions for terms like committee and floor, and a short intro for first-time visitors.",Complete,Education,Deployed,2026-10-03
 CS-206,Privacy page,"A full explanation of what's stored on your device, what's stored when you sign in, and what we never collect.",Complete,Trust,Privacy;Deployed,2026-10-03
