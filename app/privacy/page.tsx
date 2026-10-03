@@ -40,6 +40,7 @@ export default async function PrivacyPage() {
               ["Your Watchlist", "The bills you follow: number, title and last-seen status."],
               ["Sign-in flag", "Remembers that you signed in, so syncing only loads when you use it."],
               ["Dismissed tips", "Remembers if you dismissed the “install app” suggestion."],
+              ["Home feed choice", "Remembers whether you last viewed newly filed or moving bills, and which chamber."],
               ["Offline copies", "Recently viewed pages, so the app still opens without signal."],
             ]}
           />

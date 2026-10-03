@@ -23,7 +23,10 @@ export function ordinal(n: number) {
 
 /** Upstream titles are often ALL CAPS — soften them for reading. */
 export function toTitleCase(s: string) {
-  if (s !== s.toUpperCase()) return s;
+  // Treat as shouting if most letters are capitals (some titles have a stray lowercase "Inc." or similar).
+  const letters = s.match(/\p{L}/gu) ?? [];
+  const upper = letters.filter((c) => c !== c.toLowerCase()).length;
+  if (!letters.length || upper / letters.length < 0.8) return s;
   const small = new Set(["a", "an", "and", "as", "at", "by", "for", "in", "of", "on", "or", "the", "to", "with", "into", "from"]);
   return s
     .toLowerCase()

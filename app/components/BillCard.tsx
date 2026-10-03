@@ -64,7 +64,7 @@ export function BillList({ bills, hideAuthor = false }: { bills: BillSummary[]; 
 }
 
 /** Compact row for grouped lists (e.g. one panel per chamber on the home page). */
-export function BillRow({ bill }: { bill: BillSummary }) {
+export function BillRow({ bill, movedOn }: { bill: BillSummary; movedOn?: string }) {
   const title = toTitleCase(bill.title);
   const byline = authorLine(bill);
   return (
@@ -72,7 +72,7 @@ export function BillRow({ bill }: { bill: BillSummary }) {
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-2 text-xs text-gray-500">
           <span className="font-semibold text-navy">{bill.label}</span>
-          {bill.dateFiled && <span>· {formatDate(bill.dateFiled)}</span>}
+          {movedOn ? <span>· Moved {formatDate(movedOn)}</span> : bill.dateFiled && <span>· Filed {formatDate(bill.dateFiled)}</span>}
         </div>
         <p className="mt-1 line-clamp-2 text-[15px] font-medium leading-snug text-gray-900">{title}</p>
         <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1.5">

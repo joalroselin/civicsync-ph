@@ -2,8 +2,8 @@ import { Suspense } from "react";
 import { CURRENT_CONGRESS } from "@/lib/openCongress";
 import { getSiteSettings } from "@/lib/content";
 import { listMeasures } from "@/lib/batasWatch";
-import { summaryFromBatasWatch, type BillSummary } from "@/lib/bills";
-import { BillRow } from "./components/BillCard";
+import { HomeFeed } from "./components/HomeFeed";
+import { newlyFiled, recentlyMoved } from "@/lib/feed";
 import { Greeting } from "./components/Greeting";
 import { SearchBar } from "./components/SearchBar";
 import { SearchLink } from "./components/SearchNavigation";
@@ -139,60 +139,19 @@ function PulseStrip({ stats }: { stats?: { value: string; label: string }[] }) {
 }
 
 async function RecentBills() {
-  // Open Congress's catalogue lags by about a year, so the live feed comes
-  // from BatasWatch. One panel per chamber so the Senate isn't drowned out
-  // by the House's much higher filing volume.
-  const [senate, house] = await Promise.all([
-    listMeasures({ chamber: "senate", sort: "latest" }).catch(() => null),
-    listMeasures({ chamber: "house", sort: "latest" }).catch(() => null),
-  ]);
-  if (!senate && !house) {
-    return <LiveDataUnavailable what="The latest filings feed" />;
-  }
-  const pick = (res: typeof senate) =>
-    (res?.items ?? [])
-      .filter((m) => m.title || m.longTitle)
-      .slice(0, 4)
-      .map(summaryFromBatasWatch);
-
-  return (
-    <div className="grid items-start gap-4 xl:grid-cols-2">
-      <ChamberPanel name="Senate" bills={pick(senate)} />
-      <ChamberPanel name="House of Representatives" bills={pick(house)} />
-    </div>
-  );
-}
-
-function ChamberPanel({ name, bills }: { name: string; bills: BillSummary[] }) {
-  return (
-    <section className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200/70" aria-label={name}>
-      <h3 className="flex items-center justify-between border-b border-gray-100 bg-gray-50/80 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider text-gray-600">
-        {name}
-        <span className="font-normal normal-case tracking-normal text-gray-400">Newest first</span>
-      </h3>
-      {bills.length === 0 ? (
-        <p className="p-4 text-sm text-gray-500">Couldn’t load the latest filings right now.</p>
-      ) : (
-        <ul className="divide-y divide-gray-100">
-          {bills.map((b) => (
-            <li key={b.routeId}>
-              <BillRow bill={b} />
-            </li>
-          ))}
-        </ul>
-      )}
-    </section>
-  );
+  // Open Congress's catalogue lags by about a year, so the live feed comes from BatasWatch.
+  const [filed, moved] = await Promise.all([newlyFiled(), recentlyMoved()]);
+  if (!filed && !moved) return <LiveDataUnavailable what="The latest filings feed" />;
+  return <HomeFeed filed={filed} moved={moved} />;
 }
 
 function ChamberSkeleton() {
   return (
-    <div className="grid gap-4 xl:grid-cols-2">
-      {[0, 1].map((i) => (
-        <div key={i} className="rounded-2xl bg-white p-1 ring-1 ring-gray-200/70">
-          <BillListSkeleton count={3} />
-        </div>
-      ))}
+    <div>
+      <div className="mb-3 h-10 w-64 animate-pulse rounded-xl bg-gray-100" />
+      <div className="rounded-2xl bg-white p-1 ring-1 ring-gray-200/70">
+        <BillListSkeleton count={4} />
+      </div>
     </div>
   );
 }
