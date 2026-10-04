@@ -22,6 +22,14 @@ export interface Member {
   totalOnRecord: number;
   congressesServed: number;
   topTopics: { label: string; count: number }[];
+  /** Most frequent co-authors this Congress (bills with up to 10 authors) */
+  coAuthors?: { id: string | null; name: string; count: number }[];
+  /** Committees their bills are most often referred to */
+  committees?: { name: string; count: number }[];
+}
+
+export function getMemberById(id: string): Member | null {
+  return lawmakerData.members.find((m) => m.id === id) ?? null;
 }
 
 export const lawmakerData = data as unknown as { generatedAt: string; congress: number; billsScanned: number; members: Member[] };

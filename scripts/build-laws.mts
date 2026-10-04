@@ -18,6 +18,8 @@ import { effectivityDays, findIrr, type IrrInfo } from "../lib/irr.ts";
 const BW = "https://bills.juris.ph/api";
 const UA = "Mozilla/5.0 (compatible; CivicSyncPH/1.0; +https://civicsync-ph-gamma.vercel.app)";
 const OUT = new URL("../data/laws.json", import.meta.url);
+/** Bump when OCR settings or lib/irr.ts change, so laws are re-read. */
+const PARSER = 2;
 const log = (...a: unknown[]) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
 const has = (cmd: string) => {
@@ -66,8 +68,9 @@ function ocr(pdf: Buffer): string {
     return readdirSync(dir)
       .filter((f) => f.startsWith("p") && f.endsWith(".png"))
       .sort()
-      .map((f) => execFileSync("tesseract", [join(dir, f), "-", "-l", "eng", "--psm", "6"], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"], timeout: 120_000 }))
+      .map((f) => execFileSync("tesseract", [join(dir, f), "-", "-l", "eng", "--psm", "3"], { encoding: "utf8", stdio: ["ignore", "pipe", "ignore"], timeout: 120_000 }))
       .join("\n");
+    // psm 3 = automatic layout: reads two-column pages column by column.
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
@@ -75,7 +78,8 @@ function ocr(pdf: Buffer): string {
 
 for (const [number, b] of enacted) {
   const ra = b.s.match(/(\d{4,6})/)?.[1];
-  if (!ra || laws[ra]?.read === "ok") continue;
+  // Re-read laws parsed by an older version of the reader.
+  if (!ra || (laws[ra]?.read === "ok" && (laws[ra] as any).parser === PARSER)) continue;
   const m = await measure(number).catch(() => null);
   if (!m) continue;
   const doc = (m.documentVersions ?? []).find((d: any) => new RegExp(`^RA\\s*0*${ra}$`, "i").test((d.label ?? "").trim()));
@@ -96,7 +100,7 @@ for (const [number, b] of enacted) {
   }
   const text = ocr(Buffer.from(await res.arrayBuffer()));
   const irr = findIrr(text);
-  laws[ra] = { ...base, effectivityDays: effectivityDays(text), irr, read: text.trim().length > 200 ? "ok" : "no-text" };
+  laws[ra] = { ...base, effectivityDays: effectivityDays(text), irr, read: text.trim().length > 200 ? "ok" : "no-text", parser: PARSER } as Law;
   log(`RA ${ra}: ${text.length} chars; IRR ${irr ? `${irr.agency ?? "?"} · ${irr.amount ?? "?"} ${irr.unit ?? ""} from ${irr.from ?? "?"}` : "none found"}`);
 }
 

@@ -31,3 +31,13 @@ describe("IRR extraction", () => {
     expect(irrDue("2026-05-26", 15, { amount: 6, unit: "months", from: "approval" })).toBe("2026-11-26");
   });
 });
+
+describe("IRR extraction, passive voice", () => {
+  it("finds the agency after 'by'", () => {
+    const irr = findIrr(
+      "SEC. 12. Implementing Rules and Regulations. — Within sixty (60) days from the effectivity of this Act, the implementing rules and regulations (IRR) necessary for the effective and efficient enforcement of this Act shall be formulated, promulgated, and implemented by the UniFAST Board, in consultation with the CHED, TESDA, DepEd, DSWD, DBM, and other relevant stakeholders. SEC. 13."
+    )!;
+    expect(irr.agency).toBe("the UniFAST Board");
+    expect([irr.amount, irr.unit, irr.from]).toEqual([60, "days", "effectivity"]);
+  });
+});

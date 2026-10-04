@@ -116,6 +116,18 @@ export function WatchlistProvider({ children }: { children: React.ReactNode }) {
     };
   }, [startSync]);
 
+  // Notifications on: keep the server's list of followed bills in step (CS-201).
+  useEffect(() => {
+    if (!ready) return;
+    let on = false;
+    try {
+      on = localStorage.getItem("civicsync:push") === "1";
+    } catch {}
+    if (!on) return;
+    const t = setTimeout(() => import("@/lib/pushClient").then((m) => m.syncPush(items.map((b) => b.id))), 1000);
+    return () => clearTimeout(t);
+  }, [items, ready]);
+
   const toggle = useCallback(
     (bill: Omit<WatchedBill, "savedAt">) => {
       const exists = itemsRef.current.some((i) => i.id === bill.id);

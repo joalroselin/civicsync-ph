@@ -33,7 +33,10 @@ export function findIrr(raw: string): IrrInfo | null {
       : null;
   const verb = /\bshall,?\s+(?:[a-z ,]+?\s+)?(?:promulgate|issue|formulate|prepare|adopt|draft|craft|develop)\b/i;
   let agency: string | null = null;
-  const vm = clause.match(verb);
+  // Passive: "… shall be formulated, promulgated, and implemented by the UniFAST Board, in consultation with …"
+  const passive = clause.match(/shall be\s+(?:[a-z]+,?\s+(?:and\s+)?){0,4}?(?:formulated|promulgated|issued|prepared|drafted|adopted|crafted|developed)\b[^.]{0,80}?\bby\s+(?:the\s+)?([^,.;]{3,120})/i);
+  if (passive) agency = `the ${passive[1].trim().replace(/\s+in (?:close )?(?:consultation|coordination) with.*$/i, "")}`;
+  const vm = agency ? null : clause.match(verb);
   if (vm) {
     let before = clause.slice(0, vm.index).replace(/^implementing rules and regulations\s*[.:]?\s*[—–-]\s*/i, "");
     // Drop a leading deadline phrase: "Within ninety (90) days from the effectivity of this Act,"

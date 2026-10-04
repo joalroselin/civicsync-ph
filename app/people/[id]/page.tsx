@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { LawmakerRecord, RecordFallback } from "./Record";
+import { WorksWith } from "./WorksWith";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPerson, getPersonBills, personName, type OpenCongressPerson } from "@/lib/openCongress";
@@ -104,6 +105,7 @@ export default async function PersonPage(props: {
           <Suspense fallback={<RecordFallback />}>
             <LawmakerRecord person={person} />
           </Suspense>
+          <WorksWith id={person.id} />
           {servesNow && (
             <div className="mt-3 print:hidden">
               <RssLink href={`/feeds/people/${person.id}`} label="RSS: new bills and status changes" />

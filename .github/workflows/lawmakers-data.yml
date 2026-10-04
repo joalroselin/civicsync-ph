@@ -37,3 +37,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git commit -m "Data: nightly lawmakers and bill status ($(date -u +%F))"
           git push
+      # Watchlist notifications for today's changes (CS-201). Skips if secrets aren't set.
+      - run: npm ci --omit=dev --ignore-scripts
+      - name: Send notifications
+        env:
+          SANITY_API_PROJECT_ID: ${{ secrets.SANITY_API_PROJECT_ID }}
+          SANITY_API_WRITE_TOKEN: ${{ secrets.SANITY_API_WRITE_TOKEN }}
+          VAPID_PRIVATE_KEY: ${{ secrets.VAPID_PRIVATE_KEY }}
+        run: node scripts/send-push.mts

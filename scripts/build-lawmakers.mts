@@ -98,12 +98,24 @@ for (const r of rest) measures.push(...r);
 log(`${measures.length} bills read of ${first.meta.total}`);
 
 const lawsByName = new Map<string, { number: string; ra: string | null; title: string }[]>();
+// Co-authors (bills with up to 10 authors, so big group bills don't drown out
+// real working relationships) and the committees their bills are sent to.
+const coAuthorsByName = new Map<string, Map<string, number>>();
+const committeesByName = new Map<string, Map<string, number>>();
+const bump = (m: Map<string, Map<string, number>>, k: string, v: string) => {
+  const inner = m.get(k) ?? new Map<string, number>();
+  inner.set(v, (inner.get(v) ?? 0) + 1);
+  m.set(k, inner);
+};
 const topicsByName = new Map<string, Map<string, number>>();
 for (const m of measures) {
   const names = (m.authorCredits ?? []).map((a: any) => norm(a.name));
   const law = m.status && BECAME_LAW.test(m.status);
   const topic = m.analysis?.primaryPolicyArea;
+  const committee = m.primaryCommittee ? String(m.primaryCommittee).trim() : null;
   for (const n of names) {
+    if (names.length <= 10) for (const other of names) if (other !== n) bump(coAuthorsByName, n, other);
+    if (committee) bump(committeesByName, n, committee);
     if (law) {
       const list = lawsByName.get(n) ?? [];
       list.push({ number: m.number, ra: m.status.match(/RA\s?(\d{4,6})/i)?.[1] ?? null, title: m.title ?? m.longTitle ?? "" });
@@ -140,6 +152,7 @@ const rows = await pool(authors, async (a) => {
   const laws = lawsByName.get(key) ?? [];
   const topics = [...(topicsByName.get(key) ?? new Map()).entries()].sort((x, y) => y[1] - x[1]).slice(0, 5);
   const totalOnRecord = congresses.reduce((s, c) => s + (c.bills ?? 0), 0);
+  const top = (m: Map<string, number> | undefined, n: number) => [...(m ?? new Map()).entries()].sort((x, y) => y[1] - x[1]).slice(0, n);
   return {
     id: oc?.id ?? null,
     name: oc ? [oc.first_name, oc.last_name].filter(Boolean).join(" ") : displayName(a.canonicalName),
@@ -156,10 +169,23 @@ const rows = await pool(authors, async (a) => {
     totalOnRecord,
     congressesServed: served.length,
     topTopics: topics.map(([label, count]) => ({ label, count })),
+    // Raw co-author names here; linked to members after all rows exist.
+    coAuthors: top(coAuthorsByName.get(key), 5).filter(([, c]) => c >= 2).map(([name, count]) => ({ key: name, count })),
+    committees: top(committeesByName.get(key), 3).map(([name, count]) => ({ name, count })),
   };
 });
 
 const members = rows.filter(Boolean).sort((x: any, y: any) => x.lastName.localeCompare(y.lastName));
+// Link co-authors to members (by their source name) so the page can link them.
+{
+  const byCanonical = new Map<string, any>();
+  authors.forEach((a: any, i: number) => rows[i] && byCanonical.set(norm(a.canonicalName), rows[i]));
+  for (const m of members as any[])
+    m.coAuthors = m.coAuthors.map((c: any) => {
+      const other = byCanonical.get(c.key);
+      return { id: other?.id ?? null, name: other?.name ?? displayName(c.key), count: c.count };
+    });
+}
 const unmatched = members.filter((m: any) => !m.id).map((m: any) => m.name);
 mkdirSync(new URL("../data/", import.meta.url), { recursive: true });
 writeFileSync(

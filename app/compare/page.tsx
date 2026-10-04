@@ -113,6 +113,16 @@ export default async function ComparePage(props: { searchParams: Promise<{ ids?:
           </div>
         </Block>
 
+        <Block title="Their bills usually go to">
+          <div className={`grid ${cols} gap-3`}>
+            {members.map((m) => (
+              <ul key={memberKey(m)} className="flex flex-col gap-1 text-xs text-gray-700">
+                {m.committees?.length ? m.committees.map((c) => <li key={c.name}>{toTitleCase(c.name)} <span className="font-semibold text-gray-800">{c.count}</span></li>) : <li className="text-gray-500">–</li>}
+              </ul>
+            ))}
+          </div>
+        </Block>
+
         <Block title="Became law this Congress">
           <div className={`grid ${cols} gap-3`}>
             {members.map((m) => (

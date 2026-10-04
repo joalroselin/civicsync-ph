@@ -55,6 +55,13 @@ export default async function PrivacyPage() {
           <p>We don’t email you, share your address, or use it for anything else.</p>
         </Section>
 
+        <Section title="If you turn on notifications">
+          <p>
+            Notifications are optional and off by default. If you turn them on, we store this device’s push address (created by your browser) and the
+            list of bill IDs you follow, so we can tell you when one moves. No name, email or account. Turning notifications off deletes them.
+          </p>
+        </Section>
+
         <Section title="If you send us a form">
           <p>
             Forms like the translator list or partnership enquiries store only what you type in. We use it to reply to you, keep it in a private inbox,

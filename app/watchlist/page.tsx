@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { NotifyToggle } from "./NotifyToggle";
 import { useEffect, useState } from "react";
 import { useWatchlist } from "../components/WatchlistProvider";
 import { StatusBadge } from "../components/StatusBadge";
@@ -54,6 +55,11 @@ export default function WatchlistPage() {
           </div>
         )}
         {authError && <p className="mt-2 text-xs text-crimson-ink">{authError}</p>}
+        {items.length > 0 && (
+          <div className="mt-3 border-t border-gray-100 pt-3">
+            <NotifyToggle bills={items.map((b) => b.id)} />
+          </div>
+        )}
       </section>
 
       {!ready ? (
