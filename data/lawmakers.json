@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-04T09:43:03.548Z",
+ "generatedAt": "2026-10-04T09:51:48.859Z",
  "congress": 20,
  "billsScanned": 14020,
  "members": [
@@ -53,6 +53,27 @@
     {
      "label": "Taxation",
      "count": 5
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48V23Z03RH92P07508BQ",
+     "name": "Marcelino Libanan",
+     "count": 6
+    }
+   ],
+   "committees": [
+    {
+     "name": "POVERTY ALLEVIATION",
+     "count": 10
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 9
+    },
+    {
+     "name": "HEALTH",
+     "count": 7
     }
    ]
   },
@@ -112,6 +133,47 @@
     {
      "label": "Justice and Judiciary",
      "count": 5
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4581T5G2493K0B3JVTB7",
+     "name": "Ernesto Dionisio",
+     "count": 3
+    },
+    {
+     "id": "01K5ST47SJ78DH8Q5SXRPWWGFJ",
+     "name": "Ramon Rodrigo Gutierrez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST492NW635D360BN2G8XG4",
+     "name": "Gerville Luistro",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4EBQNZQCG37RY22G4JJN",
+     "name": "Lordan Suan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "JUSTICE",
+     "count": 7
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 7
+    },
+    {
+     "name": "HUMAN RIGHTS",
+     "count": 7
     }
    ]
   },
@@ -181,6 +243,47 @@
      "label": "Agriculture and Fisheries",
      "count": 22
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4D2EGTPGPW4DKM8MT2P9",
+     "name": "Andrew Julian Romualdez",
+     "count": 346
+    },
+    {
+     "id": "01K5ST4D53T126GB42M79WRCCZ",
+     "name": "Yedda Marie Kittelsvedt-Romualdez",
+     "count": 325
+    },
+    {
+     "id": "01K5ST4D2TA799NM02CY80JG6P",
+     "name": "Ferdinand Martin Romualdez",
+     "count": 324
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4BRWEXWG4GCZTXR45KM3",
+     "name": "Romero Federico Quimbo",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 98
+    },
+    {
+     "name": "HEALTH",
+     "count": 50
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 39
+    }
    ]
   },
   {
@@ -240,6 +343,47 @@
      "label": "Human Rights",
      "count": 1
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4BRTZM8Q91FEMXHZJSM4",
+     "name": "Ronaldo Puno",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4FV2EHYZ7XATD4C0DSV6",
+     "name": "Rolando Valeriano",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48HE2MKZM7WEWQQWFVET",
+     "name": "Jennifer Lagbas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4FCK0WEC55BXR15TCMWT",
+     "name": "Aniela Bianca Tolentino",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 6
+    },
+    {
+     "name": "HEALTH",
+     "count": 2
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 2
+    }
    ]
   },
   {
@@ -281,6 +425,21 @@
     },
     {
      "label": "Agriculture and Fisheries",
+     "count": 6
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 17
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 7
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
      "count": 6
     }
    ]
@@ -340,6 +499,27 @@
     {
      "label": "Agriculture and Fisheries",
      "count": 5
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST40H89BTNVW5VDGFG5NNM",
+     "name": "Jose Alvarez",
+     "count": 17
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 24
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 11
+    },
+    {
+     "name": "ENERGY",
+     "count": 11
     }
    ]
   },
@@ -409,6 +589,47 @@
      "label": "Government Administration",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 4
+    },
+    {
+     "id": "01K5ST48BYP1WACXJBN9TM5PF4",
+     "name": "Jefferson Khonghun",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4581T5G2493K0B3JVTB7",
+     "name": "Ernesto Dionisio",
+     "count": 4
+    },
+    {
+     "id": "01K5ST41F6W8MFDVF3EMK28AXG",
+     "name": "Yasser Balindong",
+     "count": 4
+    },
+    {
+     "id": "01K5ST47SJ78DH8Q5SXRPWWGFJ",
+     "name": "Ramon Rodrigo Gutierrez",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 18
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 14
+    },
+    {
+     "name": "HEALTH",
+     "count": 8
+    }
    ]
   },
   {
@@ -454,6 +675,21 @@
     },
     {
      "label": "Public Order and Safety",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 3
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 2
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
      "count": 1
     }
    ]
@@ -521,6 +757,21 @@
      "label": "Public Order and Safety",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 4
+    },
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
+     "count": 3
+    }
    ]
   },
   {
@@ -569,6 +820,32 @@
     {
      "label": "Culture, Arts and Heritage",
      "count": 4
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44J3PDXKCEFJ09TAQZ16",
+     "name": "Maximo Dalog",
+     "count": 4
+    },
+    {
+     "id": "01K5ST42PT9T6H0AG4MRGGX8S0",
+     "name": "Eleanor Bulut-Begtang",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 13
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 8
     }
    ]
   },
@@ -634,6 +911,32 @@
      "label": "Local Government",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4986Y11YTF6693JFX73D",
+     "name": "Eleandro Jesus Madrona",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 68
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 33
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 13
+    }
    ]
   },
   {
@@ -679,6 +982,47 @@
     },
     {
      "label": "Social Welfare",
+     "count": 6
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4FCK0WEC55BXR15TCMWT",
+     "name": "Aniela Bianca Tolentino",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46DKPY08XK8GSS3D9RRM",
+     "name": "Jonathan Keith Flores",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 10
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 9
+    },
+    {
+     "name": "SUSTAINABLE DEVELOPMENT GOALS",
      "count": 6
     }
    ]
@@ -738,6 +1082,37 @@
      "label": "Health",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4FKAWMFTJACYD4JEATAS",
+     "name": "Allan Ty",
+     "count": 3
+    },
+    {
+     "id": "01K5ST475ACSAZP5P8C8NKCPEZ",
+     "name": "Ed Christopher Go",
+     "count": 2
+    },
+    {
+     "id": "01K5ST45EYTEQ88B4SPR6TA1CN",
+     "name": "Faustino Michael Carlos Dy",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 7
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 4
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
+    }
    ]
   },
   {
@@ -785,6 +1160,27 @@
      "label": "Public Works and Infrastructure",
      "count": 8
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44MMW82Q8DHY8ASZMKDD",
+     "name": "Nelson Dayanghirang",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 11
+    },
+    {
+     "name": "SOCIAL SERVICES",
+     "count": 8
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 7
+    }
    ]
   },
   {
@@ -828,6 +1224,21 @@
     },
     {
      "label": "Local Government",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 1
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
      "count": 1
     }
    ]
@@ -875,6 +1286,32 @@
     },
     {
      "label": "Social Welfare",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4AMJCWQ4F0W2ZE5M8QZ4",
+     "name": "Henry Oaminal",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4AN7PS1BTNJ9TXNYGV76",
+     "name": "Sancho Fernando Oaminal",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "MINDANAO AFFAIRS",
+     "count": 2
+    },
+    {
+     "name": "HEALTH",
+     "count": 2
+    },
+    {
+     "name": "SOCIAL SERVICES",
      "count": 2
     }
    ]
@@ -934,6 +1371,27 @@
     {
      "label": "Energy",
      "count": 8
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST400QRMM1D43YY9W57Q68",
+     "name": "Gil Acosta",
+     "count": 17
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 63
+    },
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "ENERGY",
+     "count": 12
     }
    ]
   },
@@ -1000,6 +1458,47 @@
      "label": "Justice and Judiciary",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 2
+    },
+    {
+     "id": "01K5ST44MMW82Q8DHY8ASZMKDD",
+     "name": "Nelson Dayanghirang",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4739D5ACC46MM5M5TTQF",
+     "name": "Ciriaco Gato",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 21
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 15
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 11
+    }
    ]
   },
   {
@@ -1062,6 +1561,21 @@
     {
      "label": "Local Government",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 30
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 20
+    },
+    {
+     "name": "JUSTICE",
+     "count": 10
     }
    ]
   },
@@ -1131,6 +1645,47 @@
      "label": "Public Order and Safety",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 3
+    },
+    {
+     "id": "01K5ST46HA4JNANCY88PHMK2Z9",
+     "name": "Jaime Fresnedi",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4FMJNAFY6YKJQJGZFBRN",
+     "name": "Alfonso Umali",
+     "count": 3
+    },
+    {
+     "id": "01K5ST45SJJQDQ75QYYW6WDX84",
+     "name": "Edgar Erice",
+     "count": 2
+    },
+    {
+     "id": "01K5ST41CD3MBD3DVHRR59MQNP",
+     "name": "Arlene Bag-Ao",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 15
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 14
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 4
+    }
    ]
   },
   {
@@ -1182,6 +1737,21 @@
     },
     {
      "label": "Social Welfare",
+     "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
+    },
+    {
+     "name": "BANKS AND FINANCIAL INTERMEDIARIES",
+     "count": 4
+    },
+    {
+     "name": "HEALTH",
      "count": 2
     }
    ]
@@ -1246,6 +1816,21 @@
      "label": "Culture, Arts and Heritage",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 63
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 4
+    },
+    {
+     "name": "HEALTH",
+     "count": 4
+    }
    ]
   },
   {
@@ -1294,6 +1879,21 @@
     {
      "label": "Taxation",
      "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 16
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 4
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
     }
    ]
   },
@@ -1356,6 +1956,21 @@
      "label": "Appropriations and Public Finance",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 3
+    },
+    {
+     "name": "JUSTICE",
+     "count": 2
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    }
    ]
   },
   {
@@ -1407,6 +2022,21 @@
      "label": "Labor and Employment",
      "count": 4
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION",
+     "count": 13
+    },
+    {
+     "name": "TRADE, COMMERCE AND ENTREPRENEURSHIP",
+     "count": 10
+    },
+    {
+     "name": "RULES",
+     "count": 10
+    }
    ]
   },
   {
@@ -1453,6 +2083,21 @@
     {
      "label": "Housing and Urban Development",
      "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 8
+    },
+    {
+     "name": "HEALTH",
+     "count": 3
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
     }
    ]
   },
@@ -1532,6 +2177,21 @@
      "label": "Labor and Employment",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 1
+    },
+    {
+     "name": "TOURISM",
+     "count": 1
+    }
    ]
   },
   {
@@ -1598,6 +2258,42 @@
      "label": "Social Welfare",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43K5E2Q6W5HQNAY5QZT9",
+     "name": "Arthur Celeste",
+     "count": 2
+    },
+    {
+     "id": "01K5ST43YGKVBVVBSP2N0FJ7DC",
+     "name": "Mark Cojuangco",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47MMJB1GNBWNS0J75SBK",
+     "name": "Ramon Guico",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BNQ2CAETB91YKKSQTRV",
+     "name": "Marlyn Primicias-Agabas",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 6
+    },
+    {
+     "name": "ENERGY",
+     "count": 6
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 4
+    }
    ]
   },
   {
@@ -1656,6 +2352,37 @@
      "label": "Local Government",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4F0J4EHYPZRRRN80B4TB",
+     "name": "Keith Micah Tan",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4A8HF7S6MXWZMPKM6HR9",
+     "name": "Iris Marie Montes",
+     "count": 2
+    },
+    {
+     "id": "01K5ST45RTFAQ3HR6P7KW31H7R",
+     "name": "Wilfrido Mark Enverga",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 32
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 7
+    }
    ]
   },
   {
@@ -1701,6 +2428,27 @@
     },
     {
      "label": "Local Government",
+     "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST49E895TK8P4NZ8JP454X",
+     "name": "Oscar Malapitan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 1
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 1
+    },
+    {
+     "name": "ENERGY",
      "count": 1
     }
    ]
@@ -1761,6 +2509,21 @@
      "label": "Transportation",
      "count": 4
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 6
+    },
+    {
+     "name": "PUBLIC INFORMATION",
+     "count": 5
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 4
+    }
    ]
   },
   {
@@ -1814,6 +2577,21 @@
      "label": "Education",
      "count": 5
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 6
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 6
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 6
+    }
    ]
   },
   {
@@ -1856,6 +2634,47 @@
     {
      "label": "Social Welfare",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST46A4TAVQZADVCVX86D8F",
+     "name": "Jeffrey Ferrer",
+     "count": 2
+    },
+    {
+     "id": "01K5ST406XJDH929E9148CH1V9",
+     "name": "Jose Manuel Alba",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46DKPY08XK8GSS3D9RRM",
+     "name": "Jonathan Keith Flores",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4HC2ZN42AV18RRAYW8ZS",
+     "name": "Audrey Kay Zubiri",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 20
+    },
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
     }
    ]
   },
@@ -1910,6 +2729,47 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 8
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43KRYJ7VW795V7SZCC9Z",
+     "name": "Percival Cendaña",
+     "count": 108
+    },
+    {
+     "id": "01K5ST457XX0FF3Y1GC63KY16S",
+     "name": "Jose Manuel Tadeo Diokno",
+     "count": 107
+    },
+    {
+     "id": "01K5ST4865QRPXQE20HDW1E8AE",
+     "name": "Dadah Ismula",
+     "count": 107
+    },
+    {
+     "id": "01K5ST48HXZ73WMJFRQB9801SA",
+     "name": "Cielo Lagman",
+     "count": 12
+    },
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 8
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 21
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 11
+    },
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
      "count": 8
     }
    ]
@@ -1969,6 +2829,27 @@
      "label": "Public Order and Safety",
      "count": 1
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST401WCQ3TNP7QA240PSTE",
+     "name": "Ziaur-Rahman Adiong",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 4
+    },
+    {
+     "name": "HEALTH",
+     "count": 1
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 1
+    }
    ]
   },
   {
@@ -2016,6 +2897,27 @@
      "label": "Energy",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "JUSTICE",
+     "count": 6
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 6
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 6
+    }
    ]
   },
   {
@@ -2058,6 +2960,21 @@
     {
      "label": "Culture, Arts and Heritage",
      "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 63
+    },
+    {
+     "name": "HEALTH",
+     "count": 3
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
     }
    ]
   },
@@ -2116,6 +3033,21 @@
      "label": "Culture, Arts and Heritage",
      "count": 7
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 12
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 7
+    }
    ]
   },
   {
@@ -2163,6 +3095,21 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 5
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 12
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 5
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
      "count": 5
     }
    ]
@@ -2237,6 +3184,21 @@
      "label": "Public Order and Safety",
      "count": 6
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 8
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 7
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 7
+    }
    ]
   },
   {
@@ -2274,6 +3236,21 @@
     },
     {
      "label": "Local Government",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "WAYS AND MEANS",
+     "count": 2
+    },
+    {
+     "name": "RULES",
+     "count": 1
+    },
+    {
+     "name": "POPULATION AND FAMILY RELATIONS",
      "count": 1
     }
    ]
@@ -2333,6 +3310,37 @@
      "label": "Environment and Natural Resources",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4BJ38CERPF1DBYRRDP36",
+     "name": "Adolph Edward Plaza",
+     "count": 22
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 9
+    },
+    {
+     "id": "01K5ST4H83KFKMMA78V9GHHTMK",
+     "name": "Ysabel Maria Zamora-Jornada",
+     "count": 8
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 15
+    },
+    {
+     "name": "PERSONS WITH DISABILITIES",
+     "count": 10
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 10
+    }
    ]
   },
   {
@@ -2386,6 +3394,21 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 3
+    },
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
+     "count": 2
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
      "count": 1
     }
    ]
@@ -2457,6 +3480,42 @@
      "label": "Public Works and Infrastructure",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST49E895TK8P4NZ8JP454X",
+     "name": "Oscar Malapitan",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4D8VHSW8QKPXADJWJZPJ",
+     "name": "Roman Romulo",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47SJ78DH8Q5SXRPWWGFJ",
+     "name": "Ramon Rodrigo Gutierrez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4APVX74EQX8AF5NG34H7",
+     "name": "Nathaniel Oducado",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 38
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 19
+    },
+    {
+     "name": "RULES",
+     "count": 16
+    }
    ]
   },
   {
@@ -2519,6 +3578,21 @@
      "label": "Taxation",
      "count": 5
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 13
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
+    }
    ]
   },
   {
@@ -2577,6 +3651,21 @@
     {
      "label": "Education",
      "count": 8
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 24
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 9
     }
    ]
   },
@@ -2637,6 +3726,21 @@
     },
     {
      "label": "Social Welfare",
+     "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 2
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 2
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
      "count": 2
     }
    ]
@@ -2703,6 +3807,42 @@
      "label": "Culture, Arts and Heritage",
      "count": 9
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4BN36DFQBX19ZHFDCXPM",
+     "name": "Brian Daniel Llamanzares",
+     "count": 7
+    },
+    {
+     "id": "01K5ST4C09EY47DX43738WV01N",
+     "name": "Ryan Christian Recto",
+     "count": 6
+    },
+    {
+     "id": "01K5ST45K9883DAHGYZM97WRSR",
+     "name": "Sarah Jane Elago",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 13
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 10
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 9
+    }
    ]
   },
   {
@@ -2749,6 +3889,27 @@
     {
      "label": "Education",
      "count": 5
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST425N8SWECDK4ESB6ZMHN",
+     "name": "Joseph Sto. Niño Bernos",
+     "count": 30
+    }
+   ],
+   "committees": [
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 7
+    },
+    {
+     "name": "HEALTH",
+     "count": 4
+    },
+    {
+     "name": "YOUTH AND SPORTS DEVELOPMENT",
+     "count": 4
     }
    ]
   },
@@ -2807,6 +3968,27 @@
      "label": "Public Order and Safety",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4257TJ2F4EYK12835PQN",
+     "name": "Ching Bernos",
+     "count": 30
+    }
+   ],
+   "committees": [
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 8
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 4
+    },
+    {
+     "name": "YOUTH AND SPORTS DEVELOPMENT",
+     "count": 4
+    }
    ]
   },
   {
@@ -2863,6 +4045,21 @@
     {
      "label": "Public Works and Infrastructure",
      "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 7
+    },
+    {
+     "name": "TOURISM",
+     "count": 4
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 3
     }
    ]
   },
@@ -2927,6 +4124,21 @@
      "label": "Health",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 5
+    },
+    {
+     "name": "JUSTICE",
+     "count": 5
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 2
+    }
    ]
   },
   {
@@ -2975,6 +4187,21 @@
     {
      "label": "Taxation",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 12
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 9
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 6
     }
    ]
   },
@@ -3029,6 +4256,27 @@
     {
      "label": "Government Administration",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 8
     }
    ]
   },
@@ -3099,6 +4347,21 @@
     {
      "label": "Public Works and Infrastructure",
      "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 20
+    },
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
+     "count": 8
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 3
     }
    ]
   },
@@ -3175,6 +4438,21 @@
      "label": "Constitutional and Electoral Matters",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 4
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 4
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    }
    ]
   },
   {
@@ -3233,6 +4511,32 @@
     {
      "label": "Disaster Risk Reduction",
      "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44J3PDXKCEFJ09TAQZ16",
+     "name": "Maximo Dalog",
+     "count": 4
+    },
+    {
+     "id": "01K5ST406DTCM8RAAR5Z4P9HRF",
+     "name": "Caroline Agyao",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 6
+    },
+    {
+     "name": "RULES",
+     "count": 5
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
     }
    ]
   },
@@ -3297,6 +4601,21 @@
      "label": "Local Government",
      "count": 6
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 68
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 12
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 10
+    }
    ]
   },
   {
@@ -3351,6 +4670,47 @@
      "label": "Culture, Arts and Heritage",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47RNWJZ84JJA22YJ9535",
+     "name": "Rhea Mae Gullas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46PG81MDFS0B6GP2P4NY",
+     "name": "Edsel Galeos",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46VV7033BNVBC2FGKYF9",
+     "name": "Karen Hope Garcia",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 40
+    },
+    {
+     "name": "RULES",
+     "count": 14
+    }
    ]
   },
   {
@@ -3396,6 +4756,21 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 2
+    },
+    {
+     "name": "GAMES AND AMUSEMENTS",
+     "count": 1
+    },
+    {
+     "name": "TOURISM",
      "count": 1
     }
    ]
@@ -3455,6 +4830,21 @@
      "label": "Culture, Arts and Heritage",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "VETERANS AFFAIRS AND WELFARE",
+     "count": 4
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 3
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 2
+    }
    ]
   },
   {
@@ -3512,6 +4902,27 @@
      "label": "Public Order and Safety",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 19
+    },
+    {
+     "name": "HEALTH",
+     "count": 7
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 6
+    }
    ]
   },
   {
@@ -3562,6 +4973,21 @@
     {
      "label": "Culture, Arts and Heritage",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 7
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 6
     }
    ]
   },
@@ -3648,6 +5074,21 @@
      "label": "Government Administration",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 5
+    },
+    {
+     "name": "BASIC EDUCATION",
+     "count": 3
+    },
+    {
+     "name": "HIGHER, TECHNICAL AND VOCATIONAL EDUCATION",
+     "count": 3
+    }
    ]
   },
   {
@@ -3719,6 +5160,21 @@
      "label": "Health",
      "count": 4
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 7
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 5
+    },
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 5
+    }
    ]
   },
   {
@@ -3767,6 +5223,21 @@
     {
      "label": "Education",
      "count": 8
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 66
+    },
+    {
+     "name": "RULES",
+     "count": 19
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 10
     }
    ]
   },
@@ -3843,6 +5314,42 @@
      "label": "Taxation",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43YGKVBVVBSP2N0FJ7DC",
+     "name": "Mark Cojuangco",
+     "count": 2
+    },
+    {
+     "id": "01K5ST40ZVT7NP5HY07ZKRGAKA",
+     "name": "Maria Rachel Arenas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47MMJB1GNBWNS0J75SBK",
+     "name": "Ramon Guico",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BNQ2CAETB91YKKSQTRV",
+     "name": "Marlyn Primicias-Agabas",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 3
+    },
+    {
+     "name": "TOURISM",
+     "count": 3
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 3
+    }
    ]
   },
   {
@@ -3900,6 +5407,47 @@
     {
      "label": "Environment and Natural Resources",
      "count": 8
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST41CD3MBD3DVHRR59MQNP",
+     "name": "Arlene Bag-Ao",
+     "count": 108
+    },
+    {
+     "id": "01K5ST457XX0FF3Y1GC63KY16S",
+     "name": "Jose Manuel Tadeo Diokno",
+     "count": 107
+    },
+    {
+     "id": "01K5ST4865QRPXQE20HDW1E8AE",
+     "name": "Dadah Ismula",
+     "count": 107
+    },
+    {
+     "id": "01K5ST48HXZ73WMJFRQB9801SA",
+     "name": "Cielo Lagman",
+     "count": 8
+    },
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 19
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 16
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 14
     }
    ]
   },
@@ -3960,6 +5508,27 @@
      "label": "Local Government",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4H6JT7PJ8AX2KBZBJ3QE",
+     "name": "Maria Carmen Zamora",
+     "count": 5
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 6
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 6
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
+    }
    ]
   },
   {
@@ -4002,6 +5571,21 @@
     {
      "label": "Taxation",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 2
     }
    ]
   },
@@ -4051,6 +5635,27 @@
     {
      "label": "Information and Communications Technology",
      "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST46Q6H4FXG0EWPMT74TR3",
+     "name": "Alfredo Garbin",
+     "count": 7
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 6
+    },
+    {
+     "name": "HEALTH",
+     "count": 3
     }
    ]
   },
@@ -4103,6 +5708,32 @@
     },
     {
      "label": "Education",
+     "count": 6
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST45EYTEQ88B4SPR6TA1CN",
+     "name": "Faustino Michael Carlos Dy",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4FV2EHYZ7XATD4C0DSV6",
+     "name": "Rolando Valeriano",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 8
+    },
+    {
+     "name": "JUSTICE",
+     "count": 7
+    },
+    {
+     "name": "WAYS AND MEANS",
      "count": 6
     }
    ]
@@ -4158,6 +5789,27 @@
     {
      "label": "Culture, Arts and Heritage",
      "count": 5
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4BDWW77N4PP4NGDRDKDQ",
+     "name": "Jerry Perez",
+     "count": 5
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 31
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 26
+    },
+    {
+     "name": "TRADE AND INDUSTRY",
+     "count": 9
     }
    ]
   },
@@ -4228,6 +5880,21 @@
      "label": "Taxation",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 7
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 6
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 5
+    }
    ]
   },
   {
@@ -4281,6 +5948,37 @@
     {
      "label": "Health",
      "count": 13
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4F9FGNTWQRPPJ6JVGCDH",
+     "name": "Antonio Tinio",
+     "count": 144
+    },
+    {
+     "id": "01K5ST45K9883DAHGYZM97WRSR",
+     "name": "Sarah Jane Elago",
+     "count": 95
+    },
+    {
+     "id": "01K5ST4DV8BGTVBPFX5R4F85TE",
+     "name": "Elijah San Fernando",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 27
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 22
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 15
     }
    ]
   },
@@ -4345,6 +6043,21 @@
      "label": "Social Welfare",
      "count": 7
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 16
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 15
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 14
+    }
    ]
   },
   {
@@ -4390,6 +6103,21 @@
     },
     {
      "label": "Local Government",
+     "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 16
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 7
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
      "count": 3
     }
    ]
@@ -4451,6 +6179,47 @@
      "label": "Public Works and Infrastructure",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 2
+    },
+    {
+     "id": "01K5ST43K5E2Q6W5HQNAY5QZT9",
+     "name": "Arthur Celeste",
+     "count": 2
+    },
+    {
+     "id": "01K5ST40ZVT7NP5HY07ZKRGAKA",
+     "name": "Maria Rachel Arenas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47MMJB1GNBWNS0J75SBK",
+     "name": "Ramon Guico",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BNQ2CAETB91YKKSQTRV",
+     "name": "Marlyn Primicias-Agabas",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
+    },
+    {
+     "name": "ENERGY",
+     "count": 8
+    }
    ]
   },
   {
@@ -4493,6 +6262,21 @@
     {
      "label": "Energy",
      "count": 11
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 67
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 24
+    },
+    {
+     "name": "RULES",
+     "count": 12
     }
    ]
   },
@@ -4567,6 +6351,42 @@
      "label": "Local Government",
      "count": 9
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4D8VHSW8QKPXADJWJZPJ",
+     "name": "Roman Romulo",
+     "count": 2
+    },
+    {
+     "id": "01K5ST471BQ86AWVS42JQ892S8",
+     "name": "Kenneth Gatchalian",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46HA4JNANCY88PHMK2Z9",
+     "name": "Jaime Fresnedi",
+     "count": 2
+    },
+    {
+     "id": "01K5ST49VDKBYJ337X900TYK7A",
+     "name": "Jesus Marquez",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 65
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 22
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 15
+    }
    ]
   },
   {
@@ -4589,7 +6409,9 @@
    "laws": [],
    "totalOnRecord": 0,
    "congressesServed": 1,
-   "topTopics": []
+   "topTopics": [],
+   "coAuthors": [],
+   "committees": []
   },
   {
    "id": "01K5ST446MJBT7A8200KPM0ZXV",
@@ -4657,6 +6479,21 @@
      "label": "Social Welfare",
      "count": 11
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 32
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 10
+    }
    ]
   },
   {
@@ -4705,6 +6542,32 @@
     {
      "label": "Local Government",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A0X6GB62G2QZNJYXR84",
+     "name": "Raymond Democrito Mendoza",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DY2Q2G3VYZKAWZQRMEW",
+     "name": "Ma. Alana Samantha Santos",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 40
+    },
+    {
+     "name": "HEALTH",
+     "count": 7
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
     }
    ]
   },
@@ -4763,6 +6626,21 @@
     {
      "label": "Public Works and Infrastructure",
      "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 3
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 3
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 3
     }
    ]
   },
@@ -4836,6 +6714,47 @@
      "label": "Transportation",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44S6V7NMSWA9HDW6QXT3",
+     "name": "Presley De Jesus",
+     "count": 63
+    },
+    {
+     "id": "01K5ST46A4TAVQZADVCVX86D8F",
+     "name": "Jeffrey Ferrer",
+     "count": 9
+    },
+    {
+     "id": "01K5ST4E4ACA9QDNVQH3J0C2ZR",
+     "name": "Sun Shimura",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4G363BXXQRXDTCWX6SXE",
+     "name": "Girlie Veloso",
+     "count": 2
+    },
+    {
+     "id": "01K5ST41CD3MBD3DVHRR59MQNP",
+     "name": "Arlene Bag-Ao",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 77
+    },
+    {
+     "name": "ENERGY",
+     "count": 28
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 7
+    }
    ]
   },
   {
@@ -4903,6 +6822,32 @@
      "label": "Energy",
      "count": 8
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST406DTCM8RAAR5Z4P9HRF",
+     "name": "Caroline Agyao",
+     "count": 4
+    },
+    {
+     "id": "01K5ST42PT9T6H0AG4MRGGX8S0",
+     "name": "Eleanor Bulut-Begtang",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 65
+    },
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 10
+    }
    ]
   },
   {
@@ -4962,6 +6907,47 @@
      "label": "Energy",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST40C3DG442J0HXEX3SBZX",
+     "name": "Cheeno Miguel Almario",
+     "count": 3
+    },
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4739D5ACC46MM5M5TTQF",
+     "name": "Ciriaco Gato",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 12
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 6
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 4
+    }
    ]
   },
   {
@@ -5016,6 +7002,42 @@
      "label": "Public Works and Infrastructure",
      "count": 6
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4F1DC6GDFMQYDW92TH9C",
+     "name": "Reynolds Michael Tan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4F1YJ9GQB6FM4M3RNGMZ",
+     "name": "Stephen James Tan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4AVJMS7XJKANJCEP032P",
+     "name": "Edwin Marino Ongchuan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DV8BGTVBPFX5R4F85TE",
+     "name": "Elijah San Fernando",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 20
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 9
+    }
    ]
   },
   {
@@ -5066,6 +7088,42 @@
     {
      "label": "Transportation",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44E9EPYT2A2M9FWKW9P5",
+     "name": "Sergio Dagooc",
+     "count": 63
+    },
+    {
+     "id": "01K5ST46A4TAVQZADVCVX86D8F",
+     "name": "Jeffrey Ferrer",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4E4ACA9QDNVQH3J0C2ZR",
+     "name": "Sun Shimura",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4G363BXXQRXDTCWX6SXE",
+     "name": "Girlie Veloso",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 74
+    },
+    {
+     "name": "ENERGY",
+     "count": 28
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 5
     }
    ]
   },
@@ -5124,6 +7182,47 @@
      "label": "Public Order and Safety",
      "count": 8
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48HXZ73WMJFRQB9801SA",
+     "name": "Cielo Lagman",
+     "count": 9
+    },
+    {
+     "id": "01K5ST41CD3MBD3DVHRR59MQNP",
+     "name": "Arlene Bag-Ao",
+     "count": 8
+    },
+    {
+     "id": "01K5ST4FMJNAFY6YKJQJGZFBRN",
+     "name": "Alfonso Umali",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4865QRPXQE20HDW1E8AE",
+     "name": "Dadah Ismula",
+     "count": 4
+    },
+    {
+     "id": "01K5ST457XX0FF3Y1GC63KY16S",
+     "name": "Jose Manuel Tadeo Diokno",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "JUSTICE",
+     "count": 14
+    },
+    {
+     "name": "HEALTH",
+     "count": 9
+    },
+    {
+     "name": "RULES",
+     "count": 8
+    }
    ]
   },
   {
@@ -5174,6 +7273,21 @@
     {
      "label": "Energy",
      "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TRANSPORTATION",
+     "count": 2
+    },
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
+     "count": 2
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 2
     }
    ]
   },
@@ -5226,6 +7340,27 @@
      "label": "Agriculture and Fisheries",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47K8RQP01B78W0MHFXAS",
+     "name": "Kathryn Joyce Gorriceta",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 7
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 4
+    },
+    {
+     "name": "JUSTICE",
+     "count": 3
+    }
    ]
   },
   {
@@ -5268,6 +7403,21 @@
     {
      "label": "Energy",
      "count": 6
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 20
+    },
+    {
+     "name": "RULES",
+     "count": 11
+    },
+    {
+     "name": "HEALTH",
+     "count": 9
     }
    ]
   },
@@ -5320,6 +7470,27 @@
      "label": "Public Works and Infrastructure",
      "count": 6
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST49KCHYZAV71M7TE6AHZB",
+     "name": "Alfredo Marañon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 63
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 8
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 7
+    }
    ]
   },
   {
@@ -5370,6 +7541,21 @@
     {
      "label": "Agriculture and Fisheries",
      "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "PUBLIC ORDER AND DANGEROUS DRUGS",
+     "count": 8
+    },
+    {
+     "name": "CIVIL SERVICE, GOVERNMENT REORGANIZATION AND PROFESSIONAL REGULATION",
+     "count": 7
+    },
+    {
+     "name": "NATIONAL DEFENSE AND SECURITY, PEACE, UNIFICATION AND RECONCILIATION",
+     "count": 4
     }
    ]
   },
@@ -5422,6 +7608,21 @@
      "label": "Social Welfare",
      "count": 8
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 17
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 13
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 8
+    }
    ]
   },
   {
@@ -5463,6 +7664,27 @@
     },
     {
      "label": "Energy",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST492NW635D360BN2G8XG4",
+     "name": "Gerville Luistro",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 5
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 4
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
      "count": 2
     }
    ]
@@ -5519,6 +7741,21 @@
      "label": "Energy",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 28
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 9
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
+    }
    ]
   },
   {
@@ -5574,6 +7811,27 @@
     },
     {
      "label": "Taxation",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4579ZZT65P9C54C7V6H5",
+     "name": "Sittie Aminah Dimaporo",
+     "count": 12
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 6
+    },
+    {
+     "name": "REFORESTATION",
+     "count": 3
+    },
+    {
+     "name": "RULES",
      "count": 2
     }
    ]
@@ -5634,6 +7892,27 @@
      "label": "Energy",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST455JD2YN242BHPD2SBBB",
+     "name": "Imelda Dimaporo",
+     "count": 12
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 8
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 3
+    },
+    {
+     "name": "REFORESTATION",
+     "count": 3
+    }
    ]
   },
   {
@@ -5692,6 +7971,47 @@
     {
      "label": "Justice and Judiciary",
      "count": 10
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43KRYJ7VW795V7SZCC9Z",
+     "name": "Percival Cendaña",
+     "count": 107
+    },
+    {
+     "id": "01K5ST4865QRPXQE20HDW1E8AE",
+     "name": "Dadah Ismula",
+     "count": 107
+    },
+    {
+     "id": "01K5ST41CD3MBD3DVHRR59MQNP",
+     "name": "Arlene Bag-Ao",
+     "count": 107
+    },
+    {
+     "id": "01K5ST48HXZ73WMJFRQB9801SA",
+     "name": "Cielo Lagman",
+     "count": 8
+    },
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 48
+    },
+    {
+     "name": "HEALTH",
+     "count": 19
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 12
     }
    ]
   },
@@ -5756,6 +8076,47 @@
      "label": "Taxation",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST401WCQ3TNP7QA240PSTE",
+     "name": "Ziaur-Rahman Adiong",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 4
+    },
+    {
+     "id": "01K5ST48BYP1WACXJBN9TM5PF4",
+     "name": "Jefferson Khonghun",
+     "count": 4
+    },
+    {
+     "id": "01K5ST47SJ78DH8Q5SXRPWWGFJ",
+     "name": "Ramon Rodrigo Gutierrez",
+     "count": 3
+    },
+    {
+     "id": "01K5ST3ZNFVW05HFRGTF1YP6AQ",
+     "name": "Bienvenido Abante",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "POVERTY ALLEVIATION",
+     "count": 4
+    },
+    {
+     "name": "SENIOR CITIZENS",
+     "count": 4
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 3
+    }
    ]
   },
   {
@@ -5801,6 +8162,21 @@
     },
     {
      "label": "Taxation",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "PUBLIC INFORMATION",
+     "count": 1
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 1
+    },
+    {
+     "name": "REVISION OF LAWS",
      "count": 1
     }
    ]
@@ -5864,6 +8240,21 @@
      "label": "Energy",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 7
+    },
+    {
+     "name": "INDIGENOUS CULTURAL COMMUNITIES AND INDIGENOUS PEOPLES",
+     "count": 4
+    },
+    {
+     "name": "REVISION OF LAWS",
+     "count": 3
+    }
    ]
   },
   {
@@ -5901,6 +8292,32 @@
     },
     {
      "label": "Local Government",
+     "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST45CVRA8CPT6MAJXMMAK1",
+     "name": "Paolo Duterte",
+     "count": 3
+    },
+    {
+     "id": "01K5ST45CSBN4DWAYQ0PGDK7KC",
+     "name": "Omar Vincent Duterte",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "REVISION OF LAWS",
+     "count": 2
+    },
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
+     "count": 2
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
      "count": 1
     }
    ]
@@ -5944,6 +8361,32 @@
     },
     {
      "label": "Public Works and Infrastructure",
+     "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST45CVRA8CPT6MAJXMMAK1",
+     "name": "Paolo Duterte",
+     "count": 24
+    },
+    {
+     "id": "01K5ST45CRTZ0T192TKW6P2GGB",
+     "name": "Harold James Duterte",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 5
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 4
+    },
+    {
+     "name": "POVERTY ALLEVIATION",
      "count": 3
     }
    ]
@@ -5995,6 +8438,32 @@
     },
     {
      "label": "Public Order and Safety",
+     "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST45CSBN4DWAYQ0PGDK7KC",
+     "name": "Omar Vincent Duterte",
+     "count": 24
+    },
+    {
+     "id": "01K5ST45CRTZ0T192TKW6P2GGB",
+     "name": "Harold James Duterte",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 5
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 4
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
      "count": 3
     }
    ]
@@ -6057,6 +8526,32 @@
     {
      "label": "Environment and Natural Resources",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST49MSQP8V247ENMJAVBTK",
+     "name": "Ferdinand Alexander Marcos",
+     "count": 11
+    },
+    {
+     "id": "01K5ST47YVYP4J8MJY1VW39PCS",
+     "name": "Ferdinand Hernandez",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "GOVERNMENT ENTERPRISES AND PRIVATIZATION",
+     "count": 4
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 4
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 4
     }
    ]
   },
@@ -6130,6 +8625,47 @@
      "label": "Justice and Judiciary",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43REY3Q5W42H557BZ2BS",
+     "name": "Joel Chua",
+     "count": 6
+    },
+    {
+     "id": "01K5ST492NW635D360BN2G8XG4",
+     "name": "Gerville Luistro",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4F04YPFBC1T4CVQ7W8YE",
+     "name": "Emigdio Tanjuatco",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4EBQNZQCG37RY22G4JJN",
+     "name": "Lordan Suan",
+     "count": 4
+    },
+    {
+     "id": "01K5ST407CT9JA6VY1B8CRTW87",
+     "name": "Antonio Albano",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "JUSTICE",
+     "count": 19
+    },
+    {
+     "name": "YOUTH AND SPORTS DEVELOPMENT",
+     "count": 18
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 3
+    }
    ]
   },
   {
@@ -6186,6 +8722,21 @@
     {
      "label": "Taxation",
      "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 2
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 2
     }
    ]
   },
@@ -6252,6 +8803,21 @@
      "label": "Taxation",
      "count": 8
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 16
+    },
+    {
+     "name": "PUBLIC SERVICES",
+     "count": 10
+    },
+    {
+     "name": "BASIC EDUCATION",
+     "count": 9
+    }
    ]
   },
   {
@@ -6315,6 +8881,21 @@
      "label": "Government Administration",
      "count": 23
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 28
+    },
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 22
+    },
+    {
+     "name": "BASIC EDUCATION",
+     "count": 21
+    }
    ]
   },
   {
@@ -6371,6 +8952,42 @@
     {
      "label": "Health",
      "count": 11
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4F9FGNTWQRPPJ6JVGCDH",
+     "name": "Antonio Tinio",
+     "count": 95
+    },
+    {
+     "id": "01K5ST441S2EA31PR8C0H7VY78",
+     "name": "Renee Louise Co",
+     "count": 95
+    },
+    {
+     "id": "01K5ST4250P3XTJ15V1YAM6NR4",
+     "name": "Javier Miguel Benitez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DV8BGTVBPFX5R4F85TE",
+     "name": "Elijah San Fernando",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 14
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 14
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 8
     }
    ]
   },
@@ -6437,6 +9054,32 @@
     {
      "label": "Energy",
      "count": 6
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48HE2MKZM7WEWQQWFVET",
+     "name": "Jennifer Lagbas",
+     "count": 8
+    },
+    {
+     "id": "01K5ST4EBQNZQCG37RY22G4JJN",
+     "name": "Lordan Suan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 21
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 8
+    },
+    {
+     "name": "ENERGY",
+     "count": 7
     }
    ]
   },
@@ -6507,6 +9150,37 @@
      "label": "Agriculture and Fisheries",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A8HF7S6MXWZMPKM6HR9",
+     "name": "Iris Marie Montes",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4F0J4EHYPZRRRN80B4TB",
+     "name": "Keith Micah Tan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4125YF1N5FK848F7VM4K",
+     "name": "Reynante Arrogancia",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 3
+    },
+    {
+     "name": "GOVERNMENT ENTERPRISES AND PRIVATIZATION",
+     "count": 2
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    }
    ]
   },
   {
@@ -6566,6 +9240,47 @@
     },
     {
      "label": "Energy",
+     "count": 4
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4FMJNAFY6YKJQJGZFBRN",
+     "name": "Alfonso Umali",
+     "count": 3
+    },
+    {
+     "id": "01K5ST40MTJ5DQC88TGTFJJYM9",
+     "name": "Adrian Michael Amatong",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46HA4JNANCY88PHMK2Z9",
+     "name": "Jaime Fresnedi",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48HXZ73WMJFRQB9801SA",
+     "name": "Cielo Lagman",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 8
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 5
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
      "count": 4
     }
    ]
@@ -6635,6 +9350,21 @@
     {
      "label": "Public Works and Infrastructure",
      "count": 7
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 18
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 17
+    },
+    {
+     "name": "RULES",
+     "count": 15
     }
    ]
   },
@@ -6711,6 +9441,21 @@
      "label": "Government Administration",
      "count": 5
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 11
+    },
+    {
+     "name": "RULES",
+     "count": 9
+    },
+    {
+     "name": "CIVIL SERVICE, GOVERNMENT REORGANIZATION AND PROFESSIONAL REGULATION",
+     "count": 8
+    }
    ]
   },
   {
@@ -6768,6 +9513,21 @@
     {
      "label": "Constitutional and Electoral Matters",
      "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 29
+    },
+    {
+     "name": "RULES",
+     "count": 16
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
     }
    ]
   },
@@ -6845,6 +9605,21 @@
      "label": "Health",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 5
+    }
    ]
   },
   {
@@ -6898,6 +9673,21 @@
     },
     {
      "label": "Constitutional and Electoral Matters",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 4
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 1
+    },
+    {
+     "name": "TRADE AND INDUSTRY",
      "count": 1
     }
    ]
@@ -6967,6 +9757,21 @@
      "label": "Housing and Urban Development",
      "count": 4
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 21
+    },
+    {
+     "name": "RULES",
+     "count": 8
+    },
+    {
+     "name": "JUSTICE",
+     "count": 5
+    }
    ]
   },
   {
@@ -7020,6 +9825,47 @@
     },
     {
      "label": "Education",
+     "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44E9EPYT2A2M9FWKW9P5",
+     "name": "Sergio Dagooc",
+     "count": 9
+    },
+    {
+     "id": "01K5ST44S6V7NMSWA9HDW6QXT3",
+     "name": "Presley De Jesus",
+     "count": 6
+    },
+    {
+     "id": "01K5ST47J0NGNRTM0TRX53D9MB",
+     "name": "Roy Gonzales",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 2
+    },
+    {
+     "id": "01K5ST41AAWBHM9T83CSPH9H72",
+     "name": "Arlyn Ayon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 39
+    },
+    {
+     "name": "RULES",
+     "count": 3
+    },
+    {
+     "name": "REVISION OF LAWS",
      "count": 1
     }
    ]
@@ -7079,6 +9925,47 @@
      "label": "Public Order and Safety",
      "count": 6
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST401WCQ3TNP7QA240PSTE",
+     "name": "Ziaur-Rahman Adiong",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    },
+    {
+     "id": "01K5ST406XJDH929E9148CH1V9",
+     "name": "Jose Manuel Alba",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4HC2ZN42AV18RRAYW8ZS",
+     "name": "Audrey Kay Zubiri",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 23
+    },
+    {
+     "name": "JUSTICE",
+     "count": 13
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 12
+    }
    ]
   },
   {
@@ -7125,6 +10012,21 @@
     {
      "label": "Social Welfare",
      "count": 5
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 16
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 8
+    },
+    {
+     "name": "HEALTH",
+     "count": 6
     }
    ]
   },
@@ -7176,6 +10078,21 @@
     {
      "label": "Local Government",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 6
+    },
+    {
+     "name": "TOURISM",
+     "count": 5
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 4
     }
    ]
   },
@@ -7245,6 +10162,47 @@
      "label": "Environment and Natural Resources",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 3
+    },
+    {
+     "id": "01K5ST40MTJ5DQC88TGTFJJYM9",
+     "name": "Adrian Michael Amatong",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4FMJNAFY6YKJQJGZFBRN",
+     "name": "Alfonso Umali",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4D8VHSW8QKPXADJWJZPJ",
+     "name": "Roman Romulo",
+     "count": 2
+    },
+    {
+     "id": "01K5ST471BQ86AWVS42JQ892S8",
+     "name": "Kenneth Gatchalian",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 52
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 31
+    },
+    {
+     "name": "HEALTH",
+     "count": 12
+    }
    ]
   },
   {
@@ -7307,6 +10265,21 @@
      "label": "Health",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 30
+    },
+    {
+     "name": "JUSTICE",
+     "count": 10
+    },
+    {
+     "name": "ENERGY",
+     "count": 4
+    }
    ]
   },
   {
@@ -7356,6 +10329,27 @@
      "label": "Taxation",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48FPBM019VCPDD04TGWD",
+     "name": "Ma. Nina Francesca Lacson",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 12
+    },
+    {
+     "name": "JUSTICE",
+     "count": 10
+    }
    ]
   },
   {
@@ -7402,6 +10396,37 @@
     {
      "label": "Government Administration",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47RNWJZ84JJA22YJ9535",
+     "name": "Rhea Mae Gullas",
+     "count": 3
+    },
+    {
+     "id": "01K5ST46VV7033BNVBC2FGKYF9",
+     "name": "Karen Hope Garcia",
+     "count": 2
+    },
+    {
+     "id": "01K5ST42Y3ST4XB0PCAXSES1C1",
+     "name": "Patricia Calderon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 10
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 4
+    },
+    {
+     "name": "HEALTH",
+     "count": 3
     }
    ]
   },
@@ -7462,6 +10487,27 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": null,
+     "name": "Jan Franz Norbert Joselito Almario Chan",
+     "count": 7
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 5
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 4
+    },
+    {
+     "name": "ENERGY",
      "count": 2
     }
    ]
@@ -7534,6 +10580,32 @@
      "label": "Public Works and Infrastructure",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4AEC285PJYZW5HNGHK2M",
+     "name": "Jernie Jett Nisay",
+     "count": 9
+    },
+    {
+     "id": "01K5ST46VXD8QNDK102WWVCP9E",
+     "name": "Maria Angela Garcia",
+     "count": 7
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 32
+    },
+    {
+     "name": "JUSTICE",
+     "count": 10
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 5
+    }
    ]
   },
   {
@@ -7597,6 +10669,27 @@
      "label": "Social Welfare",
      "count": 6
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4F5Q0H8Z752GCHVQ98PE",
+     "name": "Kenneth Tereng",
+     "count": 43
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    },
+    {
+     "name": "HEALTH",
+     "count": 6
+    }
    ]
   },
   {
@@ -7638,6 +10731,21 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 6
+    },
+    {
+     "name": "ENERGY",
+     "count": 4
+    },
+    {
+     "name": "TRANSPORTATION",
      "count": 1
     }
    ]
@@ -7688,6 +10796,37 @@
     {
      "label": "Information and Communications Technology",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47RNWJZ84JJA22YJ9535",
+     "name": "Rhea Mae Gullas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46PG81MDFS0B6GP2P4NY",
+     "name": "Edsel Galeos",
+     "count": 2
+    },
+    {
+     "id": "01K5ST42Y3ST4XB0PCAXSES1C1",
+     "name": "Patricia Calderon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 14
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 11
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
     }
    ]
   },
@@ -7742,6 +10881,32 @@
      "label": "Transportation",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST46RG3A8V5EWCCNFRQ0PC",
+     "name": "Albert Garcia",
+     "count": 7
+    },
+    {
+     "id": "01K5ST4AEC285PJYZW5HNGHK2M",
+     "name": "Jernie Jett Nisay",
+     "count": 7
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 17
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 6
+    },
+    {
+     "name": "HEALTH",
+     "count": 5
+    }
    ]
   },
   {
@@ -7783,6 +10948,21 @@
     },
     {
      "label": "Labor and Employment",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 2
+    },
+    {
+     "name": "REFORESTATION",
+     "count": 1
+    },
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
      "count": 1
     }
    ]
@@ -7859,6 +11039,47 @@
      "label": "Health",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48BYP1WACXJBN9TM5PF4",
+     "name": "Jefferson Khonghun",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4H83KFKMMA78V9GHHTMK",
+     "name": "Ysabel Maria Zamora-Jornada",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4CA2TJD1QFPJGQ0HQYAG",
+     "name": "Terry Ridon",
+     "count": 2
+    },
+    {
+     "id": "01K5ST3ZXC61Q2SRYH67K0WBEP",
+     "name": "Jude Acidre",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 13
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
+    }
    ]
   },
   {
@@ -7923,6 +11144,47 @@
      "label": "Transportation",
      "count": 8
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4739D5ACC46MM5M5TTQF",
+     "name": "Ciriaco Gato",
+     "count": 3
+    },
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST44MMW82Q8DHY8ASZMKDD",
+     "name": "Nelson Dayanghirang",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 41
+    },
+    {
+     "name": "RULES",
+     "count": 22
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 21
+    }
    ]
   },
   {
@@ -7986,6 +11248,21 @@
      "label": "Taxation",
      "count": 7
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 20
+    },
+    {
+     "name": "BASIC EDUCATION",
+     "count": 12
+    },
+    {
+     "name": "TRADE, COMMERCE AND ENTREPRENEURSHIP",
+     "count": 8
+    }
    ]
   },
   {
@@ -8043,6 +11320,47 @@
      "label": "Environment and Natural Resources",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 23
+    },
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 3
+    },
+    {
+     "id": "01K5ST471BQ86AWVS42JQ892S8",
+     "name": "Kenneth Gatchalian",
+     "count": 3
+    },
+    {
+     "id": "01K5ST44MMW82Q8DHY8ASZMKDD",
+     "name": "Nelson Dayanghirang",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 36
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 19
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 10
+    }
    ]
   },
   {
@@ -8085,6 +11403,32 @@
     {
      "label": "Government Administration",
      "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4H521KBQS3TAXDT30ABF",
+     "name": "Joseph Kim Yu",
+     "count": 5
+    },
+    {
+     "id": "01K5ST4H4EXJGBZV9A9RB696QR",
+     "name": "Jeyzel Victoria Yu",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "COOPERATIVES DEVELOPMENT",
+     "count": 2
+    },
+    {
+     "name": "ENERGY",
+     "count": 2
+    },
+    {
+     "name": "ECONOMIC AFFAIRS",
+     "count": 2
     }
    ]
   },
@@ -8136,6 +11480,21 @@
     {
      "label": "Social Welfare",
      "count": 6
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "CIVIL SERVICE, GOVERNMENT REORGANIZATION AND PROFESSIONAL REGULATION",
+     "count": 15
+    },
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 10
+    },
+    {
+     "name": "BASIC EDUCATION",
+     "count": 8
     }
    ]
   },
@@ -8192,6 +11551,37 @@
     },
     {
      "label": "Taxation",
+     "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST407CT9JA6VY1B8CRTW87",
+     "name": "Antonio Albano",
+     "count": 2
+    },
+    {
+     "id": "01K5ST45EYTEQ88B4SPR6TA1CN",
+     "name": "Faustino Michael Carlos Dy",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4FKAWMFTJACYD4JEATAS",
+     "name": "Allan Ty",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 3
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 2
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
      "count": 1
     }
    ]
@@ -8251,6 +11641,27 @@
     {
      "label": "Transportation",
      "count": 10
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A74P0Q4QX7XZT8K7P9Q",
+     "name": "Romeo Momo",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 15
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 7
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 7
     }
    ]
   },
@@ -8314,6 +11725,21 @@
     {
      "label": "Social Welfare",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 7
     }
    ]
   },
@@ -8379,6 +11805,21 @@
      "label": "Transportation",
      "count": 5
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 67
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 8
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 5
+    }
    ]
   },
   {
@@ -8433,6 +11874,37 @@
      "label": "Energy",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48V23Z03RH92P07508BQ",
+     "name": "Marcelino Libanan",
+     "count": 25
+    },
+    {
+     "id": "01K5ST4F1YJ9GQB6FM4M3RNGMZ",
+     "name": "Stephen James Tan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4F1DC6GDFMQYDW92TH9C",
+     "name": "Reynolds Michael Tan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 9
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 6
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 6
+    }
    ]
   },
   {
@@ -8482,6 +11954,27 @@
      "label": "Transportation",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST46A4TAVQZADVCVX86D8F",
+     "name": "Jeffrey Ferrer",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 12
+    },
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 5
+    },
+    {
+     "name": "ENERGY",
+     "count": 4
+    }
    ]
   },
   {
@@ -8524,6 +12017,32 @@
     {
      "label": "Energy",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 3
+    },
+    {
+     "id": "01K5ST44PFN95QDTEMFE49ZM48",
+     "name": "Lorenz Defensor",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 10
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 8
+    },
+    {
+     "name": "PERSONS WITH DISABILITIES",
+     "count": 5
     }
    ]
   },
@@ -8574,6 +12093,42 @@
     },
     {
      "label": "Taxation",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43K5E2Q6W5HQNAY5QZT9",
+     "name": "Arthur Celeste",
+     "count": 2
+    },
+    {
+     "id": "01K5ST43YGKVBVVBSP2N0FJ7DC",
+     "name": "Mark Cojuangco",
+     "count": 2
+    },
+    {
+     "id": "01K5ST40ZVT7NP5HY07ZKRGAKA",
+     "name": "Maria Rachel Arenas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BNQ2CAETB91YKKSQTRV",
+     "name": "Marlyn Primicias-Agabas",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "ECOLOGY",
+     "count": 3
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
+    },
+    {
+     "name": "HEALTH",
      "count": 2
     }
    ]
@@ -8629,6 +12184,47 @@
      "label": "Environment and Natural Resources",
      "count": 11
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4739D5ACC46MM5M5TTQF",
+     "name": "Ciriaco Gato",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST44MMW82Q8DHY8ASZMKDD",
+     "name": "Nelson Dayanghirang",
+     "count": 2
+    },
+    {
+     "id": "01K5ST42Y3ST4XB0PCAXSES1C1",
+     "name": "Patricia Calderon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 15
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 11
+    }
    ]
   },
   {
@@ -8675,6 +12271,47 @@
     {
      "label": "Agriculture and Fisheries",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 4
+    },
+    {
+     "id": "01K5ST46PG81MDFS0B6GP2P4NY",
+     "name": "Edsel Galeos",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4G363BXXQRXDTCWX6SXE",
+     "name": "Girlie Veloso",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46VV7033BNVBC2FGKYF9",
+     "name": "Karen Hope Garcia",
+     "count": 2
+    },
+    {
+     "id": "01K5ST42Y3ST4XB0PCAXSES1C1",
+     "name": "Patricia Calderon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 8
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 6
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 4
     }
    ]
   },
@@ -8727,6 +12364,47 @@
     },
     {
      "label": "Government Administration",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST401WCQ3TNP7QA240PSTE",
+     "name": "Ziaur-Rahman Adiong",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 3
+    },
+    {
+     "id": "01K5ST48BYP1WACXJBN9TM5PF4",
+     "name": "Jefferson Khonghun",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4581T5G2493K0B3JVTB7",
+     "name": "Ernesto Dionisio",
+     "count": 3
+    },
+    {
+     "id": "01K5ST49E895TK8P4NZ8JP454X",
+     "name": "Oscar Malapitan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TRANSPORTATION",
+     "count": 17
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 4
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
      "count": 2
     }
    ]
@@ -8797,6 +12475,27 @@
      "label": "Energy",
      "count": 7
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4APVX74EQX8AF5NG34H7",
+     "name": "Nathaniel Oducado",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 16
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 16
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 11
+    }
    ]
   },
   {
@@ -8838,6 +12537,21 @@
     },
     {
      "label": "Health",
+     "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "GOVERNMENT ENTERPRISES AND PRIVATIZATION",
+     "count": 3
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 2
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
      "count": 2
     }
    ]
@@ -8916,6 +12630,42 @@
      "label": "Government Administration",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4FDVZ8NG3C3QD24D81ZW",
+     "name": "Dibu Tuan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST45DRWT1W63MR1XHSTQ96",
+     "name": "Faustino Dy",
+     "count": 2
+    },
+    {
+     "id": "01K5ST49MSQP8V247ENMJAVBTK",
+     "name": "Ferdinand Alexander Marcos",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BRWEXWG4GCZTXR45KM3",
+     "name": "Romero Federico Quimbo",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 10
+    },
+    {
+     "name": "HEALTH",
+     "count": 7
+    },
+    {
+     "name": "JUSTICE",
+     "count": 4
+    }
    ]
   },
   {
@@ -8958,6 +12708,21 @@
     {
      "label": "Environment and Natural Resources",
      "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 7
+    },
+    {
+     "name": "HEALTH",
+     "count": 6
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 6
     }
    ]
   },
@@ -9022,6 +12787,21 @@
      "label": "Public Works and Infrastructure",
      "count": 7
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 25
+    },
+    {
+     "name": "WOMEN, CHILDREN, FAMILY RELATIONS AND GENDER EQUALITY",
+     "count": 14
+    },
+    {
+     "name": "CIVIL SERVICE, GOVERNMENT REORGANIZATION AND PROFESSIONAL REGULATION",
+     "count": 8
+    }
    ]
   },
   {
@@ -9080,6 +12860,37 @@
      "label": "Government Administration",
      "count": 13
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4GGAT3ZKXMNQPCB2ESPD",
+     "name": "Miguel Luis Villafuerte",
+     "count": 111
+    },
+    {
+     "id": "01K5ST4GHVXSRJRRMB95KR9E85",
+     "name": "Vincenzo Renato Luigi Villafuerte",
+     "count": 111
+    },
+    {
+     "id": "01K5ST4CA2TJD1QFPJGQ0HQYAG",
+     "name": "Terry Ridon",
+     "count": 111
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 69
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 16
+    },
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
+     "count": 13
+    }
    ]
   },
   {
@@ -9122,6 +12933,47 @@
     {
      "label": "Human Rights",
      "count": 8
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43KRYJ7VW795V7SZCC9Z",
+     "name": "Percival Cendaña",
+     "count": 107
+    },
+    {
+     "id": "01K5ST457XX0FF3Y1GC63KY16S",
+     "name": "Jose Manuel Tadeo Diokno",
+     "count": 107
+    },
+    {
+     "id": "01K5ST41CD3MBD3DVHRR59MQNP",
+     "name": "Arlene Bag-Ao",
+     "count": 107
+    },
+    {
+     "id": "01K5ST48HXZ73WMJFRQB9801SA",
+     "name": "Cielo Lagman",
+     "count": 8
+    },
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 19
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 10
+    },
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
+     "count": 9
     }
    ]
   },
@@ -9176,6 +13028,21 @@
      "label": "Information and Communications Technology",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    },
+    {
+     "name": "HEALTH",
+     "count": 2
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 2
+    }
    ]
   },
   {
@@ -9225,6 +13092,21 @@
     },
     {
      "label": "Appropriations and Public Finance",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 5
+    },
+    {
+     "name": "TOURISM",
+     "count": 3
+    },
+    {
+     "name": "RULES",
      "count": 1
     }
    ]
@@ -9288,6 +13170,32 @@
      "label": "Agriculture and Fisheries",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48BBSDYDKA5QT5MQN3CC",
+     "name": "Elisa Kho",
+     "count": 34
+    },
+    {
+     "id": "01K5ST48DGRCTVCTBY1VP6B0EY",
+     "name": "Wilton Kho",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 7
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 4
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 3
+    }
    ]
   },
   {
@@ -9343,6 +13251,32 @@
      "label": "Culture, Arts and Heritage",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48AVFXVKGMB13R9RX12D",
+     "name": "Antonio Kho",
+     "count": 34
+    },
+    {
+     "id": "01K5ST48DGRCTVCTBY1VP6B0EY",
+     "name": "Wilton Kho",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 65
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 9
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 4
+    }
    ]
   },
   {
@@ -9393,6 +13327,32 @@
     {
      "label": "Government Administration",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48AVFXVKGMB13R9RX12D",
+     "name": "Antonio Kho",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48BBSDYDKA5QT5MQN3CC",
+     "name": "Elisa Kho",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 18
+    },
+    {
+     "name": "YOUTH AND SPORTS DEVELOPMENT",
+     "count": 3
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 3
     }
    ]
   },
@@ -9458,6 +13418,47 @@
     {
      "label": "Transportation",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 6
+    },
+    {
+     "id": "01K5ST492NW635D360BN2G8XG4",
+     "name": "Gerville Luistro",
+     "count": 4
+    },
+    {
+     "id": "01K5ST401WCQ3TNP7QA240PSTE",
+     "name": "Ziaur-Rahman Adiong",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4581T5G2493K0B3JVTB7",
+     "name": "Ernesto Dionisio",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4EK1375EJX8KGSASTM5K",
+     "name": "David Suarez",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 4
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
+    },
+    {
+     "name": "ENERGY",
+     "count": 3
     }
    ]
   },
@@ -9530,6 +13531,37 @@
      "label": "Agriculture and Fisheries",
      "count": 22
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4D2EGTPGPW4DKM8MT2P9",
+     "name": "Andrew Julian Romualdez",
+     "count": 326
+    },
+    {
+     "id": "01K5ST3ZXC61Q2SRYH67K0WBEP",
+     "name": "Jude Acidre",
+     "count": 325
+    },
+    {
+     "id": "01K5ST4D2TA799NM02CY80JG6P",
+     "name": "Ferdinand Martin Romualdez",
+     "count": 307
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 50
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 47
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 33
+    }
    ]
   },
   {
@@ -9571,6 +13603,21 @@
     },
     {
      "label": "Social Welfare",
+     "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
+    },
+    {
+     "name": "HEALTH",
+     "count": 3
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
      "count": 2
     }
    ]
@@ -9642,6 +13689,21 @@
      "label": "Environment and Natural Resources",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 12
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 6
+    },
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 5
+    }
    ]
   },
   {
@@ -9711,6 +13773,27 @@
      "label": "Public Order and Safety",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST46PCRG4QF665G5EQKTJ5",
+     "name": "Gerald Cloyd Alexis Galang",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 17
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 4
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 4
+    }
    ]
   },
   {
@@ -9778,6 +13861,21 @@
      "label": "Social Welfare",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "PUBLIC ORDER AND DANGEROUS DRUGS",
+     "count": 4
+    },
+    {
+     "name": "BANKS, FINANCIAL INSTITUTIONS AND CURRENCIES",
+     "count": 4
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 3
+    }
    ]
   },
   {
@@ -9826,6 +13924,47 @@
     {
      "label": "Culture, Arts and Heritage",
      "count": 7
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST45P60GB18WPCTH0JY7MX",
+     "name": "Yevgeny Vincente Emano",
+     "count": 8
+    },
+    {
+     "id": "01K5ST4FV2EHYZ7XATD4C0DSV6",
+     "name": "Rolando Valeriano",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BRTZM8Q91FEMXHZJSM4",
+     "name": "Ronaldo Puno",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4FCK0WEC55BXR15TCMWT",
+     "name": "Aniela Bianca Tolentino",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 37
+    },
+    {
+     "name": "RULES",
+     "count": 24
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 12
     }
    ]
   },
@@ -9879,6 +14018,32 @@
     },
     {
      "label": "Health",
+     "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4DFZYD50DG8ERNDENXMX",
+     "name": "Adrian Salceda",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4FRRMDWXJDCDGCB9J1P9",
+     "name": "De Carlo Uy",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 21
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 7
+    },
+    {
+     "name": "RULES",
      "count": 3
     }
    ]
@@ -9948,6 +14113,21 @@
      "label": "Taxation",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 32
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 18
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    }
    ]
   },
   {
@@ -9998,6 +14178,47 @@
     {
      "label": "Culture, Arts and Heritage",
      "count": 4
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST41CD3MBD3DVHRR59MQNP",
+     "name": "Arlene Bag-Ao",
+     "count": 12
+    },
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 9
+    },
+    {
+     "id": "01K5ST457XX0FF3Y1GC63KY16S",
+     "name": "Jose Manuel Tadeo Diokno",
+     "count": 8
+    },
+    {
+     "id": "01K5ST43KRYJ7VW795V7SZCC9Z",
+     "name": "Percival Cendaña",
+     "count": 8
+    },
+    {
+     "id": "01K5ST4865QRPXQE20HDW1E8AE",
+     "name": "Dadah Ismula",
+     "count": 8
+    }
+   ],
+   "committees": [
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
+     "count": 4
+    },
+    {
+     "name": "HEALTH",
+     "count": 4
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 3
     }
    ]
   },
@@ -10052,6 +14273,27 @@
      "label": "Appropriations and Public Finance",
      "count": 1
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48KJ83KS194XGAVDM8CR",
+     "name": "Sonny Lagon",
+     "count": 12
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 4
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
+    },
+    {
+     "name": "JUSTICE",
+     "count": 2
+    }
    ]
   },
   {
@@ -10101,6 +14343,27 @@
     },
     {
      "label": "Transportation",
+     "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48K2T6RYA3WQ2PD2PG72",
+     "name": "Daphne Lagon",
+     "count": 12
+    }
+   ],
+   "committees": [
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 5
+    },
+    {
+     "name": "ENERGY",
+     "count": 4
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
      "count": 3
     }
    ]
@@ -10170,6 +14433,21 @@
      "label": "Culture, Arts and Heritage",
      "count": 7
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LABOR, EMPLOYMENT AND HUMAN RESOURCES DEVELOPMENT",
+     "count": 10
+    },
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 9
+    },
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 9
+    }
    ]
   },
   {
@@ -10220,6 +14498,27 @@
     {
      "label": "Public Works and Infrastructure",
      "count": 5
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 27
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 9
+    },
+    {
+     "name": "HEALTH",
+     "count": 6
     }
    ]
   },
@@ -10279,6 +14578,21 @@
     {
      "label": "Social Welfare",
      "count": 7
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 15
+    },
+    {
+     "name": "HEALTH",
+     "count": 11
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 5
     }
    ]
   },
@@ -10347,6 +14661,21 @@
      "label": "Government Administration",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "SCIENCE AND TECHNOLOGY",
+     "count": 2
+    },
+    {
+     "name": "PUBLIC INFORMATION",
+     "count": 1
+    },
+    {
+     "name": "AD HOC COMMITTEE ON LEGISLATIVE ENERGY ACTION AND DEVELOPMENT (LEAD)",
+     "count": 1
+    }
    ]
   },
   {
@@ -10401,6 +14730,21 @@
      "label": "Public Works and Infrastructure",
      "count": 9
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 21
+    },
+    {
+     "name": "RULES",
+     "count": 16
+    },
+    {
+     "name": "HEALTH",
+     "count": 16
+    }
    ]
   },
   {
@@ -10446,6 +14790,21 @@
     },
     {
      "label": "Health",
+     "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 10
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 4
+    },
+    {
+     "name": "ECONOMIC AFFAIRS",
      "count": 4
     }
    ]
@@ -10529,6 +14888,21 @@
      "label": "Social Welfare",
      "count": 10
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER, TECHNICAL AND VOCATIONAL EDUCATION",
+     "count": 31
+    },
+    {
+     "name": "CULTURE AND THE ARTS",
+     "count": 22
+    },
+    {
+     "name": "BASIC EDUCATION",
+     "count": 16
+    }
    ]
   },
   {
@@ -10578,6 +14952,47 @@
      "label": "Housing and Urban Development",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 2
+    },
+    {
+     "id": "01K5ST44MMW82Q8DHY8ASZMKDD",
+     "name": "Nelson Dayanghirang",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4739D5ACC46MM5M5TTQF",
+     "name": "Ciriaco Gato",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 7
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 7
+    },
+    {
+     "name": "HEALTH",
+     "count": 4
+    }
    ]
   },
   {
@@ -10620,6 +15035,21 @@
     {
      "label": "Government Administration",
      "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "YOUTH AND SPORTS DEVELOPMENT",
+     "count": 2
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 2
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 2
     }
    ]
   },
@@ -10672,6 +15102,21 @@
     {
      "label": "Taxation",
      "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 5
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 4
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 1
     }
    ]
   },
@@ -10738,6 +15183,47 @@
      "label": "Health",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47H2GA70DPYFRAM1RAPZ",
+     "name": "Christopher Sheen Gonzales",
+     "count": 25
+    },
+    {
+     "id": "01K5ST3ZMKVXZKBCWK4MKFBZFN",
+     "name": "Jonathan Clement Abalos",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4BN36DFQBX19ZHFDCXPM",
+     "name": "Brian Daniel Llamanzares",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4F1YJ9GQB6FM4M3RNGMZ",
+     "name": "Stephen James Tan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4F1DC6GDFMQYDW92TH9C",
+     "name": "Reynolds Michael Tan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 22
+    },
+    {
+     "name": "POVERTY ALLEVIATION",
+     "count": 8
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 7
+    }
    ]
   },
   {
@@ -10801,6 +15287,37 @@
     {
      "label": "Public Works and Infrastructure",
      "count": 10
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4250P3XTJ15V1YAM6NR4",
+     "name": "Javier Miguel Benitez",
+     "count": 7
+    },
+    {
+     "id": "01K5ST4C09EY47DX43738WV01N",
+     "name": "Ryan Christian Recto",
+     "count": 6
+    },
+    {
+     "id": "01K5ST48V23Z03RH92P07508BQ",
+     "name": "Marcelino Libanan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 32
+    },
+    {
+     "name": "JUSTICE",
+     "count": 13
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 13
     }
    ]
   },
@@ -10866,6 +15383,21 @@
      "label": "Social Welfare",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 35
+    },
+    {
+     "name": "RULES",
+     "count": 30
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    }
    ]
   },
   {
@@ -10930,6 +15462,21 @@
      "label": "Health",
      "count": 6
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 15
+    },
+    {
+     "name": "TOURISM",
+     "count": 10
+    }
    ]
   },
   {
@@ -10988,6 +15535,21 @@
     {
      "label": "Social Welfare",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 6
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 4
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
     }
    ]
   },
@@ -11062,6 +15624,47 @@
      "label": "Health",
      "count": 7
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EBQNZQCG37RY22G4JJN",
+     "name": "Lordan Suan",
+     "count": 7
+    },
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 4
+    },
+    {
+     "id": "01K5ST48BYP1WACXJBN9TM5PF4",
+     "name": "Jefferson Khonghun",
+     "count": 4
+    },
+    {
+     "id": "01K5ST45EYTEQ88B4SPR6TA1CN",
+     "name": "Faustino Michael Carlos Dy",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4F04YPFBC1T4CVQ7W8YE",
+     "name": "Emigdio Tanjuatco",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "JUSTICE",
+     "count": 35
+    },
+    {
+     "name": "RULES",
+     "count": 30
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 8
+    }
    ]
   },
   {
@@ -11119,6 +15722,21 @@
     {
      "label": "Appropriations and Public Finance",
      "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 18
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 7
+    },
+    {
+     "name": "ENERGY",
+     "count": 7
     }
    ]
   },
@@ -11208,6 +15826,27 @@
      "label": "Agriculture and Fisheries",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4GW5M7Y8VT5EY69RCBGT",
+     "name": "Arthur Yap",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 14
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 8
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 8
+    }
    ]
   },
   {
@@ -11249,6 +15888,27 @@
     },
     {
      "label": "Public Works and Infrastructure",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST49KQ584V0Y86TBP0MYSJ",
+     "name": "Paolo Henry Marcoleta",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "GOVERNMENT ENTERPRISES AND PRIVATIZATION",
+     "count": 4
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 2
+    },
+    {
+     "name": "ENERGY",
      "count": 2
     }
    ]
@@ -11304,6 +15964,21 @@
     {
      "label": "Human Rights",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 10
+    },
+    {
+     "name": "HEALTH",
+     "count": 8
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 6
     }
    ]
   },
@@ -11386,6 +16061,32 @@
      "label": "Local Government",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 6
+    },
+    {
+     "id": "01K5ST406VC5X8GM9PTY8MSTEF",
+     "name": "Ustadz Yusop Alano",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 88
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 5
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 4
+    }
    ]
   },
   {
@@ -11453,6 +16154,21 @@
      "label": "Culture, Arts and Heritage",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "SENIOR CITIZENS",
+     "count": 15
+    },
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 10
+    }
    ]
   },
   {
@@ -11512,6 +16228,47 @@
      "label": "Energy",
      "count": 1
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST41XDPSANCW8W47JY81JZ",
+     "name": "Johanne Monich Bautista",
+     "count": 3
+    },
+    {
+     "id": "01K5ST41542EQWS014XP597YQX",
+     "name": "Dean Asistio",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4D8VHSW8QKPXADJWJZPJ",
+     "name": "Roman Romulo",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47SJ78DH8Q5SXRPWWGFJ",
+     "name": "Ramon Rodrigo Gutierrez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4APVX74EQX8AF5NG34H7",
+     "name": "Nathaniel Oducado",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 11
+    },
+    {
+     "name": "NATIONAL DEFENSE AND SECURITY",
+     "count": 3
+    },
+    {
+     "name": "HEALTH",
+     "count": 2
+    }
    ]
   },
   {
@@ -11565,6 +16322,21 @@
      "label": "Local Government",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 4
+    },
+    {
+     "name": "MUSLIM AFFAIRS",
+     "count": 4
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 3
+    }
    ]
   },
   {
@@ -11610,6 +16382,27 @@
     },
     {
      "label": "Public Works and Infrastructure",
+     "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST3ZXC61Q2SRYH67K0WBEP",
+     "name": "Jude Acidre",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 3
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 2
+    },
+    {
+     "name": "YOUTH AND SPORTS DEVELOPMENT",
      "count": 1
     }
    ]
@@ -11671,6 +16464,27 @@
      "label": "Agriculture and Fisheries",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44T85N2VJY7RY0P7VF6Q",
+     "name": "Rachel Marguerite Del Mar",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 19
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 7
+    },
+    {
+     "name": "RULES",
+     "count": 2
+    }
    ]
   },
   {
@@ -11718,6 +16532,27 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST49603GYY207FKC5D4JSQ",
+     "name": "Rolando Macasaet",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 10
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 3
+    },
+    {
+     "name": "WAYS AND MEANS",
      "count": 3
     }
    ]
@@ -11787,6 +16622,21 @@
      "label": "Taxation",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 5
+    },
+    {
+     "name": "AGRICULTURE, FOOD AND AGRARIAN REFORM",
+     "count": 3
+    },
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 2
+    }
    ]
   },
   {
@@ -11850,6 +16700,21 @@
      "label": "Social Welfare",
      "count": 11
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 23
+    },
+    {
+     "name": "AGRICULTURE, FOOD AND AGRARIAN REFORM",
+     "count": 19
+    },
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 14
+    }
    ]
   },
   {
@@ -11907,6 +16772,47 @@
     {
      "label": "Local Government",
      "count": 7
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST45DRWT1W63MR1XHSTQ96",
+     "name": "Faustino Dy",
+     "count": 11
+    },
+    {
+     "id": "01K5ST47YVYP4J8MJY1VW39PCS",
+     "name": "Ferdinand Hernandez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4739D5ACC46MM5M5TTQF",
+     "name": "Ciriaco Gato",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 10
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 7
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 6
     }
    ]
   },
@@ -11967,6 +16873,42 @@
      "label": "Government Administration",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4D8VHSW8QKPXADJWJZPJ",
+     "name": "Roman Romulo",
+     "count": 2
+    },
+    {
+     "id": "01K5ST471BQ86AWVS42JQ892S8",
+     "name": "Kenneth Gatchalian",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46HA4JNANCY88PHMK2Z9",
+     "name": "Jaime Fresnedi",
+     "count": 2
+    },
+    {
+     "id": "01K5ST442K7K1142XFDM5PGSKP",
+     "name": "Dale Corvera",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 19
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 10
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 9
+    }
    ]
   },
   {
@@ -12013,6 +16955,21 @@
     {
      "label": "Justice and Judiciary",
      "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 15
+    },
+    {
+     "name": "HEALTH",
+     "count": 12
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 8
     }
    ]
   },
@@ -12066,6 +17023,21 @@
     {
      "label": "Local Government",
      "count": 5
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
+     "count": 13
+    },
+    {
+     "name": "GOVERNMENT ENTERPRISES AND PRIVATIZATION",
+     "count": 9
+    },
+    {
+     "name": "HEALTH",
+     "count": 8
     }
    ]
   },
@@ -12137,6 +17109,21 @@
     {
      "label": "Transportation",
      "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 7
+    },
+    {
+     "name": "RULES",
+     "count": 6
+    },
+    {
+     "name": "JUSTICE",
+     "count": 6
     }
    ]
   },
@@ -12215,6 +17202,32 @@
     {
      "label": "Agriculture and Fisheries",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4DY2Q2G3VYZKAWZQRMEW",
+     "name": "Ma. Alana Samantha Santos",
+     "count": 3
+    },
+    {
+     "id": "01K5ST444HQPQEHFEZE7QN4Y8Z",
+     "name": "Edwin Cruzado",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 10
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 6
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 4
     }
    ]
   },
@@ -12297,6 +17310,21 @@
      "label": "Public Works and Infrastructure",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 6
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 5
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
+    }
    ]
   },
   {
@@ -12351,6 +17379,47 @@
     {
      "label": "Health",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4FCK0WEC55BXR15TCMWT",
+     "name": "Aniela Bianca Tolentino",
+     "count": 6
+    },
+    {
+     "id": "01K5ST47RNWJZ84JJA22YJ9535",
+     "name": "Rhea Mae Gullas",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4CEKQBDP3M9792KFEXPR",
+     "name": "Eulogio Rodriguez",
+     "count": 4
+    },
+    {
+     "id": "01K5ST48N6897QF24TTX6WH0SM",
+     "name": "Joseph Lara",
+     "count": 4
+    },
+    {
+     "id": "01K5ST47K8RQP01B78W0MHFXAS",
+     "name": "Kathryn Joyce Gorriceta",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 62
+    },
+    {
+     "name": "RULES",
+     "count": 11
     }
    ]
   },
@@ -12424,6 +17493,42 @@
      "label": "Environment and Natural Resources",
      "count": 7
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47DRF815FAD7Z7K2A2ZV",
+     "name": "Richard Gomez",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BFJ35F1ZQRBNWJJBYG7",
+     "name": "Alexander Pimentel",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "RULES",
+     "count": 16
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 13
+    }
    ]
   },
   {
@@ -12477,6 +17582,37 @@
     {
      "label": "Environment and Natural Resources",
      "count": 14
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4F0J4EHYPZRRRN80B4TB",
+     "name": "Keith Micah Tan",
+     "count": 26
+    },
+    {
+     "id": "01K5ST45RTFAQ3HR6P7KW31H7R",
+     "name": "Wilfrido Mark Enverga",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4125YF1N5FK848F7VM4K",
+     "name": "Reynante Arrogancia",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 21
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 20
+    },
+    {
+     "name": "RULES",
+     "count": 15
     }
    ]
   },
@@ -12544,6 +17680,21 @@
      "label": "Public Order and Safety",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 6
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 6
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    }
    ]
   },
   {
@@ -12586,6 +17737,21 @@
     {
      "label": "Agriculture and Fisheries",
      "count": 7
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 9
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 7
+    },
+    {
+     "name": "ENERGY",
+     "count": 6
     }
    ]
   },
@@ -12634,6 +17800,32 @@
      "label": "Consumer Protection",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST46RG3A8V5EWCCNFRQ0PC",
+     "name": "Albert Garcia",
+     "count": 9
+    },
+    {
+     "id": "01K5ST46VXD8QNDK102WWVCP9E",
+     "name": "Maria Angela Garcia",
+     "count": 7
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 11
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 8
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 7
+    }
    ]
   },
   {
@@ -12677,6 +17869,21 @@
      "label": "Energy",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 2
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 2
+    },
+    {
+     "name": "HEALTH",
+     "count": 2
+    }
    ]
   },
   {
@@ -12718,6 +17925,32 @@
     },
     {
      "label": "Energy",
+     "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4AN7PS1BTNJ9TXNYGV76",
+     "name": "Sancho Fernando Oaminal",
+     "count": 8
+    },
+    {
+     "id": "01K5ST40E47943SX7RPPPPCMW7",
+     "name": "Jason Almonte",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 19
+    },
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 7
+    },
+    {
+     "name": "JUSTICE",
      "count": 3
     }
    ]
@@ -12772,6 +18005,32 @@
     {
      "label": "Public Order and Safety",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4AMJCWQ4F0W2ZE5M8QZ4",
+     "name": "Henry Oaminal",
+     "count": 8
+    },
+    {
+     "id": "01K5ST40E47943SX7RPPPPCMW7",
+     "name": "Jason Almonte",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 14
+    },
+    {
+     "name": "HEALTH",
+     "count": 8
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
     }
    ]
   },
@@ -12837,6 +18096,47 @@
      "label": "Government Administration",
      "count": 7
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47XGNNYXEDZ1F86X56ZT",
+     "name": "Charisse Anne Hernandez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST49E895TK8P4NZ8JP454X",
+     "name": "Oscar Malapitan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4D8VHSW8QKPXADJWJZPJ",
+     "name": "Roman Romulo",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47SJ78DH8Q5SXRPWWGFJ",
+     "name": "Ramon Rodrigo Gutierrez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST41XDPSANCW8W47JY81JZ",
+     "name": "Johanne Monich Bautista",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "WAYS AND MEANS",
+     "count": 11
+    },
+    {
+     "name": "HEALTH",
+     "count": 11
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 8
+    }
    ]
   },
   {
@@ -12897,6 +18197,21 @@
     {
      "label": "Environment and Natural Resources",
      "count": 13
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 23
+    },
+    {
+     "name": "HEALTH",
+     "count": 22
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 16
     }
    ]
   },
@@ -12961,6 +18276,42 @@
      "label": "Local Government",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44MXKET71MSHY245P1EW",
+     "name": "Niko Raul Daza",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4F1DC6GDFMQYDW92TH9C",
+     "name": "Reynolds Michael Tan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4F1YJ9GQB6FM4M3RNGMZ",
+     "name": "Stephen James Tan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48V23Z03RH92P07508BQ",
+     "name": "Marcelino Libanan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 17
+    },
+    {
+     "name": "ENERGY",
+     "count": 6
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 5
+    }
    ]
   },
   {
@@ -13022,6 +18373,21 @@
     {
      "label": "Labor and Employment",
      "count": 4
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "SENIOR CITIZENS",
+     "count": 20
+    },
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "JUSTICE",
+     "count": 10
     }
    ]
   },
@@ -13087,6 +18453,47 @@
      "label": "Housing and Urban Development",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4FV2EHYZ7XATD4C0DSV6",
+     "name": "Rolando Valeriano",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BRTZM8Q91FEMXHZJSM4",
+     "name": "Ronaldo Puno",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48HE2MKZM7WEWQQWFVET",
+     "name": "Jennifer Lagbas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4FCK0WEC55BXR15TCMWT",
+     "name": "Aniela Bianca Tolentino",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 57
+    },
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 11
+    }
    ]
   },
   {
@@ -13133,6 +18540,47 @@
     {
      "label": "Public Works and Infrastructure",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48BYP1WACXJBN9TM5PF4",
+     "name": "Jefferson Khonghun",
+     "count": 6
+    },
+    {
+     "id": "01K5ST492NW635D360BN2G8XG4",
+     "name": "Gerville Luistro",
+     "count": 4
+    },
+    {
+     "id": "01K5ST401WCQ3TNP7QA240PSTE",
+     "name": "Ziaur-Rahman Adiong",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4581T5G2493K0B3JVTB7",
+     "name": "Ernesto Dionisio",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4EK1375EJX8KGSASTM5K",
+     "name": "David Suarez",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 11
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 11
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 5
     }
    ]
   },
@@ -13201,6 +18649,21 @@
      "label": "Public Works and Infrastructure",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 9
+    },
+    {
+     "name": "HEALTH",
+     "count": 6
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 5
+    }
    ]
   },
   {
@@ -13250,6 +18713,21 @@
      "label": "Government Administration",
      "count": 6
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 7
+    }
    ]
   },
   {
@@ -13296,6 +18774,21 @@
     {
      "label": "Health",
      "count": 5
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION",
+     "count": 13
+    },
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 10
+    },
+    {
+     "name": "CULTURAL COMMUNITIES AND MUSLIM AFFAIRS",
+     "count": 7
     }
    ]
   },
@@ -13348,6 +18841,21 @@
     },
     {
      "label": "Defense and National Security",
+     "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 11
+    },
+    {
+     "name": "HEALTH",
+     "count": 3
+    },
+    {
+     "name": "NATIONAL DEFENSE AND SECURITY",
      "count": 3
     }
    ]
@@ -13418,6 +18926,21 @@
      "label": "Energy",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 18
+    },
+    {
+     "name": "JUSTICE",
+     "count": 3
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    }
    ]
   },
   {
@@ -13485,6 +19008,21 @@
      "label": "Public Order and Safety",
      "count": 4
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "AGRICULTURE, FOOD AND AGRARIAN REFORM",
+     "count": 16
+    },
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 8
+    },
+    {
+     "name": "BASIC EDUCATION",
+     "count": 7
+    }
    ]
   },
   {
@@ -13538,6 +19076,21 @@
      "label": "Health",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "APPROPRIATIONS",
+     "count": 4
+    },
+    {
+     "name": "SOCIAL SERVICES",
+     "count": 3
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 2
+    }
    ]
   },
   {
@@ -13585,6 +19138,21 @@
      "label": "Taxation",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 2
+    },
+    {
+     "name": "PUBLIC INFORMATION",
+     "count": 1
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 1
+    }
    ]
   },
   {
@@ -13626,6 +19194,27 @@
     },
     {
      "label": "Health",
+     "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43RMAQNQ7N91XS5PBH4H",
+     "name": "Katrina Chua-Tai",
+     "count": 5
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 6
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 2
+    },
+    {
+     "name": "TOURISM",
      "count": 1
     }
    ]
@@ -13676,6 +19265,27 @@
     {
      "label": "Government Administration",
      "count": 4
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A74P0Q4QX7XZT8K7P9Q",
+     "name": "Romeo Momo",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 11
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 7
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 7
     }
    ]
   },
@@ -13732,6 +19342,27 @@
     },
     {
      "label": "Education",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST41R1AH5KDTBRD8A1QT2C",
+     "name": "Alfelito Bascug",
+     "count": 22
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 15
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 10
+    },
+    {
+     "name": "APPROPRIATIONS",
      "count": 2
     }
    ]
@@ -13807,6 +19438,27 @@
      "label": "Local Government",
      "count": 16
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 67
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 20
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 19
+    }
    ]
   },
   {
@@ -13877,6 +19529,42 @@
      "label": "Environment and Natural Resources",
      "count": 11
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43K5E2Q6W5HQNAY5QZT9",
+     "name": "Arthur Celeste",
+     "count": 2
+    },
+    {
+     "id": "01K5ST43YGKVBVVBSP2N0FJ7DC",
+     "name": "Mark Cojuangco",
+     "count": 2
+    },
+    {
+     "id": "01K5ST40ZVT7NP5HY07ZKRGAKA",
+     "name": "Maria Rachel Arenas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47MMJB1GNBWNS0J75SBK",
+     "name": "Ramon Guico",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 15
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 15
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 12
+    }
    ]
   },
   {
@@ -13930,6 +19618,32 @@
      "label": "Public Works and Infrastructure",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 17
+    },
+    {
+     "id": "01K5ST4D8VHSW8QKPXADJWJZPJ",
+     "name": "Roman Romulo",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TRANSPORTATION",
+     "count": 22
+    },
+    {
+     "name": "RULES",
+     "count": 13
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
+    }
    ]
   },
   {
@@ -13975,6 +19689,47 @@
     },
     {
      "label": "Local Government",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST3ZZ9DYXZ2YWQWBN89793",
+     "name": "Romeo Acop",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4FV2EHYZ7XATD4C0DSV6",
+     "name": "Rolando Valeriano",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48HE2MKZM7WEWQQWFVET",
+     "name": "Jennifer Lagbas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4FCK0WEC55BXR15TCMWT",
+     "name": "Aniela Bianca Tolentino",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 4
+    },
+    {
+     "name": "HEALTH",
+     "count": 3
+    },
+    {
+     "name": "PUBLIC INFORMATION",
      "count": 2
     }
    ]
@@ -14043,6 +19798,37 @@
      "label": "Public Works and Infrastructure",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST3ZXC61Q2SRYH67K0WBEP",
+     "name": "Jude Acidre",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 4
+    },
+    {
+     "id": "01K5ST47YVYP4J8MJY1VW39PCS",
+     "name": "Ferdinand Hernandez",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 10
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 8
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 7
+    }
    ]
   },
   {
@@ -14094,6 +19880,21 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 5
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 14
+    },
+    {
+     "name": "HEALTH",
+     "count": 6
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
      "count": 5
     }
    ]
@@ -14170,6 +19971,32 @@
      "label": "Social Welfare",
      "count": 8
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4250P3XTJ15V1YAM6NR4",
+     "name": "Javier Miguel Benitez",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4BN36DFQBX19ZHFDCXPM",
+     "name": "Brian Daniel Llamanzares",
+     "count": 6
+    }
+   ],
+   "committees": [
+    {
+     "name": "WAYS AND MEANS",
+     "count": 13
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 12
+    },
+    {
+     "name": "HEALTH",
+     "count": 10
+    }
    ]
   },
   {
@@ -14228,6 +20055,21 @@
      "label": "Health",
      "count": 5
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 66
+    },
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 7
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 5
+    }
    ]
   },
   {
@@ -14274,6 +20116,21 @@
     {
      "label": "Public Order and Safety",
      "count": 5
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 20
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 11
+    },
+    {
+     "name": "OVERSEAS WORKERS AFFAIRS",
+     "count": 7
     }
    ]
   },
@@ -14341,6 +20198,32 @@
      "label": "Environment and Natural Resources",
      "count": 11
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4C37GM69EWYKS1FV109F",
+     "name": "Ramon Jolo Revilla",
+     "count": 133
+    },
+    {
+     "id": "01K5ST4C23T3BKENK70AQMH8QF",
+     "name": "Leonard Bryan Revilla",
+     "count": 132
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 22
+    },
+    {
+     "name": "OVERSEAS WORKERS AFFAIRS",
+     "count": 21
+    },
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 11
+    }
    ]
   },
   {
@@ -14386,6 +20269,32 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 11
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A2JFND1Y7SPTDSZZJF4",
+     "name": "Lani Revilla",
+     "count": 132
+    },
+    {
+     "id": "01K5ST4C37GM69EWYKS1FV109F",
+     "name": "Ramon Jolo Revilla",
+     "count": 132
+    }
+   ],
+   "committees": [
+    {
+     "name": "OVERSEAS WORKERS AFFAIRS",
+     "count": 21
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 18
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
      "count": 11
     }
    ]
@@ -14434,6 +20343,32 @@
     {
      "label": "Environment and Natural Resources",
      "count": 11
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A2JFND1Y7SPTDSZZJF4",
+     "name": "Lani Revilla",
+     "count": 133
+    },
+    {
+     "id": "01K5ST4C23T3BKENK70AQMH8QF",
+     "name": "Leonard Bryan Revilla",
+     "count": 132
+    }
+   ],
+   "committees": [
+    {
+     "name": "OVERSEAS WORKERS AFFAIRS",
+     "count": 21
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 18
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 15
     }
    ]
   },
@@ -14498,6 +20433,47 @@
      "label": "Agriculture and Fisheries",
      "count": 11
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4GGAT3ZKXMNQPCB2ESPD",
+     "name": "Miguel Luis Villafuerte",
+     "count": 111
+    },
+    {
+     "id": "01K5ST4GHVXSRJRRMB95KR9E85",
+     "name": "Vincenzo Renato Luigi Villafuerte",
+     "count": 111
+    },
+    {
+     "id": "01K5ST483F0P35HYA5WJKFW6VR",
+     "name": "Tsuyoshi Anthony Horibata",
+     "count": 111
+    },
+    {
+     "id": "01K5ST3ZXC61Q2SRYH67K0WBEP",
+     "name": "Jude Acidre",
+     "count": 3
+    },
+    {
+     "id": "01K5ST46YKK6JE4263PWHS26N8",
+     "name": "Janette Garin",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 15
+    },
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
+     "count": 11
+    },
+    {
+     "name": "ENERGY",
+     "count": 9
+    }
    ]
   },
   {
@@ -14543,6 +20519,27 @@
     },
     {
      "label": "Social Welfare",
+     "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4CGBJB9X57MFDXTRWRN2",
+     "name": "Maximo Rodriguez",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 7
+    },
+    {
+     "name": "RULES",
+     "count": 3
+    },
+    {
+     "name": "NATURAL RESOURCES",
      "count": 3
     }
    ]
@@ -14598,6 +20595,21 @@
     },
     {
      "label": "Social Welfare",
+     "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 3
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 3
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
      "count": 2
     }
    ]
@@ -14663,6 +20675,27 @@
      "label": "Environment and Natural Resources",
      "count": 9
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 39
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 9
+    }
    ]
   },
   {
@@ -14723,6 +20756,32 @@
     {
      "label": "Transportation",
      "count": 34
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4CK028FZWCDJTV5H1R2W",
+     "name": "Rufus Rodriguez",
+     "count": 505
+    },
+    {
+     "id": "01K5ST4CBHV8EX7YTDBW75NVP1",
+     "name": "Noel Rivera",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 46
+    },
+    {
+     "name": "JUSTICE",
+     "count": 36
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 36
     }
    ]
   },
@@ -14803,6 +20862,27 @@
      "label": "Justice and Judiciary",
      "count": 44
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4CGBJB9X57MFDXTRWRN2",
+     "name": "Maximo Rodriguez",
+     "count": 505
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 46
+    },
+    {
+     "name": "JUSTICE",
+     "count": 44
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 44
+    }
    ]
   },
   {
@@ -14879,6 +20959,27 @@
      "label": "Public Works and Infrastructure",
      "count": 14
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4D8VHSW8QKPXADJWJZPJ",
+     "name": "Roman Romulo",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 66
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 33
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 22
+    }
    ]
   },
   {
@@ -14942,6 +21043,37 @@
     {
      "label": "Agriculture and Fisheries",
      "count": 22
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST3ZXC61Q2SRYH67K0WBEP",
+     "name": "Jude Acidre",
+     "count": 346
+    },
+    {
+     "id": "01K5ST4D53T126GB42M79WRCCZ",
+     "name": "Yedda Marie Kittelsvedt-Romualdez",
+     "count": 326
+    },
+    {
+     "id": "01K5ST4D2TA799NM02CY80JG6P",
+     "name": "Ferdinand Martin Romualdez",
+     "count": 325
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 53
+    },
+    {
+     "name": "HEALTH",
+     "count": 50
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 35
     }
    ]
   },
@@ -15027,6 +21159,37 @@
      "label": "Agriculture and Fisheries",
      "count": 22
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4D2EGTPGPW4DKM8MT2P9",
+     "name": "Andrew Julian Romualdez",
+     "count": 325
+    },
+    {
+     "id": "01K5ST3ZXC61Q2SRYH67K0WBEP",
+     "name": "Jude Acidre",
+     "count": 324
+    },
+    {
+     "id": "01K5ST4D53T126GB42M79WRCCZ",
+     "name": "Yedda Marie Kittelsvedt-Romualdez",
+     "count": 307
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 50
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 42
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 34
+    }
    ]
   },
   {
@@ -15090,6 +21253,21 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 6
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 10
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 7
+    },
+    {
+     "name": "HEALTH",
      "count": 6
     }
    ]
@@ -15176,6 +21354,47 @@
      "label": "Labor and Employment",
      "count": 4
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST471BQ86AWVS42JQ892S8",
+     "name": "Kenneth Gatchalian",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46HA4JNANCY88PHMK2Z9",
+     "name": "Jaime Fresnedi",
+     "count": 2
+    },
+    {
+     "id": "01K5ST49VDKBYJ337X900TYK7A",
+     "name": "Jesus Marquez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST442K7K1142XFDM5PGSKP",
+     "name": "Dale Corvera",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BQZ1C71HS0FEVY5D40H",
+     "name": "Franz Pumaren",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 27
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 27
+    },
+    {
+     "name": "RULES",
+     "count": 15
+    }
    ]
   },
   {
@@ -15248,6 +21467,47 @@
     {
      "label": "Environment and Natural Resources",
      "count": 10
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST41R1AH5KDTBRD8A1QT2C",
+     "name": "Alfelito Bascug",
+     "count": 9
+    },
+    {
+     "id": "01K5ST4H83KFKMMA78V9GHHTMK",
+     "name": "Ysabel Maria Zamora-Jornada",
+     "count": 8
+    },
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4739D5ACC46MM5M5TTQF",
+     "name": "Ciriaco Gato",
+     "count": 3
+    },
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 67
+    },
+    {
+     "name": "RULES",
+     "count": 23
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 15
     }
    ]
   },
@@ -15323,6 +21583,21 @@
      "label": "Culture, Arts and Heritage",
      "count": 4
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 32
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 11
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    }
    ]
   },
   {
@@ -15364,6 +21639,27 @@
     },
     {
      "label": "Tourism",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4ECYYPQDRPHA0XF2EREV",
+     "name": "Bella Vanessa Suansing",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 3
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 2
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
      "count": 2
     }
    ]
@@ -15420,6 +21716,27 @@
      "label": "Social Welfare",
      "count": 15
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48HTZ3D9JAT0N5E40S53",
+     "name": "Jose Manuel Lagdameo",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
+     "count": 27
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 25
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 19
+    }
    ]
   },
   {
@@ -15467,6 +21784,21 @@
      "label": "Environment and Natural Resources",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 22
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 1
+    },
+    {
+     "name": "AD HOC COMMITTEE ON LEGISLATIVE ENERGY ACTION AND DEVELOPMENT (LEAD)",
+     "count": 1
+    }
    ]
   },
   {
@@ -15509,6 +21841,21 @@
     {
      "label": "Culture, Arts and Heritage",
      "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 6
+    },
+    {
+     "name": "ENERGY",
+     "count": 6
+    },
+    {
+     "name": "OVERSEAS WORKERS AFFAIRS",
+     "count": 3
     }
    ]
   },
@@ -15559,6 +21906,21 @@
      "label": "Government Administration",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 37
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 2
+    }
    ]
   },
   {
@@ -15601,6 +21963,21 @@
     {
      "label": "Public Works and Infrastructure",
      "count": 5
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 8
+    },
+    {
+     "name": "ENERGY",
+     "count": 8
     }
    ]
   },
@@ -15656,6 +22033,42 @@
      "label": "Social Welfare",
      "count": 5
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44MXKET71MSHY245P1EW",
+     "name": "Niko Raul Daza",
+     "count": 2
+    },
+    {
+     "id": "01K5ST441S2EA31PR8C0H7VY78",
+     "name": "Renee Louise Co",
+     "count": 2
+    },
+    {
+     "id": "01K5ST45K9883DAHGYZM97WRSR",
+     "name": "Sarah Jane Elago",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4F9FGNTWQRPPJ6JVGCDH",
+     "name": "Antonio Tinio",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 40
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 20
+    },
+    {
+     "name": "RULES",
+     "count": 15
+    }
    ]
   },
   {
@@ -15709,6 +22122,32 @@
      "label": "Government Administration",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A0X6GB62G2QZNJYXR84",
+     "name": "Raymond Democrito Mendoza",
+     "count": 3
+    },
+    {
+     "id": "01K5ST444HQPQEHFEZE7QN4Y8Z",
+     "name": "Edwin Cruzado",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 8
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 6
+    },
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
+     "count": 2
+    }
    ]
   },
   {
@@ -15758,6 +22197,21 @@
      "label": "Labor and Employment",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 15
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 4
+    },
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 3
+    }
    ]
   },
   {
@@ -15800,6 +22254,32 @@
     {
      "label": "Public Order and Safety",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44E9EPYT2A2M9FWKW9P5",
+     "name": "Sergio Dagooc",
+     "count": 2
+    },
+    {
+     "id": "01K5ST44S6V7NMSWA9HDW6QXT3",
+     "name": "Presley De Jesus",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 7
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
+    },
+    {
+     "name": "JUSTICE",
+     "count": 3
     }
    ]
   },
@@ -15871,6 +22351,21 @@
      "label": "Justice and Judiciary",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 63
+    },
+    {
+     "name": "ECONOMIC AFFAIRS",
+     "count": 2
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 2
+    }
    ]
   },
   {
@@ -15928,6 +22423,21 @@
      "label": "Public Works and Infrastructure",
      "count": 6
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 16
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 9
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 6
+    }
    ]
   },
   {
@@ -15979,6 +22489,21 @@
     },
     {
      "label": "Public Works and Infrastructure",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 4
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    },
+    {
+     "name": "RULES",
      "count": 1
     }
    ]
@@ -16034,6 +22559,27 @@
      "label": "Environment and Natural Resources",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 20
+    },
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 5
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 5
+    }
    ]
   },
   {
@@ -16080,6 +22626,32 @@
     {
      "label": "Education",
      "count": 4
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4FFFV6N0YBAZVV7MW9KE",
+     "name": "Jocelyn Tulfo",
+     "count": 44
+    },
+    {
+     "id": "01K5ST4FG2H4WJBVWPNYY6AECN",
+     "name": "Ralph Wendel Tulfo",
+     "count": 26
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 25
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 7
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 7
     }
    ]
   },
@@ -16156,6 +22728,21 @@
      "label": "Government Administration",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 10
+    },
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 5
+    },
+    {
+     "name": "WOMEN, CHILDREN, FAMILY RELATIONS AND GENDER EQUALITY",
+     "count": 4
+    }
    ]
   },
   {
@@ -16229,6 +22816,47 @@
      "label": "Culture, Arts and Heritage",
      "count": 13
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST492NW635D360BN2G8XG4",
+     "name": "Gerville Luistro",
+     "count": 7
+    },
+    {
+     "id": "01K5ST4F04YPFBC1T4CVQ7W8YE",
+     "name": "Emigdio Tanjuatco",
+     "count": 5
+    },
+    {
+     "id": "01K5ST45EYTEQ88B4SPR6TA1CN",
+     "name": "Faustino Michael Carlos Dy",
+     "count": 4
+    },
+    {
+     "id": "01K5ST401WCQ3TNP7QA240PSTE",
+     "name": "Ziaur-Rahman Adiong",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 67
+    },
+    {
+     "name": "JUSTICE",
+     "count": 20
+    },
+    {
+     "name": "RULES",
+     "count": 18
+    }
    ]
   },
   {
@@ -16282,6 +22910,47 @@
     {
      "label": "Social Welfare",
      "count": 4
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EFG1WCH5SJ9RMF81E9S",
+     "name": "Mikaela Angela Suansing",
+     "count": 12
+    },
+    {
+     "id": "01K5ST4DFA7HHCDS7HBWS1C6SN",
+     "name": "Ruth Sakaluran",
+     "count": 3
+    },
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST44MMW82Q8DHY8ASZMKDD",
+     "name": "Nelson Dayanghirang",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 8
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
     }
    ]
   },
@@ -16351,6 +23020,47 @@
      "label": "Transportation",
      "count": 18
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4739D5ACC46MM5M5TTQF",
+     "name": "Ciriaco Gato",
+     "count": 23
+    },
+    {
+     "id": "01K5ST4BQZ1C71HS0FEVY5D40H",
+     "name": "Franz Pumaren",
+     "count": 17
+    },
+    {
+     "id": "01K5ST4ECYYPQDRPHA0XF2EREV",
+     "name": "Bella Vanessa Suansing",
+     "count": 12
+    },
+    {
+     "id": "01K5ST4986Y11YTF6693JFX73D",
+     "name": "Eleandro Jesus Madrona",
+     "count": 6
+    },
+    {
+     "id": "01K5ST47NC346P5BHGZXG1BPY8",
+     "name": "Howard Guintu",
+     "count": 4
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 57
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 47
+    },
+    {
+     "name": "RULES",
+     "count": 32
+    }
    ]
   },
   {
@@ -16408,6 +23118,47 @@
      "label": "Education",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 3
+    },
+    {
+     "id": "01K5ST48BYP1WACXJBN9TM5PF4",
+     "name": "Jefferson Khonghun",
+     "count": 3
+    },
+    {
+     "id": "01K5ST492NW635D360BN2G8XG4",
+     "name": "Gerville Luistro",
+     "count": 3
+    },
+    {
+     "id": "01K5ST47SJ78DH8Q5SXRPWWGFJ",
+     "name": "Ramon Rodrigo Gutierrez",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4EBQNZQCG37RY22G4JJN",
+     "name": "Lordan Suan",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TRANSPORTATION",
+     "count": 4
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 3
+    },
+    {
+     "name": "JUSTICE",
+     "count": 3
+    }
    ]
   },
   {
@@ -16459,6 +23210,21 @@
     },
     {
      "label": "Health",
+     "count": 5
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "WAYS AND MEANS",
+     "count": 11
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 6
+    },
+    {
+     "name": "ENERGY",
      "count": 5
     }
    ]
@@ -16523,6 +23289,21 @@
      "label": "Labor and Employment",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 8
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    }
    ]
   },
   {
@@ -16566,6 +23347,21 @@
      "label": "Social Welfare",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 6
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 2
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 2
+    }
    ]
   },
   {
@@ -16603,6 +23399,21 @@
     },
     {
      "label": "Energy",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 3
+    },
+    {
+     "name": "POVERTY ALLEVIATION",
+     "count": 2
+    },
+    {
+     "name": "RULES",
      "count": 1
     }
    ]
@@ -16673,6 +23484,21 @@
      "label": "Health",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 30
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 3
+    }
    ]
   },
   {
@@ -16736,6 +23562,42 @@
      "label": "Social Welfare",
      "count": 9
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A8HF7S6MXWZMPKM6HR9",
+     "name": "Iris Marie Montes",
+     "count": 26
+    },
+    {
+     "id": "01K5ST4125YF1N5FK848F7VM4K",
+     "name": "Reynante Arrogancia",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 2
+    },
+    {
+     "id": "01K5ST45RTFAQ3HR6P7KW31H7R",
+     "name": "Wilfrido Mark Enverga",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 32
+    },
+    {
+     "name": "RULES",
+     "count": 16
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 15
+    }
    ]
   },
   {
@@ -16783,6 +23645,47 @@
      "label": "Public Works and Infrastructure",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4F1YJ9GQB6FM4M3RNGMZ",
+     "name": "Stephen James Tan",
+     "count": 9
+    },
+    {
+     "id": "01K5ST44MXKET71MSHY245P1EW",
+     "name": "Niko Raul Daza",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4AVJMS7XJKANJCEP032P",
+     "name": "Edwin Marino Ongchuan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48V23Z03RH92P07508BQ",
+     "name": "Marcelino Libanan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47H2GA70DPYFRAM1RAPZ",
+     "name": "Christopher Sheen Gonzales",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 8
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 7
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 5
+    }
    ]
   },
   {
@@ -16824,6 +23727,21 @@
     },
     {
      "label": "Health",
+     "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 1
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 1
+    },
+    {
+     "name": "HEALTH",
      "count": 1
     }
    ]
@@ -16879,6 +23797,47 @@
      "label": "Social Welfare",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4F1DC6GDFMQYDW92TH9C",
+     "name": "Reynolds Michael Tan",
+     "count": 9
+    },
+    {
+     "id": "01K5ST44MXKET71MSHY245P1EW",
+     "name": "Niko Raul Daza",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4AVJMS7XJKANJCEP032P",
+     "name": "Edwin Marino Ongchuan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48V23Z03RH92P07508BQ",
+     "name": "Marcelino Libanan",
+     "count": 2
+    },
+    {
+     "id": "01K5ST47H2GA70DPYFRAM1RAPZ",
+     "name": "Christopher Sheen Gonzales",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 20
+    },
+    {
+     "name": "HEALTH",
+     "count": 6
+    },
+    {
+     "name": "ENERGY",
+     "count": 2
+    }
    ]
   },
   {
@@ -16931,6 +23890,21 @@
     {
      "label": "Health",
      "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 3
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 3
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
     }
    ]
   },
@@ -17000,6 +23974,42 @@
      "label": "Energy",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4EBQNZQCG37RY22G4JJN",
+     "name": "Lordan Suan",
+     "count": 5
+    },
+    {
+     "id": "01K5ST45EYTEQ88B4SPR6TA1CN",
+     "name": "Faustino Michael Carlos Dy",
+     "count": 4
+    },
+    {
+     "id": "01K5ST492NW635D360BN2G8XG4",
+     "name": "Gerville Luistro",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4H83KFKMMA78V9GHHTMK",
+     "name": "Ysabel Maria Zamora-Jornada",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 13
+    },
+    {
+     "name": "NATURAL RESOURCES",
+     "count": 7
+    },
+    {
+     "name": "REVISION OF LAWS",
+     "count": 6
+    }
    ]
   },
   {
@@ -17046,6 +24056,21 @@
     {
      "label": "Information and Communications Technology",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 9
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 8
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
     }
    ]
   },
@@ -17113,6 +24138,21 @@
      "label": "Public Works and Infrastructure",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 7
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 7
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 6
+    }
    ]
   },
   {
@@ -17165,6 +24205,27 @@
     },
     {
      "label": "Agriculture and Fisheries",
+     "count": 5
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST46RX7N9SENRKWRJBK71Q",
+     "name": "Dante Garcia",
+     "count": 43
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 7
+    },
+    {
+     "name": "HOUSING AND URBAN DEVELOPMENT",
+     "count": 5
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
      "count": 5
     }
    ]
@@ -17239,6 +24300,21 @@
      "label": "Public Order and Safety",
      "count": 2
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
+     "count": 6
+    }
    ]
   },
   {
@@ -17304,6 +24380,21 @@
      "label": "Social Welfare",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 5
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 5
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 4
+    }
    ]
   },
   {
@@ -17367,6 +24458,21 @@
     },
     {
      "label": "Public Works and Infrastructure",
+     "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BANKS AND FINANCIAL INTERMEDIARIES",
+     "count": 7
+    },
+    {
+     "name": "YOUTH AND SPORTS DEVELOPMENT",
+     "count": 2
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
      "count": 2
     }
    ]
@@ -17435,6 +24541,37 @@
      "label": "Health",
      "count": 13
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST441S2EA31PR8C0H7VY78",
+     "name": "Renee Louise Co",
+     "count": 144
+    },
+    {
+     "id": "01K5ST45K9883DAHGYZM97WRSR",
+     "name": "Sarah Jane Elago",
+     "count": 95
+    },
+    {
+     "id": "01K5ST4DV8BGTVBPFX5R4F85TE",
+     "name": "Elijah San Fernando",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 27
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 22
+    },
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 14
+    }
    ]
   },
   {
@@ -17486,6 +24623,47 @@
     },
     {
      "label": "Labor and Employment",
+     "count": 5
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 4
+    },
+    {
+     "id": "01K5ST4FV2EHYZ7XATD4C0DSV6",
+     "name": "Rolando Valeriano",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4BRTZM8Q91FEMXHZJSM4",
+     "name": "Ronaldo Puno",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48HE2MKZM7WEWQQWFVET",
+     "name": "Jennifer Lagbas",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 13
+    },
+    {
+     "name": "CLIMATE CHANGE",
+     "count": 6
+    },
+    {
+     "name": "YOUTH AND SPORTS DEVELOPMENT",
      "count": 5
     }
    ]
@@ -17542,6 +24720,27 @@
      "label": "Culture, Arts and Heritage",
      "count": 7
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47YVYP4J8MJY1VW39PCS",
+     "name": "Ferdinand Hernandez",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 65
+    },
+    {
+     "name": "RULES",
+     "count": 15
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 10
+    }
    ]
   },
   {
@@ -17589,6 +24788,21 @@
      "label": "Government Administration",
      "count": 7
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 12
+    },
+    {
+     "name": "PUBLIC SERVICES",
+     "count": 9
+    },
+    {
+     "name": "CIVIL SERVICE, GOVERNMENT REORGANIZATION AND PROFESSIONAL REGULATION",
+     "count": 9
+    }
    ]
   },
   {
@@ -17635,6 +24849,21 @@
     {
      "label": "Health",
      "count": 10
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENVIRONMENT, NATURAL RESOURCES AND CLIMATE CHANGE",
+     "count": 16
+    },
+    {
+     "name": "LABOR, EMPLOYMENT AND HUMAN RESOURCES DEVELOPMENT",
+     "count": 12
+    },
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 11
     }
    ]
   },
@@ -17686,6 +24915,37 @@
     {
      "label": "Environment and Natural Resources",
      "count": 7
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4FG2H4WJBVWPNYY6AECN",
+     "name": "Ralph Wendel Tulfo",
+     "count": 96
+    },
+    {
+     "id": "01K5ST4EBB576JZE8XFGFPN6EH",
+     "name": "Jeffrey Soriano",
+     "count": 44
+    },
+    {
+     "id": "01K5ST4GXY13H0HCMP3XWSHW9C",
+     "name": "Edvic Yap",
+     "count": 10
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 18
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 9
+    },
+    {
+     "name": "OVERSEAS WORKERS AFFAIRS",
+     "count": 8
     }
    ]
   },
@@ -17739,6 +24999,37 @@
     {
      "label": "Education",
      "count": 6
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4FFFV6N0YBAZVV7MW9KE",
+     "name": "Jocelyn Tulfo",
+     "count": 96
+    },
+    {
+     "id": "01K5ST4EBB576JZE8XFGFPN6EH",
+     "name": "Jeffrey Soriano",
+     "count": 26
+    },
+    {
+     "id": "01K5ST4GXY13H0HCMP3XWSHW9C",
+     "name": "Edvic Yap",
+     "count": 10
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 14
+    },
+    {
+     "name": "OVERSEAS WORKERS AFFAIRS",
+     "count": 8
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 7
     }
    ]
   },
@@ -17794,6 +25085,21 @@
      "label": "Public Works and Infrastructure",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 66
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 5
+    },
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
+     "count": 4
+    }
    ]
   },
   {
@@ -17845,6 +25151,37 @@
     },
     {
      "label": "Social Welfare",
+     "count": 1
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST407CT9JA6VY1B8CRTW87",
+     "name": "Antonio Albano",
+     "count": 3
+    },
+    {
+     "id": "01K5ST475ACSAZP5P8C8NKCPEZ",
+     "name": "Ed Christopher Go",
+     "count": 2
+    },
+    {
+     "id": "01K5ST45EYTEQ88B4SPR6TA1CN",
+     "name": "Faustino Michael Carlos Dy",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 3
+    },
+    {
+     "name": "WAYS AND MEANS",
+     "count": 3
+    },
+    {
+     "name": "AD HOC COMMITTEE ON LEGISLATIVE ENERGY ACTION AND DEVELOPMENT (LEAD)",
      "count": 1
     }
    ]
@@ -17910,6 +25247,47 @@
      "label": "Local Government",
      "count": 2
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST44T4FBNHACTZTJ7B5HCB",
+     "name": "Leila Norma Eulalia Josefa de Lima",
+     "count": 4
+    },
+    {
+     "id": "01K5ST40MTJ5DQC88TGTFJJYM9",
+     "name": "Adrian Michael Amatong",
+     "count": 3
+    },
+    {
+     "id": "01K5ST45SJJQDQ75QYYW6WDX84",
+     "name": "Edgar Erice",
+     "count": 3
+    },
+    {
+     "id": "01K5ST46HA4JNANCY88PHMK2Z9",
+     "name": "Jaime Fresnedi",
+     "count": 3
+    },
+    {
+     "id": "01K5ST48HXZ73WMJFRQB9801SA",
+     "name": "Cielo Lagman",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 64
+    },
+    {
+     "name": "PUBLIC INFORMATION",
+     "count": 2
+    },
+    {
+     "name": "TRANSPORTATION",
+     "count": 2
+    }
    ]
   },
   {
@@ -17969,6 +25347,21 @@
      "label": "Health",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 1
+    },
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
+     "count": 1
+    },
+    {
+     "name": "REVISION OF LAWS",
+     "count": 1
+    }
    ]
   },
   {
@@ -18022,6 +25415,27 @@
     {
      "label": "Environment and Natural Resources",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST48HTZ3D9JAT0N5E40S53",
+     "name": "Jose Manuel Lagdameo",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 21
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 11
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 3
     }
    ]
   },
@@ -18079,6 +25493,21 @@
     },
     {
      "label": "Public Works and Infrastructure",
+     "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 2
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    },
+    {
+     "name": "SUFFRAGE AND ELECTORAL REFORMS",
      "count": 2
     }
    ]
@@ -18143,6 +25572,47 @@
      "label": "Labor and Employment",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43REY3Q5W42H557BZ2BS",
+     "name": "Joel Chua",
+     "count": 3
+    },
+    {
+     "id": "01K5ST4BRTZM8Q91FEMXHZJSM4",
+     "name": "Ronaldo Puno",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48HE2MKZM7WEWQQWFVET",
+     "name": "Jennifer Lagbas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4FCK0WEC55BXR15TCMWT",
+     "name": "Aniela Bianca Tolentino",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 8
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 8
+    }
    ]
   },
   {
@@ -18195,6 +25665,21 @@
     {
      "label": "Social Welfare",
      "count": 29
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 67
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 48
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 39
     }
    ]
   },
@@ -18261,6 +25746,21 @@
      "label": "Appropriations and Public Finance",
      "count": 1
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 4
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 2
+    },
+    {
+     "name": "APPROPRIATIONS",
+     "count": 2
+    }
    ]
   },
   {
@@ -18303,6 +25803,37 @@
     {
      "label": "Government Administration",
      "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST47RNWJZ84JJA22YJ9535",
+     "name": "Rhea Mae Gullas",
+     "count": 2
+    },
+    {
+     "id": "01K5ST44E9EPYT2A2M9FWKW9P5",
+     "name": "Sergio Dagooc",
+     "count": 2
+    },
+    {
+     "id": "01K5ST44S6V7NMSWA9HDW6QXT3",
+     "name": "Presley De Jesus",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 16
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 9
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 5
     }
    ]
   },
@@ -18360,6 +25891,47 @@
     },
     {
      "label": "Public Works and Infrastructure",
+     "count": 4
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST406XJDH929E9148CH1V9",
+     "name": "Jose Manuel Alba",
+     "count": 6
+    },
+    {
+     "id": "01K5ST4FCK0WEC55BXR15TCMWT",
+     "name": "Aniela Bianca Tolentino",
+     "count": 4
+    },
+    {
+     "id": "01K5ST433EAJKVHNG8GRWA0TKT",
+     "name": "Carl Nicolas Cari",
+     "count": 2
+    },
+    {
+     "id": "01K5ST43KRYJ7VW795V7SZCC9Z",
+     "name": "Percival Cendaña",
+     "count": 2
+    },
+    {
+     "id": "01K5ST41CD3MBD3DVHRR59MQNP",
+     "name": "Arlene Bag-Ao",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 7
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 6
+    },
+    {
+     "name": "CLIMATE CHANGE",
      "count": 4
     }
    ]
@@ -18421,6 +25993,21 @@
      "label": "Environment and Natural Resources",
      "count": 5
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 12
+    },
+    {
+     "name": "ENERGY",
+     "count": 10
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 9
+    }
    ]
   },
   {
@@ -18473,6 +26060,21 @@
     {
      "label": "Labor and Employment",
      "count": 2
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 7
+    },
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 5
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 5
     }
    ]
   },
@@ -18527,6 +26129,37 @@
      "label": "Labor and Employment",
      "count": 12
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4GHVXSRJRRMB95KR9E85",
+     "name": "Vincenzo Renato Luigi Villafuerte",
+     "count": 115
+    },
+    {
+     "id": "01K5ST483F0P35HYA5WJKFW6VR",
+     "name": "Tsuyoshi Anthony Horibata",
+     "count": 111
+    },
+    {
+     "id": "01K5ST4CA2TJD1QFPJGQ0HQYAG",
+     "name": "Terry Ridon",
+     "count": 111
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 16
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 14
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 11
+    }
    ]
   },
   {
@@ -18574,6 +26207,37 @@
     },
     {
      "label": "Agriculture and Fisheries",
+     "count": 11
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4GGAT3ZKXMNQPCB2ESPD",
+     "name": "Miguel Luis Villafuerte",
+     "count": 115
+    },
+    {
+     "id": "01K5ST483F0P35HYA5WJKFW6VR",
+     "name": "Tsuyoshi Anthony Horibata",
+     "count": 111
+    },
+    {
+     "id": "01K5ST4CA2TJD1QFPJGQ0HQYAG",
+     "name": "Terry Ridon",
+     "count": 111
+    }
+   ],
+   "committees": [
+    {
+     "name": "PUBLIC WORKS AND HIGHWAYS",
+     "count": 15
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 11
+    },
+    {
+     "name": "AQUACULTURE AND FISHERIES RESOURCES",
      "count": 11
     }
    ]
@@ -18643,6 +26307,21 @@
      "label": "Health",
      "count": 7
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LABOR, EMPLOYMENT AND HUMAN RESOURCES DEVELOPMENT",
+     "count": 11
+    },
+    {
+     "name": "CIVIL SERVICE, GOVERNMENT REORGANIZATION AND PROFESSIONAL REGULATION",
+     "count": 11
+    },
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 9
+    }
    ]
   },
   {
@@ -18705,6 +26384,21 @@
      "label": "Public Order and Safety",
      "count": 11
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LABOR AND EMPLOYMENT",
+     "count": 16
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 14
+    },
+    {
+     "name": "CIVIL SERVICE AND PROFESSIONAL REGULATION",
+     "count": 9
+    }
    ]
   },
   {
@@ -18764,6 +26458,21 @@
      "label": "Public Order and Safety",
      "count": 9
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 22
+    },
+    {
+     "name": "BASIC EDUCATION",
+     "count": 17
+    },
+    {
+     "name": "TRADE, COMMERCE AND ENTREPRENEURSHIP",
+     "count": 11
+    }
    ]
   },
   {
@@ -18814,6 +26523,21 @@
     {
      "label": "Environment and Natural Resources",
      "count": 7
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "AGRICULTURE, FOOD AND AGRARIAN REFORM",
+     "count": 38
+    },
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 29
+    },
+    {
+     "name": "LABOR, EMPLOYMENT AND HUMAN RESOURCES DEVELOPMENT",
+     "count": 9
     }
    ]
   },
@@ -18878,6 +26602,21 @@
      "label": "Government Administration",
      "count": 4
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 14
+    },
+    {
+     "name": "JUSTICE",
+     "count": 10
+    },
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
+     "count": 6
+    }
    ]
   },
   {
@@ -18926,6 +26665,21 @@
     {
      "label": "Disaster Risk Reduction",
      "count": 1
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 5
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 5
+    },
+    {
+     "name": "PUBLIC ORDER AND SAFETY",
+     "count": 3
     }
    ]
   },
@@ -18979,6 +26733,21 @@
     {
      "label": "Public Order and Safety",
      "count": 11
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 18
+    },
+    {
+     "name": "RULES",
+     "count": 17
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 14
     }
    ]
   },
@@ -19045,6 +26814,27 @@
     {
      "label": "Taxation",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST494DNEYRGKNN6B767GT6",
+     "name": "Maria Gloria Macapagal-Arroyo",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "ENERGY",
+     "count": 12
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 6
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 5
     }
    ]
   },
@@ -19114,6 +26904,21 @@
      "label": "Labor and Employment",
      "count": 16
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 44
+    },
+    {
+     "name": "HEALTH",
+     "count": 27
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 19
+    }
    ]
   },
   {
@@ -19165,6 +26970,37 @@
     },
     {
      "label": "Public Works and Infrastructure",
+     "count": 7
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4GYPS5FMHPQWT2K6AFJ0",
+     "name": "Eric Yap",
+     "count": 82
+    },
+    {
+     "id": "01K5ST4FFFV6N0YBAZVV7MW9KE",
+     "name": "Jocelyn Tulfo",
+     "count": 10
+    },
+    {
+     "id": "01K5ST4FG2H4WJBVWPNYY6AECN",
+     "name": "Ralph Wendel Tulfo",
+     "count": 10
+    }
+   ],
+   "committees": [
+    {
+     "name": "HEALTH",
+     "count": 14
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 8
+    },
+    {
+     "name": "OVERSEAS WORKERS AFFAIRS",
      "count": 7
     }
    ]
@@ -19229,6 +27065,32 @@
      "label": "Labor and Employment",
      "count": 21
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4GXY13H0HCMP3XWSHW9C",
+     "name": "Edvic Yap",
+     "count": 82
+    },
+    {
+     "id": "01K5ST4A6A6E48CZF2JXQRCFAH",
+     "name": "Florencio Miraflores",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 48
+    },
+    {
+     "name": "HEALTH",
+     "count": 34
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 24
+    }
    ]
   },
   {
@@ -19251,7 +27113,9 @@
    "laws": [],
    "totalOnRecord": 0,
    "congressesServed": 1,
-   "topTopics": []
+   "topTopics": [],
+   "coAuthors": [],
+   "committees": []
   },
   {
    "id": "01K5ST4H34M0ZXV90YNS67V23Y",
@@ -19310,6 +27174,21 @@
      "label": "Labor and Employment",
      "count": 4
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 31
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 24
+    },
+    {
+     "name": "JUSTICE",
+     "count": 9
+    }
    ]
   },
   {
@@ -19364,6 +27243,21 @@
      "label": "Culture, Arts and Heritage",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "TOURISM",
+     "count": 63
+    },
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 26
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 3
+    }
    ]
   },
   {
@@ -19415,6 +27309,32 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 2
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4H521KBQS3TAXDT30ABF",
+     "name": "Joseph Kim Yu",
+     "count": 10
+    },
+    {
+     "id": "01K5ST474WPZYCXXZ6XRD7YBDJ",
+     "name": "Maria Kristina Jihan Glepa",
+     "count": 3
+    }
+   ],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 14
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 5
+    },
+    {
+     "name": "ENERGY",
      "count": 2
     }
    ]
@@ -19476,6 +27396,32 @@
      "label": "Government Administration",
      "count": 3
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4H4EXJGBZV9A9RB696QR",
+     "name": "Jeyzel Victoria Yu",
+     "count": 10
+    },
+    {
+     "id": "01K5ST474WPZYCXXZ6XRD7YBDJ",
+     "name": "Maria Kristina Jihan Glepa",
+     "count": 5
+    }
+   ],
+   "committees": [
+    {
+     "name": "HIGHER AND TECHNICAL EDUCATION",
+     "count": 10
+    },
+    {
+     "name": "ENERGY",
+     "count": 8
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 5
+    }
    ]
   },
   {
@@ -19528,6 +27474,21 @@
     {
      "label": "Labor and Employment",
      "count": 3
+    }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 8
+    },
+    {
+     "name": "AGRICULTURE AND FOOD",
+     "count": 4
+    },
+    {
+     "name": "INFORMATION AND COMMUNICATIONS TECHNOLOGY",
+     "count": 4
     }
    ]
   },
@@ -19595,6 +27556,27 @@
      "label": "Appropriations and Public Finance",
      "count": 1
     }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST43KYEYAH47V8SGS43E1S",
+     "name": "Leonel Ceniza",
+     "count": 5
+    }
+   ],
+   "committees": [
+    {
+     "name": "LOCAL GOVERNMENT",
+     "count": 4
+    },
+    {
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 3
+    },
+    {
+     "name": "HEALTH",
+     "count": 3
+    }
    ]
   },
   {
@@ -19641,6 +27623,47 @@
     {
      "label": "Environment and Natural Resources",
      "count": 3
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST41R1AH5KDTBRD8A1QT2C",
+     "name": "Alfelito Bascug",
+     "count": 8
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 8
+    },
+    {
+     "id": "01K5ST46YKK6JE4263PWHS26N8",
+     "name": "Janette Garin",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4AYBTXWFRNT7SBK2X4C5",
+     "name": "Francisco Paolo Ortega",
+     "count": 2
+    },
+    {
+     "id": "01K5ST48BYP1WACXJBN9TM5PF4",
+     "name": "Jefferson Khonghun",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "PERSONS WITH DISABILITIES",
+     "count": 10
+    },
+    {
+     "name": "WOMEN AND GENDER EQUALITY",
+     "count": 7
+    },
+    {
+     "name": "JUSTICE",
+     "count": 7
     }
    ]
   },
@@ -19723,6 +27746,21 @@
      "label": "Culture, Arts and Heritage",
      "count": 3
     }
+   ],
+   "coAuthors": [],
+   "committees": [
+    {
+     "name": "HEALTH AND DEMOGRAPHY",
+     "count": 8
+    },
+    {
+     "name": "RULES",
+     "count": 5
+    },
+    {
+     "name": "JUSTICE AND HUMAN RIGHTS",
+     "count": 5
+    }
    ]
   },
   {
@@ -19776,6 +27814,47 @@
     {
      "label": "Culture, Arts and Heritage",
      "count": 8
+    }
+   ],
+   "coAuthors": [
+    {
+     "id": "01K5ST4G380B94FF2WRTEPA30A",
+     "name": "Anna Veloso-Tuazon",
+     "count": 2
+    },
+    {
+     "id": "01K5ST406XJDH929E9148CH1V9",
+     "name": "Jose Manuel Alba",
+     "count": 2
+    },
+    {
+     "id": "01K5ST46DKPY08XK8GSS3D9RRM",
+     "name": "Jonathan Keith Flores",
+     "count": 2
+    },
+    {
+     "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
+     "name": "Laarni Roque",
+     "count": 2
+    },
+    {
+     "id": "01K5ST41AAWBHM9T83CSPH9H72",
+     "name": "Arlyn Ayon",
+     "count": 2
+    }
+   ],
+   "committees": [
+    {
+     "name": "RULES",
+     "count": 19
+    },
+    {
+     "name": "JUSTICE",
+     "count": 15
+    },
+    {
+     "name": "BASIC EDUCATION AND CULTURE",
+     "count": 15
     }
    ]
   }

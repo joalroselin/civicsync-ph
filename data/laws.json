@@ -1,1 +1,178 @@
-{"generatedAt":"2026-10-04T00:00:00.000Z","laws":{}}
+{
+ "generatedAt": "2026-10-04T09:54:24.397Z",
+ "laws": {
+  "12314": {
+   "ra": "12314",
+   "bill": "HB04058",
+   "title": "AN ACT APPROPRIATING FUNDS FOR THE OPERATION OF THE GOVERNMENT OF THE REPUBLIC OF THE PHILIPPINES FROM JANUARY ONE TO DECEMBER THIRTY ONE, TWO THOUSAND AND TWENTY SIX",
+   "date": "2026-01-05",
+   "how": "enacted",
+   "textUrl": null,
+   "checkedAt": "2026-10-04",
+   "effectivityDays": null,
+   "irr": null,
+   "read": "no-pdf"
+  },
+  "12315": {
+   "ra": "12315",
+   "bill": "HB06429",
+   "title": "AN ACT EXTENDING THE DURATION OF THE SECOND CONGRESSIONAL COMMISSION ON EDUCATION, AMENDING FOR THE PURPOSE REPUBLIC ACT NO. 11899, OTHERWISE KNOWN AS THE “SECOND CONGRESSIONAL COMMISSION ON EDUCATION (EDCOM II) ACT”",
+   "date": "2026-03-04",
+   "how": "enacted",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12315.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": null,
+   "read": "ok",
+   "parser": 2
+  },
+  "12316": {
+   "ra": "12316",
+   "bill": "HB08418",
+   "title": "AN ACT AUTHORIZING THE PRESIDENT OF THE PHILIPPINES TO SUSPEND OR REDUCE THE EXCISE TAXES ON PETROLEUM PRODUCTS DURING NATIONAL OR GLOBAL ECONOMIC EMERGENCIES, AMENDING FOR THE PURPOSE THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED",
+   "date": "2026-03-25",
+   "how": "enacted",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12316.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": null,
+   "read": "ok",
+   "parser": 2
+  },
+  "12317": {
+   "ra": "12317",
+   "bill": "HB08220",
+   "title": "AN ACT PROVIDING FOR THE DATE OF THE FIRST REGULAR PARLIAMENTARY ELECTIONS IN THE BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO, FURTHER AMENDING FOR THE PURPOSE SECTION 13, ARTICLE XVI OF REPUBLIC ACT NO. 11054, AS AMENDED, OTHERWISE KNOWN AS THE “ORGANIC LAW FOR THE BANGSAMORO AUTONOMOUS REGION IN MUSLIM MINDANAO”",
+   "date": "2026-03-25",
+   "how": "enacted",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12317.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 0,
+   "irr": null,
+   "read": "ok",
+   "parser": 2
+  },
+  "12318": {
+   "ra": "12318",
+   "bill": "HB06640",
+   "title": "AN ACT GRANTING PHILIPPINE CITIZENSHIP TO MAODO DIOUF",
+   "date": "2026-05-18",
+   "how": "lapsed",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12318.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": null,
+   "read": "ok",
+   "parser": 2
+  },
+  "12319": {
+   "ra": "12319",
+   "bill": "HB06641",
+   "title": "AN ACT GRANTING PHILIPPINE CITIZENSHIP TO ELIZABETH JEANETTE MEANS",
+   "date": "2026-05-18",
+   "how": "lapsed",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12319.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": null,
+   "read": "ok",
+   "parser": 2
+  },
+  "12320": {
+   "ra": "12320",
+   "bill": "HB07301",
+   "title": "AN ACT DECLARING THE MONTH OF APRIL EVERY YEAR AS THE \" PHILIPPINE VETERANS' MONTH \"",
+   "date": "2026-05-26",
+   "how": "enacted",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12320.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": {
+    "agency": "the PVAO, DND, DILG, DOH, and DepEd",
+    "amount": 90,
+    "unit": "days",
+    "from": "effectivity",
+    "clause": "Implementing Rules and Regulations. — Within ninety (90) days from the effectivity of this Act, the PVAO, DND, DILG, DOH, and DepEd shall promulgate comprehensive implementing rules and regulations necessary to carry out the provisions of this Act."
+   },
+   "read": "ok",
+   "parser": 2
+  },
+  "12321": {
+   "ra": "12321",
+   "bill": "HB04745",
+   "title": "AN ACT ESTABLISHING PUBLIC BASIC EDUCATION SCHOOLS IN GEOGRAPHICALLY ISOLATED AND DISADVANTAGED AND CONFLICT-AFFECTED AREAS, PROVIDING ACCESS ROADS LEADING TO LAST MILE SCHOOLS, AND APPROPRIATING FUNDS THEREFOR",
+   "date": "2026-07-22",
+   "how": "enacted",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12321.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": {
+    "agency": "the DepEd",
+    "amount": 90,
+    "unit": "days",
+    "from": "effectivity",
+    "clause": "Implementing Rules and Regulations. — Rules and regulations necessary for the effective enforcement of the provisions of this Act shall be formulated by the DepEd, in consultation with the DPWH, DOE, NEA, DICT, NCIP, DILG, DENR, DOST, DOTr, LWUA, DBM, TEC, Department of Social Welfare and Development, National Disaster Risk Reduction and Management Council, Civil Service Commission, and Union of Local Authorities of the Philippines and shall be implemented within ninety (90) days from the effectivity of this Act."
+   },
+   "read": "ok",
+   "parser": 2
+  },
+  "12322": {
+   "ra": "12322",
+   "bill": "HB05939",
+   "title": "AN ACT ALLOWING THE DEPARTMENT OF EDUCATION THE FLEXIBILITY TO DETERMINE THE PEDAGOGICAL APPROACHES TO BE IMPLEMENTED IN THE BASIC EDUCATION CURRICULUM, AMENDING FOR THE PURPOSE SECTION 5 OF REPUBLIC ACT NO. 10533, OR THE \"ENHANCED BASIC EDUCATION ACT OF 2013\"",
+   "date": "2026-08-02",
+   "how": "lapsed",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12322.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": null,
+   "read": "ok",
+   "parser": 2
+  },
+  "12323": {
+   "ra": "12323",
+   "bill": "HB06639",
+   "title": "AN ACT GRANTING PHILIPPINE CITIZENSHIP TO BENNIE FRANCOIS BOATWRIGHT III",
+   "date": "2026-08-30",
+   "how": "lapsed",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12323.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": null,
+   "read": "ok",
+   "parser": 2
+  },
+  "12324": {
+   "ra": "12324",
+   "bill": "HB06644",
+   "title": "AN ACT GRANTING PHILIPPINE CITIZENSHIP TO MATTHEW JAMES RAMOS",
+   "date": "2026-08-30",
+   "how": "lapsed",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12324.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": null,
+   "read": "ok",
+   "parser": 2
+  },
+  "12325": {
+   "ra": "12325",
+   "bill": "HB08476",
+   "title": "AN ACT EXPANDING THE COVERAGE OF THE TERTIARY EDUCATION SUBSIDY, AMENDING FOR THE PURPOSE REPUBLIC ACT NO. 10931, OTHERWISE KNOWN AS THE “UNIVERSAL ACCESS TO QUALITY TERTIARY EDUCATION ACT”, AND APPROPRIATING FUNDS THEREFOR",
+   "date": "2026-09-04",
+   "how": "enacted",
+   "textUrl": "https://docs.congress.hrep.online/legisdocs/ra_20/RA12325.pdf",
+   "checkedAt": "2026-10-04",
+   "effectivityDays": 15,
+   "irr": {
+    "agency": "the UniFAST Board",
+    "amount": 60,
+    "unit": "days",
+    "from": "effectivity",
+    "clause": "Implementing Rules and Regulations. — Within sixty (60) days from the effectivity of this Act, the implementing rules and regulations (IRR) necessary for the effective and efficient enforcement of this Act shall be formulated, promulgated, and implemented by the UniFAST Board, in consultation with the CHED, TESDA, DepEd, DSWD, DBM, and other relevant stakeholders in higher and technical-vocational education: Provided, That the failure of the Board to promulgate the said rules and regulations shall not prevent or delay the effectivity and implementation of this Act."
+   },
+   "read": "ok",
+   "parser": 2
+  }
+ }
+}
