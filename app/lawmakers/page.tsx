@@ -45,7 +45,11 @@ export default function LawmakersPage() {
           congresses’ outcomes aren’t in our sources yet. Totals combine Open Congress history (to about Sept 2025) with the live count.
         </p>
         <p>
-          Updated {formatDate(lawmakerData.generatedAt.slice(0, 10))} from {lawmakerData.billsScanned.toLocaleString()} bills.{" "}
+          See{" "}
+          <Link href="/laws" className="underline underline-offset-2">
+            every law and its IRR deadline
+          </Link>
+          . Updated {formatDate(lawmakerData.generatedAt.slice(0, 10))} from {lawmakerData.billsScanned.toLocaleString()} bills.{" "}
           <Link href="/about" className="underline underline-offset-2">
             About the data
           </Link>

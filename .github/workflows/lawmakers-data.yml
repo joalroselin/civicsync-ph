@@ -1,5 +1,6 @@
 # Nightly data (02:30 Manila), ~6 minutes:
 # - data/lawmakers.json: every current member's record (/lawmakers, /compare)
+# - data/laws.json: Republic Acts, their signed text, IRR agency and deadline
 # - data/status/: today's status of every bill and what changed since
 #   yesterday (On the move, bill status history, /changes, weekly card)
 # Commits only when something changed; the commit redeploys the site.
@@ -24,6 +25,9 @@ jobs:
         with:
           node-version: 24
       - run: node scripts/build-lawmakers.mts
+      # Laws: OCR each new Republic Act once to find its IRR deadline (CS-129).
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils tesseract-ocr > /dev/null
+      - run: node scripts/build-laws.mts
       - name: Commit if changed
         run: |
           git add data
