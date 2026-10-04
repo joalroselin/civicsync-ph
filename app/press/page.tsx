@@ -56,14 +56,38 @@ const LOGOS = [
   { file: "civicsync-icon.png", label: "App icon · 2048px PNG", dark: false, svg: "civicsync-icon.svg" },
 ];
 
+/** Current screenshots (v2, October 2026). Earlier sets live under ARCHIVE. */
 const SCREENSHOTS = [
   { file: "phone-1-home.png", label: "Home", phone: true },
-  { file: "phone-2-lawmaker.png", label: "Lawmaker profile", phone: true },
+  { file: "phone-2-search.png", label: "Search results", phone: true },
   { file: "phone-3-bill.png", label: "Bill page", phone: true },
-  { file: "phone-4-watchlist.png", label: "Watchlist", phone: true },
-  { file: "phone-5-search.png", label: "Search results", phone: true },
+  { file: "phone-4-lawmaker.png", label: "Lawmaker profile", phone: true },
+  { file: "phone-5-topic.png", label: "Browse by topic", phone: true },
+  { file: "phone-6-watchlist.png", label: "Watchlist", phone: true },
+  { file: "phone-7-dark-mode.png", label: "Dark mode", phone: true },
   { file: "desktop-1-home.png", label: "Desktop · Home", phone: false },
-  { file: "desktop-2-lawmaker.png", label: "Desktop · Lawmaker profile", phone: false },
+  { file: "desktop-2-bill.png", label: "Desktop · Bill page", phone: false },
+  { file: "desktop-3-lawmakers.png", label: "Desktop · All lawmakers", phone: false },
+  { file: "desktop-4-compare.png", label: "Desktop · Compare lawmakers", phone: false },
+];
+
+/** Older screenshot sets, kept for coverage that used them. Newest first. */
+const ARCHIVE = [
+  {
+    version: "v1",
+    date: "September 2026",
+    note: "The first public version.",
+    dir: "archive/v1",
+    shots: [
+      { file: "phone-1-home.png", label: "Home", phone: true },
+      { file: "phone-2-lawmaker.png", label: "Lawmaker profile", phone: true },
+      { file: "phone-3-bill.png", label: "Bill page", phone: true },
+      { file: "phone-4-watchlist.png", label: "Watchlist", phone: true },
+      { file: "phone-5-search.png", label: "Search results", phone: true },
+      { file: "desktop-1-home.png", label: "Desktop · Home", phone: false },
+      { file: "desktop-2-lawmaker.png", label: "Desktop · Lawmaker profile", phone: false },
+    ],
+  },
 ];
 
 const COLORS = [
@@ -188,7 +212,7 @@ export default async function PressPage() {
       </Section>
 
       <Section title="Screenshots">
-        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-7">
           {SCREENSHOTS.filter((s) => s.phone).map((s) => (
             <Screenshot key={s.file} {...s} />
           ))}
@@ -199,7 +223,8 @@ export default async function PressPage() {
           ))}
         </ul>
         <p className="mt-2 text-xs text-gray-500">
-          Phone: 1170×2532 · Desktop: 2880×1800. Screens show real 20th Congress bills as of September 2026.
+          Phone: 1170×2532 · Desktop: 2880×1800. Screens show real 20th Congress bills as of October 2026. Earlier versions are in the archive
+          below.
         </p>
       </Section>
 
@@ -294,6 +319,28 @@ export default async function PressPage() {
           </p>
         </div>
       </Section>
+      <Section title="Archive">
+        <p className="-mt-1 mb-4 max-w-2xl text-sm text-gray-600">
+          Screenshots from earlier versions, kept so coverage that used them still has a source. Please use the current set above for anything new.
+        </p>
+        {ARCHIVE.map((a) => (
+          <details key={a.version} className="rounded-2xl bg-surface p-4 ring-1 ring-gray-200/70">
+            <summary className="cursor-pointer text-sm font-semibold text-gray-800">
+              {a.version} · {a.date} <span className="font-normal text-gray-500">· {a.note}</span>
+            </summary>
+            <ul className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-5">
+              {a.shots.filter((x) => x.phone).map((x) => (
+                <Screenshot key={x.file} {...x} dir={a.dir} />
+              ))}
+            </ul>
+            <ul className="mt-3 grid gap-3 sm:grid-cols-2">
+              {a.shots.filter((x) => !x.phone).map((x) => (
+                <Screenshot key={x.file} {...x} dir={a.dir} />
+              ))}
+            </ul>
+          </details>
+        ))}
+      </Section>
     </main>
   );
 }
@@ -322,12 +369,12 @@ function Boilerplate({ label, text, className = "" }: { label: string; text: str
   );
 }
 
-function Screenshot({ file, label, phone }: { file: string; label: string; phone: boolean }) {
+function Screenshot({ file, label, phone, dir = "screenshots" }: { file: string; label: string; phone: boolean; dir?: string }) {
   return (
     <li>
-      <a href={`/press/screenshots/${file}`} download className="group block">
+      <a href={`/press/${dir}/${file}`} download className="group block">
         <Image
-          src={`/press/screenshots/${file}`}
+          src={`/press/${dir}/${file}`}
           alt={`CivicSync PH: ${label}`}
           width={phone ? 390 : 1440}
           height={phone ? 844 : 900}
