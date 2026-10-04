@@ -54,7 +54,7 @@ CS-301,Browse bills by topic,"Explore 20th Congress bills by topic, like Health,
 CS-302,Richer lawmaker profiles,"Photos, district or party-list (clearly labelled), and Senate positions are live for current lawmakers. Still to come: committee memberships and frequent co-authors.",In Progress,Receipts,,
 CS-303,Bill timelines,See a bill's full history of status changes over time.,Open,Bills,,
 CS-304,Compare lawmakers side by side,"Pick up to three lawmakers and see them side by side: bills this Congress, bills that became law, bills per congress, main topics, and their laws.",Complete,Receipts,Deployed,2026-10-04
-CS-305,Link enacted bills to the final law,"Connect bills that became Republic Acts to the law itself: the signed text, when it was signed or lapsed into law, and when it takes effect.",Open,Bills,,
+CS-305,Link enacted bills to the final law,"Bills that became law show the Republic Act number, whether it was signed or lapsed into law and when, and a link to the signed text.",Complete,Bills,Deployed,2026-10-04
 CS-306,"Faster, more reliable search",Our own search index so results appear instantly and stay available when outside sources are down.,Open,Performance,Performance,
 CS-307,Open dataset for other civic projects,"Publish cleaned, merged legislative data for others to build on.",Open,Data,,
 CS-308,Exploring: voting records,Researching whether we can show how lawmakers voted. This isn't available from our current sources yet.,Open,Research,,
@@ -81,4 +81,5 @@ CS-125,Print a bill page,"A clean, ink-friendly printout of any bill (status, su
 CS-126,Quicker ways to search,"Press / to search from anywhere, and a helpful not-found page with search and suggestions instead of a dead end.",Complete,Receipts,Deployed,2026-10-03
 CS-127,Lawmaker record at a glance,"Each lawmaker page shows bills on record, bills this Congress, and bills that became law this Congress, with bills per congress in their service record.",Complete,Receipts,Deployed,2026-10-03
 CS-128,Browse all lawmakers,"A sortable table of all 345 current senators and representatives: bills this Congress, became law (tap to see which laws), total on record, congresses served, or any past congress. Updated nightly.",Complete,Receipts,Deployed,2026-10-04
-CS-129,Implementing rules (IRR) and what happens after a law passes,"For each Republic Act: its Implementing Rules and Regulations (IRR) and the agency responsible, whether the IRR is out yet or overdue, when the law takes effect, and later amendments. Builds on CS-305.",Open,Bills,,
+CS-129,Implementing rules (IRR) and what happens after a law passes,"For each Republic Act: which agency must write its Implementing Rules and Regulations (IRR) and by when (read from the law itself), whether the IRR is out or overdue, and a way to send us the IRR link. Plus a full law tracker per lawmaker, including earlier congresses.",Planned,Bills,,
+CS-130,Go straight to a bill's author,"In bill lists (home, search, topics, related bills), tap the author's name to open their lawmaker page instead of the bill.",Complete,Bills,Deployed,2026-10-04
