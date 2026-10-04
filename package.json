@@ -10,7 +10,8 @@
     "smoke": "node scripts/smoke.mts",
     "typecheck": "tsc --noEmit",
     "roadmap": "node --env-file-if-exists=.env.local scripts/roadmap.mts",
-    "a11y": "node scripts/a11y.mts"
+    "a11y": "node scripts/a11y.mts",
+    "extension:zip": "cd extension && rm -f ../civicsync-extension.zip && zip -qr ../civicsync-extension.zip . -x README.md"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
