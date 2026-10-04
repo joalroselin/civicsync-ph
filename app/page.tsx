@@ -1,9 +1,11 @@
+import Link from "next/link";
 import { Suspense } from "react";
 import { CURRENT_CONGRESS } from "@/lib/openCongress";
 import { getSiteSettings } from "@/lib/content";
-import { listMeasures } from "@/lib/batasWatch";
 import { HomeFeed } from "./components/HomeFeed";
-import { newlyFiled, recentlyMoved } from "@/lib/feed";
+import { chamberPulse, newlyFiled, recentlyMoved } from "@/lib/feed";
+import { trackingSince } from "@/lib/statusHistory";
+import { formatDate } from "@/lib/format";
 import { Greeting } from "./components/Greeting";
 import { SearchBar } from "./components/SearchBar";
 import { SearchLink } from "./components/SearchNavigation";
@@ -64,7 +66,14 @@ export default async function Home() {
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_300px] lg:items-start lg:gap-10">
         {/* 2. Main content: what's new in Congress, one panel per chamber. */}
         <section aria-labelledby="recent-heading" className="lg:col-start-1 lg:row-start-1">
-          <SectionHeading id="recent-heading" eyebrow={`${CURRENT_CONGRESS}th Congress · live`} title="Latest from Congress" action={<RssLink href="/feeds" />} />
+          <SectionHeading id="recent-heading" eyebrow={`${CURRENT_CONGRESS}th Congress · live`} title="Latest from Congress" action={
+              <span className="flex items-center gap-3">
+                <Link href="/changes" className="text-sm font-semibold text-navy-ink hover:text-crimson-ink">
+                  What changed this week
+                </Link>
+                <RssLink href="/feeds" />
+              </span>
+            } />
           <Suspense fallback={<ChamberSkeleton />}>
             <RecentBills />
           </Suspense>
@@ -98,24 +107,6 @@ async function Pulse() {
   );
 }
 
-async function chamberPulse(chamber: "senate" | "house") {
-  try {
-    const since = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
-    let week = 0;
-    let total = 0;
-    // Newest first; stop once filings are older than a week (capped for politeness).
-    for (let page = 1; page <= 8; page++) {
-      const res = await listMeasures({ chamber, sort: "latest", page });
-      total = res.total;
-      const recent = res.items.filter((m) => (m.filedAt ?? "") > since).length;
-      week += recent;
-      if (recent < res.items.length || !res.hasMore) break;
-    }
-    return { total, week };
-  } catch {
-    return null;
-  }
-}
 
 function PulseStrip({ stats }: { stats?: { value: string; label: string }[] }) {
   const items = stats ?? Array.from({ length: 3 }, () => ({ value: "", label: "" }));
@@ -140,7 +131,7 @@ async function RecentBills() {
   // Open Congress's catalogue lags by about a year, so the live feed comes from BatasWatch.
   const [filed, moved] = await Promise.all([newlyFiled(), recentlyMoved()]);
   if (!filed && !moved) return <LiveDataUnavailable what="The latest filings feed" />;
-  return <HomeFeed filed={filed} moved={moved} />;
+  return <HomeFeed filed={filed} moved={moved} trackingSince={formatDate(trackingSince)} />;
 }
 
 function ChamberSkeleton() {

@@ -64,3 +64,12 @@ export function seatLabel(representation: string | null | undefined): string | n
   const name = representation.replace(/\s*party[\s-]?list$/i, "").trim();
   return `${name} (party-list)`;
 }
+
+/** Short, readable status: "Became law · RA 12324", sentence case for ALL CAPS, no "(Filed last …)" note. */
+export function displayStatus(status: string): string {
+  const ra = status.match(/republic act\s*(?:no\.?\s*)?(?:RA\s*)?(\d{4,6})/i);
+  if (ra) return `Became law · RA ${ra[1]}`;
+  const caps = status.replace(/[^A-Za-z]/g, "");
+  const s = caps && caps === caps.toUpperCase() ? status.charAt(0) + status.slice(1).toLowerCase() : status;
+  return s.replace(/\s*\(Filed last[^)]*\)\s*$/i, "");
+}

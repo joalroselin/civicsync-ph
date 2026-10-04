@@ -27,6 +27,8 @@ const checks: { path: string; status?: number[]; contains?: string; type?: strin
   { path: "/manifest.json", contains: "CivicSync" },
   { path: "/feeds", contains: "News feeds" },
   { path: "/lawmakers", contains: "Bill counts show activity" },
+  { path: "/changes", contains: "This week" },
+  { path: "/feeds/changes", contains: "<rss", type: "rss+xml" },
   { path: "/compare?ids=01K5S6MAZ4YBST5GDJV827A0J8,01K5ST4BN36DFQBX19ZHFDCXPM", contains: "Bills per congress" },
   { path: "/feeds/latest", contains: "<rss", type: "rss+xml" },
   { path: "/feeds/topics/health", contains: "<item>", type: "rss+xml" },

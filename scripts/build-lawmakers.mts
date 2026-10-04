@@ -167,3 +167,55 @@ writeFileSync(
   JSON.stringify({ generatedAt: new Date().toISOString(), congress: 20, billsScanned: measures.length, members }, null, 1) + "\n"
 );
 log(`Wrote ${members.length} members; not in Open Congress yet: ${unmatched.join(", ") || "none"}`);
+
+// 5. Daily status snapshot and what changed since the last run (CS-119).
+//    data/status/latest.json   every bill's current status
+//    data/status/changes.json  changes from the last 120 days, newest first (the app reads this)
+//    data/status/archive/YYYY-MM.json  every change, by month (history; open data)
+{
+  const dir = new URL("../data/status/", import.meta.url);
+  mkdirSync(new URL("archive/", dir), { recursive: true });
+  const { existsSync, readFileSync } = await import("node:fs");
+  const read = (f: URL, fallback: any) => (existsSync(f) ? JSON.parse(readFileSync(f, "utf8")) : fallback);
+  // House statuses carry a "(Filed last …)" note that changes without the bill moving.
+  const clean = (s: string | null) => (s ?? "").replace(/\s*\(Filed last[^)]*\)\s*$/i, "").trim();
+  const today = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Manila" });
+
+  const prevFile = new URL("latest.json", dir);
+  const prev: { date?: string; bills?: Record<string, { s: string }> } = read(prevFile, {});
+  const complete = measures.length >= first.meta.total * 0.97;
+  const bills: Record<string, { s: string; c: "senate" | "house" }> = {};
+  const titles: Record<string, string> = {};
+  for (const m of measures) {
+    bills[m.number] = { s: clean(m.status), c: m.chamber === "senate" ? "senate" : "house" };
+    titles[m.number] = (m.title ?? m.longTitle ?? "").slice(0, 160);
+  }
+
+  const changes: { date: string; number: string; chamber: string; title: string; from: string; to: string }[] = [];
+  if (prev.bills && complete) {
+    for (const [number, b] of Object.entries(bills)) {
+      const before = prev.bills[number];
+      if (before && before.s !== b.s && b.s) changes.push({ date: today, number, chamber: b.c, title: titles[number], from: before.s, to: b.s });
+    }
+  }
+  if (!complete) log(`Scan incomplete (${measures.length}/${first.meta.total}): kept the previous snapshot, no changes recorded`);
+  else {
+    // One bill per line, sorted, so each night's git diff is just the bills that changed.
+    const lines = Object.keys(bills)
+      .sort()
+      .map((k) => `${JSON.stringify(k)}:${JSON.stringify(bills[k])}`);
+    writeFileSync(prevFile, `{"date":${JSON.stringify(today)},"count":${measures.length},"bills":{\n${lines.join(",\n")}\n}}\n`);
+    // Recent changes for the app (replace today's entries so re-runs don't duplicate).
+    const recentFile = new URL("changes.json", dir);
+    const cutoff = new Date(Date.now() - 120 * 864e5).toLocaleDateString("en-CA", { timeZone: "Asia/Manila" });
+    const recent = read(recentFile, { since: today, changes: [] });
+    recent.changes = [...changes, ...recent.changes.filter((c: any) => c.date !== today && c.date >= cutoff)];
+    recent.updated = today;
+    writeFileSync(recentFile, JSON.stringify(recent, null, 0).replace(/\},\{/g, "},\n{") + "\n");
+    // Monthly archive keeps everything.
+    const archiveFile = new URL(`archive/${today.slice(0, 7)}.json`, dir);
+    const archive = read(archiveFile, []);
+    writeFileSync(archiveFile, JSON.stringify([...changes, ...archive.filter((c: any) => c.date !== today)], null, 0).replace(/\},\{/g, "},\n{") + "\n");
+    log(prev.bills ? `${changes.length} status changes since ${prev.date}` : "First snapshot saved (changes start tomorrow)");
+  }
+}

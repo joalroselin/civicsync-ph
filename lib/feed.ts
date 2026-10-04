@@ -1,6 +1,7 @@
 import { listMeasures, type BatasWatchMeasure } from "./batasWatch";
 import { summaryFromBatasWatch, type BillSummary } from "./bills";
 import { withAuthorLinks } from "./authorIndex";
+import { changeToSummary, changesSince } from "./statusHistory";
 
 /** A bill row for the home feed, with the date of its latest action when known. */
 export type FeedBill = BillSummary & { chamber: "senate" | "house"; movedOn?: string };
@@ -59,5 +60,32 @@ export async function recentlyMoved(limit = 10, withinDays = 45): Promise<FeedBi
     if (!movedOn || movedOn < since) continue;
     seen.set(m.number, toFeed(m, movedOn));
   }
+  // Daily snapshot changes (CS-119): adds Senate moves, and House moves the
+  // status search missed. Status-search rows win (they carry authors).
+  for (const c of changesSince(withinDays, { progressOnly: true })) {
+    const existing = seen.get(c.number);
+    if (existing && (existing.movedOn ?? "") >= c.date) continue;
+    seen.set(c.number, existing ? { ...existing, status: c.to, movedOn: c.date } : (changeToSummary(c) as FeedBill));
+  }
   return withAuthorLinks([...seen.values()].sort((a, b) => b.movedOn!.localeCompare(a.movedOn!)).slice(0, limit));
+}
+
+/** Bills on record and filed in the last 7 days, for one chamber. */
+export async function chamberPulse(chamber: "senate" | "house") {
+  try {
+    const since = new Date(Date.now() - 7 * 864e5).toISOString().slice(0, 10);
+    let week = 0;
+    let total = 0;
+    // Newest first; stop once filings are older than a week (capped for politeness).
+    for (let page = 1; page <= 8; page++) {
+      const res = await listMeasures({ chamber, sort: "latest", page });
+      total = res.total;
+      const recent = res.items.filter((m) => (m.filedAt ?? "") > since).length;
+      week += recent;
+      if (recent < res.items.length || !res.hasMore) break;
+    }
+    return { total, week };
+  } catch {
+    return null;
+  }
 }

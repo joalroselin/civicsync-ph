@@ -14,7 +14,7 @@ const PREF_KEY = "civicsync:home-feed";
  * two small controls, so the page stays uncluttered. Remembers the last
  * choice on this device.
  */
-export function HomeFeed({ filed, moved }: { filed: { senate: FeedBill[]; house: FeedBill[] } | null; moved: FeedBill[] | null }) {
+export function HomeFeed({ filed, moved, trackingSince }: { filed: { senate: FeedBill[]; house: FeedBill[] } | null; moved: FeedBill[] | null; trackingSince: string }) {
   const [view, setView] = useState<View>("filed");
   const [chamber, setChamber] = useState<Chamber>("all");
 
@@ -67,7 +67,7 @@ export function HomeFeed({ filed, moved }: { filed: { senate: FeedBill[]; house:
           <span className="font-semibold uppercase tracking-wider text-gray-600">
             {chamber === "all" ? "Senate and House" : chamber === "senate" ? "Senate" : "House of Representatives"}
           </span>
-          <span>{view === "filed" ? "Newest filings first" : chamber === "all" ? "Latest action first · House only for now" : "Latest action first"}</span>
+          <span>{view === "filed" ? "Newest filings first" : "Latest action first"}</span>
         </p>
         {rows.length > 0 ? (
           <ul className="divide-y divide-gray-100">
@@ -78,7 +78,7 @@ export function HomeFeed({ filed, moved }: { filed: { senate: FeedBill[]; house:
             ))}
           </ul>
         ) : (
-          <Empty view={view} chamber={chamber} unavailable={view === "filed" ? !filed : !moved} />
+          <Empty view={view} chamber={chamber} unavailable={view === "filed" ? !filed : !moved} trackingSince={trackingSince} />
         )}
         {view === "moved" && rows.length > 0 && (
           <p className="border-t border-gray-100 px-4 py-2.5 text-[11px] text-gray-500">
@@ -93,11 +93,11 @@ export function HomeFeed({ filed, moved }: { filed: { senate: FeedBill[]; house:
   );
 }
 
-function Empty({ view, chamber, unavailable }: { view: View; chamber: Chamber; unavailable: boolean }) {
+function Empty({ view, chamber, unavailable, trackingSince }: { view: View; chamber: Chamber; unavailable: boolean; trackingSince: string }) {
   let text = "Nothing to show right now.";
   if (unavailable) text = "The live tracker isn’t responding right now. Try again in a few minutes.";
   else if (view === "moved" && chamber === "senate")
-    text = "The Senate’s records don’t yet say when a bill’s status changed, so we can’t list recent Senate moves. We’re working on tracking this ourselves.";
+    text = `We check every Senate bill’s status daily (since ${trackingSince}). Senate moves will show here as they happen.`;
   else if (view === "moved") text = "No bills moved past committee in the last 45 days.";
   return <p className="px-4 py-6 text-center text-sm leading-relaxed text-gray-500">{text}</p>;
 }

@@ -11,6 +11,7 @@ import { LawCard } from "../../components/LawCard";
 import { SimilarBills } from "../../components/SimilarBills";
 import { StatusBadge } from "../../components/StatusBadge";
 import { StatusHelp } from "../../components/StatusHelp";
+import { StatusTimeline } from "../../components/StatusTimeline";
 import { WatchButton } from "../../components/WatchButton";
 import { ShareButton } from "../../components/ShareButton";
 import { EmailAction } from "../../components/EmailAction";
@@ -112,6 +113,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
               <>
                 <StatusBadge status={bill.status} size="md" />
                 <StatusHelp status={bill.status} />
+                <StatusTimeline number={bill.billNumber} congress={bill.congress} />
                 {bill.committee && (
                   <dl className="mt-3 text-sm">
                     <dt className="text-xs text-gray-500">Primary committee</dt>

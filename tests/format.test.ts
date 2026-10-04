@@ -97,3 +97,12 @@ describe("parseLaw", () => {
     expect(parseLaw("PENDING IN THE COMMITTEE")).toBeNull();
   });
 });
+
+describe("displayStatus", () => {
+  it("shortens laws and cleans caps", async () => {
+    const { displayStatus } = await import("@/lib/format");
+    expect(displayStatus("REPUBLIC ACT RA12324 (Lapsed into law on 2026-08-30)")).toBe("Became law · RA 12324");
+    expect(displayStatus("PENDING IN THE COMMITTEE")).toBe("Pending in the committee");
+    expect(displayStatus("Filed (Filed last 2026-09-09)")).toBe("Filed");
+  });
+});

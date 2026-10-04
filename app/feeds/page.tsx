@@ -14,7 +14,8 @@ export default async function FeedsPage() {
   const topics = await listPolicyAreas().catch(() => []);
   const main = [
     { title: "Newly filed bills", path: "/feeds/latest", note: "Every new Senate and House bill." },
-    { title: "Bills on the move", path: "/feeds/moving", note: "Bills that passed a reading or moved chambers. House for now." },
+    { title: "Bills on the move", path: "/feeds/moving", note: "Bills that passed a reading or moved chambers." },
+    { title: "Every status change", path: "/feeds/changes", note: "Each Senate and House bill whose status changed, daily." },
   ];
   return (
     <main className="px-5 pb-12 md:pt-4">
