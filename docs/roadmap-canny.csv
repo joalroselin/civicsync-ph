@@ -8,7 +8,7 @@ CS-006,Install as an app,"Add CivicSync to your home screen from the browser, no
 CS-007,"Works on phone, tablet, and desktop","Layouts adapt to any screen: bottom tabs on phones, a sidebar and two-column pages on larger screens.",Complete,Platform,Deployed,2026-09-30
 CS-008,Faster-feeling search,"A clear loading state while searching, and results that appear in stages so lawmakers and recent bills show first.",Complete,Receipts,Performance;Deployed,2026-09-24
 CS-009,About page,"What CivicSync is, where the data comes from, what it isn't, and who's behind it.",Complete,Trust,Deployed,2026-09-30
-CS-010,Press kit,"Descriptions, fact sheet, logos, screenshots, and FAQ for journalists.",Complete,Community,Deployed,2026-09-30
+CS-010,Press kit,"Descriptions, fact sheet, logos, current screenshots (October 2026) and FAQ for journalists, plus an archive of earlier screenshots.",Complete,Community,Deployed,2026-09-30
 CS-011,Get involved page,"Ways to help: share, report data errors, suggest features, translate, contribute code, partner, or license commercially.",Complete,Community,Deployed,2026-09-30
 CS-012,Report an issue on every bill,A “Report an issue” link on each bill page with the bill number and a template pre-filled.,Complete,Bills,Deployed,2026-09-30
 CS-013,Official social accounts and share menu,"Follow CivicSync on Facebook and Instagram, and share it from the Get involved page.",Complete,Community,Deployed,2026-09-30
