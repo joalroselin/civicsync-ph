@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { personInitials, personName, personShortName, type OpenCongressPerson } from "@/lib/openCongress";
+import { seatLabel } from "@/lib/format";
 
 /** `role` (e.g. "Senator") is shown when the card appears under a bill's authors. */
 export function PersonCard({ person, role }: { person: OpenCongressPerson; role?: string }) {
@@ -49,6 +50,6 @@ export function Avatar({ person, size = 44 }: { person: OpenCongressPerson; size
 
 /** District/party-list or position (e.g. "Senate Minority Leader"), unless it just repeats the role badge. */
 function subtitle(person: OpenCongressPerson, role?: string) {
-  const extra = person.profile?.representation ?? person.profile?.position;
+  const extra = seatLabel(person.profile?.representation) ?? person.profile?.position;
   return extra && extra.toLowerCase() !== role?.toLowerCase() && extra.toLowerCase() !== "senator" ? extra : personName(person);
 }

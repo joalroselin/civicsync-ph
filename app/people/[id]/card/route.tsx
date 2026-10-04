@@ -3,7 +3,7 @@ import { getPerson, personName } from "@/lib/openCongress";
 import { SHARE_SIZES, ShareFrame, ogFonts, shareFormat, truncate } from "@/lib/og";
 import { withProfiles } from "@/lib/authorIndex";
 import { getLawmakerRecord } from "@/lib/people";
-import { ordinal } from "@/lib/format";
+import { ordinal, seatLabel } from "@/lib/format";
 
 /** Share image for a lawmaker: /people/[id]/card?format=post|story (CS-204). Facts only. */
 export async function GET(req: Request, props: { params: Promise<{ id: string }> }) {
@@ -59,7 +59,7 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
             </div>
             {latest && (
               <div style={{ display: "flex", fontSize: 28, color: "#C7D2FE", marginTop: 12 }}>
-                {`${person.profile?.position ?? latest.position}, ${latest.congress_ordinal} Congress${person.profile?.representation ? ` · ${person.profile.representation}` : ""}`}
+                {`${person.profile?.position ?? latest.position}, ${latest.congress_ordinal} Congress${person.profile?.representation ? ` · ${seatLabel(person.profile.representation)}` : ""}`}
               </div>
             )}
           </div>

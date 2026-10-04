@@ -76,3 +76,13 @@ describe("malformed author names", () => {
     expect(displayAuthorName("MADRONA. ELEANDRO JESUS F.")).toBe("Eleandro Jesus F. Madrona");
   });
 });
+
+describe("seatLabel", () => {
+  it("labels party-list groups", async () => {
+    const { seatLabel } = await import("@/lib/format");
+    expect(seatLabel("4Ps")).toBe("4Ps (party-list)");
+    expect(seatLabel("1-RIDER PARTYLIST")).toBe("1-RIDER (party-list)");
+    expect(seatLabel("Manila, 6th District")).toBe("Manila, 6th District");
+    expect(seatLabel(null)).toBeNull();
+  });
+});

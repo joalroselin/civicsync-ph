@@ -52,3 +52,15 @@ export function toTitleCase(input: string) {
     })
     .join(" ");
 }
+
+/**
+ * A representative's seat, readable without context. Districts already say
+ * so ("Manila, 6th District"); party-list groups are just a name ("4Ps",
+ * "TINGOG"), which can be mistaken for a programme, so label them.
+ */
+export function seatLabel(representation: string | null | undefined): string | null {
+  if (!representation) return null;
+  if (/district/i.test(representation)) return representation;
+  const name = representation.replace(/\s*party[\s-]?list$/i, "").trim();
+  return `${name} (party-list)`;
+}

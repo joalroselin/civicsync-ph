@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getMembers, memberKey, type Member } from "@/lib/lawmakers";
 import { PageHeader } from "../components/PageHeader";
-import { toTitleCase } from "@/lib/format";
+import { seatLabel, toTitleCase } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Compare lawmakers", robots: { index: false } };
 
@@ -61,7 +61,7 @@ export default async function ComparePage(props: { searchParams: Promise<{ ids?:
                   m.name
                 )}
               </h2>
-              <p className="mt-0.5 text-xs text-gray-500">{m.chamber === "senate" ? m.position : `Rep. · ${m.representation ?? "House"}`}</p>
+              <p className="mt-0.5 text-xs text-gray-500">{m.chamber === "senate" ? m.position : `Rep. · ${seatLabel(m.representation) ?? "House"}`}</p>
             </section>
           ))}
         </div>

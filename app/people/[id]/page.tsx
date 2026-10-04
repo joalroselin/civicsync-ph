@@ -8,7 +8,7 @@ import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
 import { summaryFromOpenCongress } from "@/lib/bills";
 import { liveBills } from "@/lib/people";
 import { withProfiles } from "@/lib/authorIndex";
-import { ordinal } from "@/lib/format";
+import { ordinal, seatLabel } from "@/lib/format";
 import { BillList } from "../../components/BillCard";
 import { Avatar } from "../../components/PersonCard";
 import { PageHeader, Pager } from "../../components/PageHeader";
@@ -79,7 +79,7 @@ export default async function PersonPage(props: {
                   {person.profile?.position ?? latest.position}, {latest.congress_ordinal} Congress
                 </p>
               )}
-              {person.profile?.representation && <p className="mt-0.5 text-sm font-medium text-gray-800">{person.profile.representation}</p>}
+              {person.profile?.representation && <p className="mt-0.5 text-sm font-medium text-gray-800">{seatLabel(person.profile.representation)}</p>}
               {served.length > 0 && (
                 <p className="mt-1 text-xs text-gray-500">
                   Served in {congresses.length} {congresses.length === 1 ? "congress" : "congresses"}

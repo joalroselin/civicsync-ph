@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { lawmakerData, memberKey } from "@/lib/lawmakers";
-import { formatDate, toTitleCase } from "@/lib/format";
+import { formatDate, seatLabel, toTitleCase } from "@/lib/format";
 import { PageHeader } from "../components/PageHeader";
 import { LawmakersTable, type Row } from "./LawmakersTable";
 
@@ -17,7 +17,7 @@ export default function LawmakersPage() {
     name: m.name,
     lastName: m.lastName,
     chamber: m.chamber,
-    sub: m.chamber === "senate" ? (m.position !== "Senator" ? m.position : "Senate") : (m.representation ?? "House"),
+    sub: m.chamber === "senate" ? (m.position !== "Senator" ? m.position : "Senate") : (seatLabel(m.representation) ?? "House"),
     portraitUrl: m.portraitUrl,
     filed: m.filedThisCongress,
     laws: m.becameLaw,
