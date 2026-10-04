@@ -51,7 +51,7 @@ CS-206,Privacy page,"A full explanation of what's stored on your device, what's 
 CS-207,Major regional languages,"Cebuano, Ilocano, Hiligaynon, Waray, Bikol, Kapampangan, and Pangasinan, reviewed by native speakers.",Open,Language,,
 CS-208,Translated bill summaries,"Plain-language summaries in more languages, clearly labelled as machine-translated, with the original alongside.",Open,Language,,
 CS-301,Browse bills by topic,"Explore 20th Congress bills by topic, like Health, Education or Agriculture, with the most relevant bills first and a Senate/House filter.",Complete,Discovery,Deployed,2026-10-03
-CS-302,Richer lawmaker profiles,"Photos, district or party-list, and Senate positions are live for current lawmakers. Still to come: committee memberships and frequent co-authors.",In Progress,Receipts,,
+CS-302,Richer lawmaker profiles,"Photos, district or party-list (clearly labelled), and Senate positions are live for current lawmakers. Still to come: committee memberships and frequent co-authors.",In Progress,Receipts,,
 CS-303,Bill timelines,See a bill's full history of status changes over time.,Open,Bills,,
 CS-304,Compare lawmakers side by side,"Pick up to three lawmakers and see them side by side: bills this Congress, bills that became law, bills per congress, main topics, and their laws.",Complete,Receipts,Deployed,2026-10-04
 CS-305,Link enacted bills to the final law,"Connect bills that became Republic Acts to the law itself: the signed text, when it was signed or lapsed into law, and when it takes effect.",Open,Bills,,
