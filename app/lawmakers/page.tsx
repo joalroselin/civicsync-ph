@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { lawmakerData, memberKey } from "@/lib/lawmakers";
-import { formatDate } from "@/lib/format";
+import { formatDate, toTitleCase } from "@/lib/format";
 import { PageHeader } from "../components/PageHeader";
 import { LawmakersTable, type Row } from "./LawmakersTable";
 
@@ -21,6 +21,7 @@ export default function LawmakersPage() {
     portraitUrl: m.portraitUrl,
     filed: m.filedThisCongress,
     laws: m.becameLaw,
+    lawList: m.laws.map((l) => ({ number: l.number, ra: l.ra, title: toTitleCase(l.title) })),
     total: m.totalOnRecord,
     served: m.congressesServed,
     byCongress: Object.fromEntries(m.congresses.map((c) => [c.congress, c.bills])),

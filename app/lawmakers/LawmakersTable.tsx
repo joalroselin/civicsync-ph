@@ -14,6 +14,7 @@ export interface Row {
   portraitUrl: string | null;
   filed: number;
   laws: number;
+  lawList: { number: string; ra: string | null; title: string }[];
   total: number;
   served: number;
   byCongress: Record<number, number | null>;
@@ -35,6 +36,8 @@ export function LawmakersTable({ rows }: { rows: Row[] }) {
   const [sort, setSort] = useState<{ key: SortKey; dir: 1 | -1 }>({ key: "name", dir: 1 });
   const [past, setPast] = useState(19);
   const [picked, setPicked] = useState<string[]>([]);
+  // Row whose laws are listed underneath (one at a time).
+  const [openLaws, setOpenLaws] = useState<string | null>(null);
 
   const shown = useMemo(() => {
     const f = q.trim().toLowerCase();
@@ -151,7 +154,7 @@ export function LawmakersTable({ rows }: { rows: Row[] }) {
             {shown.map((r) => {
               const isPicked = picked.includes(r.key);
               const full = picked.length >= MAX_COMPARE && !isPicked;
-              return (
+              return [
                 <tr key={r.key} className="group hover:bg-gray-50">
                   <td className="px-3 py-2.5">
                     <input
@@ -187,12 +190,52 @@ export function LawmakersTable({ rows }: { rows: Row[] }) {
                     </div>
                   </td>
                   <Num value={r.filed} className={cell("filed")} />
-                  <Num value={r.laws} accent={r.laws > 0} className={cell("laws")} />
+                  {r.laws > 0 ? (
+                    <td className={`px-3 py-2.5 text-right ${cell("laws")}`}>
+                      <button
+                        type="button"
+                        onClick={() => setOpenLaws((o) => (o === r.key ? null : r.key))}
+                        aria-expanded={openLaws === r.key}
+                        aria-controls={`laws-${r.key}`}
+                        title="Show which laws"
+                        className="inline-flex items-center gap-1 rounded-md px-1.5 font-semibold tabular-nums text-emerald-700 underline decoration-dotted underline-offset-4 hover:bg-emerald-50"
+                      >
+                        {r.laws}
+                        <span aria-hidden className="text-[10px]">{openLaws === r.key ? "▲" : "▼"}</span>
+                      </button>
+                    </td>
+                  ) : (
+                    <Num value={0} className={cell("laws")} />
+                  )}
                   <Num value={r.total} className={cell("total")} />
                   <Num value={r.served} className={cell("served")} />
                   <Num value={r.byCongress[past] ?? null} className={cell("past")} />
-                </tr>
-              );
+                </tr>,
+                openLaws === r.key && (
+                  <tr key={`${r.key}-laws`} id={`laws-${r.key}`} className="bg-emerald-50/40">
+                    <td />
+                    <td colSpan={6} className="px-3 pb-3 pt-1">
+                      {/* w-0 min-w-full: take the table's width, never widen it (long titles truncate). */}
+                      <div className="w-0 min-w-full">
+                      <p className="mb-1.5 truncate text-xs font-semibold text-gray-700">
+                        Became law this Congress ({r.laws}), including laws they co-authored
+                      </p>
+                      <ul className="flex flex-col gap-1.5">
+                        {r.lawList.map((l) => (
+                          <li key={l.number} className="text-[13px]">
+                            <Link href={`/bills/${l.number}`} className="group/law flex gap-2 hover:text-navy-ink">
+                              <span className="shrink-0 font-semibold text-emerald-700">{l.ra ? `RA ${l.ra}` : "Law"}</span>
+                              <span className="min-w-0 truncate text-gray-800 group-hover/law:underline">{l.title}</span>
+                              <span className="shrink-0 text-xs text-gray-500">{l.number.replace(/^SBN-/, "SB ").replace(/^HB0*/, "HB ")}</span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                      </div>
+                    </td>
+                  </tr>
+                ),
+              ];
             })}
           </tbody>
         </table>
