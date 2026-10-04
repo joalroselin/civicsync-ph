@@ -226,7 +226,13 @@ async function Empty() {
             </li>
           ))}
         </ul>
-        <p className="mt-3 text-xs text-gray-500">Or type a lawmaker’s name or a bill number, like “SB 1294”.</p>
+        <p className="mt-3 text-xs text-gray-500">
+          Or type a lawmaker’s name or a bill number, like “SB 1294”, or{" "}
+          <Link href="/lawmakers" className="font-semibold text-navy-ink underline underline-offset-2">
+            browse and compare all lawmakers
+          </Link>
+          .
+        </p>
       </section>
 
       {topics.length > 0 && (

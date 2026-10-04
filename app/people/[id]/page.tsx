@@ -109,6 +109,11 @@ export default async function PersonPage(props: {
               <RssLink href={`/feeds/people/${person.id}`} label="RSS: new bills and status changes" />
             </div>
           )}
+          <p className="mt-3 text-sm print:hidden">
+            <Link href="/lawmakers" className="font-semibold text-navy-ink hover:text-crimson-ink">
+              Compare with other lawmakers →
+            </Link>
+          </p>
           <ShareImageButton
             src={`/people/${person.id}/card`}
             filename={`civicsync-${personName(person).toLowerCase().replace(/[^a-z0-9]+/g, "-")}`}

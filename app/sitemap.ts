@@ -44,7 +44,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const pages: MetadataRoute.Sitemap = [
     { url: SITE_URL, changeFrequency: "daily", priority: 1 },
-    ...["receipts", "topics", "feeds", "how-bills-become-law", "about", "get-involved", "press", "privacy"].map((p) => ({ url: `${SITE_URL}/${p}`, changeFrequency: "weekly" as const, priority: 0.6 })),
+    ...["receipts", "lawmakers", "topics", "feeds", "how-bills-become-law", "about", "get-involved", "press", "privacy"].map((p) => ({ url: `${SITE_URL}/${p}`, changeFrequency: "weekly" as const, priority: 0.6 })),
   ];
   const bills = (subtype: "SB" | "HB", max: number): MetadataRoute.Sitemap =>
     Array.from({ length: max }, (_, i) => ({

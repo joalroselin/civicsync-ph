@@ -10,6 +10,7 @@
  * sources: a few requests at a time, with retries.
  */
 import { mkdirSync, writeFileSync } from "node:fs";
+import { matchByName } from "../lib/authorMatch.ts";
 
 const BW = "https://bills.juris.ph/api";
 const OC = "https://open-congress-api.bettergov.ph/api";
@@ -44,6 +45,12 @@ async function pool<T, R>(items: T[], fn: (t: T, i: number) => Promise<R>): Prom
   return out;
 }
 
+/** "ACOP, PHILIP CONRAD M." → "Philip Conrad M. Acop" */
+const displayName = (c: string) => {
+  const [last, first = ""] = c.split(",").map((x) => x.trim());
+  const cap = (x: string) => x.toLowerCase().replace(/(^|[\s"(-])(\p{L})/gu, (_, p, ch) => p + ch.toUpperCase());
+  return `${cap(first)} ${cap(last)}`.trim();
+};
 const norm = (s: string) => s.toUpperCase().replace(/\s+/g, " ").trim();
 const log = (...a: unknown[]) => console.log(new Date().toISOString().slice(11, 19), ...a);
 
@@ -61,15 +68,21 @@ for (let offset = 0; ; offset += 100) {
 }
 const byHouseKey = new Map<string, any>();
 for (const p of ocPeople) for (const k of p.congress_website_author_keys ?? []) byHouseKey.set(k, p);
-function matchSenator(canonical: string) {
-  const [last, first = ""] = canonical.toUpperCase().split(",");
-  const given = first.replace(/"[^"]*"/g, " ").split(/[\s.]+/).filter((g) => g.length > 1);
-  const hits = ocPeople.filter((p) => {
-    const pl = (p.last_name ?? "").toUpperCase();
-    const names = [...(p.first_name ?? "").toUpperCase().split(/\s+/), ...(p.aliases ?? []).map((a: string) => a.toUpperCase())];
-    return (pl === last.trim() || pl.split("-").includes(last.trim())) && given.some((g) => names.includes(g));
-  });
-  return hits.length === 1 ? hits[0] : null;
+/**
+ * Current-Congress list first; then all of Open Congress by surname, since
+ * some members aren't tagged with the 20th Congress there yet.
+ */
+async function findPerson(a: any): Promise<any | null> {
+  if (a.chamber === "house" && a.officialMemberId && byHouseKey.has(a.officialMemberId)) return byHouseKey.get(a.officialMemberId);
+  const local = matchByName(a.canonicalName, ocPeople);
+  if (local) return local;
+  const surname = a.canonicalName.split(",")[0].replace(/\b(JR|SR|II|III|IV)\.?\b/gi, "").trim();
+  const found: any[] = (await get(`${OC}/search/people?q=${encodeURIComponent(surname)}&limit=20`).catch(() => null))?.data ?? [];
+  if (a.officialMemberId) {
+    const byCode = found.find((p) => (p.congress_website_author_keys ?? []).includes(a.officialMemberId));
+    if (byCode) return byCode;
+  }
+  return matchByName(a.canonicalName, found);
 }
 
 // 3. Every 20th Congress bill: who filed it, did it become law, topic
@@ -107,9 +120,9 @@ for (const m of measures) {
 // 4. Per member: service record + bills per earlier congress (Open Congress)
 log("Per-congress counts…");
 const rows = await pool(authors, async (a) => {
-  const oc = a.chamber === "house" && a.officialMemberId ? byHouseKey.get(a.officialMemberId) : matchSenator(a.canonicalName);
-  if (!oc) return null;
-  const person = (await get(`${OC}/people/${oc.id}?include_congresses=true`).catch(() => null))?.data;
+  const oc = await findPerson(a);
+  // Not in Open Congress yet (newer members): keep them, current Congress only.
+  const person = oc ? (await get(`${OC}/people/${oc.id}?include_congresses=true`).catch(() => null))?.data : null;
   // Always include the 20th Congress: they're a current member even if the record lags.
   const served: number[] = [...new Set<number>([20, ...(person?.congresses_served ?? []).map((c: any) => c.congress_number)])].sort((x, y) => y - x);
   const congresses = await Promise.all(
@@ -118,7 +131,9 @@ const rows = await pool(authors, async (a) => {
       bills:
         c === 20
           ? (a.billCount as number)
-          : ((await get(`${OC}/people/${oc.id}/documents?congress=${c}&limit=1`).catch(() => null))?.pagination?.total ?? null),
+          : oc
+            ? ((await get(`${OC}/people/${oc.id}/documents?congress=${c}&limit=1`).catch(() => null))?.pagination?.total ?? null)
+            : null,
     }))
   );
   const key = norm(a.canonicalName);
@@ -126,9 +141,9 @@ const rows = await pool(authors, async (a) => {
   const topics = [...(topicsByName.get(key) ?? new Map()).entries()].sort((x, y) => y[1] - x[1]).slice(0, 5);
   const totalOnRecord = congresses.reduce((s, c) => s + (c.bills ?? 0), 0);
   return {
-    id: oc.id,
-    name: [oc.first_name, oc.last_name].filter(Boolean).join(" "),
-    lastName: oc.last_name,
+    id: oc?.id ?? null,
+    name: oc ? [oc.first_name, oc.last_name].filter(Boolean).join(" ") : displayName(a.canonicalName),
+    lastName: oc?.last_name ?? a.canonicalName.split(",")[0].trim(),
     chamber: a.chamber as "senate" | "house",
     position: a.position ?? (a.chamber === "senate" ? "Senator" : "Representative"),
     representation: a.representation ?? null,
@@ -144,9 +159,10 @@ const rows = await pool(authors, async (a) => {
 });
 
 const members = rows.filter(Boolean).sort((x: any, y: any) => x.lastName.localeCompare(y.lastName));
+const unmatched = members.filter((m: any) => !m.id).map((m: any) => m.name);
 mkdirSync(new URL("../data/", import.meta.url), { recursive: true });
 writeFileSync(
   new URL("../data/lawmakers.json", import.meta.url),
   JSON.stringify({ generatedAt: new Date().toISOString(), congress: 20, billsScanned: measures.length, members }, null, 1) + "\n"
 );
-log(`Wrote ${members.length} members (${authors.length - members.length} unmatched)`);
+log(`Wrote ${members.length} members; not in Open Congress yet: ${unmatched.join(", ") || "none"}`);

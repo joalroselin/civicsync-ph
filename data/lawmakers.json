@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-03T03:41:19.153Z",
+ "generatedAt": "2026-10-04T08:27:18.992Z",
  "congress": 20,
  "billsScanned": 14020,
  "members": [
@@ -235,6 +235,48 @@
     {
      "label": "Human Rights",
      "count": 1
+    }
+   ]
+  },
+  {
+   "id": null,
+   "name": "Philip Conrad M. Acop",
+   "lastName": "ACOP",
+   "chamber": "house",
+   "position": "Representative",
+   "representation": "Antipolo City, 2nd District",
+   "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3fcf7b1bb5ac86b736938559/portrait-fce1b8cc416518ab.jpg",
+   "congresses": [
+    {
+     "congress": 20,
+     "bills": 61
+    }
+   ],
+   "filedThisCongress": 61,
+   "becameLaw": 0,
+   "laws": [],
+   "totalOnRecord": 61,
+   "congressesServed": 1,
+   "topTopics": [
+    {
+     "label": "Health",
+     "count": 17
+    },
+    {
+     "label": "Public Order and Safety",
+     "count": 7
+    },
+    {
+     "label": "Education",
+     "count": 6
+    },
+    {
+     "label": "Labor and Employment",
+     "count": 6
+    },
+    {
+     "label": "Agriculture and Fisheries",
+     "count": 6
     }
    ]
   },
@@ -3894,6 +3936,54 @@
    ]
   },
   {
+   "id": null,
+   "name": "Jan Franz Norbert Joselito Almario Chan",
+   "lastName": "CHAN",
+   "chamber": "house",
+   "position": "Representative",
+   "representation": "AKO BIKOL",
+   "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5208b705ff2e9ee97405882a/portrait-52d911af34ab1a80.jpg",
+   "congresses": [
+    {
+     "congress": 20,
+     "bills": 36
+    }
+   ],
+   "filedThisCongress": 36,
+   "becameLaw": 1,
+   "laws": [
+    {
+     "number": "HB08476",
+     "ra": "12325",
+     "title": "AN ACT EXPANDING THE COVERAGE OF THE TERTIARY EDUCATION SUBSIDY, AMENDING FOR THE PURPOSE REPUBLIC ACT NO. 10931, OTHERWISE KNOWN AS THE “UNIVERSAL ACCESS TO QUALITY TERTIARY EDUCATION ACT”, AND APPROPRIATING FUNDS THEREFOR"
+    }
+   ],
+   "totalOnRecord": 36,
+   "congressesServed": 1,
+   "topTopics": [
+    {
+     "label": "Justice and Judiciary",
+     "count": 19
+    },
+    {
+     "label": "Health",
+     "count": 3
+    },
+    {
+     "label": "Education",
+     "count": 2
+    },
+    {
+     "label": "Social Welfare",
+     "count": 2
+    },
+    {
+     "label": "Information and Communications Technology",
+     "count": 1
+    }
+   ]
+  },
+  {
    "id": "01K5ST43REY3Q5W42H557BZ2BS",
    "name": "Joel Chua",
    "lastName": "Chua",
@@ -6054,6 +6144,68 @@
    ]
   },
   {
+   "id": "01K5S6MAZ4YBST5GDJV827A0HZ",
+   "name": "Jose Ejercito-Estrada",
+   "lastName": "Ejercito-Estrada",
+   "chamber": "senate",
+   "position": "Senator",
+   "representation": null,
+   "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-535e7e6b8c6ceed0e7053e34/portrait-a4561bf0226e88a8.png",
+   "congresses": [
+    {
+     "congress": 20,
+     "bills": 326
+    },
+    {
+     "congress": 19,
+     "bills": 330
+    },
+    {
+     "congress": 16,
+     "bills": 633
+    },
+    {
+     "congress": 15,
+     "bills": 616
+    },
+    {
+     "congress": 14,
+     "bills": 534
+    },
+    {
+     "congress": 13,
+     "bills": 275
+    }
+   ],
+   "filedThisCongress": 326,
+   "becameLaw": 0,
+   "laws": [],
+   "totalOnRecord": 2714,
+   "congressesServed": 6,
+   "topTopics": [
+    {
+     "label": "Education",
+     "count": 45
+    },
+    {
+     "label": "Health",
+     "count": 38
+    },
+    {
+     "label": "Labor and Employment",
+     "count": 27
+    },
+    {
+     "label": "Environment and Natural Resources",
+     "count": 23
+    },
+    {
+     "label": "Government Administration",
+     "count": 23
+    }
+   ]
+  },
+  {
    "id": "01K5ST45K9883DAHGYZM97WRSR",
    "name": "Sarah Jane Elago",
    "lastName": "Elago",
@@ -7791,6 +7943,56 @@
     {
      "label": "Government Administration",
      "count": 1
+    }
+   ]
+  },
+  {
+   "id": "01K5S6MAZ4YBST5GDJV827A0J4",
+   "name": "Christopher Lawrence Go",
+   "lastName": "Go",
+   "chamber": "senate",
+   "position": "Senator",
+   "representation": null,
+   "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-f30922e8a13e8babb1bfe4a8/portrait-cffb0d27b06ce1e7.png",
+   "congresses": [
+    {
+     "congress": 20,
+     "bills": 102
+    },
+    {
+     "congress": 19,
+     "bills": 143
+    },
+    {
+     "congress": 18,
+     "bills": 112
+    }
+   ],
+   "filedThisCongress": 102,
+   "becameLaw": 0,
+   "laws": [],
+   "totalOnRecord": 357,
+   "congressesServed": 3,
+   "topTopics": [
+    {
+     "label": "Health",
+     "count": 21
+    },
+    {
+     "label": "Education",
+     "count": 12
+    },
+    {
+     "label": "Labor and Employment",
+     "count": 9
+    },
+    {
+     "label": "Housing and Urban Development",
+     "count": 7
+    },
+    {
+     "label": "Social Welfare",
+     "count": 6
     }
    ]
   },
@@ -10189,6 +10391,48 @@
     {
      "label": "Housing and Urban Development",
      "count": 2
+    }
+   ]
+  },
+  {
+   "id": null,
+   "name": "Karl Fernandez Legazpi",
+   "lastName": "LEGAZPI",
+   "chamber": "house",
+   "position": "Representative",
+   "representation": "PINOY WORKERS",
+   "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-86fb0a0142c1746ba1be3672/portrait-faa486a6dc5de2e5.jpg",
+   "congresses": [
+    {
+     "congress": 20,
+     "bills": 14
+    }
+   ],
+   "filedThisCongress": 14,
+   "becameLaw": 0,
+   "laws": [],
+   "totalOnRecord": 14,
+   "congressesServed": 1,
+   "topTopics": [
+    {
+     "label": "Labor and Employment",
+     "count": 3
+    },
+    {
+     "label": "Education",
+     "count": 2
+    },
+    {
+     "label": "Agriculture and Fisheries",
+     "count": 2
+    },
+    {
+     "label": "Culture, Arts and Heritage",
+     "count": 1
+    },
+    {
+     "label": "Government Administration",
+     "count": 1
     }
    ]
   },
@@ -14304,6 +14548,81 @@
    ]
   },
   {
+   "id": "01K5ST4CYNM9JEZM4X82FAW518",
+   "name": "Antonino Roman",
+   "lastName": "Roman",
+   "chamber": "house",
+   "position": "Representative",
+   "representation": "Bataan, 1st District",
+   "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-d3711e9f96ef17a0f8d89f42/portrait-af786fbda950f799.png",
+   "congresses": [
+    {
+     "congress": 20,
+     "bills": 245
+    },
+    {
+     "congress": 13,
+     "bills": 4
+    },
+    {
+     "congress": 12,
+     "bills": 4
+    },
+    {
+     "congress": 11,
+     "bills": 11
+    }
+   ],
+   "filedThisCongress": 245,
+   "becameLaw": 4,
+   "laws": [
+    {
+     "number": "HB08476",
+     "ra": "12325",
+     "title": "AN ACT EXPANDING THE COVERAGE OF THE TERTIARY EDUCATION SUBSIDY, AMENDING FOR THE PURPOSE REPUBLIC ACT NO. 10931, OTHERWISE KNOWN AS THE “UNIVERSAL ACCESS TO QUALITY TERTIARY EDUCATION ACT”, AND APPROPRIATING FUNDS THEREFOR"
+    },
+    {
+     "number": "HB05939",
+     "ra": "12322",
+     "title": "AN ACT ALLOWING THE DEPARTMENT OF EDUCATION THE FLEXIBILITY TO DETERMINE THE PEDAGOGICAL APPROACHES TO BE IMPLEMENTED IN THE BASIC EDUCATION CURRICULUM, AMENDING FOR THE PURPOSE SECTION 5 OF REPUBLIC ACT NO. 10533, OR THE \"ENHANCED BASIC EDUCATION ACT OF 2013\""
+    },
+    {
+     "number": "HB04745",
+     "ra": "12321",
+     "title": "AN ACT ESTABLISHING PUBLIC BASIC EDUCATION SCHOOLS IN GEOGRAPHICALLY ISOLATED AND DISADVANTAGED AND CONFLICT-AFFECTED AREAS, PROVIDING ACCESS ROADS LEADING TO LAST MILE SCHOOLS, AND APPROPRIATING FUNDS THEREFOR"
+    },
+    {
+     "number": "HB04058",
+     "ra": "12314",
+     "title": "AN ACT APPROPRIATING FUNDS FOR THE OPERATION OF THE GOVERNMENT OF THE REPUBLIC OF THE PHILIPPINES FROM JANUARY ONE TO DECEMBER THIRTY ONE, TWO THOUSAND AND TWENTY SIX"
+    }
+   ],
+   "totalOnRecord": 264,
+   "congressesServed": 4,
+   "topTopics": [
+    {
+     "label": "Tourism",
+     "count": 53
+    },
+    {
+     "label": "Education",
+     "count": 39
+    },
+    {
+     "label": "Justice and Judiciary",
+     "count": 22
+    },
+    {
+     "label": "Energy",
+     "count": 19
+    },
+    {
+     "label": "Public Works and Infrastructure",
+     "count": 14
+    }
+   ]
+  },
+  {
    "id": "01K5ST4D2EGTPGPW4DKM8MT2P9",
    "name": "Andrew Julian Romualdez",
    "lastName": "Romualdez",
@@ -15434,6 +15753,126 @@
     },
     {
      "label": "Environment and Natural Resources",
+     "count": 3
+    }
+   ]
+  },
+  {
+   "id": "01K5ST4EBB576JZE8XFGFPN6EH",
+   "name": "Jeffrey Soriano",
+   "lastName": "Soriano",
+   "chamber": "house",
+   "position": "Representative",
+   "representation": "ACT-CIS",
+   "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ec411ea2739a9f1687d69a49/portrait-9f3fcc1737217634.jpg",
+   "congresses": [
+    {
+     "congress": 20,
+     "bills": 106
+    },
+    {
+     "congress": 19,
+     "bills": 139
+    }
+   ],
+   "filedThisCongress": 106,
+   "becameLaw": 0,
+   "laws": [],
+   "totalOnRecord": 245,
+   "congressesServed": 2,
+   "topTopics": [
+    {
+     "label": "Health",
+     "count": 23
+    },
+    {
+     "label": "Labor and Employment",
+     "count": 12
+    },
+    {
+     "label": "Public Order and Safety",
+     "count": 9
+    },
+    {
+     "label": "Social Welfare",
+     "count": 8
+    },
+    {
+     "label": "Education",
+     "count": 4
+    }
+   ]
+  },
+  {
+   "id": "01K5S6MAZ4YBST5GDJV827A0JY",
+   "name": "Vicente Sotto",
+   "lastName": "Sotto",
+   "chamber": "senate",
+   "position": "Senate President Pro Tempore",
+   "representation": null,
+   "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-8d3266efda2f35f07a026c38/portrait-eab574af819b1044.png",
+   "congresses": [
+    {
+     "congress": 20,
+     "bills": 52
+    },
+    {
+     "congress": 18,
+     "bills": 123
+    },
+    {
+     "congress": 17,
+     "bills": 85
+    },
+    {
+     "congress": 16,
+     "bills": 38
+    },
+    {
+     "congress": 15,
+     "bills": 31
+    },
+    {
+     "congress": 12,
+     "bills": 0
+    },
+    {
+     "congress": 11,
+     "bills": 0
+    },
+    {
+     "congress": 10,
+     "bills": 0
+    },
+    {
+     "congress": 9,
+     "bills": 0
+    }
+   ],
+   "filedThisCongress": 52,
+   "becameLaw": 0,
+   "laws": [],
+   "totalOnRecord": 329,
+   "congressesServed": 9,
+   "topTopics": [
+    {
+     "label": "Public Order and Safety",
+     "count": 7
+    },
+    {
+     "label": "Energy",
+     "count": 5
+    },
+    {
+     "label": "Culture, Arts and Heritage",
+     "count": 4
+    },
+    {
+     "label": "Local Government",
+     "count": 3
+    },
+    {
+     "label": "Government Administration",
      "count": 3
     }
    ]

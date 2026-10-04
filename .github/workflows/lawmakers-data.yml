@@ -1,0 +1,32 @@
+# Nightly: rebuild data/lawmakers.json (bills per congress, laws, topics for
+# every current member) and commit it if it changed. The commit redeploys
+# the site, so /lawmakers and /compare stay current. Takes ~6 minutes.
+name: Lawmakers data
+
+on:
+  schedule:
+    - cron: "30 18 * * *" # 02:30 Manila
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: ${{ github.repository == 'joalroselin/civicsync-ph' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/build-lawmakers.mts
+      - name: Commit if changed
+        run: |
+          # Ignore the timestamp: only commit when the numbers changed.
+          if git diff --quiet -I '"generatedAt"' data/lawmakers.json; then echo "No changes."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Data: refresh lawmakers.json"
+          git push
