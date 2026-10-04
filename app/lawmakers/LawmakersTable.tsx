@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
+import { ZeroLawsNote } from "../components/ZeroLawsNote";
 
 export interface Row {
   key: string;
@@ -12,6 +13,7 @@ export interface Row {
   chamber: "senate" | "house";
   sub: string;
   portraitUrl: string | null;
+  profileUrl: string | null;
   filed: number;
   laws: number;
   lawList: { number: string; ra: string | null; title: string }[];
@@ -190,33 +192,37 @@ export function LawmakersTable({ rows }: { rows: Row[] }) {
                     </div>
                   </td>
                   <Num value={r.filed} className={cell("filed")} />
-                  {r.laws > 0 ? (
+                  {(
                     <td className={`px-3 py-2.5 text-right ${cell("laws")}`}>
                       <button
                         type="button"
                         onClick={() => setOpenLaws((o) => (o === r.key ? null : r.key))}
                         aria-expanded={openLaws === r.key}
                         aria-controls={`laws-${r.key}`}
-                        title="Show which laws"
-                        className="inline-flex items-center gap-1 rounded-md px-1.5 font-semibold tabular-nums text-emerald-700 underline decoration-dotted underline-offset-4 hover:bg-emerald-50"
+                        title={r.laws ? "Show which laws" : "Why zero?"}
+                        className={`inline-flex items-center gap-1 rounded-md px-1.5 tabular-nums underline decoration-dotted underline-offset-4 ${
+                          r.laws ? "font-semibold text-emerald-700 hover:bg-emerald-50" : "text-gray-800 decoration-gray-400 hover:bg-gray-100"
+                        }`}
                       >
                         {r.laws}
                         <span aria-hidden className="text-[10px]">{openLaws === r.key ? "▲" : "▼"}</span>
                       </button>
                     </td>
-                  ) : (
-                    <Num value={0} className={cell("laws")} />
                   )}
                   <Num value={r.total} className={cell("total")} />
                   <Num value={r.served} className={cell("served")} />
                   <Num value={r.byCongress[past] ?? null} className={cell("past")} />
                 </tr>,
                 openLaws === r.key && (
-                  <tr key={`${r.key}-laws`} id={`laws-${r.key}`} className="bg-emerald-50/40">
+                  <tr key={`${r.key}-laws`} id={`laws-${r.key}`} className={r.laws ? "bg-emerald-50/40" : "bg-gray-50"}>
                     <td />
                     <td colSpan={6} className="px-3 pb-3 pt-1">
                       {/* w-0 min-w-full: take the table's width, never widen it (long titles truncate). */}
                       <div className="w-0 min-w-full">
+                      {r.laws === 0 ? (
+                        <ZeroLawsNote chamber={r.chamber} compact />
+                      ) : (
+                        <>
                       <p className="mb-1.5 truncate text-xs font-semibold text-gray-700">
                         Became law this Congress ({r.laws}), including laws they co-authored
                       </p>
@@ -231,6 +237,8 @@ export function LawmakersTable({ rows }: { rows: Row[] }) {
                           </li>
                         ))}
                       </ul>
+                        </>
+                      )}
                       </div>
                     </td>
                   </tr>

@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { OpenCongressPerson } from "@/lib/openCongress";
 import { getLawmakerRecord } from "@/lib/people";
 import { ordinal } from "@/lib/format";
+import { ZeroLawsNote } from "../../components/ZeroLawsNote";
 
 type Served = NonNullable<OpenCongressPerson["congresses_served"]>;
 
@@ -28,6 +29,12 @@ export async function LawmakerRecord({ person }: { person: OpenCongressPerson })
           <Stat value={new Set(served.map((c) => c.congress_number)).size} label="congresses" hint="Congresses served" />
         )}
       </dl>
+
+      {record.current && laws.length === 0 && (
+        <div className="mt-2 rounded-2xl bg-surface px-4 py-3 ring-1 ring-gray-200/70">
+          <ZeroLawsNote chamber={/senat/i.test(served[0]?.position ?? "") ? "senate" : "house"} compact />
+        </div>
+      )}
 
       {laws.length > 0 && (
         <details className="mt-2 rounded-2xl bg-surface px-4 py-3 text-sm ring-1 ring-gray-200/70">

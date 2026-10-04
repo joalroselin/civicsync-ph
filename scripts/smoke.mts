@@ -12,6 +12,7 @@ const checks: { path: string; status?: number[]; contains?: string; type?: strin
   { path: "/", contains: "Latest from Congress" },
   { path: "/receipts?q=rice", contains: "Receipts" },
   { path: "/bills/SBN-1294", contains: "SB 1294" },
+  { path: "/bills/HB08476", contains: "Now law" },
   { path: "/how-bills-become-law", contains: "How a bill becomes law" },
   { path: "/privacy", contains: "Privacy first" },
   { path: "/about", contains: "About" },

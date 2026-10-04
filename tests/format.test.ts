@@ -86,3 +86,14 @@ describe("seatLabel", () => {
     expect(seatLabel(null)).toBeNull();
   });
 });
+
+describe("parseLaw", () => {
+  it("reads both status formats and finds the signed text", async () => {
+    const { parseLaw } = await import("@/lib/bills");
+    expect(parseLaw("Republic Act RA12314 enacted on 2026-01-05", [{ label: "RA12314", url: "https://x/RA12314.pdf" }])).toEqual({
+      ra: "12314", date: "2026-01-05", how: "enacted", textUrl: "https://x/RA12314.pdf",
+    });
+    expect(parseLaw("REPUBLIC ACT RA12324 (Lapsed into law on 2026-08-30)")).toEqual({ ra: "12324", date: "2026-08-30", how: "lapsed", textUrl: null });
+    expect(parseLaw("PENDING IN THE COMMITTEE")).toBeNull();
+  });
+});

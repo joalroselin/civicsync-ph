@@ -54,6 +54,9 @@ export interface BillSummary {
   status?: string | null;
   /** Author display names, principal author first. */
   authors: string[];
+  /** Raw name of the first author as the source writes it (for linking), and their profile ID once resolved. */
+  firstAuthorKey?: string;
+  firstAuthorId?: string | null;
 }
 
 export type AuthorRole = "Senator" | "Representative";
@@ -98,6 +101,7 @@ export function summaryFromSemantic(h: SemanticHit): BillSummary & { summary: st
     dateFiled: h.filedAt,
     status: h.status ?? "Filed",
     authors: (h.authorCredits ?? []).map((a) => displayAuthorName(a.name)),
+    firstAuthorKey: h.authorCredits?.[0]?.name,
     summary: h.summary,
   };
 }
@@ -112,12 +116,50 @@ export function summaryFromBatasWatch(m: BatasWatchMeasure): BillSummary {
     dateFiled: m.filedAt,
     status: statusText(m),
     authors: (m.authorCredits?.length ? m.authorCredits.map((a) => a.name) : m.primaryAuthors ?? []).map(displayAuthorName),
+    firstAuthorKey: m.authorCredits?.[0]?.name ?? m.primaryAuthors?.[0],
   };
 }
 
 /** Newly filed Senate bills have no status yet — say so rather than "unavailable". */
 function statusText(m: BatasWatchMeasure): string {
   return m.status ?? "Filed";
+}
+
+export interface BillLaw {
+  /** "12314" */
+  ra: string;
+  /** YYYY-MM-DD */
+  date: string | null;
+  how: "enacted" | "lapsed";
+  /** The signed law (PDF on the House or Senate site), when available */
+  textUrl: string | null;
+}
+
+/**
+ * "Republic Act RA12314 enacted on 2026-01-05" or
+ * "REPUBLIC ACT RA12324 (Lapsed into law on 2026-08-30)" → law details.
+ */
+export function parseLaw(status: string | null | undefined, docs: { label?: string; url: string }[] = []): BillLaw | null {
+  const m = status?.match(/republic act\s*(?:no\.?\s*)?(?:RA\s*)?(\d{4,6})/i);
+  if (!m) return null;
+  const date = status!.match(/(\d{4}-\d{2}-\d{2})/)?.[1] ?? null;
+  const doc = docs.find((d) => new RegExp(`^RA\\s*0*${m[1]}$`, "i").test((d.label ?? "").trim()));
+  return { ra: m[1], date, how: /lapsed/i.test(status!) ? "lapsed" : "enacted", textUrl: doc?.url ?? null };
+}
+
+const linkOk = new Map<string, { ok: boolean; at: number }>();
+/**
+ * Some official PDFs are listed but not accessible (e.g. RA 12314 returns
+ * "Access Denied"). Check once a day so we never show a broken link.
+ */
+export async function checkLink(url: string): Promise<boolean> {
+  const hit = linkOk.get(url);
+  if (hit && Date.now() - hit.at < 864e5) return hit.ok;
+  const ok = await fetch(url, { method: "HEAD", cache: "no-store", signal: AbortSignal.timeout(4000), headers: { "User-Agent": "Mozilla/5.0 CivicSyncPH link check" } })
+    .then((r) => r.ok)
+    .catch(() => false);
+  linkOk.set(url, { ok, at: Date.now() });
+  return ok;
 }
 
 export interface BillDetail {
@@ -135,6 +177,8 @@ export interface BillDetail {
   authors: OpenCongressPerson[];
   /** Plain names, used when there are no linked profiles. */
   authorNames: string[];
+  /** Set when the bill became a Republic Act (from the live tracker's status). */
+  law: BillLaw | null;
   /** Open Congress profile ID for each of `authorNames`, when we can tell who it is. */
   authorIds: (string | null)[];
   sourceUrls: { label: string; url: string }[];
@@ -228,6 +272,11 @@ async function merge(oc: OpenCongressBill | null, bw: BatasWatchMeasure | null):
     authorIds: bw?.authorCredits?.length ? bw.authorCredits.map((a) => authorIndex.idByName.get(normName(a.name)) ?? null) : [],
     sourceUrls,
     status: bw ? statusText(bw) : null,
+    law: await (async () => {
+      const law = bw ? parseLaw(bw.status, bw.documentVersions ?? []) : null;
+      if (law?.textUrl && !(await checkLink(law.textUrl))) law.textUrl = null;
+      return law;
+    })(),
     committee: bw?.primaryCommittee ?? null,
     secondaryCommittees: bw?.secondaryCommittees ?? [],
     analysis: bw?.analysis ?? null,

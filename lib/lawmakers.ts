@@ -13,6 +13,8 @@ export interface Member {
   position: string;
   representation: string | null;
   portraitUrl: string | null;
+  /** Senate or House website profile (lists their bills and laws) */
+  officialProfileUrl: string | null;
   congresses: { congress: number; bills: number | null }[];
   filedThisCongress: number;
   becameLaw: number;

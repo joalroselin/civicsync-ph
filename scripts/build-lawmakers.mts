@@ -148,6 +148,7 @@ const rows = await pool(authors, async (a) => {
     position: a.position ?? (a.chamber === "senate" ? "Senator" : "Representative"),
     representation: a.representation ?? null,
     portraitUrl: a.portraitUrl ?? null,
+    officialProfileUrl: a.officialProfileUrl ?? null,
     congresses,
     filedThisCongress: a.billCount ?? 0,
     becameLaw: laws.length,

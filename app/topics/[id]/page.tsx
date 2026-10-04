@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { listPolicyAreas, semanticSearch, type PolicyArea } from "@/lib/batasWatch";
 import { summaryFromSemantic } from "@/lib/bills";
+import { withAuthorLinks } from "@/lib/authorIndex";
 import { BillRow } from "../../components/BillCard";
 import { PageHeader } from "../../components/PageHeader";
 import { LiveDataUnavailable } from "../../components/LiveDataUnavailable";
@@ -31,7 +32,7 @@ export default async function TopicPage(props: { params: Promise<{ id: string }>
 
   // The topic filter needs a query; the topic's own description works best.
   const hits = await semanticSearch({ q: `${topic.label}: ${topic.description}`, category: topic.label, chamber, limit: 50 }).catch(() => null);
-  const bills = hits?.map(summaryFromSemantic);
+  const bills = hits ? await withAuthorLinks(hits.map(summaryFromSemantic)) : undefined;
 
   const pill = (active: boolean) =>
     `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"}`;

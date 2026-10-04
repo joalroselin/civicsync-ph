@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-04T08:27:18.992Z",
+ "generatedAt": "2026-10-04T08:58:25.879Z",
  "congress": 20,
  "billsScanned": 14020,
  "members": [
@@ -11,6 +11,7 @@
    "position": "Representative",
    "representation": "4Ps",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-7f77ae57ba32b4248f4a846e/portrait-c171bf2b55d974c1.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K106",
    "congresses": [
     {
      "congress": 20,
@@ -63,6 +64,7 @@
    "position": "Representative",
    "representation": "Manila, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-32d74b2d6a3ba306b03ddf85/portrait-d44a588769373ce6.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E003",
    "congresses": [
     {
      "congress": 20,
@@ -121,6 +123,7 @@
    "position": "Representative",
    "representation": "TINGOG",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a4d9f89a089fe9c28342173c/portrait-9ce29198a293a3c4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K119",
    "congresses": [
     {
      "congress": 20,
@@ -188,6 +191,7 @@
    "position": "Representative",
    "representation": "Antipolo City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-69d813569b21e8d7dd2dd4b1/portrait-1509b8577379ddfa.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G002",
    "congresses": [
     {
      "congress": 20,
@@ -246,6 +250,7 @@
    "position": "Representative",
    "representation": "Antipolo City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3fcf7b1bb5ac86b736938559/portrait-fce1b8cc416518ab.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L104",
    "congresses": [
     {
      "congress": 20,
@@ -288,6 +293,7 @@
    "position": "Representative",
    "representation": "Palawan, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-003f6c9d5c4ada98ca2fbcae/portrait-4adce7a3c034dc4c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J004",
    "congresses": [
     {
      "congress": 20,
@@ -345,6 +351,7 @@
    "position": "Representative",
    "representation": "Lanao del Sur, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-16084a975541ccc4a8f9a0ac/portrait-3153f5c5f7510667.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K002",
    "congresses": [
     {
      "congress": 20,
@@ -412,6 +419,7 @@
    "position": "Representative",
    "representation": "Cavite, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-65ff526eb8c612ed07b0830d/portrait-7849f56b0bc60919.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K003",
    "congresses": [
     {
      "congress": 20,
@@ -458,6 +466,7 @@
    "position": "Representative",
    "representation": "Laguna, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e35fbf6c145b094f9a261c95/portrait-98f5da45f0dfdf2a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E005",
    "congresses": [
     {
      "congress": 20,
@@ -522,6 +531,7 @@
    "position": "Representative",
    "representation": "Kalinga, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-84d13611d560f1121b90ce0f/portrait-beba89f8a8015186.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L001",
    "congresses": [
     {
      "congress": 20,
@@ -570,6 +580,7 @@
    "position": "Representative",
    "representation": "Basilan, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a63fbcc0258bf0a252b4f5a7/portrait-22a64024a190da49.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L002",
    "congresses": [
     {
      "congress": 20,
@@ -633,6 +644,7 @@
    "position": "Representative",
    "representation": "Bukidnon, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-fc24dae7567e872360c54245/portrait-96c00c3c90ce6330.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K005",
    "congresses": [
     {
      "congress": 20,
@@ -679,6 +691,7 @@
    "position": "Representative",
    "representation": "Isabela, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1334eae17d1eb14f581d6ecc/portrait-67f192908b4bc59d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J006",
    "congresses": [
     {
      "congress": 20,
@@ -735,6 +748,7 @@
    "position": "Representative",
    "representation": "Davao Oriental, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-841acb09f85d0d7d9b4e0089/portrait-121362306b33319c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K006",
    "congresses": [
     {
      "congress": 20,
@@ -781,6 +795,7 @@
    "position": "Representative",
    "representation": "Makati City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-928980ebf083c4ac53f82c89/portrait-8499be66d2b81036.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L003",
    "congresses": [
     {
      "congress": 20,
@@ -825,6 +840,7 @@
    "position": "Representative",
    "representation": "Misamis Occidental, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-43412c827cfe013cee1e6ebd/portrait-6b6d82ac184f68ac.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K007",
    "congresses": [
     {
      "congress": 20,
@@ -871,6 +887,7 @@
    "position": "Representative",
    "representation": "Palawan, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-74933593f6c763cc017a753d/portrait-60ff8e3b7164f72b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K008",
    "congresses": [
     {
      "congress": 20,
@@ -928,6 +945,7 @@
    "position": "Representative",
    "representation": "Negros Occidental, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5130a89b880496cda6d412a7/portrait-4948d7d135ae567d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G006",
    "congresses": [
     {
      "congress": 20,
@@ -992,6 +1010,7 @@
    "position": "Representative",
    "representation": "Laguna, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-837f5e1b602481f907a49ee8/portrait-b24db637245626cd.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K009",
    "congresses": [
     {
      "congress": 20,
@@ -1054,6 +1073,7 @@
    "position": "Representative",
    "representation": "Zamboanga del Norte, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-65fdc38ca9b5c52a4e08c5c2/portrait-cd74f4207b799206.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K010",
    "congresses": [
     {
      "congress": 20,
@@ -1121,6 +1141,7 @@
    "position": "Representative",
    "representation": "USWAG ILONGGO",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1b7408d9a92b745acf128309/portrait-6a16683974d54935.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K108",
    "congresses": [
     {
      "congress": 20,
@@ -1173,6 +1194,7 @@
    "position": "Representative",
    "representation": "Aurora, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-d72ed5f9e885fc656117bee2/portrait-60a65cbcb614343e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J009",
    "congresses": [
     {
      "congress": 20,
@@ -1234,6 +1256,7 @@
    "position": "Representative",
    "representation": "Tarlac, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1a0c8275468bf2392b7f635a/portrait-c9fd1531751aa58e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L004",
    "congresses": [
     {
      "congress": 20,
@@ -1282,6 +1305,7 @@
    "position": "Representative",
    "representation": "Butuan, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-55e7701049f96f996fbb65e2/portrait-07f9e65c4175d5f7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F007",
    "congresses": [
     {
      "congress": 20,
@@ -1342,6 +1366,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-dae2af517deabe347285699c/portrait-7b6c5e0d7d0127ea.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Paolo-Benigno-%22Bam%22-Aquino-IV",
    "congresses": [
     {
      "congress": 20,
@@ -1392,6 +1417,7 @@
    "position": "Representative",
    "representation": "KAPUSO PM",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9fd7aa92e56da897a6009518/portrait-e5d48b05956ed297.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L009",
    "congresses": [
     {
      "congress": 20,
@@ -1438,6 +1464,7 @@
    "position": "Representative",
    "representation": "Sulu, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a5372b9f6176437f6be60bfb/portrait-07a5baece11ff58a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/D004",
    "congresses": [
     {
      "congress": 20,
@@ -1515,6 +1542,7 @@
    "position": "Representative",
    "representation": "Pangasinan, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1de8e15911e60f1da0d2669f/portrait-52f4375da2c38ef3.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F008",
    "congresses": [
     {
      "congress": 20,
@@ -1580,6 +1608,7 @@
    "position": "Representative",
    "representation": "Quezon, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-49cbe45e631e7c301814d92f/portrait-46c6afe6d6ef4e9f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K011",
    "congresses": [
     {
      "congress": 20,
@@ -1637,6 +1666,7 @@
    "position": "Representative",
    "representation": "Caloocan City, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6caecaaf97a6f43502ed8fd6/portrait-838acfb3ba17b276.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K012",
    "congresses": [
     {
      "congress": 20,
@@ -1683,6 +1713,7 @@
    "position": "Representative",
    "representation": "Quezon City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-2bde56292212a18b7ddd7435/portrait-6a475f5b143750ba.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K013",
    "congresses": [
     {
      "congress": 20,
@@ -1740,6 +1771,7 @@
    "position": "Representative",
    "representation": "Bohol, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-452d69c60df78b3738b56fe5/portrait-93463c06a6bbf4e7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K014",
    "congresses": [
     {
      "congress": 20,
@@ -1792,6 +1824,7 @@
    "position": "Representative",
    "representation": "SWERTE",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-30a2ba9e8a3919093f05a408/portrait-192c7ee27b8496dc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L006",
    "congresses": [
     {
      "congress": 20,
@@ -1834,6 +1867,7 @@
    "position": "Representative",
    "representation": "Dinagat Islands, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-fb1dbcd9bc54756f26ed37c6/portrait-a79644b893a8adad.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G009",
    "congresses": [
     {
      "congress": 20,
@@ -1888,6 +1922,7 @@
    "position": "Representative",
    "representation": "Lanao del Sur, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3dd5b37a049d19905239301b/portrait-293b40ea49a10378.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J011",
    "congresses": [
     {
      "congress": 20,
@@ -1944,6 +1979,7 @@
    "position": "Representative",
    "representation": "General Santos City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-61809d6360e65030f0f57608/portrait-c2d323d47f3e1b04.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J123",
    "congresses": [
     {
      "congress": 20,
@@ -1990,6 +2026,7 @@
    "position": "Representative",
    "representation": "Zamboanga Sibugay, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-86b89f3c69a703abad90632d/portrait-6226d0c8c48e5f3f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L007",
    "congresses": [
     {
      "congress": 20,
@@ -2032,6 +2069,7 @@
    "position": "Representative",
    "representation": "Ilocos Norte, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-77806ad0787cf14a7f24b7ec/portrait-e2fd1731154c4d6f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J012",
    "congresses": [
     {
      "congress": 20,
@@ -2088,6 +2126,7 @@
    "position": "Representative",
    "representation": "Surigao del Norte, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-54255f4a8c62a536327b61e6/portrait-f2eb731cacdadeb6.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L008",
    "congresses": [
     {
      "congress": 20,
@@ -2136,6 +2175,7 @@
    "position": "Representative",
    "representation": "Iloilo City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-086d366f9129029337084fba/portrait-c5e364d93fe638fa.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J013",
    "congresses": [
     {
      "congress": 20,
@@ -2207,6 +2247,7 @@
    "position": "Representative",
    "representation": "Cavite, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6ae8639c58331034e0526039/portrait-bbc575312f7c38cc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L096",
    "congresses": [
     {
      "congress": 20,
@@ -2245,6 +2286,7 @@
    "position": "Representative",
    "representation": "Agusan del Sur, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-275a0cd51fef56fe9f824f48/portrait-01d358fabc1ea90c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J014",
    "congresses": [
     {
      "congress": 20,
@@ -2301,6 +2343,7 @@
    "position": "Representative",
    "representation": "Davao Occidental, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-0d6021ed3387ee49d7bde712/portrait-8d085597fbeee5b8.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K015",
    "congresses": [
     {
      "congress": 20,
@@ -2355,6 +2398,7 @@
    "position": "Representative",
    "representation": "TRABAHO",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e900a8e9d34cf9f1dc2d71d3/portrait-31ab5417e33fc045.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L010",
    "congresses": [
     {
      "congress": 20,
@@ -2423,6 +2467,7 @@
    "position": "Representative",
    "representation": "DUMPER PTDA",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c7e150b85aed55ce4e2c64a8/portrait-5d9db58f17008ceb.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J086",
    "congresses": [
     {
      "congress": 20,
@@ -2484,6 +2529,7 @@
    "position": "Representative",
    "representation": "MAGBUBUKID",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-4d65e0f93063771fe5821cc5/portrait-bd006e19dc5321e0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L011",
    "congresses": [
     {
      "congress": 20,
@@ -2542,6 +2588,7 @@
    "position": "Representative",
    "representation": "Bacolod City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-edb97ec9b1f1135d316dbc94/portrait-b6f78b4555e62996.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G015",
    "congresses": [
     {
      "congress": 20,
@@ -2602,6 +2649,7 @@
    "position": "Representative",
    "representation": "Negros Occidental, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-d09c54674ff86099f47234c9/portrait-d8f6545da3c2a80a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L012",
    "congresses": [
     {
      "congress": 20,
@@ -2665,6 +2713,7 @@
    "position": "Representative",
    "representation": "SOLID NORTH PARTY",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8d2d0b000a05db0755936442/portrait-6ab953817f818a72.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K016",
    "congresses": [
     {
      "congress": 20,
@@ -2711,6 +2760,7 @@
    "position": "Representative",
    "representation": "Abra, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-dc9f7575e9346001bd609baa/portrait-ed4554657d891455.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/I098",
    "congresses": [
     {
      "congress": 20,
@@ -2767,6 +2817,7 @@
    "position": "Representative",
    "representation": "Bohol, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1579a8a2cb208d548fd1ad8b/portrait-d9aad7cbca3f403e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J075",
    "congresses": [
     {
      "congress": 20,
@@ -2823,6 +2874,7 @@
    "position": "Representative",
    "representation": "Iloilo, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-716bc0a24a6693f2fe9dc0ab/portrait-64fe6385673b3218.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E018",
    "congresses": [
     {
      "congress": 20,
@@ -2885,6 +2937,7 @@
    "position": "Representative",
    "representation": "Taguig City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-617f281dac8681e6f1f9edc6/portrait-3c68a72d5b0279f6.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L013",
    "congresses": [
     {
      "congress": 20,
@@ -2933,6 +2986,7 @@
    "position": "Representative",
    "representation": "Batangas, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e96beb60467e12e6a2222f72/portrait-c0ec9e7da53052e7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L014",
    "congresses": [
     {
      "congress": 20,
@@ -2986,6 +3040,7 @@
    "position": "Representative",
    "representation": "Pampanga, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-aed1aa2afa199860309ca69d/portrait-52d8edc412f0241a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E019",
    "congresses": [
     {
      "congress": 20,
@@ -3055,6 +3110,7 @@
    "position": "Representative",
    "representation": "AGAP",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e4f42098434255f9e448376f/portrait-2f08cda83bdab8be.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F095",
    "congresses": [
     {
      "congress": 20,
@@ -3129,6 +3185,7 @@
    "position": "Representative",
    "representation": "Apayao, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c8c0e6d74826dea72e774334/portrait-c7a6c021518f38a2.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G013",
    "congresses": [
     {
      "congress": 20,
@@ -3187,6 +3244,7 @@
    "position": "Representative",
    "representation": "Davao del Sur, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9e029fb00f632fbe8d199517/portrait-5c5511381a573fee.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K018",
    "congresses": [
     {
      "congress": 20,
@@ -3249,6 +3307,7 @@
    "position": "Representative",
    "representation": "Cebu, 7th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ee7a7a165d601fdf279744ba/portrait-bd3760f187a05226.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L016",
    "congresses": [
     {
      "congress": 20,
@@ -3302,6 +3361,7 @@
    "position": "Representative",
    "representation": "Pasay City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-38da426f72e51a2c09af5789/portrait-c1b7eab9027200fe.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J018",
    "congresses": [
     {
      "congress": 20,
@@ -3348,6 +3408,7 @@
    "position": "Representative",
    "representation": "Cotabato, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b0c1dc1695cd59842fef144c/portrait-2f5365815bf576cf.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J019",
    "congresses": [
     {
      "congress": 20,
@@ -3404,6 +3465,7 @@
    "position": "Representative",
    "representation": "Leyte, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-7922b113460e9076e106c487/portrait-8f4169817d09dbb0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J020",
    "congresses": [
     {
      "congress": 20,
@@ -3460,6 +3522,7 @@
    "position": "Representative",
    "representation": "Capiz, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-2ccf859169cfba0c164297d6/portrait-9d1118ac4e991c18.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G021",
    "congresses": [
     {
      "congress": 20,
@@ -3510,6 +3573,7 @@
    "position": "Senate Minority Leader",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-b9a19e35c30c957773fbf4d8/portrait-bc9b44b009c076fa.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Alan-Peter-S.-Cayetano",
    "congresses": [
     {
      "congress": 20,
@@ -3594,6 +3658,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-f1deb68d81cecc4f18fbf38e/portrait-fb11f56d38199e55.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Pia-S.-Cayetano",
    "congresses": [
     {
      "congress": 20,
@@ -3664,6 +3729,7 @@
    "position": "Representative",
    "representation": "Nueva Vizcaya, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-810a396a4828bfd52b5b35dd/portrait-f4ed624fc1a934e2.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L017",
    "congresses": [
     {
      "congress": 20,
@@ -3712,6 +3778,7 @@
    "position": "Representative",
    "representation": "Pangasinan, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-413d8a1e59322d0f68731614/portrait-0462ef66c442e277.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/D012",
    "congresses": [
     {
      "congress": 20,
@@ -3786,6 +3853,7 @@
    "position": "Representative",
    "representation": "AKBAYAN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-61e896a21dbe3cfba53686b7/portrait-ecc8e2f170a4a3b7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K142",
    "congresses": [
     {
      "congress": 20,
@@ -3843,6 +3911,7 @@
    "position": "Representative",
    "representation": "Davao de Oro, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8eb01f972a32d68747006d62/portrait-78f545837dfad7c3.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L018",
    "congresses": [
     {
      "congress": 20,
@@ -3901,6 +3970,7 @@
    "position": "Representative",
    "representation": "Lapu-Lapu City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-dd9ad7a2298416d67126c09c/portrait-52d6a00723eba5cc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L019",
    "congresses": [
     {
      "congress": 20,
@@ -3943,6 +4013,7 @@
    "position": "Representative",
    "representation": "AKO BIKOL",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5208b705ff2e9ee97405882a/portrait-52d911af34ab1a80.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L103",
    "congresses": [
     {
      "congress": 20,
@@ -3991,6 +4062,7 @@
    "position": "Representative",
    "representation": "Manila, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-961281dfc99721a3695a336a/portrait-ecb69f51c716c3e7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K020",
    "congresses": [
     {
      "congress": 20,
@@ -4043,6 +4115,7 @@
    "position": "Representative",
    "representation": "Zamboanga City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-df88b71a425505861af7ef54/portrait-36329a7acaeabac1.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L020",
    "congresses": [
     {
      "congress": 20,
@@ -4096,6 +4169,7 @@
    "position": "Representative",
    "representation": "Ifugao, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-98c707e5e2b2120c1add285e/portrait-96ed57429723618e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/D015",
    "congresses": [
     {
      "congress": 20,
@@ -4164,6 +4238,7 @@
    "position": "Representative",
    "representation": "KABATAAN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-dfed048d196d31e078ecbf83/portrait-e493b76469455101.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L022",
    "congresses": [
     {
      "congress": 20,
@@ -4217,6 +4292,7 @@
    "position": "Representative",
    "representation": "Quezon City, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-4450cfc06729ba2a93802f1c/portrait-c230376ecf3bc7b3.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K022",
    "congresses": [
     {
      "congress": 20,
@@ -4279,6 +4355,7 @@
    "position": "Representative",
    "representation": "Tarlac, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-dbf28b9982f24cca87033bdd/portrait-16292550b17e0ae6.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K021",
    "congresses": [
     {
      "congress": 20,
@@ -4325,6 +4402,7 @@
    "position": "Representative",
    "representation": "Pangasinan, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8ec30e5f89accdc6afebc4ac/portrait-0ad94eda5f975cb6.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/D017",
    "congresses": [
     {
      "congress": 20,
@@ -4383,6 +4461,7 @@
    "position": "Representative",
    "representation": "Batangas, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-65f03c3dd7f3394f14dff579/portrait-a9ab21fddc3351ad.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L023",
    "congresses": [
     {
      "congress": 20,
@@ -4425,6 +4504,7 @@
    "position": "Representative",
    "representation": "Agusan del Norte, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-4556c2b06f1f5863b15ac070/portrait-c4ddefd082545eb3.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K023",
    "congresses": [
     {
      "congress": 20,
@@ -4497,6 +4577,7 @@
    "position": "Representative",
    "representation": "Bulacan, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-d683a2fcdbb056bf92910d73/portrait-ce019370573f5c09.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L025",
    "congresses": [
     {
      "congress": 20,
@@ -4518,6 +4599,7 @@
    "position": "Representative",
    "representation": "Taguig City-Pateros, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ec712edbfc0cec9cd6bb03f8/portrait-b2ed9308adaedfcc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K024",
    "congresses": [
     {
      "congress": 20,
@@ -4585,6 +4667,7 @@
    "position": "Representative",
    "representation": "Cotabato, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-0c26a0cf846bc4b88f954154/portrait-69fb0e8c947e85b4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L026",
    "congresses": [
     {
      "congress": 20,
@@ -4633,6 +4716,7 @@
    "position": "Representative",
    "representation": "Quirino, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-889834aa86ed165cfd052405/portrait-85d746fad9b77837.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K026",
    "congresses": [
     {
      "congress": 20,
@@ -4690,6 +4774,7 @@
    "position": "Representative",
    "representation": "APEC",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8944ee23018f77186d2d0cef/portrait-bd649a700e150bf5.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J093",
    "congresses": [
     {
      "congress": 20,
@@ -4761,6 +4846,7 @@
    "position": "Representative",
    "representation": "Mountain Province, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f9d03aca8b3d0248f9dba40e/portrait-efb64b2e1ed81232.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J024",
    "congresses": [
     {
      "congress": 20,
@@ -4827,6 +4913,7 @@
    "position": "Representative",
    "representation": "Davao Oriental, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f22537171dc033fa10403a53/portrait-1a976a8285f2ceb5.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L101",
    "congresses": [
     {
      "congress": 20,
@@ -4885,6 +4972,7 @@
    "position": "Representative",
    "representation": "Northern Samar, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-91ed208c12b6770f96d079e0/portrait-4c21544705cdac0c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L027",
    "congresses": [
     {
      "congress": 20,
@@ -4938,6 +5026,7 @@
    "position": "Representative",
    "representation": "PHILRECA",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a51432f92bdb76eab9066496/portrait-3f38967810ba9c2f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K136",
    "congresses": [
     {
      "congress": 20,
@@ -4988,6 +5077,7 @@
    "position": "Representative",
    "representation": "ML",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f0f2a9917c0be7c7271291d6/portrait-8894edb11859a96e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/I401",
    "congresses": [
     {
      "congress": 20,
@@ -5044,6 +5134,7 @@
    "position": "Representative",
    "representation": "Pangasinan, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c000acbc3d2d24bb3c05bf6c/portrait-6295867daf5fe02a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G030",
    "congresses": [
     {
      "congress": 20,
@@ -5094,6 +5185,7 @@
    "position": "Representative",
    "representation": "Iloilo, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-dccf9b0cb31de940bd33d4c9/portrait-e9a9918bc4aa7a4c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J119",
    "congresses": [
     {
      "congress": 20,
@@ -5144,6 +5236,7 @@
    "position": "Representative",
    "representation": "Negros Oriental, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b923cc8a34c99047ec0868c6/portrait-ec398792a0b57686.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L029",
    "congresses": [
     {
      "congress": 20,
@@ -5186,6 +5279,7 @@
    "position": "Representative",
    "representation": "Cebu City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9134c5ee98cf4c00494e8822/portrait-68b8aacf2875b6c5.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G031",
    "congresses": [
     {
      "congress": 20,
@@ -5236,6 +5330,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-d486788c2429a8085ee24517/portrait-9f84278d5115d36a.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Ronald-%22Bato%22-M.-Dela-Rosa",
    "congresses": [
     {
      "congress": 20,
@@ -5286,6 +5381,7 @@
    "position": "Representative",
    "representation": "ANG PROBINSYANO",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-420ada571793a59b893b1548/portrait-e9f3848dab8d9b34.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J095",
    "congresses": [
     {
      "congress": 20,
@@ -5336,6 +5432,7 @@
    "position": "Representative",
    "representation": "Batangas, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-840134eaa337e7f91d50a9c7/portrait-752deb792f45cd5f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L030",
    "congresses": [
     {
      "congress": 20,
@@ -5378,6 +5475,7 @@
    "position": "Representative",
    "representation": "Biñan City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-0cde5dc583e53aa5ced28e23/portrait-7738d36e44700a64.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L031",
    "congresses": [
     {
      "congress": 20,
@@ -5431,6 +5529,7 @@
    "position": "Representative",
    "representation": "Lanao del Norte, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f07616b36393e502185e8d73/portrait-b0d04a1785ee2e24.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G034",
    "congresses": [
     {
      "congress": 20,
@@ -5487,6 +5586,7 @@
    "position": "Representative",
    "representation": "Lanao del Norte, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a5b66f14a52de41bbccae97c/portrait-fdaa3485d586bd19.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K027",
    "congresses": [
     {
      "congress": 20,
@@ -5544,6 +5644,7 @@
    "position": "Representative",
    "representation": "AKBAYAN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c9fb0f48c522f170d67c954b/portrait-77eda10b16d7f0a4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L032",
    "congresses": [
     {
      "congress": 20,
@@ -5602,6 +5703,7 @@
    "position": "Representative",
    "representation": "Manila, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-da4816e53fa467e7b56bf312/portrait-c16d1dd11589de11.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K028",
    "congresses": [
     {
      "congress": 20,
@@ -5664,6 +5766,7 @@
    "position": "Representative",
    "representation": "Bulacan, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-4be77d241ee4103c0c70e8a4/portrait-3aa49c3deeaadc65.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K029",
    "congresses": [
     {
      "congress": 20,
@@ -5710,6 +5813,7 @@
    "position": "Representative",
    "representation": "Baguio City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-4b315d1b61f73698b7d74725/portrait-8b76f2b0caac3f9c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/D024",
    "congresses": [
     {
      "congress": 20,
@@ -5770,6 +5874,7 @@
    "position": "Representative",
    "representation": "PPP",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a60b1d59242ce586d97dc11b/portrait-9f9e360b58278f84.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L033",
    "congresses": [
     {
      "congress": 20,
@@ -5808,6 +5913,7 @@
    "position": "Representative",
    "representation": "Davao City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-84e6d2151228c30e06711882/portrait-6fe6a56e45597f42.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L034",
    "congresses": [
     {
      "congress": 20,
@@ -5850,6 +5956,7 @@
    "position": "Representative",
    "representation": "Davao City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-efa28ecb2a4b6bfa50c79127/portrait-2bf5b98afcd4f727.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J026",
    "congresses": [
     {
      "congress": 20,
@@ -5900,6 +6007,7 @@
    "position": "Speaker of the House",
    "representation": "Isabela, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-59b23ec1304fd299def2b1d0/portrait-5538ef467e210f08.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/D027",
    "congresses": [
     {
      "congress": 20,
@@ -5960,6 +6068,7 @@
    "position": "Representative",
    "representation": "Isabela, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-97766b0149960cafc5286c87/portrait-479349e26ab93748.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J027",
    "congresses": [
     {
      "congress": 20,
@@ -6031,6 +6140,7 @@
    "position": "Representative",
    "representation": "Isabela, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-fa0cf3aa2c23711f89e6db48/portrait-09138a70ee360382.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J029",
    "congresses": [
     {
      "congress": 20,
@@ -6087,6 +6197,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-bb296d2338e0513001cb8448/portrait-f03a0517654f9b0b.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Joseph-Victor-%22JV%22-G.-Ejercito",
    "congresses": [
     {
      "congress": 20,
@@ -6151,6 +6262,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-535e7e6b8c6ceed0e7053e34/portrait-a4561bf0226e88a8.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Jinggoy-Ejercito-Estrada",
    "congresses": [
     {
      "congress": 20,
@@ -6213,6 +6325,7 @@
    "position": "Representative",
    "representation": "GABRIELA",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-140c5e36d6729bf3452b2041/portrait-681f5951d3fd8fdb.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/I083",
    "congresses": [
     {
      "congress": 20,
@@ -6269,6 +6382,7 @@
    "position": "Representative",
    "representation": "Misamis Oriental, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-411d0356d23015b16cd79671/portrait-18650775c03d61ee.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F027",
    "congresses": [
     {
      "congress": 20,
@@ -6334,6 +6448,7 @@
    "position": "Representative",
    "representation": "Quezon, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-34c2eeafdcb8e9088ecb00b9/portrait-8c41e0e81cca1681.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F028",
    "congresses": [
     {
      "congress": 20,
@@ -6402,6 +6517,7 @@
    "position": "Representative",
    "representation": "Caloocan City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6e9e494bf634b2ff60bd0127/portrait-5399a78964018b0a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/H025",
    "congresses": [
     {
      "congress": 20,
@@ -6462,6 +6578,7 @@
    "position": "Representative",
    "representation": "Sorsogon, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-0764f0ac9d94b60102a456d9/portrait-7eae6ff78a5ab70d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K030",
    "congresses": [
     {
      "congress": 20,
@@ -6529,6 +6646,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-2bea028cf991072b3d222508/portrait-04177cb286cd7908.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Francis-%22Chiz%22-G.-Escudero",
    "congresses": [
     {
      "congress": 20,
@@ -6603,6 +6721,7 @@
    "position": "Representative",
    "representation": "COOP-NATCCO",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f38c84dc0178b13d8eba632e/portrait-244daf0ae4a8edd2.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K121",
    "congresses": [
     {
      "congress": 20,
@@ -6660,6 +6779,7 @@
    "position": "Representative",
    "representation": "Biliran, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5d61e096c7b2297be896f466/portrait-15f7c7d795d8545e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E036",
    "congresses": [
     {
      "congress": 20,
@@ -6735,6 +6855,7 @@
    "position": "Representative",
    "representation": "ABONO",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-54a1ca50d960375f840de698/portrait-20f4087d80da2b35.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F088",
    "congresses": [
     {
      "congress": 20,
@@ -6789,6 +6910,7 @@
    "position": "Representative",
    "representation": "Cavite, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-91de33b04ea0f5a6e5214f2d/portrait-b1b5dcf727f315ed.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K032",
    "congresses": [
     {
      "congress": 20,
@@ -6855,6 +6977,7 @@
    "position": "Representative",
    "representation": "Negros Occidental, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-068b84a1974c14df0a3b0a6e/portrait-5c043e80f1c07f52.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F082",
    "congresses": [
     {
      "congress": 20,
@@ -6909,6 +7032,7 @@
    "position": "Representative",
    "representation": "Bukidnon, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a7eacd269b201a2e6714b4e6/portrait-8b97992c1b359f32.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J033",
    "congresses": [
     {
      "congress": 20,
@@ -6965,6 +7089,7 @@
    "position": "Representative",
    "representation": "Sorsogon, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c84f67555fdf0affbfce74a6/portrait-a252bf4ec6919dfc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K033",
    "congresses": [
     {
      "congress": 20,
@@ -7011,6 +7136,7 @@
    "position": "Representative",
    "representation": "Cebu, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1af2b943d9afcfb4c07c2719/portrait-1f719b902f4cbefe.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J036",
    "congresses": [
     {
      "congress": 20,
@@ -7061,6 +7187,7 @@
    "position": "Representative",
    "representation": "Muntinlupa City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1cd966283c4cf2442d1eb319/portrait-23b603f461dbcd0d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K034",
    "congresses": [
     {
      "congress": 20,
@@ -7128,6 +7255,7 @@
    "position": "Representative",
    "representation": "Camarines Sur, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-072594816a83fcc03ec678fc/portrait-87a81470310f26f8.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J037",
    "congresses": [
     {
      "congress": 20,
@@ -7189,6 +7317,7 @@
    "position": "Representative",
    "representation": "Valenzuela City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-24f089862330c6cc703966ae/portrait-eb1d76118caa8aea.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L035",
    "congresses": [
     {
      "congress": 20,
@@ -7237,6 +7366,7 @@
    "position": "Representative",
    "representation": "Cebu, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-dc266570ca73d2f983b04ee5/portrait-c7e9a46f75800705.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K035",
    "congresses": [
     {
      "congress": 20,
@@ -7283,6 +7413,7 @@
    "position": "Representative",
    "representation": "AKO BIKOL",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-60b3c3507e321048e4ab48cd/portrait-aedc487d455caef3.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G111",
    "congresses": [
     {
      "congress": 20,
@@ -7343,6 +7474,7 @@
    "position": "Representative",
    "representation": "Bataan, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-69b4438702254257bc48d01e/portrait-f81c734a569af7bf.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E031",
    "congresses": [
     {
      "congress": 20,
@@ -7412,6 +7544,7 @@
    "position": "Representative",
    "representation": "La Union, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-338c695d4c6ef56599dd9505/portrait-aa71959ab38ea24a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K036",
    "congresses": [
     {
      "congress": 20,
@@ -7474,6 +7607,7 @@
    "position": "Representative",
    "representation": "Rizal, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c846848adf882721a73adf58/portrait-75df15b03bac1e79.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K038",
    "congresses": [
     {
      "congress": 20,
@@ -7516,6 +7650,7 @@
    "position": "Representative",
    "representation": "Cebu, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1ce5a1af7f8226fc7d3b2d37/portrait-cc80127dcddf8a14.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L036",
    "congresses": [
     {
      "congress": 20,
@@ -7564,6 +7699,7 @@
    "position": "Representative",
    "representation": "Bataan, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-06a1ad5de8cda6bdb3cdeeb3/portrait-302bfee832446b3f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K037",
    "congresses": [
     {
      "congress": 20,
@@ -7616,6 +7752,7 @@
    "position": "Representative",
    "representation": "CWS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-2029dbea85cc4a67f271c8f2/portrait-b1922f3b6b69a651.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K113",
    "congresses": [
     {
      "congress": 20,
@@ -7658,6 +7795,7 @@
    "position": "Representative",
    "representation": "Iloilo, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b54682db0be4bdd8a062869e/portrait-ca7037f7875fd760.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E032",
    "congresses": [
     {
      "congress": 20,
@@ -7731,6 +7869,7 @@
    "position": "Representative",
    "representation": "Valenzuela City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-0a1fe911750c230a41ec19b5/portrait-5d69784ef27f3aa4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L037",
    "congresses": [
     {
      "congress": 20,
@@ -7794,6 +7933,7 @@
    "position": "Senate President",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-d557e376dfca1b811a43622e/portrait-c546aaffdfcdf45e.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Win-Gatchalian",
    "congresses": [
     {
      "congress": 20,
@@ -7856,6 +7996,7 @@
    "position": "Representative",
    "representation": "Batanes, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-61bc60871a40362175812e60/portrait-279b07b08cef67dc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J038",
    "congresses": [
     {
      "congress": 20,
@@ -7912,6 +8053,7 @@
    "position": "Representative",
    "representation": "ONE COOP",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-7de53defcdcb43653148a7f6/portrait-75fc0cb5ec5cef67.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L038",
    "congresses": [
     {
      "congress": 20,
@@ -7954,6 +8096,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-f30922e8a13e8babb1bfe4a8/portrait-cffb0d27b06ce1e7.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Christopher-Lawrence-T.-Go",
    "congresses": [
     {
      "congress": 20,
@@ -8004,6 +8147,7 @@
    "position": "Representative",
    "representation": "Isabela, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a1d2ce975aa5b20294f76903/portrait-add05c565c82c772.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J039",
    "congresses": [
     {
      "congress": 20,
@@ -8060,6 +8204,7 @@
    "position": "Representative",
    "representation": "Leyte, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3f6a606a7715a930f6b27871/portrait-7f6d105d307c8d0a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K039",
    "congresses": [
     {
      "congress": 20,
@@ -8117,6 +8262,7 @@
    "position": "Representative",
    "representation": "Mandaluyong City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c87a5c84d61fb67967be8436/portrait-f4997ff3051c87e0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/I032",
    "congresses": [
     {
      "congress": 20,
@@ -8179,6 +8325,7 @@
    "position": "Representative",
    "representation": "Pampanga, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-dffa3fd5514585a8162940b9/portrait-dce8698393dcaac0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L039",
    "congresses": [
     {
      "congress": 20,
@@ -8242,6 +8389,7 @@
    "position": "Representative",
    "representation": "Eastern Samar, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-58bc6e83280e737f10db1258/portrait-8a2147c4279bbcda.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L040",
    "congresses": [
     {
      "congress": 20,
@@ -8295,6 +8443,7 @@
    "position": "Representative",
    "representation": "Santa Rosa City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c5a00c7a07df7110b50ac5cf/portrait-04b0b8ffa1cb96ec.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L041",
    "congresses": [
     {
      "congress": 20,
@@ -8343,6 +8492,7 @@
    "position": "Representative",
    "representation": "Iloilo City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e90875d5ea7d4cf90fc57f60/portrait-fbc7caca8dc6ac78.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L042",
    "congresses": [
     {
      "congress": 20,
@@ -8385,6 +8535,7 @@
    "position": "Representative",
    "representation": "Pangasinan, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ee1022f2f6eba745061560bc/portrait-bb4f3fbd3e7f1a4a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J042",
    "congresses": [
     {
      "congress": 20,
@@ -8435,6 +8586,7 @@
    "position": "Representative",
    "representation": "Capiz, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-52021a516ba5dc04959baef5/portrait-43d31a14d7d640ca.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K117",
    "congresses": [
     {
      "congress": 20,
@@ -8487,6 +8639,7 @@
    "position": "Representative",
    "representation": "Cebu, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9899ce18126941d418d22936/portrait-2acd4136af02c284.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K040",
    "congresses": [
     {
      "congress": 20,
@@ -8533,6 +8686,7 @@
    "position": "Representative",
    "representation": "1-RIDER PARTYLIST",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-02da3676c246f39552f40226/portrait-0612fb08ee69f347.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K104",
    "congresses": [
     {
      "congress": 20,
@@ -8585,6 +8739,7 @@
    "position": "Representative",
    "representation": "Calamba City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b8f1a54079e3810f9c50da7d/portrait-73015d984533f829.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K042",
    "congresses": [
     {
      "congress": 20,
@@ -8652,6 +8807,7 @@
    "position": "Representative",
    "representation": "Rizal, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9505f0b0509e6cd8361e62a6/portrait-fff1b2abdbdd9428.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L043",
    "congresses": [
     {
      "congress": 20,
@@ -8694,6 +8850,7 @@
    "position": "Representative",
    "representation": "South Cotabato, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9cb9148f75db23b65480b8c7/portrait-d9d58f2c17f0e2c0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/H035",
    "congresses": [
     {
      "congress": 20,
@@ -8769,6 +8926,7 @@
    "position": "Representative",
    "representation": "Laguna, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5041707b1ece13ab112ec02d/portrait-6996186a96873a47.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L044",
    "congresses": [
     {
      "congress": 20,
@@ -8811,6 +8969,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-4948e7bd2484f2cf45ca7b19/portrait-070b6f662ff5ef1b.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Risa-Hontiveros",
    "congresses": [
     {
      "congress": 20,
@@ -8873,6 +9032,7 @@
    "position": "Representative",
    "representation": "Camarines Sur, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1e972903fc4a4b60f898e0f2/portrait-c9fd9d4982144194.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K043",
    "congresses": [
     {
      "congress": 20,
@@ -8930,6 +9090,7 @@
    "position": "Representative",
    "representation": "AKBAYAN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-cb08b7d89803483d47fecdaa/portrait-19e5f7b38484859b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L046",
    "congresses": [
     {
      "congress": 20,
@@ -8972,6 +9133,7 @@
    "position": "Representative",
    "representation": "Negros Oriental, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-d209524a3fcd580faa744d04/portrait-7a706333e7b9073c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L099",
    "congresses": [
     {
      "congress": 20,
@@ -9024,6 +9186,7 @@
    "position": "Representative",
    "representation": "Leyte, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-eb5cf78b8816e2976e0f852c/portrait-a9d723e40a18e7b0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J044",
    "congresses": [
     {
      "congress": 20,
@@ -9074,6 +9237,7 @@
    "position": "Representative",
    "representation": "Masbate, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-2aa17f2913bb5b3c38607ac5/portrait-a09ad09fe14f3012.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/A044",
    "congresses": [
     {
      "congress": 20,
@@ -9134,6 +9298,7 @@
    "position": "Representative",
    "representation": "Masbate, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-331549533d2a8e888f397088/portrait-44a37894b5318229.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/H037",
    "congresses": [
     {
      "congress": 20,
@@ -9188,6 +9353,7 @@
    "position": "Representative",
    "representation": "Masbate, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-62fbc6332c74da4cfee67b92/portrait-52909d63533ca1f6.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J046",
    "congresses": [
     {
      "congress": 20,
@@ -9238,6 +9404,7 @@
    "position": "Representative",
    "representation": "Zambales, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-2f3babe44a0bdc0412421b9c/portrait-4087edbfa60b9d6b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/H038",
    "congresses": [
     {
      "congress": 20,
@@ -9302,6 +9469,7 @@
    "position": "Representative",
    "representation": "TINGOG",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-bd6cca310088260893178c53/portrait-96f6224451d0bd11.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/I059",
    "congresses": [
     {
      "congress": 20,
@@ -9372,6 +9540,7 @@
    "position": "Representative",
    "representation": "ABANG LINGKOD",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-023c72bbe27043c3f77f0fb1/portrait-696d183bb8f67a88.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L047",
    "congresses": [
     {
      "congress": 20,
@@ -9414,6 +9583,7 @@
    "position": "Representative",
    "representation": "Zamboanga del Norte, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-767cc3f1393ee5b7c24494ef/portrait-87922967db31f9df.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L048",
    "congresses": [
     {
      "congress": 20,
@@ -9482,6 +9652,7 @@
    "position": "Representative",
    "representation": "MANILA TEACHERS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3e4aa2c85df30b78d83abbbb/portrait-4d5b723b7f5d1be7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L049",
    "congresses": [
     {
      "congress": 20,
@@ -9550,6 +9721,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-0ce8d9571a665cee058230ff/portrait-3ea1cb27ce8341a4.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Panfilo-%22Ping%22-M.-Lacson",
    "congresses": [
     {
      "congress": 20,
@@ -9616,6 +9788,7 @@
    "position": "Representative",
    "representation": "Misamis Oriental, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b5384435b30d56c41d8808e3/portrait-b1f7685ecaf3b50b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L050",
    "congresses": [
     {
      "congress": 20,
@@ -9664,6 +9837,7 @@
    "position": "Representative",
    "representation": "Davao del Norte, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f06c591f9ffadaaa6f8236b5/portrait-74d4842a968455ed.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L051",
    "congresses": [
     {
      "congress": 20,
@@ -9717,6 +9891,7 @@
    "position": "Representative",
    "representation": "Makati City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b213504acae2986909f2660a/portrait-a93f2e36f43956ba.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G055",
    "congresses": [
     {
      "congress": 20,
@@ -9783,6 +9958,7 @@
    "position": "Representative",
    "representation": "Albay, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-738620a3a35a419c2de76367/portrait-d485adfa13aaccea.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/C065",
    "congresses": [
     {
      "congress": 20,
@@ -9833,6 +10009,7 @@
    "position": "Representative",
    "representation": "Cebu, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-0d16af5c81b0f62ae21fe0a5/portrait-df128fc3822656e0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K046",
    "congresses": [
     {
      "congress": 20,
@@ -9885,6 +10062,7 @@
    "position": "Representative",
    "representation": "AKO BISAYA",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e06fff18705f2e150d56cd32/portrait-12228a3eeaa4e487.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J102",
    "congresses": [
     {
      "congress": 20,
@@ -9935,6 +10113,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-cc60c6a59ed190e76c37e4b2/portrait-de193865c3acd46a.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Manuel-%22Lito%22-M.-Lapid",
    "congresses": [
     {
      "congress": 20,
@@ -10001,6 +10180,7 @@
    "position": "Representative",
    "representation": "Cagayan, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b51231bce1c052234e754278/portrait-b3a5d060f8abeb0c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J047",
    "congresses": [
     {
      "congress": 20,
@@ -10051,6 +10231,7 @@
    "position": "Representative",
    "representation": "Pampanga, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-689be95115a028e5822fe54e/portrait-c296f462f3e7882a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L097",
    "congresses": [
     {
      "congress": 20,
@@ -10109,6 +10290,7 @@
    "position": "Representative",
    "representation": "Negros Occidental, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f60995ce1febafec2e9ea0f5/portrait-a406401f4b1403d4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/B020",
    "congresses": [
     {
      "congress": 20,
@@ -10175,6 +10357,7 @@
    "position": "Representative",
    "representation": "Camarines Sur, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ee618f24cf0ad138111b3a39/portrait-5010bc506c7b4260.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L052",
    "congresses": [
     {
      "congress": 20,
@@ -10228,6 +10411,7 @@
    "position": "Representative",
    "representation": "Antique, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8e72723e2e9b6a35acb18fb9/portrait-9dd6990952b1e129.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K047",
    "congresses": [
     {
      "congress": 20,
@@ -10274,6 +10458,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-909e12036b2c4d88780bb185/portrait-8725f652bda56bf7.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Loren-Legarda",
    "congresses": [
     {
      "congress": 20,
@@ -10354,6 +10539,7 @@
    "position": "Representative",
    "representation": "PINOY WORKERS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-bc932ef76568f8a80741cdbd/portrait-27c7932d1fe88e60.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L053",
    "congresses": [
     {
      "congress": 20,
@@ -10402,6 +10588,7 @@
    "position": "Representative",
    "representation": "PINOY WORKERS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-86fb0a0142c1746ba1be3672/portrait-faa486a6dc5de2e5.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L106",
    "congresses": [
     {
      "congress": 20,
@@ -10444,6 +10631,7 @@
    "position": "Representative",
    "representation": "Batangas, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-32623d3c9680b0cd03e6d275/portrait-5a989e774a3e0844.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L054",
    "congresses": [
     {
      "congress": 20,
@@ -10495,6 +10683,7 @@
    "position": "Representative",
    "representation": "4Ps",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-81c92cf8b8df19a668f71259/portrait-1d4ac503b13829ce.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/C069",
    "congresses": [
     {
      "congress": 20,
@@ -10559,6 +10748,7 @@
    "position": "Representative",
    "representation": "FPJ PANDAY BAYANIHAN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f0712bb543e6d1607343fe39/portrait-4961956ebe43cae4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L055",
    "congresses": [
     {
      "congress": 20,
@@ -10622,6 +10812,7 @@
    "position": "Representative",
    "representation": "ALONA",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e6b88103d8d21c115a05883c/portrait-5a90ba633d3d226e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L056",
    "congresses": [
     {
      "congress": 20,
@@ -10685,6 +10876,7 @@
    "position": "Representative",
    "representation": "Albay, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-d36f28f15aa5e47d7cfb9d4d/portrait-750bcb50d563387a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L057",
    "congresses": [
     {
      "congress": 20,
@@ -10748,6 +10940,7 @@
    "position": "Representative",
    "representation": "Cavite, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-21c474c5f0ba9317a23be214/portrait-3e92f65e16b3ec96.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G059",
    "congresses": [
     {
      "congress": 20,
@@ -10806,6 +10999,7 @@
    "position": "Representative",
    "representation": "Batangas, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-78292432acc5d5f6742f9370/portrait-835c20c2ed28b786.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K048",
    "congresses": [
     {
      "congress": 20,
@@ -10878,6 +11072,7 @@
    "position": "Representative",
    "representation": "South Cotabato, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-4538f5080cbb455379604fcd/portrait-68afbe7c83579306.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K049",
    "congresses": [
     {
      "congress": 20,
@@ -10935,6 +11130,7 @@
    "position": "Representative",
    "representation": "Pampanga, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-147d812eb8c76c313e49f8a5/portrait-722775931e5a32a2.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G060",
    "congresses": [
     {
      "congress": 20,
@@ -11022,6 +11218,7 @@
    "position": "Representative",
    "representation": "SSS-GSIS PENSYONADO",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-96e569e80c9d7c7bc20b8ccb/portrait-166d2239c795baaa.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L058",
    "congresses": [
     {
      "congress": 20,
@@ -11064,6 +11261,7 @@
    "position": "Representative",
    "representation": "Manila, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1526c460fdd2ea2326fcb1c1/portrait-b2ce269a49b13791.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L059",
    "congresses": [
     {
      "congress": 20,
@@ -11117,6 +11315,7 @@
    "position": "Representative",
    "representation": "Romblon, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-569eeed2df5644a224370f7e/portrait-1b24b2a4a9a9dcc0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/A054",
    "congresses": [
     {
      "congress": 20,
@@ -11197,6 +11396,7 @@
    "position": "Representative",
    "representation": "UNITED SENIOR CITIZENS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8586618bf0a6e680f6c70a0c/portrait-2dc033a6c7cd4f9c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/I109",
    "congresses": [
     {
      "congress": 20,
@@ -11263,6 +11463,7 @@
    "position": "Representative",
    "representation": "Caloocan City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e36aa16f1088377981574812/portrait-fbd8a43f132026b9.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E042",
    "congresses": [
     {
      "congress": 20,
@@ -11321,6 +11522,7 @@
    "position": "Representative",
    "representation": "Maguindanao del Sur, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-40ce81ae8dc1a5f619aa21af/portrait-7cb7d15fa59b6e5a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J050",
    "congresses": [
     {
      "congress": 20,
@@ -11373,6 +11575,7 @@
    "position": "Representative",
    "representation": "Zambales, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-bc4a6ec5da3861ab424be61a/portrait-585118e5ec616559.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K050",
    "congresses": [
     {
      "congress": 20,
@@ -11419,6 +11622,7 @@
    "position": "Representative",
    "representation": "Negros Occidental, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5fab6e3c124c0cb0006ff887/portrait-1fe2cef8bae14661.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E045",
    "congresses": [
     {
      "congress": 20,
@@ -11477,6 +11681,7 @@
    "position": "Representative",
    "representation": "SAGIP",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-cba5e1f296f3f3f7cec839b7/portrait-d2f3e7bcc537daa5.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L060",
    "congresses": [
     {
      "congress": 20,
@@ -11525,6 +11730,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-aee5ec32f8d103332736cd7a/portrait-f8c9e3d0ef53f08c.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Rodante-D.-Marcoleta",
    "congresses": [
     {
      "congress": 20,
@@ -11591,6 +11797,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-7581f15241fdd37679037554/portrait-9063ebf640e64d51.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Imee-R.-Marcos",
    "congresses": [
     {
      "congress": 20,
@@ -11653,6 +11860,7 @@
    "position": "Representative",
    "representation": "Ilocos Norte, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-16daae1b554dbd44b0866f48/portrait-37b18dcfe111ff03.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K051",
    "congresses": [
     {
      "congress": 20,
@@ -11710,6 +11918,7 @@
    "position": "Representative",
    "representation": "Aklan, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-267dce42786a8110d18daf87/portrait-d7e261d9663d611b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L061",
    "congresses": [
     {
      "congress": 20,
@@ -11768,6 +11977,7 @@
    "position": "Representative",
    "representation": "Maguindanao del Norte, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-da356bf373ac92c87d775279/portrait-3bdb20e90e4ead9c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K052",
    "congresses": [
     {
      "congress": 20,
@@ -11814,6 +12024,7 @@
    "position": "Representative",
    "representation": "Laguna, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1907ba90551098434edc85d9/portrait-bd567e42785e8aa7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K053",
    "congresses": [
     {
      "congress": 20,
@@ -11866,6 +12077,7 @@
    "position": "Representative",
    "representation": "Surigao del Norte, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-19a744a65a61dd84fe35806d/portrait-bcf22195dfb7d3bd.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F046",
    "congresses": [
     {
      "congress": 20,
@@ -11936,6 +12148,7 @@
    "position": "Representative",
    "representation": "TUCP",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6b6645d7696cddde43766b1e/portrait-22997de340ea734a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F123",
    "congresses": [
     {
      "congress": 20,
@@ -12013,6 +12226,7 @@
    "position": "Representative",
    "representation": "Southern Leyte, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-92f7969fda02593441c4aee1/portrait-ae5a905b18b9f88d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/0118",
    "congresses": [
     {
      "congress": 20,
@@ -12093,6 +12307,7 @@
    "position": "Representative",
    "representation": "Aklan, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b454e55eb21380ea9e1f073c/portrait-540cc671594e1bcc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E048",
    "congresses": [
     {
      "congress": 20,
@@ -12147,6 +12362,7 @@
    "position": "Representative",
    "representation": "Surigao del Sur, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6d5119224c81c221277287f9/portrait-c72a56a98b5da9c8.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J105",
    "congresses": [
     {
      "congress": 20,
@@ -12218,6 +12434,7 @@
    "position": "Representative",
    "representation": "4K",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3fe09f9027b2e3b6be32d199/portrait-6f76cb517a436fce.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L062",
    "congresses": [
     {
      "congress": 20,
@@ -12271,6 +12488,7 @@
    "position": "Representative",
    "representation": "Guimaras, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-42b8901aa82284ebf67e3431/portrait-8fd203bfe139475d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F055",
    "congresses": [
     {
      "congress": 20,
@@ -12336,6 +12554,7 @@
    "position": "Representative",
    "representation": "BH",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-48024ed0b1bb910c1572b568/portrait-e1e0f12fe412ca0e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L063",
    "congresses": [
     {
      "congress": 20,
@@ -12378,6 +12597,7 @@
    "position": "Representative",
    "representation": "PUSONG PINOY",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6d08d5e78ef0a15e6d2f52c2/portrait-e76f897bc79a640c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K135",
    "congresses": [
     {
      "congress": 20,
@@ -12424,6 +12644,7 @@
    "position": "Representative",
    "representation": "Cagayan, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-382aa4123af05172ab7bca09/portrait-cbeb9d7e7630e8ae.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/I045",
    "congresses": [
     {
      "congress": 20,
@@ -12466,6 +12687,7 @@
    "position": "Representative",
    "representation": "ASENSO PINOY",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ac569c3c50ee919e493c914d/portrait-8ed81bdd9b83e3a1.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L064",
    "congresses": [
     {
      "congress": 20,
@@ -12508,6 +12730,7 @@
    "position": "Representative",
    "representation": "Misamis Occidental, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8f7cf99d588cf7786bfe5295/portrait-78eb1a30da71ca7e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K056",
    "congresses": [
     {
      "congress": 20,
@@ -12560,6 +12783,7 @@
    "position": "Representative",
    "representation": "1TAHANAN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c9aa6bf7113fa8cae75d7f2c/portrait-4b52f17edd1c1cc7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L065",
    "congresses": [
     {
      "congress": 20,
@@ -12623,6 +12847,7 @@
    "position": "Representative",
    "representation": "Parañaque City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3d74ecef28e08402643669ec/portrait-7d6fa58c4cbb72c0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/H046",
    "congresses": [
     {
      "congress": 20,
@@ -12683,6 +12908,7 @@
    "position": "Representative",
    "representation": "Northern Samar, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-84bbee1e1749e756389108c0/portrait-4757d27465345a8a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/I047",
    "congresses": [
     {
      "congress": 20,
@@ -12745,6 +12971,7 @@
    "position": "Representative",
    "representation": "SENIOR CITIZENS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c02b0c68ba9aebd7b3fda4ee/portrait-72c5ffda54e1eb28.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J127",
    "congresses": [
     {
      "congress": 20,
@@ -12806,6 +13033,7 @@
    "position": "Representative",
    "representation": "Malabon City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8a0aa5d6bc5a3df8fa3d69a9/portrait-a86da630a0a1a3b7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L066",
    "congresses": [
     {
      "congress": 20,
@@ -12869,6 +13097,7 @@
    "position": "Representative",
    "representation": "La Union, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a5936c83ef0c2ddb08478154/portrait-7b3747cb3629dea0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K059",
    "congresses": [
     {
      "congress": 20,
@@ -12915,6 +13144,7 @@
    "position": "Representative",
    "representation": "Mandaue City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-32be6e23b42df18fb77f214d/portrait-4940ad5e6131a360.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J055",
    "congresses": [
     {
      "congress": 20,
@@ -12981,6 +13211,7 @@
    "position": "Representative",
    "representation": "GP (GALING SA PUSO)",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-935fdd1d95d51afbd928c977/portrait-5f73c8bcfce5bb35.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L067",
    "congresses": [
     {
      "congress": 20,
@@ -13029,6 +13260,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-1f72b1a5dcc232648fd69616/portrait-a0dedae0b4d76cc0.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Robinhood-C.-Padilla",
    "congresses": [
     {
      "congress": 20,
@@ -13075,6 +13307,7 @@
    "position": "Representative",
    "representation": "Oriental Mindoro, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-75dda92b1f0247659633814f/portrait-6e5d92f5ee47d26e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K062",
    "congresses": [
     {
      "congress": 20,
@@ -13127,6 +13360,7 @@
    "position": "Representative",
    "representation": "Bulacan, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-afd0f80872017900deb8b9dd/portrait-9f12ba6134ef374c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K063",
    "congresses": [
     {
      "congress": 20,
@@ -13194,6 +13428,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-b9cfbb9d6a05257bd553d5ab/portrait-11addce2a582cb9b.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Francis-%22Kiko%22-Pangilinan",
    "congresses": [
     {
      "congress": 20,
@@ -13260,6 +13495,7 @@
    "position": "Representative",
    "representation": "Camarines Norte, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ce4e7ea41e496dde0ae6355d/portrait-45b6a1db80be6273.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K064",
    "congresses": [
     {
      "congress": 20,
@@ -13312,6 +13548,7 @@
    "position": "Representative",
    "representation": "Nueva Ecija, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-20bf71866181fc0d299b34bb/portrait-905055700d94c651.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K065",
    "congresses": [
     {
      "congress": 20,
@@ -13358,6 +13595,7 @@
    "position": "Representative",
    "representation": "Zamboanga City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8f5aa76ecb63872374d886a5/portrait-aae719419ce41446.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L095",
    "congresses": [
     {
      "congress": 20,
@@ -13400,6 +13638,7 @@
    "position": "Representative",
    "representation": "Surigao del Sur, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-64cd2256f518e9110585edb5/portrait-480402cbd95655e5.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L068",
    "congresses": [
     {
      "congress": 20,
@@ -13448,6 +13687,7 @@
    "position": "Representative",
    "representation": "Agusan del Sur, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-547cca97b7b28d20669d90a1/portrait-0951138b2397791f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J057",
    "congresses": [
     {
      "congress": 20,
@@ -13504,6 +13744,7 @@
    "position": "Representative",
    "representation": "Bulacan, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1b4e089a41985ae459ad2eaa/portrait-fc9e0c41a57c5555.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K066",
    "congresses": [
     {
      "congress": 20,
@@ -13576,6 +13817,7 @@
    "position": "Representative",
    "representation": "Pangasinan, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c0579d9581c897fb08448f66/portrait-d5744f586fbcfa34.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G072",
    "congresses": [
     {
      "congress": 20,
@@ -13645,6 +13887,7 @@
    "position": "Representative",
    "representation": "Quezon City, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a8ad02bdae3e1c0253d9a684/portrait-2edb57971bf4cfd0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K067",
    "congresses": [
     {
      "congress": 20,
@@ -13697,6 +13940,7 @@
    "position": "Representative",
    "representation": "Antipolo City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8065e23585ff0f285f28a6a3/portrait-734232c940c3057f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/E052",
    "congresses": [
     {
      "congress": 20,
@@ -13743,6 +13987,7 @@
    "position": "Representative",
    "representation": "Marikina City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ec6da13a1918f8d61581a76c/portrait-e4b3a8f8bcbf94d7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G073",
    "congresses": [
     {
      "congress": 20,
@@ -13808,6 +14053,7 @@
    "position": "Representative",
    "representation": "Cebu City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-7c1682cdbe877932efbc2983/portrait-071093cdc423a8aa.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K068",
    "congresses": [
     {
      "congress": 20,
@@ -13860,6 +14106,7 @@
    "position": "Representative",
    "representation": "Batangas, 6th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5ec812a92a678895b58aa5a2/portrait-b97c3416a659562f.png",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L078",
    "congresses": [
     {
      "congress": 20,
@@ -13933,6 +14180,7 @@
    "position": "Representative",
    "representation": "Iligan City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-64aa38c62031166361401f03/portrait-29d4c284fd020cba.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K069",
    "congresses": [
     {
      "congress": 20,
@@ -13990,6 +14238,7 @@
    "position": "Representative",
    "representation": "Cavite, 7th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-57f994cce505eeabcf37de3f/portrait-a4300a1414ec7611.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K139",
    "congresses": [
     {
      "congress": 20,
@@ -14036,6 +14285,7 @@
    "position": "Representative",
    "representation": "Cavite, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c6f8018a56f276f723d00076/portrait-2fee3253c1be9785.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G078",
    "congresses": [
     {
      "congress": 20,
@@ -14101,6 +14351,7 @@
    "position": "Representative",
    "representation": "AGIMAT",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e2237a4b9c33176cbfa7df90/portrait-9936ed972258c89d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K110",
    "congresses": [
     {
      "congress": 20,
@@ -14147,6 +14398,7 @@
    "position": "Representative",
    "representation": "Cavite, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c4792ff07d84def473a3f093/portrait-a3f22c7f416ee995.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K070",
    "congresses": [
     {
      "congress": 20,
@@ -14193,6 +14445,7 @@
    "position": "Representative",
    "representation": "BICOL SARO",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8cf27c5beb8572dd2dc567d2/portrait-39ca38d83817beab.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/H072",
    "congresses": [
     {
      "congress": 20,
@@ -14255,6 +14508,7 @@
    "position": "Representative",
    "representation": "Tarlac, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f7a5f5714b8686f248312724/portrait-80a43bb7e2e8d8e6.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K072",
    "congresses": [
     {
      "congress": 20,
@@ -14301,6 +14555,7 @@
    "position": "Representative",
    "representation": "San Jose Del Monte City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-add6f050f5ebe9af20e35270/portrait-451d825e068296b8.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F056",
    "congresses": [
     {
      "congress": 20,
@@ -14355,6 +14610,7 @@
    "position": "Representative",
    "representation": "Catanduanes, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-190454e2fcf1d5b7c60f762f/portrait-071a1bb845827c45.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K073",
    "congresses": [
     {
      "congress": 20,
@@ -14417,6 +14673,7 @@
    "position": "Representative",
    "representation": "ABAMIN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c94af3c748f02b153659bbfe/portrait-44cb667d604bd224.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G079",
    "congresses": [
     {
      "congress": 20,
@@ -14477,6 +14734,7 @@
    "position": "Representative",
    "representation": "Cagayan de Oro City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-928583403df40e58d4418e6f/portrait-5b50c80fe0750a16.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F057",
    "congresses": [
     {
      "congress": 20,
@@ -14555,6 +14813,7 @@
    "position": "Representative",
    "representation": "Bataan, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-d3711e9f96ef17a0f8d89f42/portrait-af786fbda950f799.png",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L102",
    "congresses": [
     {
      "congress": 20,
@@ -14630,6 +14889,7 @@
    "position": "Representative",
    "representation": "TINGOG",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9e53adec781af977c0057320/portrait-7c00af80f23ebdf4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L069",
    "congresses": [
     {
      "congress": 20,
@@ -14693,6 +14953,7 @@
    "position": "Representative",
    "representation": "Leyte, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-896ccf2ae98092ebb9a00a49/portrait-d4e2d1617c6cdcc7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F061",
    "congresses": [
     {
      "congress": 20,
@@ -14776,6 +15037,7 @@
    "position": "Representative",
    "representation": "Camiguin, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-78c7780fbb695162638aeecf/portrait-38eefdb68866bf91.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/C100",
    "congresses": [
     {
      "congress": 20,
@@ -14840,6 +15102,7 @@
    "position": "Representative",
    "representation": "Pasig City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e85093459d1455069b812b78/portrait-8086873fd9e3fc5a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F062",
    "congresses": [
     {
      "congress": 20,
@@ -14923,6 +15186,7 @@
    "position": "Representative",
    "representation": "Bukidnon, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9f09aef58058a4704e67e761/portrait-59fd25fb471b23d7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K074",
    "congresses": [
     {
      "congress": 20,
@@ -14995,6 +15259,7 @@
    "position": "Representative",
    "representation": "Negros Oriental, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c585180a4cce6892a11267ad/portrait-3e00fc8b5e9e6653.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L070",
    "congresses": [
     {
      "congress": 20,
@@ -15068,6 +15333,7 @@
    "position": "Representative",
    "representation": "Sultan Kudarat, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f25f29b88e20feb9332febb6/portrait-dcea3220b9f79c0c.png",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L071",
    "congresses": [
     {
      "congress": 20,
@@ -15110,6 +15376,7 @@
    "position": "Representative",
    "representation": "Albay, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6f0b1c35b358a9ddd0583cbf/portrait-31a077085ddb6b4e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L072",
    "congresses": [
     {
      "congress": 20,
@@ -15163,6 +15430,7 @@
    "position": "Representative",
    "representation": "Tawi-Tawi, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a6a9b1f59aa2bae9304283ef/portrait-e5938152e998c3bc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K075",
    "congresses": [
     {
      "congress": 20,
@@ -15209,6 +15477,7 @@
    "position": "Representative",
    "representation": "Marinduque, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a0113711f8cf5b0ebc27f4af/portrait-52daa34856a554c9.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L073",
    "congresses": [
     {
      "congress": 20,
@@ -15251,6 +15520,7 @@
    "position": "Representative",
    "representation": "Nueva Ecija, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ad9489b79292004e82046159/portrait-48ae898987a451d0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L074",
    "congresses": [
     {
      "congress": 20,
@@ -15299,6 +15569,7 @@
    "position": "Representative",
    "representation": "Palawan, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-95a403ca4d1158fb36e78045/portrait-b7bdb0d700ec0776.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L075",
    "congresses": [
     {
      "congress": 20,
@@ -15341,6 +15612,7 @@
    "position": "Representative",
    "representation": "KAMANGGAGAWA",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5dd4aa6f22657c218770ee3b/portrait-6bfc8028caae3b4a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L076",
    "congresses": [
     {
      "congress": 20,
@@ -15394,6 +15666,7 @@
    "position": "Representative",
    "representation": "Cotabato, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8dec0c7d9bd3df203d63742d/portrait-8798a7361cb5dc87.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K077",
    "congresses": [
     {
      "congress": 20,
@@ -15446,6 +15719,7 @@
    "position": "Representative",
    "representation": "Las Piñas City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-31bbc5863367a94cbf39d0ae/portrait-965a23ce76f5ca21.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L077",
    "congresses": [
     {
      "congress": 20,
@@ -15494,6 +15768,7 @@
    "position": "Representative",
    "representation": "Cebu, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ae2d17f67dac404f022d4765/portrait-fe635ee7ad2d2625.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L079",
    "congresses": [
     {
      "congress": 20,
@@ -15536,6 +15811,7 @@
    "position": "Representative",
    "representation": "Ilocos Sur, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-44b9767e1b65d8fd47421570/portrait-87da89fc606c7ac0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F068",
    "congresses": [
     {
      "congress": 20,
@@ -15605,6 +15881,7 @@
    "position": "Representative",
    "representation": "Ilocos Sur, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b1a0ee98c3a5a27398d80d35/portrait-aa71c9c90229bf0d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J066",
    "congresses": [
     {
      "congress": 20,
@@ -15661,6 +15938,7 @@
    "position": "Representative",
    "representation": "AKO ILOCANO AKO",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a748f54cffe3bc48761e880f/portrait-d0289df707248fd9.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K129",
    "congresses": [
     {
      "congress": 20,
@@ -15713,6 +15991,7 @@
    "position": "Representative",
    "representation": "Sarangani, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1acf12a16c3830f9f85af731/portrait-792a40403011e4f9.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K078",
    "congresses": [
     {
      "congress": 20,
@@ -15765,6 +16044,7 @@
    "position": "Representative",
    "representation": "ACT-CIS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ec411ea2739a9f1687d69a49/portrait-9f3fcc1737217634.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K103",
    "congresses": [
     {
      "congress": 20,
@@ -15811,6 +16091,7 @@
    "position": "Senate President Pro Tempore",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-8d3266efda2f35f07a026c38/portrait-eab574af819b1044.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Vicente-C.-Sotto-III",
    "congresses": [
     {
      "congress": 20,
@@ -15885,6 +16166,7 @@
    "position": "Representative",
    "representation": "Cagayan de Oro City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-11ad31244ec5d21174a6d4c3/portrait-ae05b19280caa157.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K079",
    "congresses": [
     {
      "congress": 20,
@@ -15957,6 +16239,7 @@
    "position": "Representative",
    "representation": "Sultan Kudarat, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-977ffc0ce2ef01e497869fbb/portrait-9b71451f1cce436c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L080",
    "congresses": [
     {
      "congress": 20,
@@ -16010,6 +16293,7 @@
    "position": "Representative",
    "representation": "Nueva Ecija, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3162c8dbd3dcfea59260f4ec/portrait-4d12be242d375a19.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K080",
    "congresses": [
     {
      "congress": 20,
@@ -16077,6 +16361,7 @@
    "position": "Representative",
    "representation": "Quezon, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-2152b67a2b9595ee3e9d1c3e/portrait-8d834d4391fe2d41.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J068",
    "congresses": [
     {
      "congress": 20,
@@ -16133,6 +16418,7 @@
    "position": "Representative",
    "representation": "Quezon City, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-89f10fb7b2ddb4458d9482f4/portrait-2929ea4730857069.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J069",
    "congresses": [
     {
      "congress": 20,
@@ -16185,6 +16471,7 @@
    "position": "Representative",
    "representation": "Camarines Norte, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-142ac863276a8e4defb8293a/portrait-11b7da5209399748.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J070",
    "congresses": [
     {
      "congress": 20,
@@ -16246,6 +16533,7 @@
    "position": "Representative",
    "representation": "Zamboanga Sibugay, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1eae4c99cd6609a6f3531a0f/portrait-42d96ca00c296b75.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L045",
    "congresses": [
     {
      "congress": 20,
@@ -16288,6 +16576,7 @@
    "position": "Representative",
    "representation": "KUSUG TAUSUG",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-cfb832227427ad0a57ebb516/portrait-d9d0ac18579d6522.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L081",
    "congresses": [
     {
      "congress": 20,
@@ -16326,6 +16615,7 @@
    "position": "Representative",
    "representation": "Isabela, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b7e6a103157bd61d3113eeae/portrait-5e2a64b9fc8a6372.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K083",
    "congresses": [
     {
      "congress": 20,
@@ -16393,6 +16683,7 @@
    "position": "Representative",
    "representation": "Quezon, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-87325a7ccc5a3151d4ce1f3a/portrait-6a42505688eb7ed0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K134",
    "congresses": [
     {
      "congress": 20,
@@ -16455,6 +16746,7 @@
    "position": "Representative",
    "representation": "Samar, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8aaef1b7fc5617665daf080b/portrait-13152aee60aa718c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K084",
    "congresses": [
     {
      "congress": 20,
@@ -16501,6 +16793,7 @@
    "position": "Representative",
    "representation": "Sulu, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-30bf07d0263d6446e0c2575d/portrait-2800d05bd94e8469.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J073",
    "congresses": [
     {
      "congress": 20,
@@ -16543,6 +16836,7 @@
    "position": "Representative",
    "representation": "Samar, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a516a24864d6793a6f1f2ff4/portrait-a538e9bd4d96b5ca.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K082",
    "congresses": [
     {
      "congress": 20,
@@ -16595,6 +16889,7 @@
    "position": "Representative",
    "representation": "KAMALAYAN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-15e91b7a8a5176e2355dfd96/portrait-ff22d0920ed3340a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K107",
    "congresses": [
     {
      "congress": 20,
@@ -16647,6 +16942,7 @@
    "position": "Representative",
    "representation": "Rizal, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b06c93151010a4e27a38f7e6/portrait-a80e17ba71a43c1f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K085",
    "congresses": [
     {
      "congress": 20,
@@ -16714,6 +17010,7 @@
    "position": "Representative",
    "representation": "Occidental Mindoro, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8b8df4f9162f304ee15772fa/portrait-ee38f9a33333035b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K086",
    "congresses": [
     {
      "congress": 20,
@@ -16760,6 +17057,7 @@
    "position": "Representative",
    "representation": "Marikina City, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-64cb7ff368e284fa306164d6/portrait-0306e02eb758d63e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F070",
    "congresses": [
     {
      "congress": 20,
@@ -16825,6 +17123,7 @@
    "position": "Representative",
    "representation": "KM NGAYON NA",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-0620ce2e77fc8e573a27c532/portrait-973449f4621ecca4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L082",
    "congresses": [
     {
      "congress": 20,
@@ -16878,6 +17177,7 @@
    "position": "Representative",
    "representation": "TGP",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b97b93a0b025c9d6a6028899/portrait-5f7470e27b36db5d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J114",
    "congresses": [
     {
      "congress": 20,
@@ -16949,6 +17249,7 @@
    "position": "Representative",
    "representation": "Navotas City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-90702bffed6e423d0e3f3533/portrait-5290573c4e19d76b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G090",
    "congresses": [
     {
      "congress": 20,
@@ -17013,6 +17314,7 @@
    "position": "Representative",
    "representation": "Manila, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-328cca7942641c8280e95438/portrait-7c8aac5b8f2e54ef.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F092",
    "congresses": [
     {
      "congress": 20,
@@ -17077,6 +17379,7 @@
    "position": "Representative",
    "representation": "ACT TEACHERS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8b3fc7aec742c415d2065623/portrait-02bb5fcaf0a4974f.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G093",
    "congresses": [
     {
      "congress": 20,
@@ -17142,6 +17445,7 @@
    "position": "Representative",
    "representation": "Cavite, 8th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-998f618bcba59b0d3b754bb1/portrait-ad6059484bb3ff48.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K088",
    "congresses": [
     {
      "congress": 20,
@@ -17194,6 +17498,7 @@
    "position": "Representative",
    "representation": "South Cotabato, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-06f362559728ab5a7d76e3fc/portrait-f213fa09fb85b796.png",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L083",
    "congresses": [
     {
      "congress": 20,
@@ -17247,6 +17552,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-ac8cc04da1e46cb3d49e8dbd/portrait-7a5cd7d8464980fb.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Erwin-T.-Tulfo",
    "congresses": [
     {
      "congress": 20,
@@ -17293,6 +17599,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-bed710eca20e19bbe064c59d/portrait-c26d4b0662d8373b.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Raffy-T.-Tulfo",
    "congresses": [
     {
      "congress": 20,
@@ -17339,6 +17646,7 @@
    "position": "Representative",
    "representation": "ACT-CIS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-7f3dda4cf062bf8d3b68c757/portrait-4909d4174a339f43.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K102",
    "congresses": [
     {
      "congress": 20,
@@ -17389,6 +17697,7 @@
    "position": "Representative",
    "representation": "Quezon City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ee1ad40226f42756e7e08c08/portrait-42fe437d1f9c0de1.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K089",
    "congresses": [
     {
      "congress": 20,
@@ -17441,6 +17750,7 @@
    "position": "Representative",
    "representation": "Iloilo, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-a3b054e7edb469840c680d92/portrait-e302839d44667bae.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L084",
    "congresses": [
     {
      "congress": 20,
@@ -17494,6 +17804,7 @@
    "position": "Representative",
    "representation": "LPGMA",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-5a6650018d617d94a92a02f2/portrait-2deca00320cf0496.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J125",
    "congresses": [
     {
      "congress": 20,
@@ -17546,6 +17857,7 @@
    "position": "Representative",
    "representation": "Oriental Mindoro, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9e6e5410b48aab1e96de3c08/portrait-8a1ec249220b4ae7.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/D066",
    "congresses": [
     {
      "congress": 20,
@@ -17608,6 +17920,7 @@
    "position": "Representative",
    "representation": "Davao City, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-049f332bec9d5204253ef7a8/portrait-b289027c3079899d.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/F073",
    "congresses": [
     {
      "congress": 20,
@@ -17666,6 +17979,7 @@
    "position": "Representative",
    "representation": "Davao del Norte, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ab86077a96f60e0aaa6d5581/portrait-b9e036619293934b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L085",
    "congresses": [
     {
      "congress": 20,
@@ -17719,6 +18033,7 @@
    "position": "Representative",
    "representation": "Zamboanga del Norte, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-cbe7f624d15ba4949684da46/portrait-033f90f953e01b62.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K141",
    "congresses": [
     {
      "congress": 20,
@@ -17776,6 +18091,7 @@
    "position": "Representative",
    "representation": "Manila, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-06221467ee6dcf1c2bc264b9/portrait-b320fdafda3e7c42.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J078",
    "congresses": [
     {
      "congress": 20,
@@ -17837,6 +18153,7 @@
    "position": "Representative",
    "representation": "Quezon City, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-fe9a51f0a5f9c34d42db5af5/portrait-3c4265db272cc85b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K091",
    "congresses": [
     {
      "congress": 20,
@@ -17889,6 +18206,7 @@
    "position": "Representative",
    "representation": "Cagayan, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-bdf4b8c11577af13db316316/portrait-19a09a26d4391b57.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G125",
    "congresses": [
     {
      "congress": 20,
@@ -17953,6 +18271,7 @@
    "position": "Representative",
    "representation": "MALASAKIT@BAYANIHAN",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-39253fba9c46afd76487ec2e/portrait-ca814250507342e0.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L087",
    "congresses": [
     {
      "congress": 20,
@@ -17995,6 +18314,7 @@
    "position": "Representative",
    "representation": "Leyte, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6212018d7de7db0ca9bbcdff/portrait-0998320c35c394ed.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K092",
    "congresses": [
     {
      "congress": 20,
@@ -18052,6 +18372,7 @@
    "position": "Representative",
    "representation": "Nueva Ecija, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3d7f968f8c4014bc05fd4d16/portrait-a0da41fe6d093431.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L088",
    "congresses": [
     {
      "congress": 20,
@@ -18110,6 +18431,7 @@
    "position": "Representative",
    "representation": "Siquijor, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-6079275b183ad70f528960ff/portrait-85f1b281d55dfcdc.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K137",
    "congresses": [
     {
      "congress": 20,
@@ -18162,6 +18484,7 @@
    "position": "Representative",
    "representation": "Camarines Sur, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e2256ab43c2f753e4eea5969/portrait-9bcd7d50493fd504.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K094",
    "congresses": [
     {
      "congress": 20,
@@ -18214,6 +18537,7 @@
    "position": "Representative",
    "representation": "Camarines Sur, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-4effa7c04083f204b17a8bab/portrait-33929e57cf2c62b4.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L089",
    "congresses": [
     {
      "congress": 20,
@@ -18262,6 +18586,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-971baea12e71914479962384/portrait-1073a9820cb32479.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Joel-Villanueva",
    "congresses": [
     {
      "congress": 20,
@@ -18328,6 +18653,7 @@
    "position": "Representative",
    "representation": "CIBAC",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f27fbbbb6d491525ff9d0aba/portrait-b03140d17224f248.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J117",
    "congresses": [
     {
      "congress": 20,
@@ -18389,6 +18715,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-a87f03de10d305ca3409d20a/portrait-6e1700798078254f.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Mark-A.-Villar",
    "congresses": [
     {
      "congress": 20,
@@ -18447,6 +18774,7 @@
    "position": "Senator",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-2d0d82ee246ba242e24b16f1/portrait-de3388105bb20287.png",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Camille-A.-Villar",
    "congresses": [
     {
      "congress": 20,
@@ -18497,6 +18825,7 @@
    "position": "Representative",
    "representation": "Bulacan, 4th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-ea3acadc8372284e544dc992/portrait-307e70f77a4919d2.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J082",
    "congresses": [
     {
      "congress": 20,
@@ -18559,6 +18888,7 @@
    "position": "Representative",
    "representation": "Bulacan, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-c9b0fdeb3741135ae25a3747/portrait-e4326b18e33ac04e.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L090",
    "congresses": [
     {
      "congress": 20,
@@ -18607,6 +18937,7 @@
    "position": "Representative",
    "representation": "Parañaque City, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-3e9ecce39aa89c9501a01009/portrait-f060bfdeee6a3737.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K138",
    "congresses": [
     {
      "congress": 20,
@@ -18659,6 +18990,7 @@
    "position": "Representative",
    "representation": "MURANG KURYENTE",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-af6416c0df6269e2716ce8f9/portrait-ba570e40dbd490ca.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/G101",
    "congresses": [
     {
      "congress": 20,
@@ -18724,6 +19056,7 @@
    "position": "Representative",
    "representation": "Southern Leyte, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-8cf9ba89aa845ecf31906ed8/portrait-1e62396865004067.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K096",
    "congresses": [
     {
      "congress": 20,
@@ -18791,6 +19124,7 @@
    "position": "Representative",
    "representation": "ACT-CIS",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-f01bbfadbce13619f18940ef/portrait-d104f84031c3b646.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K101",
    "congresses": [
     {
      "congress": 20,
@@ -18843,6 +19177,7 @@
    "position": "Representative",
    "representation": "Benguet, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-930a01321be7f1cc1999b4bd/portrait-08ac9baaf75261c9.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/J118",
    "congresses": [
     {
      "congress": 20,
@@ -18904,6 +19239,7 @@
    "position": "Representative",
    "representation": "Bohol, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-522094fae3dc4519a8c3777b/portrait-8e049b7ab6d359df.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L091",
    "congresses": [
     {
      "congress": 20,
@@ -18925,6 +19261,7 @@
    "position": "Representative",
    "representation": "NANAY",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-200a008df624d66b1465f12b/portrait-f65492ae5f365182.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L021",
    "congresses": [
     {
      "congress": 20,
@@ -18983,6 +19320,7 @@
    "position": "Representative",
    "representation": "Rizal, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-b55daace65e2a7bec6c50bee/portrait-6ad9f2d0d1c9e3a8.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L092",
    "congresses": [
     {
      "congress": 20,
@@ -19036,6 +19374,7 @@
    "position": "Representative",
    "representation": "Zamboanga del Sur, 2nd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-94a9d8fbc3e294a0221d87ce/portrait-3d505abef0c63b02.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K097",
    "congresses": [
     {
      "congress": 20,
@@ -19088,6 +19427,7 @@
    "position": "Representative",
    "representation": "Zamboanga del Sur, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-d42a9c5e25c2f1cd9f51bbec/portrait-0817ea581e518d7b.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L093",
    "congresses": [
     {
      "congress": 20,
@@ -19146,6 +19486,7 @@
    "position": "Representative",
    "representation": "Negros Occidental, 5th District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-9c101b3be12278a827df0aba/portrait-904c68ba74765f84.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K098",
    "congresses": [
     {
      "congress": 20,
@@ -19198,6 +19539,7 @@
    "position": "Representative",
    "representation": "Davao de Oro, 1st District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-68682d584ea54baa208d9e5c/portrait-6f67cb1db6a6c125.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/H084",
    "congresses": [
     {
      "congress": 20,
@@ -19263,6 +19605,7 @@
    "position": "Representative",
    "representation": "San Juan City, Lone District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-e605b521e40699c22dbd0d0c/portrait-25444763dd3ccc5c.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/K099",
    "congresses": [
     {
      "congress": 20,
@@ -19309,6 +19652,7 @@
    "position": "Senate Majority Leader",
    "representation": null,
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/senate/person-1a57e8845b6723058f91bdff/portrait-802ff794fdbc7700.jpg",
+   "officialProfileUrl": "https://senate.gov.ph/senator/Juan-Miguel-F.-Zubiri",
    "congresses": [
     {
      "congress": 20,
@@ -19389,6 +19733,7 @@
    "position": "Representative",
    "representation": "Bukidnon, 3rd District",
    "portraitUrl": "https://juris-assets.bettergov.ph/bataswatch/authors/20/house/person-1c3d13be001b680748bbbb09/portrait-de7f4a407d1a173a.jpg",
+   "officialProfileUrl": "https://congress.gov.ph/house-members/view/L094",
    "congresses": [
     {
      "congress": 20,

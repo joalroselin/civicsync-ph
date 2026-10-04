@@ -27,6 +27,7 @@ interface BwAuthor {
   representation?: string | null;
   position?: string | null;
   billCount?: number | null;
+  officialProfileUrl?: string | null;
 }
 interface OcPerson {
   id: string;
@@ -78,6 +79,7 @@ async function build(): Promise<AuthorIndex> {
       photoCredit: a.portraitAttribution ? `${a.portraitAttribution}${a.portraitLicense ? ` (${a.portraitLicense.toLowerCase()})` : ""}` : null,
       photoSourceUrl: a.portraitSourceUrl ?? null,
       currentBillCount: a.billCount ?? null,
+      officialProfileUrl: a.officialProfileUrl ?? null,
     });
   }
   const namesById = new Map<string, string[]>();
@@ -109,4 +111,11 @@ async function ocPeople(): Promise<OcPerson[]> {
     if (!json.pagination?.has_more) break;
   }
   return out;
+}
+
+/** Fills `firstAuthorId` so lists can link the author straight to their profile. */
+export async function withAuthorLinks<T extends { firstAuthorKey?: string; firstAuthorId?: string | null }>(bills: T[]): Promise<T[]> {
+  if (!bills.some((b) => b.firstAuthorKey)) return bills;
+  const { idByName } = await getAuthorIndex();
+  return bills.map((b) => (b.firstAuthorKey ? { ...b, firstAuthorId: idByName.get(normName(b.firstAuthorKey)) ?? null } : b));
 }

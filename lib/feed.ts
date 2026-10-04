@@ -1,5 +1,6 @@
 import { listMeasures, type BatasWatchMeasure } from "./batasWatch";
 import { summaryFromBatasWatch, type BillSummary } from "./bills";
+import { withAuthorLinks } from "./authorIndex";
 
 /** A bill row for the home feed, with the date of its latest action when known. */
 export type FeedBill = BillSummary & { chamber: "senate" | "house"; movedOn?: string };
@@ -19,7 +20,8 @@ export async function newlyFiled(perChamber = 5): Promise<{ senate: FeedBill[]; 
   if (!senate && !house) return null;
   const pick = (items: BatasWatchMeasure[] = []) =>
     items.filter((m) => m.title || m.longTitle).slice(0, perChamber).map((m) => toFeed(m));
-  return { senate: pick(senate?.items), house: pick(house?.items) };
+  const [s, h] = await Promise.all([withAuthorLinks(pick(senate?.items)), withAuthorLinks(pick(house?.items))]);
+  return { senate: s, house: h };
 }
 
 /**
@@ -57,5 +59,5 @@ export async function recentlyMoved(limit = 10, withinDays = 45): Promise<FeedBi
     if (!movedOn || movedOn < since) continue;
     seen.set(m.number, toFeed(m, movedOn));
   }
-  return [...seen.values()].sort((a, b) => b.movedOn!.localeCompare(a.movedOn!)).slice(0, limit);
+  return withAuthorLinks([...seen.values()].sort((a, b) => b.movedOn!.localeCompare(a.movedOn!)).slice(0, limit));
 }

@@ -41,6 +41,8 @@ export interface LawmakerProfile {
   photoSourceUrl: string | null;
   /** Bills filed in the 20th Congress so far (BatasWatch, more current than Open Congress) */
   currentBillCount: number | null;
+  /** Senate or House website profile (lists their bills and laws) */
+  officialProfileUrl: string | null;
 }
 
 export interface OpenCongressBill {

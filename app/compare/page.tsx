@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getMembers, memberKey, type Member } from "@/lib/lawmakers";
 import { PageHeader } from "../components/PageHeader";
+import { ZeroLawsNote } from "../components/ZeroLawsNote";
 import { seatLabel, toTitleCase } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Compare lawmakers", robots: { index: false } };
@@ -126,7 +127,9 @@ export default async function ComparePage(props: { searchParams: Promise<{ ids?:
                     </li>
                   ))
                 ) : (
-                  <li className="text-gray-500">None yet</li>
+                  <li>
+                    <ZeroLawsNote chamber={m.chamber} compact />
+                  </li>
                 )}
               </ul>
             ))}

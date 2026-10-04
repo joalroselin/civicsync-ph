@@ -7,6 +7,7 @@ import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
 import { formatDate, ordinal, toTitleCase } from "@/lib/format";
 import { PageHeader } from "../../components/PageHeader";
 import { AuthorList } from "../../components/AuthorList";
+import { LawCard } from "../../components/LawCard";
 import { SimilarBills } from "../../components/SimilarBills";
 import { StatusBadge } from "../../components/StatusBadge";
 import { StatusHelp } from "../../components/StatusHelp";
@@ -105,6 +106,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
           <div className="mt-4 xl:mt-0 print:hidden">
             <WatchButton bill={{ id: bill.id, label: bill.label, title, congress: bill.congress, status: bill.status }} />
           </div>
+          {bill.law && <LawCard law={bill.law} email={contactEmail} billLabel={bill.label} />}
           <Card title="Status">
             {bill.statusSource ? (
               <>

@@ -19,6 +19,7 @@ export default function LawmakersPage() {
     chamber: m.chamber,
     sub: m.chamber === "senate" ? (m.position !== "Senator" ? m.position : "Senate") : (seatLabel(m.representation) ?? "House"),
     portraitUrl: m.portraitUrl,
+    profileUrl: m.officialProfileUrl ?? null,
     filed: m.filedThisCongress,
     laws: m.becameLaw,
     lawList: m.laws.map((l) => ({ number: l.number, ra: l.ra, title: toTitleCase(l.title) })),

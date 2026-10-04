@@ -6,7 +6,7 @@ import { BATASWATCH_CONGRESS, getMeasureByNumber, listPolicyAreas, semanticSearc
 import { summaryFromBatasWatch, summaryFromOpenCongress, summaryFromSemantic } from "@/lib/bills";
 import { getSiteSettings } from "@/lib/content";
 import { highlightTerms, nameMatches } from "@/lib/search";
-import { withProfiles } from "@/lib/authorIndex";
+import { withAuthorLinks, withProfiles } from "@/lib/authorIndex";
 import { BillList, BillRow } from "../components/BillCard";
 import { LiveDataUnavailable } from "../components/LiveDataUnavailable";
 import { PersonCard } from "../components/PersonCard";
@@ -69,7 +69,7 @@ async function Results({ q, page, chamber, congress }: { q: string; page: number
           .then((m) => (m ? [summaryFromBatasWatch(m)] : []))
           .catch(() => null)
       : Promise.resolve([]),
-    showBest ? semanticSearch({ q, chamber, limit: 12, minScore: MIN_SCORE }).then((hits) => hits.slice(0, 6).map(summaryFromSemantic)).catch(() => null) : Promise.resolve([]),
+    showBest ? semanticSearch({ q, chamber, limit: 12, minScore: MIN_SCORE }).then((hits) => withAuthorLinks(hits.slice(0, 6).map(summaryFromSemantic))).catch(() => null) : Promise.resolve([]),
   ]);
 
   return (
