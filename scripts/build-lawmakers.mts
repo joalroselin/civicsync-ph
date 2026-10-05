@@ -255,7 +255,9 @@ log(`Wrote ${members.length} members; not in Open Congress yet: ${unmatched.join
     mkdirSync(new URL("../data/search/", import.meta.url), { recursive: true });
     const display = (raw?: string) => {
       if (!raw) return "";
-      const [last, given = ""] = raw.split(",").map((x) => x.trim());
+      // Some records use a period instead of the comma: "MADRONA. ELEANDRO JESUS F."
+      const fixed = raw.includes(",") ? raw : raw.replace(/^([A-Z\u00C0-\u017F'-]{2,})\.\s+/, "$1, ");
+      const [last, given = ""] = fixed.split(",").map((x) => x.trim());
       const cap = (x: string) => x.toLowerCase().replace(/(^|[\s"(-])(\p{L})/gu, (_, p, c) => p + c.toUpperCase());
       return given ? `${cap(given)} ${cap(last)}` : cap(last);
     };

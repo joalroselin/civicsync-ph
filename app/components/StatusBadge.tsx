@@ -1,4 +1,5 @@
 import { statusTone, type StatusTone } from "@/lib/batasWatch";
+import { displayStatus } from "@/lib/format";
 
 const toneClasses: Record<StatusTone, string> = {
   law: "bg-emerald-50 text-emerald-800 ring-emerald-200",
@@ -14,7 +15,8 @@ export function StatusBadge({ status, size = "sm" }: { status: string | null; si
   // Senate statuses arrive in ALL CAPS; sentence-case them for readability.
   const full = raw === raw.toUpperCase() ? raw.charAt(0) + raw.slice(1).toLowerCase() : raw;
   // House statuses carry a "(Filed last 2026-09-09)" suffix — keep chips short.
-  const text = size === "sm" ? full.replace(/\s*\(.*\)\s*$/, "") : full;
+  // Short badges in lists: "Became law · RA 12325", no "(Filed last …)".
+  const text = size === "sm" ? displayStatus(raw) : full;
   return (
     <span
       className={`inline-flex max-w-full items-center gap-1.5 rounded-full ring-1 ring-inset ${toneClasses[tone]} ${
