@@ -1,7 +1,7 @@
 {
- "generatedAt": "2026-10-04T09:51:48.859Z",
+ "generatedAt": "2026-10-05T09:30:05.541Z",
  "congress": 20,
- "billsScanned": 14020,
+ "billsScanned": 13990,
  "members": [
   {
    "id": "01K5ST3ZMKVXZKBCWK4MKFBZFN",
@@ -3295,10 +3295,6 @@
      "count": 10
     },
     {
-     "label": "Local Government",
-     "count": 9
-    },
-    {
      "label": "Culture, Arts and Heritage",
      "count": 4
     },
@@ -3309,13 +3305,17 @@
     {
      "label": "Environment and Natural Resources",
      "count": 3
+    },
+    {
+     "label": "Health",
+     "count": 3
     }
    ],
    "coAuthors": [
     {
      "id": "01K5ST4BJ38CERPF1DBYRRDP36",
      "name": "Adolph Edward Plaza",
-     "count": 22
+     "count": 14
     },
     {
      "id": "01K5ST4DB4VSTTSGS2VHDZS3HQ",
@@ -3338,8 +3338,8 @@
      "count": 10
     },
     {
-     "name": "LOCAL GOVERNMENT",
-     "count": 10
+     "name": "APPROPRIATIONS",
+     "count": 2
     }
    ]
   },
@@ -8867,11 +8867,11 @@
     },
     {
      "label": "Health",
-     "count": 38
+     "count": 32
     },
     {
      "label": "Labor and Employment",
-     "count": 27
+     "count": 26
     },
     {
      "label": "Environment and Natural Resources",
@@ -8879,14 +8879,14 @@
     },
     {
      "label": "Government Administration",
-     "count": 23
+     "count": 21
     }
    ],
    "coAuthors": [],
    "committees": [
     {
      "name": "HEALTH AND DEMOGRAPHY",
-     "count": 28
+     "count": 25
     },
     {
      "name": "JUSTICE AND HUMAN RIGHTS",
@@ -12858,24 +12858,24 @@
     },
     {
      "label": "Government Administration",
-     "count": 13
+     "count": 12
     }
    ],
    "coAuthors": [
     {
      "id": "01K5ST4GGAT3ZKXMNQPCB2ESPD",
      "name": "Miguel Luis Villafuerte",
-     "count": 111
+     "count": 107
     },
     {
      "id": "01K5ST4GHVXSRJRRMB95KR9E85",
      "name": "Vincenzo Renato Luigi Villafuerte",
-     "count": 111
+     "count": 107
     },
     {
      "id": "01K5ST4CA2TJD1QFPJGQ0HQYAG",
      "name": "Terry Ridon",
-     "count": 111
+     "count": 107
     }
    ],
    "committees": [
@@ -12889,7 +12889,7 @@
     },
     {
      "name": "AQUACULTURE AND FISHERIES RESOURCES",
-     "count": 13
+     "count": 12
     }
    ]
   },
@@ -18310,7 +18310,7 @@
     },
     {
      "name": "LOCAL GOVERNMENT",
-     "count": 5
+     "count": 4
     }
    ]
   },
@@ -19329,10 +19329,6 @@
      "count": 10
     },
     {
-     "label": "Local Government",
-     "count": 9
-    },
-    {
      "label": "Environment and Natural Resources",
      "count": 3
     },
@@ -19343,13 +19339,17 @@
     {
      "label": "Education",
      "count": 2
+    },
+    {
+     "label": "Health",
+     "count": 2
     }
    ],
    "coAuthors": [
     {
      "id": "01K5ST41R1AH5KDTBRD8A1QT2C",
      "name": "Alfelito Bascug",
-     "count": 22
+     "count": 14
     }
    ],
    "committees": [
@@ -19358,11 +19358,11 @@
      "count": 15
     },
     {
-     "name": "LOCAL GOVERNMENT",
-     "count": 10
+     "name": "APPROPRIATIONS",
+     "count": 2
     },
     {
-     "name": "APPROPRIATIONS",
+     "name": "HIGHER AND TECHNICAL EDUCATION",
      "count": 2
     }
    ]
@@ -20419,7 +20419,7 @@
     },
     {
      "label": "Government Administration",
-     "count": 12
+     "count": 11
     },
     {
      "label": "Labor and Employment",
@@ -20438,17 +20438,17 @@
     {
      "id": "01K5ST4GGAT3ZKXMNQPCB2ESPD",
      "name": "Miguel Luis Villafuerte",
-     "count": 111
+     "count": 107
     },
     {
      "id": "01K5ST4GHVXSRJRRMB95KR9E85",
      "name": "Vincenzo Renato Luigi Villafuerte",
-     "count": 111
+     "count": 107
     },
     {
      "id": "01K5ST483F0P35HYA5WJKFW6VR",
      "name": "Tsuyoshi Anthony Horibata",
-     "count": 111
+     "count": 107
     },
     {
      "id": "01K5ST3ZXC61Q2SRYH67K0WBEP",
@@ -20468,7 +20468,7 @@
     },
     {
      "name": "AQUACULTURE AND FISHERIES RESOURCES",
-     "count": 11
+     "count": 10
     },
     {
      "name": "ENERGY",
@@ -22237,7 +22237,7 @@
    "topTopics": [
     {
      "label": "Education",
-     "count": 9
+     "count": 8
     },
     {
      "label": "Energy",
@@ -22274,12 +22274,12 @@
      "count": 7
     },
     {
-     "name": "BASIC EDUCATION AND CULTURE",
+     "name": "JUSTICE",
      "count": 3
     },
     {
-     "name": "JUSTICE",
-     "count": 3
+     "name": "LEGISLATIVE FRANCHISES",
+     "count": 2
     }
    ]
   },
@@ -26115,14 +26115,14 @@
     },
     {
      "label": "Government Administration",
-     "count": 16
-    },
-    {
-     "label": "Public Works and Infrastructure",
-     "count": 14
+     "count": 15
     },
     {
      "label": "Transportation",
+     "count": 13
+    },
+    {
+     "label": "Public Works and Infrastructure",
      "count": 13
     },
     {
@@ -26134,17 +26134,17 @@
     {
      "id": "01K5ST4GHVXSRJRRMB95KR9E85",
      "name": "Vincenzo Renato Luigi Villafuerte",
-     "count": 115
+     "count": 111
     },
     {
      "id": "01K5ST483F0P35HYA5WJKFW6VR",
      "name": "Tsuyoshi Anthony Horibata",
-     "count": 111
+     "count": 107
     },
     {
      "id": "01K5ST4CA2TJD1QFPJGQ0HQYAG",
      "name": "Terry Ridon",
-     "count": 111
+     "count": 107
     }
    ],
    "committees": [
@@ -26195,11 +26195,7 @@
     },
     {
      "label": "Government Administration",
-     "count": 12
-    },
-    {
-     "label": "Public Works and Infrastructure",
-     "count": 12
+     "count": 11
     },
     {
      "label": "Labor and Employment",
@@ -26208,23 +26204,27 @@
     {
      "label": "Agriculture and Fisheries",
      "count": 11
+    },
+    {
+     "label": "Environment and Natural Resources",
+     "count": 11
     }
    ],
    "coAuthors": [
     {
      "id": "01K5ST4GGAT3ZKXMNQPCB2ESPD",
      "name": "Miguel Luis Villafuerte",
-     "count": 115
+     "count": 111
     },
     {
      "id": "01K5ST483F0P35HYA5WJKFW6VR",
      "name": "Tsuyoshi Anthony Horibata",
-     "count": 111
+     "count": 107
     },
     {
      "id": "01K5ST4CA2TJD1QFPJGQ0HQYAG",
      "name": "Terry Ridon",
-     "count": 111
+     "count": 107
     }
    ],
    "committees": [
@@ -26238,7 +26238,7 @@
     },
     {
      "name": "AQUACULTURE AND FISHERIES RESOURCES",
-     "count": 11
+     "count": 10
     }
    ]
   },
@@ -27809,7 +27809,7 @@
     },
     {
      "label": "Public Works and Infrastructure",
-     "count": 11
+     "count": 10
     },
     {
      "label": "Culture, Arts and Heritage",

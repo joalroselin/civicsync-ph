@@ -1,4 +1,5 @@
-import { getBillDetail, type BillDetail } from "./bills";
+import { type BillDetail } from "./bills";
+import { getBillDetailWithFallback } from "./billDetail";
 import { personShortName } from "./openCongress";
 import { statusTone, type StatusTone } from "./batasWatch";
 import { toTitleCase } from "./format";
@@ -24,7 +25,7 @@ export const TONE_COLORS: Record<StatusTone, { bg: string; fg: string; dot: stri
 };
 
 export async function loadEmbedBill(id: string): Promise<EmbedBill | null> {
-  const bill = await getBillDetail(id).catch(() => null);
+  const bill = await getBillDetailWithFallback(id).catch(() => null);
   if (!bill) return null;
   const names = bill.authors.length ? bill.authors.map(personShortName) : bill.authorNames;
   const prefix = bill.chamber === "Senate" ? "Sen." : "Rep.";

@@ -187,7 +187,10 @@ export interface BillDetail {
   committee: string | null;
   secondaryCommittees: string[];
   analysis: BatasWatchMeasure["analysis"];
-  statusSource: "batasWatch" | null;
+  /** "snapshot": BatasWatch was unreachable, so status is from our nightly copy (CS-903) */
+  statusSource: "batasWatch" | "snapshot" | null;
+  /** For "snapshot": the date of that copy */
+  statusAsOf?: string;
   inOpenCongress: boolean;
 }
 

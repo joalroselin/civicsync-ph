@@ -245,3 +245,38 @@ log(`Wrote ${members.length} members; not in Open Congress yet: ${unmatched.join
     log(prev.bills ? `${changes.length} status changes since ${prev.date}` : "First snapshot saved (changes start tomorrow)");
   }
 }
+
+// 6. Search index of every 20th Congress bill (CS-306) and the last-known
+//    status the site falls back to when BatasWatch is down (CS-903).
+//    data/search/bills-20.json: one bill per line, newest first.
+{
+  if (measures.length < first.meta.total * 0.97) log("Scan incomplete: kept the previous search index");
+  else {
+    mkdirSync(new URL("../data/search/", import.meta.url), { recursive: true });
+    const display = (raw?: string) => {
+      if (!raw) return "";
+      const [last, given = ""] = raw.split(",").map((x) => x.trim());
+      const cap = (x: string) => x.toLowerCase().replace(/(^|[\s"(-])(\p{L})/gu, (_, p, c) => p + c.toUpperCase());
+      return given ? `${cap(given)} ${cap(last)}` : cap(last);
+    };
+    const rows = [...measures]
+      .filter((m) => m.number)
+      .sort((a, b) => (b.filedAt ?? "").localeCompare(a.filedAt ?? "") || b.number.localeCompare(a.number))
+      .map((m) =>
+        JSON.stringify({
+          n: m.number,
+          c: m.chamber === "senate" ? "s" : "h",
+          t: (m.title ?? m.longTitle ?? "").replace(/\s+/g, " ").trim(),
+          a: display(m.authorCredits?.[0]?.name ?? m.primaryAuthors?.[0]),
+          k: m.authorCredits?.length ?? m.primaryAuthors?.length ?? 0,
+          s: (m.status ?? "").replace(/\s+/g, " ").trim(),
+          f: m.filedAt ?? null,
+          p: m.analysis?.primaryPolicyArea ?? null,
+          o: m.officialRecordUrl ?? null,
+        })
+      );
+    const today = new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Manila" });
+    writeFileSync(new URL("../data/search/bills-20.json", import.meta.url), `{"date":${JSON.stringify(today)},"bills":[\n${rows.join(",\n")}\n]}\n`);
+    log(`Search index: ${rows.length} bills`);
+  }
+}

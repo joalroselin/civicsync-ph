@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "roadmap": "node --env-file-if-exists=.env.local scripts/roadmap.mts",
     "a11y": "node scripts/a11y.mts",
-    "extension:zip": "cd extension && rm -f ../civicsync-extension.zip && zip -qr ../civicsync-extension.zip . -x README.md"
+    "extension:zip": "cd extension && rm -f ../civicsync-extension.zip && zip -qr ../civicsync-extension.zip . -x README.md",
+    "start:offline": "BATASWATCH_BASE=http://127.0.0.1:9 next start -p 3100"
   },
   "dependencies": {
     "@portabletext/react": "^8.0.1",
@@ -22,6 +23,7 @@
     "next": "^16.3.8",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
+    "server-only": "^0.0.1",
     "web-push": "^3.6.7"
   },
   "devDependencies": {

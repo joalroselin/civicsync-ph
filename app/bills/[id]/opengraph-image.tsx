@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getBillDetail } from "@/lib/bills";
+import { getBillDetailWithFallback } from "@/lib/billDetail";
 import { ordinal, toTitleCase } from "@/lib/format";
 import { OgFrame, OgStatus, OG_SIZE, ogFonts, truncate } from "@/lib/og";
 
@@ -10,7 +10,7 @@ export const revalidate = 1800;
 
 export default async function Image(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
-  const bill = await getBillDetail(params.id).catch(() => null);
+  const bill = await getBillDetailWithFallback(params.id).catch(() => null);
   const fonts = await ogFonts();
 
   if (!bill) {

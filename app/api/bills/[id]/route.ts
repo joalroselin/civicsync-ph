@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getBillDetail } from "@/lib/bills";
+import { getBillDetailWithFallback } from "@/lib/billDetail";
 
 /**
  * GET /api/bills/:id
@@ -10,7 +10,7 @@ import { getBillDetail } from "@/lib/bills";
 export async function GET(_req: NextRequest, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
   try {
-    return NextResponse.json(await getBillDetail(params.id));
+    return NextResponse.json(await getBillDetailWithFallback(params.id));
   } catch (err) {
     console.error(err);
     return NextResponse.json({ error: "Bill not found" }, { status: 404 });

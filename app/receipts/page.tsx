@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { parseBillNumber, searchBills, searchPeople } from "@/lib/openCongress";
-import { BATASWATCH_CONGRESS, getMeasureByNumber, listPolicyAreas, semanticSearch, toBatasWatchNumber } from "@/lib/batasWatch";
-import { summaryFromBatasWatch, summaryFromOpenCongress, summaryFromSemantic } from "@/lib/bills";
+import { BATASWATCH_CONGRESS, fromBatasWatchNumber, getMeasureByNumber, listPolicyAreas, semanticSearch, toBatasWatchNumber } from "@/lib/batasWatch";
+import { summaryFromBatasWatch, summaryFromOpenCongress, summaryFromSemantic, type BillSummary } from "@/lib/bills";
 import { getSiteSettings } from "@/lib/content";
 import { highlightTerms, nameMatches } from "@/lib/search";
+import { searchIndex, type IndexedBill } from "@/lib/billIndex";
 import { withAuthorLinks, withProfiles } from "@/lib/authorIndex";
 import { BillList, BillRow } from "../components/BillCard";
 import { LiveDataUnavailable } from "../components/LiveDataUnavailable";
@@ -106,6 +107,11 @@ async function Results({ q, page, chamber, congress }: { q: string; page: number
         </Section>
       )}
 
+      {!billNo && (!congress || congress === BATASWATCH_CONGRESS) && (page === 1 || congress === BATASWATCH_CONGRESS) && (
+        <ThisCongress q={q} page={page} chamber={chamber} paged={congress === BATASWATCH_CONGRESS} terms={terms} exclude={(best ?? []).map((b) => b.routeId)} />
+      )}
+
+      {congress !== BATASWATCH_CONGRESS && (
       <Suspense key={`${q}|${page}|${chamber}|${congress}`} fallback={<BillsFallback />}>
         <RecordBills
           q={q}
@@ -114,10 +120,16 @@ async function Results({ q, page, chamber, congress }: { q: string; page: number
           chamber={chamber}
           congress={congress}
           terms={terms}
-          exclude={[...(exact ?? []), ...(best ?? [])].map((b) => b.routeId)}
+          exclude={[
+            ...(exact ?? []),
+            ...(best ?? []),
+            // Already listed under "This Congress" (first 10).
+            ...(!billNo && !congress && page === 1 ? searchIndex(q, { chamber, limit: 10 }).results.map((b) => ({ routeId: b.n })) : []),
+          ].map((b) => b.routeId)}
           hasOtherResults={(people?.length ?? 0) + (exact?.length ?? 0) + (best?.length ?? 0) > 0}
         />
       </Suspense>
+      )}
     </div>
   );
 }
@@ -153,7 +165,9 @@ async function RecordBills({
 
   // Bills already shown above aren't repeated here.
   const skip = new Set(exclude);
-  const summaries = bills.data.map((b) => summaryFromOpenCongress(b)).filter((b) => !skip.has(b.routeId));
+  const summaries = bills.data
+    .map((b) => summaryFromOpenCongress(b))
+    .filter((b) => !skip.has(b.routeId));
 
   if (summaries.length === 0) {
     if (hasOtherResults) return null;
@@ -170,7 +184,7 @@ async function RecordBills({
     <Section
       id="bills"
       title={`Every bill on record · ${bills.total.toLocaleString()}`}
-      note={`${scope}. Matches any title containing your words, newest first. Records run to about Sept 2025.`}
+      note={`${scope}. From Open Congress (1987 to about Sept 2025). Matches any title containing your words, newest first.`}
     >
       <BillList bills={summaries} highlight={terms} />
       <Pager
@@ -181,6 +195,53 @@ async function RecordBills({
       />
     </Section>
   );
+}
+
+/**
+ * 20th Congress title/author matches from our own nightly copy (CS-306):
+ * instant, current, and still works when the sources are down.
+ */
+function ThisCongress({ q, page, chamber, paged, terms, exclude }: { q: string; page: number; chamber?: "senate" | "house"; paged: boolean; terms: string[]; exclude: string[] }) {
+  const skip = new Set(exclude);
+  const size = paged ? PAGE_SIZE : 10;
+  const { total, results } = searchIndex(q, { chamber, limit: size + skip.size, offset: paged ? (page - 1) * size : 0 });
+  const rows = results.filter((b) => !skip.has(b.n)).slice(0, size);
+  if (!total) return null;
+  const more = new URLSearchParams({ q, congress: String(BATASWATCH_CONGRESS), ...(chamber ? { chamber } : {}) });
+  return (
+    <Section id="this-congress" title={`This Congress · ${total.toLocaleString()} ${total === 1 ? "bill" : "bills"}`} note="Every 20th Congress bill whose title or author matches your words, newest first.">
+      <ul className="divide-y divide-gray-100 overflow-hidden rounded-2xl bg-surface shadow-sm ring-1 ring-gray-200/70">
+        {rows.map((b) => (
+          <li key={b.n}>
+            <BillRow bill={indexedToSummary(b)} highlight={terms} />
+          </li>
+        ))}
+      </ul>
+      {paged ? (
+        <Pager basePath="/receipts" params={{ q, chamber, congress: String(BATASWATCH_CONGRESS) }} page={page} hasMore={page * size < total} />
+      ) : (
+        total > size && (
+          <Link href={`/receipts?${more}`} className="mt-3 inline-block text-sm font-semibold text-navy-ink hover:text-crimson-ink">
+            See all {total.toLocaleString()} this Congress →
+          </Link>
+        )
+      )}
+    </Section>
+  );
+}
+
+function indexedToSummary(b: IndexedBill): BillSummary {
+  const p = fromBatasWatchNumber(b.n);
+  return {
+    routeId: b.n,
+    label: p ? `${p.subtype} ${p.number}` : b.n,
+    congress: BATASWATCH_CONGRESS,
+    title: b.t || "Untitled bill",
+    dateFiled: b.f,
+    status: b.s || "Filed",
+    // authorLine shows the first name and "+N" for the rest.
+    authors: b.a ? [b.a, ...Array.from({ length: Math.max(0, b.k - 1) }, () => "")] : [],
+  };
 }
 
 function BillsFallback() {

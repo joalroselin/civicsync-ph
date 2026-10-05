@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { NotifyToggle } from "./NotifyToggle";
+import { RssCopy } from "./RssCopy";
 import { useEffect, useState } from "react";
 import { useWatchlist } from "../components/WatchlistProvider";
 import { StatusBadge } from "../components/StatusBadge";
@@ -58,6 +59,9 @@ export default function WatchlistPage() {
         {items.length > 0 && (
           <div className="mt-3 border-t border-gray-100 pt-3">
             <NotifyToggle bills={items.map((b) => b.id)} />
+            <div className="mt-3 border-t border-gray-100 pt-3">
+              <RssCopy bills={items.map((b) => b.id)} />
+            </div>
           </div>
         )}
       </section>

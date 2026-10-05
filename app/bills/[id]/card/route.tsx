@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { getBillDetail } from "@/lib/bills";
+import { getBillDetailWithFallback } from "@/lib/billDetail";
 import { explainStatus, STAGES } from "@/lib/billStages";
 import { personShortName } from "@/lib/openCongress";
 import { ordinal, toTitleCase } from "@/lib/format";
@@ -10,7 +10,7 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   const { id } = await props.params;
   const format = shareFormat(new URL(req.url).searchParams.get("format"));
   const story = format === "story";
-  const [bill, fonts] = await Promise.all([getBillDetail(id).catch(() => null), ogFonts()]);
+  const [bill, fonts] = await Promise.all([getBillDetailWithFallback(id).catch(() => null), ogFonts()]);
   if (!bill) return new Response("Bill not found", { status: 404 });
 
   const title = truncate(toTitleCase(bill.title), story ? 130 : 110);

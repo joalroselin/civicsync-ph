@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Link-preview images read these fonts from disk at request time.
-  outputFileTracingIncludes: { "/**": ["./assets/fonts/**/*"] },
+  // Read from disk at request time: link-preview fonts, and the bill search
+  // index (data/search, CS-306/903).
+  outputFileTracingIncludes: { "/**": ["./assets/fonts/**/*", "./data/search/**/*"] },
   async headers() {
     return [
       {

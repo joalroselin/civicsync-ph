@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { getBillDetail, LiveSourceUnavailableError, type BillDetail } from "@/lib/bills";
+import { LiveSourceUnavailableError, type BillDetail } from "@/lib/bills";
+import { getBillDetailWithFallback } from "@/lib/billDetail";
 import { getSiteSettings } from "@/lib/content";
 import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
 import { formatDate, ordinal, toTitleCase } from "@/lib/format";
@@ -23,7 +24,7 @@ import { personName } from "@/lib/openCongress";
 
 async function load(id: string): Promise<BillDetail | "unavailable" | null> {
   try {
-    return await getBillDetail(id);
+    return await getBillDetailWithFallback(id);
   } catch (err) {
     return err instanceof LiveSourceUnavailableError ? "unavailable" : null;
   }
@@ -127,7 +128,11 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
                     )}
                   </dl>
                 )}
-                <p className="mt-3 text-[11px] text-gray-500">Status via BatasWatch (independent source)</p>
+                <p className="mt-3 text-[11px] text-gray-500">
+                  {bill.statusSource === "snapshot"
+                    ? `Status as of ${bill.statusAsOf ? formatDate(bill.statusAsOf) : "our last check"}, from our nightly copy. The live tracker isn’t responding right now.`
+                    : "Status via BatasWatch (independent source)"}
+                </p>
               </>
             ) : (
               <p className="text-sm text-gray-500">
@@ -227,7 +232,7 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
       </p>
       <p className="mt-2 text-center text-[11px] text-gray-500">
         {bill.billNumber} · Sources:{" "}
-        {[bill.inOpenCongress && "BetterGov Open Congress", bill.statusSource && "BatasWatch"].filter(Boolean).join(", ")}
+        {[bill.inOpenCongress && "BetterGov Open Congress", bill.statusSource === "batasWatch" && "BatasWatch", bill.statusSource === "snapshot" && "CivicSync nightly copy of BatasWatch"].filter(Boolean).join(", ")}
       </p>
     </main>
   );

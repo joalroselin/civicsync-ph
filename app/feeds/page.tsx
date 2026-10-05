@@ -32,6 +32,15 @@ export default async function FeedsPage() {
           ))}
         </ul>
 
+        <h2 className="mt-10 text-xs font-semibold uppercase tracking-wider text-gray-500">Your Watchlist</h2>
+        <p className="mt-2 text-sm text-gray-700">
+          Follow some bills, then use “Copy RSS link” on your{" "}
+          <Link href="/watchlist" className="font-semibold text-navy-ink underline underline-offset-2">
+            Watchlist
+          </Link>{" "}
+          for a personal feed of just those bills.
+        </p>
+
         <h2 className="mt-10 text-xs font-semibold uppercase tracking-wider text-gray-500">By lawmaker</h2>
         <p className="mt-2 text-sm text-gray-700">
           Open any lawmaker’s page from{" "}

@@ -158,7 +158,11 @@ function SourcesNote() {
         <a className="underline" href="https://bills.juris.ph" target="_blank" rel="noreferrer">
           BatasWatch
         </a>
-        , an independent source. Always verify against the official record linked on each bill.
+        , an independent source. Always verify against the official record linked on each bill.{" "}
+        <Link className="underline" href="/data">
+          Download the data
+        </Link>
+        .
       </p>
     </aside>
   );

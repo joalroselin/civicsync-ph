@@ -12,7 +12,8 @@
  * `q` is a fuzzy search, so results must be matched on `number` exactly.
  */
 
-const BASE_URL = "https://bills.juris.ph/api";
+// Overridable for testing the offline fallback (npm run start:offline).
+const BASE_URL = process.env.BATASWATCH_BASE ?? "https://bills.juris.ph/api";
 
 /** Status moves daily at most; 30 minutes keeps us polite and fresh. */
 const REVALIDATE_SECONDS = 1800;
