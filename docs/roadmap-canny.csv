@@ -84,3 +84,4 @@ CS-128,Browse all lawmakers,"A sortable table of all 345 current senators and re
 CS-129,Implementing rules (IRR) and what happens after a law passes,"Live: each law's IRR agency and deadline, read automatically from the law, with an estimated due date and past-due flag on /laws and bill pages. Next: knowing when an IRR is actually published, and laws from earlier congresses.",In Progress,Bills,,
 CS-130,Go straight to a bill's author,"In bill lists (home, search, topics, related bills), tap the author's name to open their lawmaker page instead of the bill.",Complete,Bills,Deployed,2026-10-04
 CS-131,What changed this week,"A daily list of every Senate and House bill whose status changed, this week's numbers, an RSS feed, and a shareable 'This week in Congress' image.",Complete,Bills,Deployed,2026-10-04
+CS-132,Filter bills according to status,So we can track and search bills categorized by status,Open,Discovery,,
