@@ -9,7 +9,7 @@ import { SocialIcons } from "./SocialIcons";
 import { ThemeToggle } from "./ThemeToggle";
 import type { SocialLink } from "@/lib/content";
 
-const REPO_URL = "https://github.com/joalroselin/civicsync-ph";
+const REPO_URL = "https://hellojoal.dev/";
 const ROADMAP_URL = "https://civicsyncph.canny.io";
 
 /** Main app destinations: bottom tabs on phones, top of the sidebar on larger screens. */
