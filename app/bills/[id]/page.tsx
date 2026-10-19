@@ -22,6 +22,13 @@ import { BillTools } from "../../components/BillTools";
 import { SITE_URL } from "@/lib/site";
 import { personName } from "@/lib/openCongress";
 
+// Cache each bill page after its first visit (refreshed with the data, every 30 minutes at most), so crawlers
+// walking every bill don't re-render the same page on each hit. No bills are built ahead of time.
+export const revalidate = 1800;
+export async function generateStaticParams() {
+  return [];
+}
+
 async function load(id: string): Promise<BillDetail | "unavailable" | null> {
   try {
     return await getBillDetailWithFallback(id);

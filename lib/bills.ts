@@ -155,7 +155,7 @@ const linkOk = new Map<string, { ok: boolean; at: number }>();
 export async function checkLink(url: string): Promise<boolean> {
   const hit = linkOk.get(url);
   if (hit && Date.now() - hit.at < 864e5) return hit.ok;
-  const ok = await fetch(url, { method: "HEAD", cache: "no-store", signal: AbortSignal.timeout(4000), headers: { "User-Agent": "Mozilla/5.0 CivicSyncPH link check" } })
+  const ok = await fetch(url, { method: "HEAD", next: { revalidate: 86400 }, signal: AbortSignal.timeout(4000), headers: { "User-Agent": "Mozilla/5.0 CivicSyncPH link check" } })
     .then((r) => r.ok)
     .catch(() => false);
   linkOk.set(url, { ok, at: Date.now() });
