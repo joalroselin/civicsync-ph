@@ -5,16 +5,16 @@ CS-003,Bill pages with live status,"See where a 20th Congress bill is now, which
 CS-004,Watchlist,Bookmark bills to follow. Statuses refresh every time you open it. No account needed.,Complete,Watchlist,,2026-09-24
 CS-005,Sync your Watchlist across devices,Optional Google sign-in keeps your Watchlist on every device.,Complete,Watchlist,,2026-09-24
 CS-006,Install as an app,"Add CivicSync to your home screen from the browser, no app store needed. Pages you've visited still open offline.",Complete,Platform,,2026-09-24
-CS-007,"Works on phone, tablet, and desktop","Layouts adapt to any screen: bottom tabs on phones, a sidebar and two-column pages on larger screens.",Complete,Platform,Deployed,2026-09-30
+CS-007,"Works on phone, tablet, and desktop","Layouts adapt to any screen: bottom tabs on phones, a sidebar and two-column pages on larger screens.",Complete,Platform,,2026-09-30
 CS-008,Faster-feeling search,"A clear loading state while searching, and results that appear in stages so lawmakers and recent bills show first.",Complete,Receipts,Performance,2026-09-24
-CS-009,About page,"What CivicSync is, where the data comes from, what it isn't, and who's behind it.",Complete,Trust,Deployed,2026-09-30
-CS-010,Press kit,"Descriptions, fact sheet, logos, current screenshots (October 2026) and FAQ for journalists, plus an archive of earlier screenshots.",Complete,Community,Deployed,2026-09-30
-CS-011,Get involved page,"Ways to help: share, report data errors, suggest features, translate, contribute code, partner, or license commercially.",Complete,Community,Deployed,2026-09-30
-CS-012,Report an issue on every bill,A “Report an issue” link on each bill page with the bill number and a template pre-filled.,Complete,Bills,Deployed,2026-09-30
-CS-013,Official social accounts and share menu,"Follow CivicSync on Facebook and Instagram, and share it from the Get involved page.",Complete,Community,Deployed,2026-09-30
-CS-014,"Open source, with commercial licences","CivicSync's code is open source under the AGPL-3.0, with commercial licences for businesses that need other terms.",Complete,Community,Open source;Deployed,2026-09-30
-CS-015,Email that works without a mail app,"Email buttons open a panel with the address, Gmail compose, and copyable templates, so they work for webmail users too.",Complete,Community,Deployed,2026-09-30
-CS-016,Privacy-first notes,"Clear, low-key reminders that no account is needed and your Watchlist stays on your device unless you choose to sync.",Complete,Trust,Privacy;Deployed,2026-09-30
+CS-009,About page,"What CivicSync is, where the data comes from, what it isn't, and who's behind it.",Complete,Trust,,2026-09-30
+CS-010,Press kit,"Descriptions, fact sheet, logos, current screenshots (October 2026) and FAQ for journalists, plus an archive of earlier screenshots.",Complete,Community,,2026-09-30
+CS-011,Get involved page,"Ways to help: share, report data errors, suggest features, translate, contribute code, partner, or license commercially.",Complete,Community,,2026-09-30
+CS-012,Report an issue on every bill,A “Report an issue” link on each bill page with the bill number and a template pre-filled.,Complete,Bills,,2026-09-30
+CS-013,Official social accounts and share menu,"Follow CivicSync on Facebook and Instagram, and share it from the Get involved page.",Complete,Community,,2026-09-30
+CS-014,"Open source, with commercial licences","CivicSync's code is open source under the AGPL-3.0, with commercial licences for businesses that need other terms.",Complete,Community,Open source,2026-09-30
+CS-015,Email that works without a mail app,"Email buttons open a panel with the address, Gmail compose, and copyable templates, so they work for webmail users too.",Complete,Community,,2026-09-30
+CS-016,Privacy-first notes,"Clear, low-key reminders that no account is needed and your Watchlist stays on your device unless you choose to sync.",Complete,Trust,Privacy,2026-09-30
 CS-017,Lawmaker profiles with service record,"See which congresses a lawmaker served in, and in which chamber, on one profile.",Complete,Receipts,,2026-09-24
 CS-018,Filter a lawmaker's bills by congress,"Tabs for each congress a lawmaker served in, plus their full history.",Complete,Receipts,,2026-09-24
 CS-019,Live list of each lawmaker's current bills,"The 20th Congress tab updates from the live tracker, including bills filed since late 2025.",Complete,Receipts,,2026-09-24
@@ -28,20 +28,20 @@ CS-026,Accurate authorship for shared surnames,"Lawmakers who share a surname (t
 CS-027,Greetings in Filipino,A “Magandang umaga / tanghali / hapon / gabi” greeting that follows the time of day in Manila.,Complete,Language,,2026-09-24
 CS-028,Share a bill from its page,"A share button on every bill page, using your phone's share sheet or copying the link.",Complete,Sharing,,2026-09-24
 CS-029,Friendly error and offline pages,"Helpful pages when something isn't found, a source is slow, or you're offline.",Complete,Platform,,2026-09-24
-CS-030,Instant content updates,"Site text like the About page and FAQ updates within seconds, without downtime.",Complete,Under the hood,Performance;Deployed,2026-09-30
-CS-031,Contributing guide and code of conduct,"Clear guidance for anyone who wants to help build CivicSync, with a commitment to staying non-partisan.",Complete,Community,Open source;Deployed,2026-09-30
-CS-032,Public roadmap,"This board: see what's shipped, what's next, and suggest or vote on ideas.",Complete,Community,Deployed,2026-09-30
-CS-033,"Simpler navigation, with a More menu on phones","A cleaner sidebar (main pages first, About and Get involved below) and a new More tab on phones, so every page is one tap away from anywhere.",Complete,Design,Deployed,2026-09-30
-CS-034,Author's role shown on every bill,"Every Senate and House bill shows who filed it and their role, Senator or Representative, in bill lists and on the bill page.",Complete,Bills,Deployed,2026-09-30
-CS-101,Faster loading for users in the Philippines,"The app's servers now run in Singapore, closer to Philippine users.",Complete,Performance,Performance;Deployed,2026-09-30
-CS-102,Lighter app on mobile data,"Sign-in features load only when you need them, halving the data used on a first visit.",Complete,Performance,Performance;Deployed,2026-09-30
-CS-103,Rich previews when sharing,"Links to bills and lawmakers shared on Facebook, Messenger, and X show a preview card with the title and status.",Complete,Sharing,Deployed,2026-09-30
+CS-030,Instant content updates,"Site text like the About page and FAQ updates within seconds, without downtime.",Complete,Under the hood,Performance,2026-09-30
+CS-031,Contributing guide and code of conduct,"Clear guidance for anyone who wants to help build CivicSync, with a commitment to staying non-partisan.",Complete,Community,Open source,2026-09-30
+CS-032,Public roadmap,"This board: see what's shipped, what's next, and suggest or vote on ideas.",Complete,Community,,2026-09-30
+CS-033,"Simpler navigation, with a More menu on phones","A cleaner sidebar (main pages first, About and Get involved below) and a new More tab on phones, so every page is one tap away from anywhere.",Complete,Design,,2026-09-30
+CS-034,Author's role shown on every bill,"Every Senate and House bill shows who filed it and their role, Senator or Representative, in bill lists and on the bill page.",Complete,Bills,,2026-09-30
+CS-101,Faster loading for users in the Philippines,"The app's servers now run in Singapore, closer to Philippine users.",Complete,Performance,Performance,2026-09-30
+CS-102,Lighter app on mobile data,"Sign-in features load only when you need them, halving the data used on a first visit.",Complete,Performance,Performance,2026-09-30
+CS-103,Rich previews when sharing,"Links to bills and lawmakers shared on Facebook, Messenger, and X show a preview card with the title and status.",Complete,Sharing,,2026-09-30
 CS-104,Our own web address,Move from the temporary vercel.app link to a proper domain (e.g. civicsync.ph).,Planned,Platform,,
 CS-105,Accessibility improvements,"Readable contrast in light and dark mode, a skip-to-content link, and an automatic accessibility check (WCAG 2.1 AA) on every change.",Complete,Accessibility,Deployed,2026-10-03
 CS-106,More complete data for newer bills,Work with data partners to fill gaps for bills filed since late 2025.,Open,Data,,
-CS-107,Privacy-friendly analytics,"Anonymous, cookieless visit counts so we can see which pages are useful. No personal data, no cross-site tracking.",Complete,Trust,Privacy;Under the hood;Deployed,2026-09-30
+CS-107,Privacy-friendly analytics,"Anonymous, cookieless visit counts so we can see which pages are useful. No personal data, no cross-site tracking.",Complete,Trust,Privacy;Under the hood,2026-09-30
 CS-108,"Upgrade to the latest app framework (Next.js 16, React 19)","Why: CivicSync runs on Next.js 14 and React 18, two major versions behind. Staying behind means newer tools increasingly won't work with it (the content editor already had to be hosted separately for this reason), older versions get less attention for bug and security fixes, and we miss performance improvements. What changes: page parameters become asynchronous (an official tool handles most of it), a small change to how cached content is refreshed, and a new default build tool. All current libraries support React 19. Plan: do it on a separate branch with a full check of every page before merging. Afterwards, the content editor can move into the app at /studio. Estimated effort: a few hours.",Complete,Under the hood,Under the hood;Performance;Deployed,2026-10-03
-CS-110,Built-in forms for ideas and volunteers,"Join the translator list, propose a partnership, or ask about a commercial licence with a short form, without leaving CivicSync or needing an email app. Submissions are stored privately.",Complete,Community,Deployed,2026-09-30
+CS-110,Built-in forms for ideas and volunteers,"Join the translator list, propose a partnership, or ask about a commercial licence with a short form, without leaving CivicSync or needing an email app. Submissions are stored privately.",Complete,Community,,2026-09-30
 CS-201,Get notified when a bill you follow moves,Turn on notifications from your Watchlist and get a browser notification when a bill you follow moves. No account needed: only the device's push address and the bills you follow are stored.,Complete,Watchlist,Deployed,2026-10-05
 CS-202,Filipino / Tagalog language option,"Switch the whole app to Filipino, translated and reviewed by people.",Planned,Language,,
 CS-203,Dark mode,"A darker colour scheme that's easier on the eyes at night. Follows your phone's setting automatically, or pick Light or Dark from the menu.",Complete,Design,Deployed,2026-10-03
