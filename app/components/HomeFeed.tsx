@@ -10,9 +10,7 @@ type Chamber = "all" | "senate" | "house";
 const PREF_KEY = "civicsync:home-feed";
 
 /**
- * Home feed: "Newly filed" or "On the move", filtered by chamber. One panel,
- * two small controls, so the page stays uncluttered. Remembers the last
- * choice on this device.
+ * Home feed with activity and chamber filters remembered on this device.
  */
 export function HomeFeed({ filed, moved, trackingSince }: { filed: { senate: FeedBill[]; house: FeedBill[] } | null; moved: FeedBill[] | null; trackingSince: string }) {
   const [view, setView] = useState<View>("filed");
@@ -40,9 +38,9 @@ export function HomeFeed({ filed, moved, trackingSince }: { filed: { senate: Fee
 
   return (
     <div>
-      <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+      <div className="mb-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
         <Segmented
-          label="Show"
+          label="Bill activity"
           value={view}
           onChange={(v) => {
             setView(v);
@@ -53,7 +51,7 @@ export function HomeFeed({ filed, moved, trackingSince }: { filed: { senate: Fee
             { value: "moved", label: "On the move" },
           ]}
         />
-        <Pills
+        <ChamberSelect
           value={chamber}
           onChange={(c) => {
             setChamber(c);
@@ -62,15 +60,9 @@ export function HomeFeed({ filed, moved, trackingSince }: { filed: { senate: Fee
         />
       </div>
 
-      <section className="overflow-hidden rounded-2xl bg-surface shadow-sm ring-1 ring-gray-200/70" aria-live="polite">
-        <p className="flex items-center justify-between border-b border-gray-100 bg-gray-50/80 px-4 py-2.5 text-xs text-gray-500">
-          <span className="font-semibold uppercase tracking-wider text-gray-600">
-            {chamber === "all" ? "Senate and House" : chamber === "senate" ? "Senate" : "House of Representatives"}
-          </span>
-          <span>{view === "filed" ? "Newest filings first" : "Latest action first"}</span>
-        </p>
+      <div className="border-y border-gray-200" aria-live="polite">
         {rows.length > 0 ? (
-          <ul className="divide-y divide-gray-100">
+          <ul className="divide-y divide-gray-200">
             {rows.map((b) => (
               <li key={b.routeId}>
                 <BillRow bill={b} movedOn={view === "moved" ? b.movedOn : undefined} />
@@ -81,14 +73,14 @@ export function HomeFeed({ filed, moved, trackingSince }: { filed: { senate: Fee
           <Empty view={view} chamber={chamber} unavailable={view === "filed" ? !filed : !moved} trackingSince={trackingSince} />
         )}
         {view === "moved" && rows.length > 0 && (
-          <p className="border-t border-gray-100 px-4 py-2.5 text-[11px] text-gray-500">
+          <p className="border-t border-gray-200 px-4 py-3 text-sm leading-relaxed text-gray-600">
             Bills that passed a reading, were scheduled for debate, or moved between chambers in the last 45 days.{" "}
             <Link href="/how-bills-become-law" className="underline underline-offset-2 hover:text-navy-ink">
               What the steps mean
             </Link>
           </p>
         )}
-      </section>
+      </div>
     </div>
   );
 }
@@ -99,7 +91,7 @@ function Empty({ view, chamber, unavailable, trackingSince }: { view: View; cham
   else if (view === "moved" && chamber === "senate")
     text = `We check every Senate bill’s status daily (since ${trackingSince}). Senate moves will show here as they happen.`;
   else if (view === "moved") text = "No bills moved past committee in the last 45 days.";
-  return <p className="px-4 py-6 text-center text-sm leading-relaxed text-gray-500">{text}</p>;
+  return <p className="px-4 py-5 text-sm leading-relaxed text-gray-600">{text}</p>;
 }
 
 function Segmented<T extends string>({
@@ -114,16 +106,15 @@ function Segmented<T extends string>({
   options: { value: T; label: string }[];
 }) {
   return (
-    <div role="tablist" aria-label={label} className="inline-flex rounded-xl bg-gray-100 p-1">
+    <div role="group" aria-label={label} className="flex gap-4">
       {options.map((o) => (
         <button
           key={o.value}
           type="button"
-          role="tab"
-          aria-selected={value === o.value}
+          aria-pressed={value === o.value}
           onClick={() => onChange(o.value)}
-          className={`rounded-lg px-3 py-1.5 text-sm font-semibold transition ${
-            value === o.value ? "bg-surface text-navy-ink shadow-sm" : "text-gray-600 hover:text-gray-800"
+          className={`min-h-11 border-b-2 text-sm font-semibold ${
+            value === o.value ? "border-[#fcd116] text-navy-ink" : "border-transparent text-gray-600 hover:text-gray-900"
           }`}
         >
           {o.label}
@@ -133,27 +124,19 @@ function Segmented<T extends string>({
   );
 }
 
-function Pills({ value, onChange }: { value: Chamber; onChange: (c: Chamber) => void }) {
-  const options: { value: Chamber; label: string }[] = [
-    { value: "all", label: "All" },
-    { value: "senate", label: "Senate" },
-    { value: "house", label: "House" },
-  ];
+function ChamberSelect({ value, onChange }: { value: Chamber; onChange: (c: Chamber) => void }) {
   return (
-    <div role="group" aria-label="Chamber" className="flex gap-1">
-      {options.map((o) => (
-        <button
-          key={o.value}
-          type="button"
-          aria-pressed={value === o.value}
-          onClick={() => onChange(o.value)}
-          className={`rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${
-            value === o.value ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"
-          }`}
-        >
-          {o.label}
-        </button>
-      ))}
-    </div>
+    <label className="flex items-center gap-2 text-sm text-gray-700">
+      Chamber
+      <select
+        value={value}
+        onChange={(event) => onChange(event.target.value as Chamber)}
+        className="min-h-11 rounded-md border border-gray-300 bg-surface px-2 font-medium text-gray-900"
+      >
+        <option value="all">All</option>
+        <option value="senate">Senate</option>
+        <option value="house">House</option>
+      </select>
+    </label>
   );
 }
