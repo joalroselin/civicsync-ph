@@ -1,9 +1,8 @@
 import { ImageResponse } from "next/og";
-import { getPerson, personName } from "@/lib/openCongress";
+import { personName } from "@/lib/openCongress";
 import { SHARE_SIZES, ShareFrame, ogFonts, shareFormat, truncate } from "@/lib/og";
-import { withProfiles } from "@/lib/authorIndex";
-import { getLawmakerRecord } from "@/lib/people";
-import { ordinal, seatLabel } from "@/lib/format";
+import { getLawmakerRecord, loadLawmaker } from "@/lib/people";
+import { formatDate, ordinal, seatLabel } from "@/lib/format";
 
 /** Share image for a lawmaker: /people/[id]/card?format=post|story (CS-204). Facts only. */
 export async function GET(req: Request, props: { params: Promise<{ id: string }> }) {
@@ -11,9 +10,7 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
   const format = shareFormat(new URL(req.url).searchParams.get("format"));
   const story = format === "story";
   const [person, fonts] = await Promise.all([
-    getPerson(id)
-      .then((p) => withProfiles([p]).then(([x]) => x))
-      .catch(() => null),
+    loadLawmaker(id),
     ogFonts(),
   ]);
   if (!person) return new Response("Lawmaker not found", { status: 404 });
@@ -96,7 +93,9 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
           </div>
         )}
         <div style={{ display: "flex", fontSize: 20, color: "#A5B4FC", marginTop: 28 }}>
-          {record.current ? "Laws: 20th Congress so far, incl. co-authored. " : ""}Earlier bills from Open Congress (1987 to about Sept 2025).
+          {record.snapshotAsOf
+            ? `Includes saved figures from ${formatDate(record.snapshotAsOf.slice(0, 10))}.`
+            : `${record.current ? "Laws: 20th Congress so far, incl. co-authored. " : ""}Earlier bills from Open Congress (1987 to about Sept 2025).`}
         </div>
       </ShareFrame>
     ),

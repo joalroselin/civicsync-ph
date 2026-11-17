@@ -1,6 +1,6 @@
-import { getPerson, personName } from "@/lib/openCongress";
+import { personName } from "@/lib/openCongress";
 import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
-import { allPersonBills } from "@/lib/people";
+import { allPersonBills, loadLawmaker } from "@/lib/people";
 import { authorRole } from "@/lib/bills";
 import { toTitleCase } from "@/lib/format";
 import { SITE_URL } from "@/lib/site";
@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/site";
 /** A lawmaker's authored bills as CSV, for researchers and journalists. ?congress=20 | 19 | … | all */
 export async function GET(req: Request, props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
-  const person = await getPerson(params.id).catch(() => null);
+  const person = await loadLawmaker(params.id);
   if (!person) return new Response("Lawmaker not found", { status: 404 });
 
   const filter = new URL(req.url).searchParams.get("congress") ?? "all";

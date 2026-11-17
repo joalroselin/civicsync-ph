@@ -4,11 +4,10 @@ import { LawmakerRecord, RecordFallback } from "./Record";
 import { WorksWith } from "./WorksWith";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPerson, getPersonBills, personName, type OpenCongressPerson } from "@/lib/openCongress";
+import { getPersonBills, personName } from "@/lib/openCongress";
 import { BATASWATCH_CONGRESS } from "@/lib/batasWatch";
 import { summaryFromOpenCongress } from "@/lib/bills";
-import { liveBills } from "@/lib/people";
-import { withProfiles } from "@/lib/authorIndex";
+import { liveBills, loadLawmaker } from "@/lib/people";
 import { ordinal, seatLabel } from "@/lib/format";
 import { BillList } from "../../components/BillCard";
 import { Avatar } from "../../components/PersonCard";
@@ -19,18 +18,9 @@ import { RssLink } from "../../components/RssLink";
 
 const PAGE_SIZE = 20;
 
-async function loadPerson(id: string): Promise<OpenCongressPerson | null> {
-  try {
-    const [person] = await withProfiles([await getPerson(id)]);
-    return person;
-  } catch {
-    return null;
-  }
-}
-
 export async function generateMetadata(props: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const params = await props.params;
-  const person = await loadPerson(params.id);
+  const person = await loadLawmaker(params.id);
   if (!person) return { title: "Lawmaker" };
   const current = (person.congresses_served ?? []).some((c) => c.congress_number === 20);
   return {
@@ -44,7 +34,7 @@ export default async function PersonPage(props: {
   searchParams: Promise<{ congress?: string; page?: string }>;
 }) {
   const [params, searchParams] = await Promise.all([props.params, props.searchParams]);
-  const person = await loadPerson(params.id);
+  const person = await loadLawmaker(params.id);
   if (!person) notFound();
 
   const served = person.congresses_served ?? [];
@@ -85,6 +75,11 @@ export default async function PersonPage(props: {
                 <p className="mt-1 text-xs text-gray-500">
                   Served in {congresses.length} {congresses.length === 1 ? "congress" : "congresses"}
                 </p>
+              )}
+              {person.profile?.officialProfileUrl && (
+                <a href={person.profile.officialProfileUrl} className="mt-2 inline-block text-sm text-navy-ink underline underline-offset-2">
+                  Official profile
+                </a>
               )}
               {person.profile?.photoCredit && (
                 <p className="mt-2 text-[10px] text-gray-500">

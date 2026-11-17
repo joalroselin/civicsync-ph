@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { parseBillNumber, searchBills, searchPeople } from "@/lib/openCongress";
+import { parseBillNumber, searchBills } from "@/lib/openCongress";
 import { BATASWATCH_CONGRESS, fromBatasWatchNumber, getMeasureByNumber, listPolicyAreas, semanticSearch, toBatasWatchNumber } from "@/lib/batasWatch";
 import { summaryFromBatasWatch, summaryFromOpenCongress, summaryFromSemantic, type BillSummary } from "@/lib/bills";
 import { getSiteSettings } from "@/lib/content";
-import { highlightTerms, nameMatches } from "@/lib/search";
+import { highlightTerms } from "@/lib/search";
 import { searchIndex, type IndexedBill } from "@/lib/billIndex";
-import { withAuthorLinks, withProfiles } from "@/lib/authorIndex";
+import { withAuthorLinks } from "@/lib/authorIndex";
+import { findLawmakers } from "@/lib/people";
 import { BillList, BillRow } from "../components/BillCard";
 import { LiveDataUnavailable } from "../components/LiveDataUnavailable";
 import { PersonCard } from "../components/PersonCard";
@@ -58,10 +59,8 @@ async function Results({ q, page, chamber, congress }: { q: string; page: number
   const firstPage = page === 1;
   const terms = billNo ? [] : highlightTerms(q);
 
-  const people = billNo || !firstPage ? [] : await searchPeople({ q, limit: 8 })
-          .then((ps) => withProfiles(ps.filter((p) => nameMatches(p, q)).slice(0, 6)))
-          .catch(() => null);
-  const isPersonSearch = (people?.length ?? 0) > 0;
+  const people = billNo || !firstPage ? [] : await findLawmakers(q);
+  const isPersonSearch = people.length > 0;
   const showBest = !billNo && !isPersonSearch && firstPage && (!congress || congress === BATASWATCH_CONGRESS);
 
   const [exact, best] = await Promise.all([
@@ -78,7 +77,7 @@ async function Results({ q, page, chamber, congress }: { q: string; page: number
       {isPersonSearch && (
         <Section id="people" title="Lawmakers" note="Tap a name for every bill they’ve filed">
           <ul className="grid gap-2 sm:grid-cols-2">
-            {people!.map((p) => (
+            {people.map((p) => (
               <li key={p.id}>
                 <PersonCard person={p} />
               </li>
@@ -126,7 +125,7 @@ async function Results({ q, page, chamber, congress }: { q: string; page: number
             // Already listed under "This Congress" (first 10).
             ...(!billNo && !congress && page === 1 ? searchIndex(q, { chamber, limit: 10 }).results.map((b) => ({ routeId: b.n })) : []),
           ].map((b) => b.routeId)}
-          hasOtherResults={(people?.length ?? 0) + (exact?.length ?? 0) + (best?.length ?? 0) > 0}
+          hasOtherResults={people.length + (exact?.length ?? 0) + (best?.length ?? 0) > 0}
         />
       </Suspense>
       )}

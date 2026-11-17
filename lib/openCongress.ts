@@ -41,6 +41,7 @@ export interface LawmakerProfile {
   photoSourceUrl: string | null;
   /** Bills filed in the 20th Congress so far (BatasWatch, more current than Open Congress) */
   currentBillCount: number | null;
+  snapshotAsOf?: string;
   /** Senate or House website profile (lists their bills and laws) */
   officialProfileUrl: string | null;
 }
@@ -113,7 +114,7 @@ export function personInitials(p: OpenCongressPerson): string {
   return `${p.first_name?.[0] ?? ""}${p.last_name?.[0] ?? ""}`.toUpperCase() || "?";
 }
 
-async function get<T>(path: string, params: Record<string, string | number | undefined> = {}) {
+async function get<T>(path: string, params: Record<string, string | number | undefined> = {}, signal?: AbortSignal) {
   const qs = new URLSearchParams(
     Object.entries(params)
       .filter(([, v]) => v !== undefined && v !== "")
@@ -121,6 +122,7 @@ async function get<T>(path: string, params: Record<string, string | number | und
   );
   const res = await fetch(`${BASE_URL}${path}?${qs}`, {
     next: { revalidate: REVALIDATE_SECONDS },
+    signal,
   });
   if (!res.ok) throw new Error(`Open Congress ${path} failed: ${res.status}`);
   const json = await res.json();
@@ -141,7 +143,7 @@ export async function searchPeople(params: {
   congress?: number;
   limit?: number;
 }): Promise<OpenCongressPerson[]> {
-  const json = await get<OpenCongressPerson[]>("/search/people", params);
+  const json = await get<OpenCongressPerson[]>("/search/people", params, AbortSignal.timeout(8_000));
   // Upstream has duplicate records for some lawmakers (e.g. one per chamber
   // served); keep the first, which carries the fuller profile.
   const seen = new Set<string>();
@@ -175,9 +177,10 @@ export function parseBillNumber(q: string): { subtype: "SB" | "HB"; number: numb
 }
 
 export async function getPerson(id: string): Promise<OpenCongressPerson> {
-  const json = await get<OpenCongressPerson>(`/people/${id}`, {
+  const json = await get<OpenCongressPerson>(`/people/${encodeURIComponent(id)}`, {
     include_congresses: "true",
-  });
+  }, AbortSignal.timeout(8_000));
+  if (!json.data) throw new Error(`Open Congress lawmaker ${id} not found`);
   return json.data;
 }
 
@@ -185,7 +188,7 @@ export async function getPersonBills(
   personId: string,
   params: { congress?: number; limit?: number; offset?: number } = {}
 ): Promise<Page<OpenCongressBill>> {
-  return toPage(await get<OpenCongressBill[]>(`/people/${personId}/documents`, params));
+  return toPage(await get<OpenCongressBill[]>(`/people/${personId}/documents`, params, AbortSignal.timeout(8_000)));
 }
 
 export async function getBill(id: string): Promise<OpenCongressBill> {

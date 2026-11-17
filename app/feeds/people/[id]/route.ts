@@ -1,15 +1,12 @@
-import { getPerson, personName } from "@/lib/openCongress";
-import { withProfiles } from "@/lib/authorIndex";
-import { liveBills } from "@/lib/people";
+import { personName } from "@/lib/openCongress";
+import { liveBills, loadLawmaker } from "@/lib/people";
 import { toTitleCase } from "@/lib/format";
 import { rssResponse } from "@/lib/rss";
 
 /** A lawmaker's 20th Congress bills, newest first. */
 export async function GET(_req: Request, props: { params: Promise<{ id: string }> }) {
   const { id } = await props.params;
-  const person = await getPerson(id)
-    .then((p) => withProfiles([p]).then(([x]) => x))
-    .catch(() => null);
+  const person = await loadLawmaker(id);
   if (!person) return new Response("Lawmaker not found", { status: 404 });
   const pages = await Promise.all([1, 2].map((p) => liveBills(person, p)));
   const bills = pages.flatMap((p) => p?.data ?? []);

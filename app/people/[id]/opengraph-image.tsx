@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
-import { getPerson, personName } from "@/lib/openCongress";
+import { personName } from "@/lib/openCongress";
+import { loadLawmaker } from "@/lib/people";
 import { OgFrame, OG_SIZE, ogFonts, truncate } from "@/lib/og";
 
 export const alt = "Lawmaker on CivicSync PH";
@@ -9,7 +10,7 @@ export const revalidate = 3600;
 
 export default async function Image(props: { params: Promise<{ id: string }> }) {
   const params = await props.params;
-  const person = await getPerson(params.id).catch(() => null);
+  const person = await loadLawmaker(params.id);
   const fonts = await ogFonts();
   const served = person?.congresses_served ?? [];
   const latest = served[0];

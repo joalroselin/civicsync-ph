@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { OpenCongressPerson } from "@/lib/openCongress";
 import { getLawmakerRecord } from "@/lib/people";
-import { ordinal } from "@/lib/format";
+import { formatDate, ordinal } from "@/lib/format";
 import { ZeroLawsNote } from "../../components/ZeroLawsNote";
 
 type Served = NonNullable<OpenCongressPerson["congresses_served"]>;
@@ -22,13 +22,16 @@ export async function LawmakerRecord({ person }: { person: OpenCongressPerson })
         <Stat value={record.totalOnRecord} label="bills on record" hint="Every congress served, including this one" />
         {record.current ? (
           <>
-            <Stat value={record.current.filed} label="this Congress" hint="20th Congress so far, from the live tracker" />
+            <Stat value={record.current.filed} label="this Congress" hint="Bills filed in the 20th Congress" />
             <Stat value={laws.length} label="became law" hint="20th Congress so far, as author or co-author" accent={laws.length > 0} />
           </>
         ) : (
           <Stat value={new Set(served.map((c) => c.congress_number)).size} label="congresses" hint="Congresses served" />
         )}
       </dl>
+      {record.snapshotAsOf && (
+        <p className="mt-2 text-xs text-gray-600">Some bill counts use saved data from {formatDate(record.snapshotAsOf.slice(0, 10))}.</p>
+      )}
 
       {record.current && laws.length === 0 && (
         <div className="mt-2 rounded-2xl bg-surface px-4 py-3 ring-1 ring-gray-200/70">
