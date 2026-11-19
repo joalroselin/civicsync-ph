@@ -21,13 +21,13 @@ export const revalidate = 1800;
 export default async function Home() {
   const { homeSuggestions } = await getSiteSettings();
   return (
-    <main className="home-page mx-auto flex max-w-3xl flex-col gap-8 px-5 pb-12 pt-7 md:px-8 md:pt-12">
+    <main className="mx-auto flex max-w-3xl flex-col gap-8 px-5 pb-12 pt-7 md:px-8 md:pt-12">
       <header>
         <div className="mb-6 flex items-center gap-2 font-semibold text-navy-ink md:hidden">
           <Logo size={26} />
           <span>CivicSync PH</span>
         </div>
-        <h1 className="max-w-xl border-l-4 border-[#fcd116] pl-4 font-display text-4xl font-semibold leading-[1.12] text-navy-ink sm:text-5xl">
+        <h1 className="max-w-xl border-l-4 border-flag-yellow pl-4 font-display text-4xl font-semibold leading-[1.12] text-navy-ink sm:text-5xl">
           Follow bills in the Philippine Congress
         </h1>
         <p className="mt-5 max-w-[58ch] text-lg leading-relaxed text-gray-800">

@@ -20,6 +20,7 @@ const config: Config = {
       colors: {
         navy: "#1E3A8A",
         crimson: "#991B1B",
+        "flag-yellow": "#FCD116",
         paper: v("paper"),
         surface: v("surface"),
         "navy-ink": v("navy-ink"),

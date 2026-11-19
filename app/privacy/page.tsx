@@ -20,9 +20,9 @@ export default async function PrivacyPage() {
     <main className="px-5 pb-12 md:pt-4">
       <PageHeader title="Privacy" />
       <div className="max-w-3xl">
-        <section className="rounded-[20px] bg-navy p-6 text-white shadow-md md:p-8">
-          <h2 className="font-display text-2xl font-semibold leading-tight md:text-3xl">Privacy first, in plain language.</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-indigo-100 md:text-lg">
+        <section className="page-intro">
+          <h2 className="font-display text-2xl font-semibold leading-tight text-navy-ink md:text-3xl">Privacy first, in plain language.</h2>
+          <p className="mt-3 text-base leading-relaxed text-gray-700 md:text-lg">
             No account needed, no ads, no selling data, no tracking you across other sites. Here’s exactly what CivicSync stores, and where.
           </p>
         </section>

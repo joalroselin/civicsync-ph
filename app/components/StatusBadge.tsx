@@ -25,7 +25,7 @@ export function StatusBadge({ status, size = "sm" }: { status: string | null; si
       title={full}
     >
       <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-current" aria-hidden />
-      <span className="truncate">{text}</span>
+      <span className="min-w-0 break-words">{text}</span>
     </span>
   );
 }

@@ -91,9 +91,10 @@ const ARCHIVE = [
 ];
 
 const COLORS = [
-  { name: "Navy", hex: "#1E3A8A", use: "Primary: brand, headers, links", text: "text-white" },
-  { name: "Crimson", hex: "#991B1B", use: "Accent: logo dot, Watchlist", text: "text-white" },
-  { name: "Paper", hex: "#F9FAFB", use: "Background", text: "text-[#111827]" },
+  { name: "Cream", hex: "#FBF8F0", use: "Page background", text: "text-[#111827]" },
+  { name: "Navy", hex: "#1E3A8A", use: "Headings, navigation, and links", text: "text-white" },
+  { name: "Crimson", hex: "#991B1B", use: "Primary actions and Watchlist", text: "text-white" },
+  { name: "Flag yellow", hex: "#FCD116", use: "Small highlights", text: "text-[#111827]" },
 ];
 
 /** Copy (descriptions, FAQ, contact, figures) is edited in Sanity Studio; see lib/content.ts. */
@@ -115,7 +116,7 @@ export default async function PressPage() {
           <a
             href="/press/civicsync-press-kit.zip"
             download
-            className="inline-flex items-center gap-2 rounded-xl bg-navy px-4 py-3 text-sm font-semibold text-white hover:bg-blue-900"
+            className="inline-flex items-center gap-2 rounded-lg bg-crimson px-4 py-3 text-sm font-semibold text-white hover:bg-red-900"
           >
             <DownloadIcon /> Download full kit (.zip)
           </a>
@@ -229,7 +230,7 @@ export default async function PressPage() {
       </Section>
 
       <Section title="Brand">
-        <ul className="grid gap-3 sm:grid-cols-3">
+        <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {COLORS.map((c) => (
             <li key={c.hex} className="overflow-hidden rounded-2xl bg-surface ring-1 ring-gray-200/70">
               <div className={`flex h-20 items-end p-3 font-mono text-sm ${c.text}`} style={{ background: c.hex }}>

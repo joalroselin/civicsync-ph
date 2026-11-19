@@ -72,7 +72,7 @@ export function LawmakersTable({ rows }: { rows: Row[] }) {
   const cell = (k: SortKey) => (phoneCol === k ? "" : "hidden md:table-cell");
 
   const pill = (active: boolean) =>
-    `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy text-white ring-navy" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"}`;
+    `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy-ink/10 text-navy-ink ring-navy-ink/40" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"}`;
 
   return (
     <div>
@@ -251,19 +251,19 @@ export function LawmakersTable({ rows }: { rows: Row[] }) {
 
       {picked.length > 0 && (
         <div className="fixed inset-x-0 bottom-[calc(64px+env(safe-area-inset-bottom))] z-30 px-4 md:bottom-6 md:left-auto md:right-6 md:px-0">
-          <div className="mx-auto flex max-w-md items-center gap-3 rounded-2xl bg-slate-900 p-3 pl-4 text-white shadow-lg ring-1 ring-white/10">
+          <div className="mx-auto flex max-w-md items-center gap-3 rounded-xl bg-surface p-3 pl-4 text-gray-900 shadow-lg ring-1 ring-gray-300">
             <p className="flex-1 text-sm">
               <span className="font-semibold">{picked.length} selected</span>
-              <span className="block text-xs text-slate-300">{picked.length < 2 ? "Pick at least 2 to compare" : `Up to ${MAX_COMPARE}`}</span>
+              <span className="block text-xs text-gray-600">{picked.length < 2 ? "Pick at least 2 to compare" : `Up to ${MAX_COMPARE}`}</span>
             </p>
-            <button type="button" onClick={() => setPicked([])} className="rounded-lg px-3 py-2 text-sm text-slate-300 hover:text-white">
+            <button type="button" onClick={() => setPicked([])} className="rounded-lg px-3 py-2 text-sm text-gray-700 hover:text-navy-ink">
               Clear
             </button>
             <button
               type="button"
               disabled={picked.length < 2}
               onClick={() => router.push(`/compare?ids=${picked.join(",")}`)}
-              className="rounded-lg bg-white px-3 py-2 text-sm font-semibold text-navy disabled:opacity-50"
+              className="rounded-lg bg-crimson px-3 py-2 text-sm font-semibold text-white hover:bg-red-900 disabled:opacity-50"
             >
               Compare →
             </button>

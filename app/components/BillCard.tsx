@@ -9,9 +9,8 @@ export function BillCard({ bill, hideAuthor = false, highlight }: { bill: BillSu
   const title = toTitleCase(bill.title);
   const byline = hideAuthor ? null : authorLine(bill);
   return (
-    <Link
-      href={`/bills/${bill.routeId}`}
-      className="flex items-start gap-3 rounded-2xl bg-surface p-4 shadow-sm ring-1 ring-gray-200/70 transition hover:ring-navy-ink/30"
+    <div
+      className="relative flex items-start gap-3 rounded-xl bg-surface p-4 ring-1 ring-gray-200 transition hover:ring-navy-ink/30"
     >
       <div className="min-w-0 flex-1">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-gray-500">
@@ -20,9 +19,9 @@ export function BillCard({ bill, hideAuthor = false, highlight }: { bill: BillSu
             {ordinal(bill.congress)} Congress{bill.dateFiled && ` · Filed ${formatDate(bill.dateFiled)}`}
           </span>
         </div>
-        <p className="mt-1.5 line-clamp-3 text-[15px] font-medium leading-snug text-gray-900">
-          <Highlight text={title} terms={highlight} />
-        </p>
+        <Link href={`/bills/${bill.routeId}`} className="mt-1.5 block font-medium leading-snug text-navy-ink after:absolute after:inset-0 hover:underline">
+          <span className="line-clamp-3"><Highlight text={title} terms={highlight} /></span>
+        </Link>
         {byline && <AuthorByline text={byline} role={authorRole(bill.label)} />}
         {bill.status !== undefined && (
           <div className="mt-2">
@@ -30,11 +29,13 @@ export function BillCard({ bill, hideAuthor = false, highlight }: { bill: BillSu
           </div>
         )}
       </div>
-      <WatchButton
-        variant="icon"
-        bill={{ id: bill.routeId, label: bill.label, title, congress: bill.congress, status: bill.status ?? null, authorLine: byline ?? undefined }}
-      />
-    </Link>
+      <div className="relative z-10">
+        <WatchButton
+          variant="icon"
+          bill={{ id: bill.routeId, label: bill.label, title, congress: bill.congress, status: bill.status ?? null, authorLine: byline ?? undefined }}
+        />
+      </div>
+    </div>
   );
 }
 
@@ -79,7 +80,7 @@ export function BillRow({ bill, movedOn, summary, highlight }: { bill: BillSumma
           <span className="font-semibold text-navy-ink">{bill.label}</span>
           {movedOn ? <span>· Moved {formatDate(movedOn)}</span> : bill.dateFiled && <span>· Filed {formatDate(bill.dateFiled)}</span>}
         </div>
-        <Link href={`/bills/${bill.routeId}`} className="mt-1 block text-[15px] font-medium leading-snug text-gray-900 after:absolute after:inset-0 after:content-['']">
+        <Link href={`/bills/${bill.routeId}`} className="mt-1 block font-medium leading-snug text-navy-ink after:absolute after:inset-0 hover:underline">
           <span className="line-clamp-2">
             <Highlight text={title} terms={highlight} />
           </span>

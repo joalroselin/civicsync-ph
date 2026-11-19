@@ -8,7 +8,7 @@ import { SearchNavigationProvider } from "./components/SearchNavigation";
 import { AnnouncementBanner } from "./components/AnnouncementBanner";
 import { getSiteSettings } from "@/lib/content";
 import { Analytics } from "@vercel/analytics/next";
-import { themeScript } from "./components/ThemeToggle";
+import { LIGHT_THEME_COLOR, themeScript } from "@/lib/theme";
 import { KeyboardShortcuts } from "./components/KeyboardShortcuts";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 
@@ -41,10 +41,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#1E3A8A" },
-    { media: "(prefers-color-scheme: dark)", color: "#0B101E" },
-  ],
+  themeColor: LIGHT_THEME_COLOR,
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",

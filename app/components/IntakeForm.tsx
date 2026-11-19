@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { INTAKE_FORMS, type IntakeField, type IntakeKind } from "@/lib/intake";
 
 /**
@@ -24,6 +24,13 @@ export function IntakeForm({
   const [errors, setErrors] = useState<Partial<Record<IntakeField["name"], string>>>({});
   const [message, setMessage] = useState<string | null>(null);
   const startedAt = useRef(0);
+  const trigger = useRef<HTMLButtonElement>(null);
+  const formElement = useRef<HTMLFormElement>(null);
+
+  useEffect(() => {
+    if (open) formElement.current?.querySelector<HTMLElement>("input, select, textarea")?.focus();
+    else if (startedAt.current) trigger.current?.focus();
+  }, [open]);
 
   const openForm = () => {
     startedAt.current = Date.now();
@@ -58,7 +65,7 @@ export function IntakeForm({
 
   if (!open) {
     return (
-      <button type="button" className={buttonClassName} onClick={openForm}>
+      <button ref={trigger} type="button" className={buttonClassName} onClick={openForm}>
         {label}
       </button>
     );
@@ -74,24 +81,26 @@ export function IntakeForm({
   }
 
   const input =
-    "mt-1 w-full rounded-lg border-0 bg-surface px-3 py-2 text-sm text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-ink";
+    "mt-1 w-full rounded-lg border-0 bg-surface px-3 py-2 text-base text-gray-900 ring-1 ring-inset ring-gray-400 placeholder:text-gray-600 focus:outline-none focus:ring-2 focus:ring-navy-ink";
 
   return (
-    <form onSubmit={submit} noValidate className="rounded-xl bg-gray-50 p-4 ring-1 ring-gray-200">
+    <form ref={formElement} onSubmit={submit} noValidate className="rounded-xl bg-gray-50 p-4 ring-1 ring-gray-200">
       <p className="font-display text-base font-semibold text-gray-900">{form.title}</p>
       <div className="mt-3 space-y-3">
         {form.fields.map((f) => {
           const id = `${kind}-${f.name}`;
           const err = errors[f.name];
+          const errorId = err ? `${id}-error` : undefined;
+          const fieldState = { "aria-invalid": !!err, "aria-describedby": errorId };
           return (
             <div key={f.name}>
               <label htmlFor={id} className="block text-xs font-semibold text-gray-700">
                 {f.label}
               </label>
               {f.type === "textarea" ? (
-                <textarea id={id} name={f.name} rows={4} maxLength={f.max} required={f.required} placeholder={f.placeholder} className={input} aria-invalid={!!err} />
+                <textarea id={id} name={f.name} rows={4} maxLength={f.max} required={f.required} placeholder={f.placeholder} className={input} {...fieldState} />
               ) : f.type === "select" ? (
-                <select id={id} name={f.name} required={f.required} defaultValue="" className={input} aria-invalid={!!err}>
+                <select id={id} name={f.name} required={f.required} defaultValue="" className={input} {...fieldState}>
                   <option value="" disabled>
                     Choose one
                   </option>
@@ -109,10 +118,10 @@ export function IntakeForm({
                   placeholder={f.placeholder}
                   autoComplete={f.name === "name" ? "name" : f.name === "email" ? "email" : f.name === "organisation" ? "organization" : "off"}
                   className={input}
-                  aria-invalid={!!err}
+                  {...fieldState}
                 />
               )}
-              {err && <p className="mt-1 text-xs font-semibold text-crimson-ink">{err}</p>}
+              {err && <p id={errorId} className="mt-1 text-sm font-semibold text-crimson-ink">{err}</p>}
             </div>
           );
         })}

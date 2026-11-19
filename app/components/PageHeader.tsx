@@ -4,13 +4,13 @@ export function PageHeader({ title, back, children }: { title: string; back?: st
   return (
     <header className="sticky top-0 z-10 print:static -mx-5 mb-4 flex items-center gap-2 bg-paper/90 px-5 py-3 backdrop-blur">
       {back && (
-        <Link href={back} aria-label="Back" className="-ml-2 grid print:hidden h-9 w-9 place-items-center rounded-full text-gray-700 hover:bg-gray-200/60">
+        <Link href={back} aria-label="Back" className="-ml-2 grid h-11 w-11 shrink-0 place-items-center rounded-full text-navy-ink hover:bg-gray-200/60 print:hidden">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
             <path d="m15 18-6-6 6-6" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
       )}
-      <h1 className="flex-1 truncate font-display text-xl font-semibold">{title}</h1>
+      <h1 className="min-w-0 flex-1 break-words font-display text-2xl font-semibold leading-tight text-navy-ink">{title}</h1>
       {children && <div className="print:hidden">{children}</div>}
     </header>
   );

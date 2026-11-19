@@ -17,7 +17,7 @@ const chrome = [process.env.CHROME_PATH, "/Applications/Google Chrome.app/Conten
 if (!chrome) throw new Error("Chrome not found; set CHROME_PATH");
 const axeSource = readFileSync(createRequire(import.meta.url).resolve("axe-core/axe.min.js"), "utf8");
 
-const pages = ["/", "/receipts", "/receipts?q=rice", "/bills/SBN-1294", "/bills/HB08476", "/people/01K5S6MAZ4YBST5GDJV827A0J8", "/topics", "/laws", "/data", "/changes", "/feeds", "/lawmakers", "/compare?ids=01K5S6MAZ4YBST5GDJV827A0J8,01K5ST4BN36DFQBX19ZHFDCXPM", "/how-bills-become-law", "/watchlist", "/about", "/get-involved", "/press", "/privacy", "/not-a-page"];
+const pages = ["/", "/receipts", "/receipts?q=rice", "/receipts?q=SB%201294", "/bills/SBN-1294", "/bills/HB08476", "/people/01K5S6MAZ4YBST5GDJV827A0J8", "/topics", "/topics/health", "/laws", "/data", "/changes", "/feeds", "/lawmakers", "/compare?ids=01K5S6MAZ4YBST5GDJV827A0J8,01K5ST4BN36DFQBX19ZHFDCXPM", "/how-bills-become-law", "/watchlist", "/about", "/get-involved", "/press", "/privacy", "/offline", "/not-a-page"];
 
 const browser = await puppeteer.launch({ executablePath: chrome, headless: true, args: ["--no-sandbox"] });
 let failures = 0;
@@ -25,12 +25,26 @@ for (const scheme of ["light", "dark"] as const) {
   for (const path of pages) {
     const page = await browser.newPage();
     await page.emulateMediaFeatures([{ name: "prefers-color-scheme", value: scheme }]);
-    await page.evaluateOnNewDocument(() => {
+    await page.evaluateOnNewDocument((path, scheme) => {
       try {
         localStorage.setItem("civicsync:install-dismissed", "1");
+        localStorage.setItem("civicsync:theme", scheme);
+        if (path === "/watchlist") {
+          localStorage.setItem("civicsync:watchlist", JSON.stringify([{
+            id: "SBN-1294", label: "SB 1294", title: "The Magna Carta of Young Farmers",
+            congress: 20, status: "Pending in the Committee", savedAt: Date.now(),
+          }]));
+        }
       } catch {}
-    });
-    await page.goto(BASE + path, { waitUntil: "load", timeout: 60_000 });
+    }, path, scheme);
+    const response = await page.goto(BASE + path, { waitUntil: "load", timeout: 60_000 });
+    const status = response?.status();
+    if (status !== 200 && !(path === "/not-a-page" && status === 404)) {
+      console.log(`✗ ${scheme.padEnd(5)} ${path} (HTTP ${status ?? "unavailable"})`);
+      failures++;
+      await page.close();
+      continue;
+    }
     await new Promise((r) => setTimeout(r, 1500));
     await page.evaluate(axeSource);
     const result = await page.evaluate(async () => {
@@ -42,10 +56,10 @@ for (const scheme of ["light", "dark"] as const) {
     failures += bad.length;
     const minor = result.length - bad.length;
     console.log(`${bad.length ? "✗" : "✓"} ${scheme.padEnd(5)} ${path}${minor ? `  (${minor} minor)` : ""}`);
-    for (const v of bad) console.log(`    [${v.impact}] ${v.id}: ${v.help} (${v.count}×) e.g. ${v.nodes.join(" | ")}`);
+    for (const v of result) console.log(`    [${v.impact}] ${v.id}: ${v.help} (${v.count}×) e.g. ${v.nodes.join(" | ")}`);
     await page.close();
   }
 }
 await browser.close();
-console.log(failures ? `\n${failures} serious issue type(s)` : "\nNo serious accessibility issues");
+console.log(failures ? `\n${failures} failed checks` : "\nNo serious accessibility issues");
 process.exit(failures ? 1 : 0);

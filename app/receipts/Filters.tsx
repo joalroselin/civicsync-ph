@@ -19,7 +19,7 @@ export function Filters({ q, chamber, congress }: { q: string; chamber?: string;
   };
   const pill = (active: boolean) =>
     `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${
-      active ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"
+      active ? "bg-navy-ink/10 text-navy-ink ring-navy-ink/40" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"
     }`;
 
   return (

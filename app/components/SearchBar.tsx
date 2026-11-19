@@ -41,11 +41,11 @@ export function SearchBar({ defaultValue = "", autoFocus = false, showSubmit = f
           autoFocus={autoFocus}
           enterKeyHint="search"
           placeholder={showSubmit ? "Bill, lawmaker, or topic" : "Politician, bill title, or topic"}
-          aria-keyshortcuts="/"
+          aria-keyshortcuts="Control+/"
           className={`peer w-full bg-surface py-3.5 text-gray-900 focus:outline-none focus:ring-2 focus:ring-navy-ink ${
             showSubmit
               ? "rounded-lg border border-gray-400 px-3 text-base placeholder:text-gray-600"
-              : "rounded-2xl border-0 pl-11 pr-4 text-[15px] shadow-sm ring-1 ring-gray-200 placeholder:text-gray-400"
+              : "rounded-lg border border-gray-400 pl-11 pr-4 text-base placeholder:text-gray-600 md:pr-20"
           }`}
         />
         {!q && !showSubmit && (
@@ -53,7 +53,7 @@ export function SearchBar({ defaultValue = "", autoFocus = false, showSubmit = f
             aria-hidden
             className="pointer-events-none absolute right-3.5 top-1/2 hidden -translate-y-1/2 rounded-md px-2 py-0.5 font-sans text-xs text-gray-500 ring-1 ring-gray-200 peer-focus:opacity-0 md:block"
           >
-            /
+            Ctrl + /
           </kbd>
         )}
       </div>

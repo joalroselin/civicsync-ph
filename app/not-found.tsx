@@ -9,12 +9,12 @@ export default async function NotFound() {
   return (
     <main className="mx-auto flex min-h-[70vh] max-w-xl flex-col justify-center px-5 py-12">
       <p className="font-display text-sm font-semibold uppercase tracking-wider text-crimson-ink">Page not found</p>
-      <h1 className="mt-1 font-display text-2xl font-semibold md:text-3xl">We couldn’t find that page.</h1>
+      <h1 className="mt-1 font-display text-2xl font-semibold text-navy-ink md:text-3xl">We couldn’t find that page.</h1>
       <p className="mt-2 text-gray-600">
         The link may be old, or the bill number may not exist yet. Search for a lawmaker, a bill number like “SB 1294”, or a topic.
       </p>
       <div className="mt-6">
-        <SearchBar autoFocus />
+        <SearchBar showSubmit />
       </div>
       <div className="mt-3 flex flex-wrap items-center gap-2">
         <span className="text-xs text-gray-500">Try</span>

@@ -49,7 +49,7 @@ export default function WatchlistPage() {
             </PrivacyNote>
             <button
               onClick={() => signIn().catch(() => setAuthError("Sign-in didn’t complete. Try again."))}
-              className="shrink-0 rounded-xl bg-navy px-3.5 py-2 text-sm font-semibold text-white"
+              className="shrink-0 rounded-lg bg-crimson px-3.5 py-2 text-sm font-semibold text-white hover:bg-red-900"
             >
               Sign in
             </button>
@@ -74,7 +74,7 @@ export default function WatchlistPage() {
           <p className="mt-1 text-sm text-gray-600">
             Find a bill in Receipts and tap the bookmark to follow it.
           </p>
-          <Link href="/receipts" className="mt-4 inline-block rounded-xl bg-navy px-4 py-2.5 text-sm font-semibold text-white">
+          <Link href="/receipts" className="mt-4 inline-block rounded-lg bg-crimson px-4 py-2.5 text-sm font-semibold text-white hover:bg-red-900">
             Browse Receipts
           </Link>
         </div>
@@ -86,23 +86,22 @@ export default function WatchlistPage() {
           <ul className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
             {items.map((b) => (
               <li key={b.id}>
-                <Link
-                  href={`/bills/${b.id}`}
-                  className="flex h-full items-start gap-3 rounded-2xl bg-surface p-4 shadow-sm ring-1 ring-gray-200/70 hover:ring-navy-ink/30"
-                >
+                <div className="relative flex h-full items-start gap-3 rounded-xl bg-surface p-4 ring-1 ring-gray-200 hover:ring-navy-ink/30">
                   <div className="min-w-0 flex-1">
                     <div className="flex gap-2 text-xs text-gray-500">
                       <span className="rounded-md bg-navy-ink/10 px-1.5 py-0.5 font-semibold text-navy-ink">{b.label}</span>
                       <span>Saved {formatDate(new Date(b.savedAt).toISOString())}</span>
                     </div>
-                    <p className="mt-1.5 line-clamp-3 text-[15px] font-medium leading-snug">{b.title}</p>
+                    <Link href={`/bills/${b.id}`} className="mt-1.5 block font-medium leading-snug text-navy-ink after:absolute after:inset-0 hover:underline">
+                      <span className="line-clamp-3">{b.title}</span>
+                    </Link>
                     {b.authorLine && <AuthorByline text={b.authorLine} role={b.label.startsWith("SB") ? "Senator" : "Representative"} />}
                     <div className="mt-2">
                       <StatusBadge status={b.status} />
                     </div>
                   </div>
-                  <WatchButton variant="icon" bill={b} />
-                </Link>
+                  <div className="relative z-10"><WatchButton variant="icon" bill={b} /></div>
+                </div>
               </li>
             ))}
           </ul>

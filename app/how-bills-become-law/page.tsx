@@ -14,9 +14,9 @@ export default function HowBillsBecomeLawPage() {
     <main className="px-5 pb-12 md:pt-4">
       <PageHeader title="How a bill becomes law" />
       <div className="max-w-3xl">
-        <section className="rounded-[20px] bg-navy p-6 text-white shadow-md md:p-8">
-          <h2 className="font-display text-2xl font-semibold leading-tight md:text-3xl">From filing to Republic Act, in 8 steps.</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-indigo-100 md:text-lg">
+        <section className="page-intro">
+          <h2 className="font-display text-2xl font-semibold leading-tight text-navy-ink md:text-3xl">From filing to Republic Act, in 8 steps.</h2>
+          <p className="mt-3 text-base leading-relaxed text-gray-700 md:text-lg">
             Thousands of bills are filed every Congress, and only a small share become law. Here’s the path each one takes, and what the statuses
             on CivicSync mean.
           </p>
@@ -59,7 +59,7 @@ export default function HowBillsBecomeLawPage() {
         </section>
 
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/receipts" className="rounded-xl bg-navy px-4 py-3 text-sm font-semibold text-white hover:bg-blue-900">
+          <Link href="/receipts" className="rounded-lg bg-crimson px-4 py-3 text-sm font-semibold text-white hover:bg-red-900">
             Look up a bill
           </Link>
           <Link href="/watchlist" className="rounded-xl bg-surface px-4 py-3 text-sm font-semibold text-navy-ink ring-1 ring-gray-200 hover:ring-navy-ink/40">

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useWatchlist } from "./WatchlistProvider";
 import { Logo } from "./Logo";
 import { SocialIcons } from "./SocialIcons";
@@ -34,8 +34,8 @@ const SECONDARY_PATHS = ["/about", "/get-involved", "/press"];
 /** One compact line: privacy promise + credit (the AI note lives only here). */
 function FooterLine({ className = "" }: { className?: string }) {
   return (
-    <p className={`text-[11px] leading-relaxed text-gray-500 ${className}`}>
-      <Link href="/privacy" className="transition hover:text-crimson-ink">
+    <p className={`text-xs leading-relaxed text-gray-600 ${className}`}>
+      <Link href="/privacy" className="underline underline-offset-2 hover:text-crimson-ink">
         Privacy first
       </Link>{" "}
       · Built by{" "}
@@ -43,7 +43,7 @@ function FooterLine({ className = "" }: { className?: string }) {
         href={REPO_URL}
         target="_blank"
         rel="noreferrer"
-        className="font-semibold text-gray-500 underline decoration-gray-300 underline-offset-2 transition hover:text-crimson-ink hover:decoration-crimson-ink"
+        className="font-semibold underline underline-offset-2 hover:text-crimson-ink"
       >
         HelloJoal
       </a>{" "}
@@ -62,7 +62,7 @@ export function BottomNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) 
   useEffect(() => setMoreOpen(false), [pathname]);
 
   const tabClass = (active: boolean) =>
-    `relative flex w-full flex-col items-center gap-0.5 py-2.5 text-[11px] font-semibold ${active ? "text-navy-ink" : "text-gray-500"}`;
+    `relative flex w-full flex-col items-center gap-0.5 border-t-2 py-2 text-xs font-semibold focus-visible:-outline-offset-2 ${active ? "border-flag-yellow text-navy-ink" : "border-transparent text-gray-500"}`;
   const moreActive = moreOpen || SECONDARY_PATHS.some((p) => pathname.startsWith(p));
 
   return (
@@ -94,6 +94,7 @@ export function BottomNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) 
               type="button"
               aria-haspopup="dialog"
               aria-expanded={moreOpen}
+              aria-controls={moreOpen ? "more-menu" : undefined}
               onClick={() => setMoreOpen((o) => !o)}
               className={tabClass(moreActive)}
             >
@@ -108,18 +109,38 @@ export function BottomNav({ socialLinks = [] }: { socialLinks?: SocialLink[] }) 
 }
 
 function MoreSheet({ socialLinks, onClose }: { socialLinks: SocialLink[]; onClose: () => void }) {
+  const dialog = useRef<HTMLDialogElement>(null);
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [onClose]);
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const closeOnDesktop = () => {
+      if (desktop.matches) dialog.current?.close();
+    };
+    if (!dialog.current?.open) dialog.current?.showModal();
+    desktop.addEventListener("change", closeOnDesktop);
+    return () => desktop.removeEventListener("change", closeOnDesktop);
+  }, []);
 
   const row = "flex items-center gap-3 rounded-xl px-3 py-3 text-[15px] font-semibold text-gray-800 active:bg-gray-100";
   return (
-    <div className="fixed inset-0 z-30 md:hidden" role="dialog" aria-modal="true" aria-label="More">
-      <button type="button" aria-label="Close" onClick={onClose} className="absolute inset-0 bg-black/40" />
-      <div className="absolute inset-x-0 bottom-0 rounded-t-3xl bg-surface px-4 pb-[calc(76px+env(safe-area-inset-bottom))] pt-3 shadow-2xl">
-        <div className="mx-auto mb-2 h-1 w-10 rounded-full bg-gray-300" aria-hidden />
+    <dialog
+      id="more-menu"
+      ref={dialog}
+      aria-labelledby="more-heading"
+      onClose={onClose}
+      onClick={(e) => {
+        if (e.target === e.currentTarget || (e.target instanceof Element && e.target.closest('a[href^="/"]'))) {
+          e.currentTarget.close();
+        }
+      }}
+      className="fixed inset-x-0 bottom-0 top-auto m-0 max-h-[calc(100dvh-1rem)] w-full max-w-none overflow-y-auto rounded-t-2xl bg-surface text-gray-900 backdrop:bg-black/45"
+    >
+      <div className="px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-3">
+        <div className="flex items-center justify-between gap-2 border-b border-gray-200 pl-3">
+          <h2 id="more-heading" className="font-display text-xl font-semibold text-navy-ink">More</h2>
+          <button type="button" onClick={() => dialog.current?.close()} className="min-h-11 px-3 text-sm font-semibold text-navy-ink">
+            Close
+          </button>
+        </div>
         <ul className="flex flex-col">
           {secondary.map(({ href, label, icon: Icon }) => (
             <li key={href}>
@@ -149,7 +170,7 @@ function MoreSheet({ socialLinks, onClose }: { socialLinks: SocialLink[]; onClos
           <FooterLine className="mt-3" />
         </div>
       </div>
-    </div>
+    </dialog>
   );
 }
 

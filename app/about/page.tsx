@@ -62,9 +62,9 @@ export default async function AboutPage() {
       <PageHeader title="About" />
 
       <div className="max-w-3xl">
-        <section className="rounded-[20px] bg-navy p-6 text-white shadow-md md:p-8">
-          <h2 className="font-display text-2xl font-semibold leading-tight md:text-3xl">{about.title}</h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-indigo-100 md:text-lg">{about.intro}</p>
+        <section className="page-intro">
+          <h2 className="font-display text-2xl font-semibold leading-tight text-navy-ink md:text-3xl">{about.title}</h2>
+          <p className="mt-3 text-base leading-relaxed text-gray-700 md:text-lg">{about.intro}</p>
         </section>
 
         <dl className="mt-4 grid grid-cols-3 gap-3">
@@ -79,7 +79,7 @@ export default async function AboutPage() {
         </article>
 
         <div className="mt-10 flex flex-wrap items-center gap-3">
-          <Link href="/receipts" className="rounded-xl bg-navy px-4 py-3 text-sm font-semibold text-white hover:bg-blue-900">
+          <Link href="/receipts" className="rounded-lg bg-crimson px-4 py-3 text-sm font-semibold text-white hover:bg-red-900">
             Start searching
           </Link>
           <Link href="/get-involved" className="rounded-xl bg-surface px-4 py-3 text-sm font-semibold text-crimson-ink ring-1 ring-gray-200 hover:ring-crimson-ink/40">

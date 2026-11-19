@@ -27,17 +27,17 @@ export async function GET(req: Request, props: { params: Promise<{ id: string }>
 <style>
 *{box-sizing:border-box;margin:0}
 body{font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif;background:transparent;color:#111827}
-a.card{display:flex;flex-direction:column;gap:8px;padding:14px 16px;border:1px solid #E5E7EB;border-radius:14px;background:#fff;color:inherit;text-decoration:none;height:100vh;max-height:200px;overflow:hidden}
+a.card{display:flex;flex-direction:column;gap:8px;padding:14px 16px;border:1px solid #D8D2C6;border-left:4px solid #FCD116;border-radius:14px;background:#FBF8F0;color:inherit;text-decoration:none;height:100vh;max-height:200px;overflow:hidden}
 a.card:hover{border-color:#1E3A8A55}
-.meta{display:flex;gap:8px;align-items:center;font-size:12px;color:#6B7280;flex-wrap:wrap}
+.meta{display:flex;gap:8px;align-items:center;font-size:12px;color:#5E6571;flex-wrap:wrap}
 .chip{background:#1E3A8A1a;color:#1E3A8A;font-weight:700;border-radius:6px;padding:1px 6px}
 .title{font-weight:600;font-size:15px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:12px;color:#4B5563}
 .status{display:inline-flex;gap:6px;align-items:center;border-radius:99px;padding:2px 10px;font-weight:600;background:${tone.bg};color:${tone.fg};max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .status i{width:6px;height:6px;border-radius:99px;background:${tone.dot};flex:none}
-.foot{margin-top:auto;display:flex;justify-content:space-between;font-size:12px;color:#6B7280}
+.foot{margin-top:auto;display:flex;justify-content:space-between;font-size:12px;color:#5E6571}
 .foot b{color:#1E3A8A}
-${dark ? `body{color:#F3F4F6}a.card{background:#111827;border-color:#374151}.meta,.row,.foot{color:#9CA3AF}.chip{background:#93C5FD26;color:#BFDBFE}.foot b{color:#BFDBFE}` : ""}
+${dark ? `body{color:#F3F4F6}a.card{background:#111827;border-color:#374151;border-left-color:#FCD116}.meta,.row,.foot{color:#9CA3AF}.chip{background:#93C5FD26;color:#BFDBFE}.foot b{color:#BFDBFE}` : ""}
 </style></head><body>
 <a class="card" href="${esc(link)}" target="_blank" rel="noopener">
 ${body}

@@ -35,16 +35,16 @@ export default async function TopicPage(props: { params: Promise<{ id: string }>
   const bills = hits ? await withAuthorLinks(hits.map(summaryFromSemantic)) : undefined;
 
   const pill = (active: boolean) =>
-    `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"}`;
+    `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy-ink/10 text-navy-ink ring-navy-ink/40" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"}`;
 
   return (
     <main className="px-5 pb-12 md:pt-4">
       <PageHeader title="Topics" back="/topics" />
       <div className="max-w-4xl">
-        <section className="rounded-[20px] bg-navy p-6 text-white shadow-md md:p-8">
-          <p className="text-xs font-semibold uppercase tracking-wider text-indigo-200">20th Congress · Topic</p>
-          <h2 className="mt-1 font-display text-2xl font-semibold md:text-3xl">{topic.label}</h2>
-          <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-indigo-100">{topic.description}</p>
+        <section className="page-intro">
+          <p className="text-sm font-medium text-gray-600">20th Congress · Topic</p>
+          <h2 className="mt-1 font-display text-2xl font-semibold text-navy-ink md:text-3xl">{topic.label}</h2>
+          <p className="mt-2 max-w-2xl text-base leading-relaxed text-gray-700">{topic.description}</p>
           <dl className="mt-5 flex gap-6 text-sm">
             <Stat value={topic.primaryBillCount} label="bills" />
             <Stat value={topic.senatePrimaryBillCount} label="Senate" />
@@ -62,7 +62,7 @@ export default async function TopicPage(props: { params: Promise<{ id: string }>
               { v: "senate", label: "Senate" },
               { v: "house", label: "House" },
             ].map((o) => (
-              <Link key={o.label} href={o.v ? `/topics/${id}?chamber=${o.v}` : `/topics/${id}`} className={pill(chamber === o.v)} scroll={false}>
+              <Link key={o.label} href={o.v ? `/topics/${id}?chamber=${o.v}` : `/topics/${id}`} className={pill(chamber === o.v)} aria-current={chamber === o.v ? "true" : undefined} scroll={false}>
                 {o.label}
               </Link>
             ))}
@@ -95,8 +95,8 @@ function Stat({ value, label }: { value: number; label: string }) {
     <div>
       <dt className="sr-only">{label}</dt>
       <dd>
-        <span className="block font-display text-xl font-semibold">{value.toLocaleString()}</span>
-        <span className="text-xs text-indigo-200">{label}</span>
+        <span className="block font-display text-xl font-semibold text-navy-ink">{value.toLocaleString()}</span>
+        <span className="text-sm text-gray-600">{label}</span>
       </dd>
     </div>
   );

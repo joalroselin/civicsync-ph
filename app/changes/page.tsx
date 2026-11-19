@@ -27,14 +27,14 @@ export default async function ChangesPage(props: { searchParams: Promise<{ chamb
   const byDate = new Map<string, StatusChange[]>();
   for (const c of changes) byDate.set(c.date, [...(byDate.get(c.date) ?? []), c]);
   const pill = (active: boolean) =>
-    `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy text-white ring-navy" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"}`;
+    `rounded-full px-3 py-1 text-xs font-semibold ring-1 transition ${active ? "bg-navy-ink/10 text-navy-ink ring-navy-ink/40" : "bg-surface text-gray-600 ring-gray-200 hover:ring-navy-ink/40"}`;
 
   return (
     <main className="px-5 pb-12 md:pt-4">
       <PageHeader title="What changed" />
       <div className="max-w-3xl">
-        <section className="rounded-[20px] bg-navy p-5 text-white shadow-md md:p-6">
-          <p className="text-xs font-semibold uppercase tracking-wider text-indigo-200">This week · {week.range}</p>
+        <section className="page-intro">
+          <h2 className="font-display text-lg font-semibold text-navy-ink">This week · {week.range}</h2>
           <dl className="mt-3 grid grid-cols-3 gap-3">
             {[
               [week.filed, "bills filed"],
@@ -44,8 +44,8 @@ export default async function ChangesPage(props: { searchParams: Promise<{ chamb
               <div key={l as string}>
                 <dt className="sr-only">{l}</dt>
                 <dd>
-                  <span className="block font-display text-2xl font-semibold">{(n as number).toLocaleString()}</span>
-                  <span className="text-xs text-indigo-200">{l}</span>
+                  <span className="block font-display text-2xl font-semibold text-navy-ink">{(n as number).toLocaleString()}</span>
+                  <span className="text-sm text-gray-600">{l}</span>
                 </dd>
               </div>
             ))}
@@ -59,7 +59,7 @@ export default async function ChangesPage(props: { searchParams: Promise<{ chamb
             { v: "senate", l: "Senate" },
             { v: "house", l: "House" },
           ].map((o) => (
-            <Link key={o.l} href={o.v ? `/changes?chamber=${o.v}` : "/changes"} className={pill(chamber === o.v)} scroll={false}>
+            <Link key={o.l} href={o.v ? `/changes?chamber=${o.v}` : "/changes"} className={pill(chamber === o.v)} aria-current={chamber === o.v ? "true" : undefined} scroll={false}>
               {o.l}
             </Link>
           ))}

@@ -125,7 +125,7 @@ export default async function PersonPage(props: {
           </h2>
 
           {congresses.length > 1 && (
-            <div className="-mx-5 mt-3 flex gap-2 no-scrollbar overflow-x-auto px-5 pb-1 md:mx-0 md:flex-wrap md:overflow-visible md:px-0" role="tablist" aria-label="Filter by congress">
+            <nav className="-mx-5 mt-3 flex gap-2 no-scrollbar overflow-x-auto px-5 py-1.5 md:mx-0 md:flex-wrap md:overflow-visible md:px-0" aria-label="Filter by Congress">
               {congresses.map((n) => (
                 <FilterChip
                   key={n}
@@ -135,7 +135,7 @@ export default async function PersonPage(props: {
                 />
               ))}
               <FilterChip href={`/people/${person.id}?congress=all`} active={!congress} label="All history" />
-            </div>
+            </nav>
           )}
 
           <div className="mt-4">
@@ -186,11 +186,10 @@ function FilterChip({ href, active, label }: { href: string; active: boolean; la
   return (
     <Link
       href={href}
-      role="tab"
-      aria-selected={active}
+      aria-current={active ? "true" : undefined}
       scroll={false}
       className={`shrink-0 rounded-full px-3.5 py-1.5 text-sm font-medium ring-1 ring-inset ${
-        active ? "bg-navy text-white ring-navy-ink" : "bg-surface text-gray-700 ring-gray-200"
+        active ? "bg-navy-ink/10 text-navy-ink ring-navy-ink/40" : "bg-surface text-gray-700 ring-gray-200"
       }`}
     >
       {label}

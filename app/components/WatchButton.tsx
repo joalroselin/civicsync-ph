@@ -23,7 +23,7 @@ export function WatchButton({
         }}
         aria-pressed={watched}
         aria-label={watched ? `Remove ${bill.label} from Watchlist` : `Add ${bill.label} to Watchlist`}
-        className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition ${
+        className={`grid h-11 w-11 shrink-0 place-items-center rounded-full transition ${
           watched ? "bg-crimson-ink/10 text-crimson-ink" : "text-gray-500 hover:bg-gray-100 hover:text-gray-600"
         }`}
       >

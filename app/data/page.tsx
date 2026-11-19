@@ -44,7 +44,7 @@ export default function DataPage() {
                 <a
                   href={`${RAW}/${d.file}`}
                   download
-                  className="shrink-0 rounded-xl bg-navy px-3 py-2 text-sm font-semibold text-white hover:bg-blue-900"
+                  className="shrink-0 rounded-lg bg-crimson px-3 py-2 text-sm font-semibold text-white hover:bg-red-900"
                 >
                   Download
                 </a>

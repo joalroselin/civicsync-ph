@@ -4,19 +4,19 @@
 
 /* Theme colours (RGB triplets, used by tailwind.config.ts). Light by default;
    html.dark switches to the dark set. Set before first paint by the script in
-   app/layout.tsx, from the saved choice or the device setting. */
+   app/layout.tsx, from the saved choice. */
 :root {
   color-scheme: light;
-  --paper: 249 250 251;
-  --surface: 255 255 255;
+  --paper: 251 248 240;
+  --surface: 255 253 247;
   --navy-ink: 30 58 138;
   --crimson-ink: 153 27 27;
-  --gray-50: 249 250 251;
-  --gray-100: 243 244 246;
-  --gray-200: 229 231 235;
+  --gray-50: 248 245 237;
+  --gray-100: 243 239 229;
+  --gray-200: 226 221 210;
   --gray-300: 209 213 219;
   --gray-400: 156 163 175;
-  --gray-500: 107 114 128;
+  --gray-500: 94 101 113;
   --gray-600: 75 85 99;
   --gray-700: 55 65 81;
   --gray-800: 31 41 55;
@@ -42,20 +42,20 @@
 @media screen {
 html.dark {
   color-scheme: dark;
-  --paper: 11 16 30;
-  --surface: 20 28 46;
-  --navy-ink: 165 180 252;
+  --paper: 22 24 27;
+  --surface: 29 32 36;
+  --navy-ink: 174 200 252;
   --crimson-ink: 252 165 165;
-  --gray-50: 27 37 58;
-  --gray-100: 33 45 69;
-  --gray-200: 47 61 87;
-  --gray-300: 68 83 110;
-  --gray-400: 120 133 156;
-  --gray-500: 145 157 178;
-  --gray-600: 172 183 201;
-  --gray-700: 200 208 221;
-  --gray-800: 224 230 239;
-  --gray-900: 241 245 249;
+  --gray-50: 33 36 41;
+  --gray-100: 39 43 48;
+  --gray-200: 55 60 67;
+  --gray-300: 73 79 86;
+  --gray-400: 131 140 153;
+  --gray-500: 161 169 181;
+  --gray-600: 192 199 209;
+  --gray-700: 213 219 226;
+  --gray-800: 231 235 240;
+  --gray-900: 247 245 241;
   --amber-50: 58 44 14;
   --amber-100: 74 55 16;
   --amber-200: 110 80 20;
@@ -69,14 +69,20 @@ html.dark {
   --emerald-900: 167 243 208;
   --red-50: 64 18 22;
   --red-200: 118 34 40;
-  --blue-50: 24 38 78;
-  --blue-200: 48 70 130;
+  --blue-50: 36 50 73;
+  --blue-200: 65 92 136;
 }
 }
 
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+    scroll-padding-block-start: 4.5rem;
+    scroll-padding-block-end: calc(4.5rem + env(safe-area-inset-bottom));
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--navy-ink));
+    outline-offset: 3px;
   }
   input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
@@ -92,10 +98,9 @@ html.dark {
   }
 }
 
-@media screen {
-  html:not(.dark) body:has(.home-page) {
-    --paper: 251 248 240;
-    --surface: 255 253 247;
+@layer components {
+  .page-intro {
+    @apply border-l-4 border-flag-yellow py-1 pl-4 md:pl-6;
   }
 }
 

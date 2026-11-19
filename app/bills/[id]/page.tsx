@@ -88,15 +88,15 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
       </PageHeader>
 
       {/*
-        Phones: one column in DOM order (title, watch, status, summary, …).
+        Phones read the introduction and sources before the full status history.
         Wide screens (xl, 1280px+): title + details on the left; watch/status/
         authors in a sticky side panel. Below that the sidebar leaves too
         little room for two columns, so it stays single-column.
       */}
       <div className="flex flex-col xl:grid xl:grid-cols-[minmax(0,1fr)_340px] xl:grid-rows-[auto_1fr] xl:gap-x-8">
         <div className="xl:col-start-1 xl:row-start-1">
-          <section className="print-plain rounded-[20px] bg-navy p-5 text-white shadow-md md:p-8">
-            <div className="flex flex-wrap gap-x-2 text-xs font-medium text-indigo-200">
+          <section className="page-intro print-plain">
+            <div className="flex flex-wrap gap-x-2 text-sm font-medium text-gray-600">
               <span>{bill.chamber}</span>
               <span>·</span>
               <span>{ordinal(bill.congress)} Congress</span>
@@ -107,12 +107,46 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
                 </>
               )}
             </div>
-            <h2 className="mt-2 font-display text-[22px] font-semibold leading-tight md:text-3xl">{title}</h2>
-            {bill.subtitle && <p className="mt-2 text-sm leading-relaxed text-indigo-100/90 md:text-base">{toTitleCase(bill.subtitle)}</p>}
+            <h2 className="mt-2 font-display text-[26px] font-semibold leading-tight text-navy-ink md:text-4xl">{title}</h2>
+            {bill.subtitle && <p className="mt-2 text-base leading-relaxed text-gray-700">{toTitleCase(bill.subtitle)}</p>}
+            {bill.statusSource && (
+              <div className="mt-3"><StatusBadge status={bill.status} size="md" /></div>
+            )}
           </section>
+          {bill.analysis?.overview && (
+            <Card title="In plain language">
+              <p className="text-lg leading-relaxed">{bill.analysis.overview}</p>
+              {bill.analysis.policyAreas && bill.analysis.policyAreas.length > 0 && (
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {bill.analysis.policyAreas.map((a) => (
+                    <span key={a} className="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-700">
+                      {a}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <p className="mt-3 text-[11px] text-gray-500">
+                Automated summary by BatasWatch. It may miss nuance — read the bill text before citing it.
+              </p>
+            </Card>
+          )}
+          {bill.sourceUrls.length > 0 && (
+            <Card title="Official sources">
+              <ul className="divide-y divide-gray-100">
+                {bill.sourceUrls.map((s) => (
+                  <li key={s.url}>
+                    <a href={s.url} target="_blank" rel="noreferrer" className="flex items-center justify-between gap-3 py-2.5 text-base font-medium text-navy-ink underline underline-offset-4">
+                      <span className="min-w-0 break-words">{s.label}</span>
+                      <span aria-hidden>↗</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Card>
+          )}
         </div>
 
-        <aside className="xl:sticky xl:top-20 xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:self-start">
+        <aside aria-label="Bill details" className="xl:sticky xl:top-20 xl:col-start-2 xl:row-span-2 xl:row-start-1 xl:self-start">
           <div className="mt-4 xl:mt-0 print:hidden">
             <WatchButton bill={{ id: bill.id, label: bill.label, title, congress: bill.congress, status: bill.status }} />
           </div>
@@ -120,7 +154,6 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
           <Card title="Status">
             {bill.statusSource ? (
               <>
-                <StatusBadge status={bill.status} size="md" />
                 <StatusHelp status={bill.status} />
                 <StatusTimeline number={bill.billNumber} congress={bill.congress} />
                 {bill.committee && (
@@ -149,36 +182,12 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
               </p>
             )}
           </Card>
-          <div className="hidden xl:block">
-            <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${authorCount} ${role}s`}>
-              <AuthorList people={bill.authors} names={bill.authorNames} ids={bill.authorIds} role={role} />
-            </Card>
-          </div>
+          <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${authorCount} ${role}s`}>
+            <AuthorList people={bill.authors} names={bill.authorNames} ids={bill.authorIds} role={role} />
+          </Card>
         </aside>
 
         <div className="xl:col-start-1 xl:row-start-2">
-          {bill.analysis?.overview && (
-            <Card title="In plain language">
-              <p className="text-[15px] leading-relaxed">{bill.analysis.overview}</p>
-              {bill.analysis.policyAreas && bill.analysis.policyAreas.length > 0 && (
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {bill.analysis.policyAreas.map((a) => (
-                    <span key={a} className="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-700">
-                      {a}
-                    </span>
-                  ))}
-                </div>
-              )}
-              <p className="mt-3 text-[11px] text-gray-500">
-                Automated summary by BatasWatch. It may miss nuance — read the bill text before citing it.
-              </p>
-            </Card>
-          )}
-          <div className="xl:hidden">
-            <Card title={authorCount === 1 ? `Author · ${role}` : `Authors · ${authorCount} ${role}s`}>
-              <AuthorList people={bill.authors} names={bill.authorNames} ids={bill.authorIds} role={role} />
-            </Card>
-          </div>
           {bill.subjects.length > 0 && (
             <Card title="Subjects">
               <div className="flex flex-wrap gap-1.5">
@@ -188,20 +197,6 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
                   </span>
                 ))}
               </div>
-            </Card>
-          )}
-          {bill.sourceUrls.length > 0 && (
-            <Card title="Official sources">
-              <ul className="divide-y divide-gray-100">
-                {bill.sourceUrls.map((s) => (
-                  <li key={s.url}>
-                    <a href={s.url} target="_blank" rel="noreferrer" className="flex items-center justify-between gap-3 py-2.5 text-sm font-medium text-navy-ink">
-                      <span className="truncate">{s.label}</span>
-                      <span aria-hidden>↗</span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
             </Card>
           )}
           <Suspense fallback={null}>
@@ -247,8 +242,8 @@ export default async function BillPage(props: { params: Promise<{ id: string }> 
 
 function Card({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-4 rounded-2xl bg-surface p-4 shadow-sm ring-1 ring-gray-200/70">
-      <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-gray-500">{title}</h3>
+    <section className="mt-5 border-t border-gray-200 pt-4">
+      <h2 className="mb-2 font-display text-xl font-semibold text-navy-ink">{title}</h2>
       {children}
     </section>
   );

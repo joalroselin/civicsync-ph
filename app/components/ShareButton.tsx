@@ -18,7 +18,7 @@ export function ShareButton({ title }: { title: string }) {
           setTimeout(() => setCopied(false), 1800);
         }
       }}
-      className="grid h-9 min-w-9 place-items-center rounded-full px-2 text-gray-700 hover:bg-gray-200/60"
+      className="grid h-11 min-w-11 place-items-center rounded-full px-2 text-navy-ink hover:bg-gray-200/60"
     >
       {copied ? (
         <span className="text-xs font-semibold">Copied</span>

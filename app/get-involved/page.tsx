@@ -55,21 +55,21 @@ export default async function GetInvolvedPage() {
         </section>
       )}
 
-      <section className="mt-10 max-w-5xl rounded-2xl bg-navy p-5 text-white md:p-6">
+      <section className="page-intro mt-10 max-w-5xl">
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="font-display text-lg font-semibold">Open source, built in the open</p>
-            <p className="mt-1 max-w-2xl text-sm leading-relaxed text-indigo-100">
+            <h2 className="font-display text-lg font-semibold text-navy-ink">Open source, built in the open</h2>
+            <p className="mt-1 max-w-2xl text-base leading-relaxed text-gray-700">
               CivicSync’s code is licensed under the GNU AGPL-3.0, so improvements to it stay public, with commercial
               licences for businesses that need other terms. Everyone taking part agrees to our code of conduct and
               keeps CivicSync non-partisan.
             </p>
           </div>
           <div className="flex shrink-0 flex-wrap gap-2 text-sm font-semibold">
-            <a href={`${REPO_URL}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noreferrer" className="rounded-xl bg-surface px-4 py-2.5 text-navy-ink">
+            <a href={`${REPO_URL}/blob/main/CONTRIBUTING.md`} target="_blank" rel="noreferrer" className="rounded-lg bg-crimson px-4 py-2.5 text-white hover:bg-red-900">
               Contributing guide
             </a>
-            <a href={`${REPO_URL}/blob/main/CODE_OF_CONDUCT.md`} target="_blank" rel="noreferrer" className="rounded-xl px-4 py-2.5 ring-1 ring-white/40 hover:bg-white/10">
+            <a href={`${REPO_URL}/blob/main/CODE_OF_CONDUCT.md`} target="_blank" rel="noreferrer" className="rounded-lg bg-surface px-4 py-2.5 text-navy-ink ring-1 ring-gray-300 hover:bg-gray-50">
               Code of conduct
             </a>
           </div>
